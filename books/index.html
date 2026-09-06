@@ -2604,7 +2604,29 @@
             }
         };
 
-        const SVG_FALLBACK_COVER = `data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='120' viewBox='0 0 80 120'><rect width='80' height='120' fill='%231e293b' rx='4'/><circle cx='40' cy='45' r='16' fill='%2338bdf8' opacity='0.2'/><text x='40' y='50' fill='%2338bdf8' font-size='10' font-weight='bold' text-anchor='middle' font-family='sans-serif'>FB2</text><text x='40' y='80' fill='%2394a3b8' font-size='9' text-anchor='middle' font-family='sans-serif'>FLIBUSTA</text></svg>`;
+        const SVG_FALLBACK_COVER = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(
+            `<svg xmlns="http://www.w3.org/2000/svg" width="160" height="240" viewBox="0 0 160 240">
+                <defs>
+                    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#1e293b"/>
+                        <stop offset="100%" stop-color="#0f172a"/>
+                    </linearGradient>
+                </defs>
+                <rect width="160" height="240" fill="url(#g)" rx="8"/>
+                <rect x="10" y="10" width="140" height="220" fill="none" stroke="#334155" stroke-width="1.5" stroke-dasharray="4 4" rx="6"/>
+                <circle cx="80" cy="90" r="28" fill="#38bdf8" opacity="0.15"/>
+                <path d="M70 82h20M70 90h20M70 98h12" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round"/>
+                <text x="80" y="145" fill="#f1f5f9" font-size="13" font-weight="600" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">FLIBUSTA</text>
+                <text x="80" y="165" fill="#64748b" font-size="10" font-weight="500" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">ЭЛЕКТРОННАЯ КНИГА</text>
+            </svg>`
+        );
+
+        function handleCoverError(el) {
+            if (el) {
+                el.onerror = null;
+                el.src = SVG_FALLBACK_COVER;
+            }
+        }
 
         const _booksMap = new Map();
 
@@ -2810,7 +2832,7 @@
                         return `
                             <div class="book-card">
                                 <div class="book-card-main">
-                                    <img src="${coverSrc}" class="book-card-cover" alt="Обложка" onerror="this.src='${SVG_FALLBACK_COVER}';" onclick="openReader(${b.id}, '${cleanTitle.replace(/'/g, "\\'")}')">
+                                    <img src="${coverSrc}" class="book-card-cover" alt="Обложка" onerror="handleCoverError(this)" onclick="openReader(${b.id}, '${cleanTitle.replace(/'/g, "\\'")}')">
                                     <div class="book-info-col">
                                         <div class="book-title" onclick="openReader(${b.id}, '${cleanTitle.replace(/'/g, "\\'")}')">${cleanTitle}</div>
                                         <div class="book-author-link" onclick="openAuthor('${cleanAuthor.replace(/'/g, "\\'")}')">${cleanAuthor}</div>
@@ -2901,7 +2923,7 @@
 
             anchor.innerHTML = `
                 <div class="continue-reading-hero">
-                    <img src="${API_BASE}/api/book/${latest.id}/cover" class="hero-cover" alt="Обложка" onerror="this.src='${SVG_FALLBACK_COVER}';" onclick="openReader(${latest.id}, '${escapeHtml(latest.title)}')">
+                    <img src="${API_BASE}/api/book/${latest.id}/cover" class="hero-cover" alt="Обложка" onerror="handleCoverError(this)" onclick="openReader(${latest.id}, '${escapeHtml(latest.title)}')">
                     <div class="hero-info">
                         <div class="hero-tag"><i class="fa-solid fa-bookmark"></i> Продолжить чтение</div>
                         <div class="hero-title" onclick="openReader(${latest.id}, '${escapeHtml(latest.title)}')">${escapeHtml(latest.title)}</div>
@@ -2999,7 +3021,7 @@
                                     const seqBadge = b.ser_no ? `<span class="shelf-card-series">#${b.ser_no} ${escapeHtml(b.series || '')}</span>` : (b.series ? `<span class="shelf-card-series">${escapeHtml(b.series)}</span>` : '');
                                     return `
                                         <div class="shelf-card" onclick="openBookDetails(${b.id})">
-                                            <img src="${API_BASE}/api/book/${b.id}/cover" class="shelf-cover" alt="Обложка" loading="lazy" onerror="this.src='${SVG_FALLBACK_COVER}';">
+                                            <img src="${API_BASE}/api/book/${b.id}/cover" class="shelf-cover" alt="Обложка" loading="lazy" onerror="handleCoverError(this)">
                                             <div class="shelf-card-title" title="${cleanTitle}">${cleanTitle}</div>
                                             <div class="shelf-card-author">${cleanAuthor}</div>
                                             ${seqBadge}
@@ -3053,7 +3075,7 @@
                         return `
                             <div class="book-card">
                                 <div class="book-card-main">
-                                    <img src="${coverSrc}" class="book-card-cover" alt="Обложка" onerror="this.src='${SVG_FALLBACK_COVER}';" onclick="openReader(${b.id}, '${cleanTitle.replace(/'/g, "\\'")}')">
+                                    <img src="${coverSrc}" class="book-card-cover" alt="Обложка" onerror="handleCoverError(this)" onclick="openReader(${b.id}, '${cleanTitle.replace(/'/g, "\\'")}')">
                                     <div class="book-info-col">
                                         <div class="book-title" onclick="openReader(${b.id}, '${cleanTitle.replace(/'/g, "\\'")}')">${cleanTitle}</div>
                                         <div class="book-author-link" onclick="openAuthor('${cleanAuthor.replace(/'/g, "\\'")}')">${cleanAuthor}</div>
@@ -3109,7 +3131,7 @@
                 return `
                 <div class="book-card">
                     <div class="book-card-main">
-                        <img src="${API_BASE}/api/book/${b.id}/cover" alt="Обложка" onerror="this.onerror=null; this.src='${SVG_FALLBACK_COVER}';" class="book-card-cover" onclick="openBookDetails(${b.id})" loading="lazy">
+                        <img src="${API_BASE}/api/book/${b.id}/cover" alt="Обложка" onerror="handleCoverError(this)" class="book-card-cover" onclick="openBookDetails(${b.id})" loading="lazy">
                         <div class="book-info-col">
                             <div class="book-title" onclick="openBookDetails(${b.id})">${cleanTitle}</div>
                             <a class="book-author-link" onclick="openAuthor('${cleanAuthor}')">
@@ -3198,7 +3220,7 @@
             let html = `
             <div class="flibusta-author-view">
                 <div class="author-top-profile">
-                    <img src="${authorPhotoUrl}" class="author-photo" alt="${escapeHtml(bioInfo.name)}" onerror="this.src='${SVG_FALLBACK_COVER}';">
+                    <img src="${authorPhotoUrl}" class="author-photo" alt="${escapeHtml(bioInfo.name)}" onerror="handleCoverError(this)">
                     <div class="author-bio-content">
                         <h2>${escapeHtml(bioInfo.name)}</h2>
                         <div class="author-bio-text">${bioInfo.bio}</div>
@@ -3404,7 +3426,7 @@
             }
 
             coverEl.src = `${API_BASE}/api/book/${bookId}/cover`;
-            coverEl.onerror = () => { coverEl.src = SVG_FALLBACK_COVER; };
+            coverEl.onerror = () => { handleCoverError(coverEl); };
             openModal(modal);
 
             // Fetch rich details from backend if on local/tailscale
