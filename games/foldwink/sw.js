@@ -1,6 +1,7 @@
 /* global self, caches, fetch, Response, URL */
+const CACHE_VERSION = "v0.9.1-palimpsest";
 const CACHE_PREFIX = "foldwink-shell-";
-const CACHE_NAME = CACHE_PREFIX + "v1";
+const CACHE_NAME = `${CACHE_PREFIX}${CACHE_VERSION}`;
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -13,7 +14,10 @@ const APP_SHELL = [
 ];
 
 self.addEventListener("install", (event) => {
-  event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_SHELL)));
+  self.skipWaiting();
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_SHELL)),
+  );
 });
 
 self.addEventListener("activate", (event) => {
@@ -24,11 +28,23 @@ self.addEventListener("activate", (event) => {
         Promise.all(
           keys
             .filter((key) => key.startsWith(CACHE_PREFIX) && key !== CACHE_NAME)
-            .map((key) => caches.delete(key)),
+            .map((key) => {
+              console.log("[SW] Purging old cache:", key);
+              return caches.delete(key);
+            }),
         ),
       )
       .then(() => self.clients.claim()),
   );
+});
+
+self.addEventListener("message", (event) => {
+  if (
+    event.data &&
+    (event.data.type === "SKIP_WAITING" || event.data === "skipWaiting")
+  ) {
+    self.skipWaiting();
+  }
 });
 
 async function networkThenCache(request) {
@@ -40,7 +56,11 @@ async function networkThenCache(request) {
     }
     return response;
   } catch {
-    return (await cache.match(request)) || (await cache.match("./"));
+    return (
+      (await cache.match(request, { ignoreSearch: true })) ||
+      (await cache.match("./")) ||
+      (await cache.match("./index.html"))
+    );
   }
 }
 
