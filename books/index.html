@@ -2008,7 +2008,7 @@
     <div class="container">
         <!-- Header -->
         <header>
-            <div class="logo-group" onclick="showHomeScreen()">
+            <div class="logo-group" onclick="showHomeScreen(true)">
                 <div class="logo-icon">📚</div>
                 <div class="logo-title">
                     <h1>Flibusta <span>Hub</span></h1>
@@ -2029,7 +2029,7 @@
 
         <!-- Navigation Breadcrumb -->
         <div class="nav-breadcrumb" id="breadcrumb">
-            <a onclick="showHomeScreen()"><i class="fa-solid fa-house"></i> Главный каталог</a>
+            <a onclick="showHomeScreen(true)"><i class="fa-solid fa-house"></i> Главный каталог</a>
             <span>/</span>
             <span id="breadcrumb-current" style="color: #f1f5f9; font-weight: 600;">Автор</span>
         </div>
@@ -2047,9 +2047,9 @@
 
             <!-- Quick Filter Tags -->
             <div class="quick-tags" id="quick-tags-bar">
-                <div class="tag-pill active" onclick="setQuickTag(this, 'shelves')">🔥 Все полки</div>
-                <div class="tag-pill" onclick="setQuickTag(this, 'continue')">📖 Читаю сейчас</div>
-                <div class="tag-pill" onclick="setQuickTag(this, 'offline')">💾 В памяти <span id="offline-count-badge"></span></div>
+                <div class="tag-pill active" id="tag-pill-shelves" onclick="setQuickTag(this, 'shelves')">🔥 Все полки</div>
+                <div class="tag-pill" id="tag-pill-continue" onclick="setQuickTag(this, 'continue')">📖 Читаю сейчас</div>
+                <div class="tag-pill" id="tag-pill-offline" onclick="setQuickTag(this, 'offline')">💾 В памяти <span id="offline-count-badge"></span></div>
                 <div class="tag-pill" onclick="setQuickTag(this, 'author', 'Несбё')">🇳🇴 Ю Несбё</div>
                 <div class="tag-pill" onclick="setQuickTag(this, 'author', 'Кеплер')">🇸🇪 Ларс Кеплер</div>
                 <div class="tag-pill" onclick="setQuickTag(this, 'series', 'Харри Холе')">❄️ Харри Холе</div>
@@ -2085,7 +2085,7 @@
     <!-- Book Details Modal -->
     <div id="book-modal" onclick="closeBookModal(event)">
         <div class="book-modal-card" onclick="event.stopPropagation()">
-            <button class="modal-close-btn" onclick="closeModal(document.getElementById('book-modal'))"><i class="fa-solid fa-xmark"></i></button>
+            <button class="modal-close-btn" onclick="closeBookDetailsModal()"><i class="fa-solid fa-xmark"></i></button>
             <div class="book-modal-header">
                 <img id="modal-cover" class="modal-cover-img" src="" alt="Обложка">
                 <div class="modal-meta-info">
@@ -2714,9 +2714,9 @@
             clearTimeout(searchTimeout);
             searchTimeout = setTimeout(() => {
                 if (!q) {
-                    showHomeScreen();
+                    showHomeScreen(true);
                 } else {
-                    performSearch(q);
+                    performSearch(q, true);
                 }
             }, 180);
         });
@@ -2738,7 +2738,7 @@
                 }
                 const bookModal = document.getElementById('book-modal');
                 if (bookModal && bookModal.style.display === 'flex') {
-                    closeModal(bookModal);
+                    closeBookDetailsModal();
                     return;
                 }
                 const connModal = document.getElementById('conn-modal');
@@ -2752,7 +2752,15 @@
         function clearSearch() {
             document.getElementById('query-input').value = '';
             document.getElementById('clear-btn').style.display = 'none';
-            showHomeScreen();
+            showHomeScreen(true);
+        }
+
+        function setActiveTagPill(id) {
+            document.querySelectorAll('.tag-pill').forEach(el => el.classList.remove('active'));
+            if (id) {
+                const el = document.getElementById(id);
+                if (el) el.classList.add('active');
+            }
         }
 
         function setQuickTag(element, type, val) {
@@ -2761,34 +2769,38 @@
 
             if (type === 'shelves') {
                 document.getElementById('query-input').value = '';
-                showHomeScreen();
+                showHomeScreen(true);
             } else if (type === 'continue') {
-                renderContinueReadingShelf(true);
+                renderContinueReadingShelf(true, true);
             } else if (type === 'offline') {
-                showOfflineShelf();
+                showOfflineShelf(true);
             } else if (type === 'author') {
-                openAuthor(val);
+                openAuthor(val, true);
             } else if (type === 'series') {
-                openSeries(val);
+                openSeries(val, true);
             } else if (type === 'query') {
                 document.getElementById('query-input').value = val;
-                performSearch(val);
+                performSearch(val, true);
             }
         }
 
-        async function performSearch(query) {
-            currentSearchQuery = query;
+        async function performSearch(query, pushHistory = true) {
+            let normQ = (query || '').replace(/ё/g, 'е').replace(/Ё/g, 'Е').trim();
+            if (!pushHistory && currentSearchQuery === normQ && document.getElementById('books-grid')) {
+                return;
+            }
+            currentSearchQuery = normQ;
             document.getElementById('breadcrumb').style.display = 'none';
             document.getElementById('search-section').style.display = 'block';
             document.getElementById('facet-bar').style.display = 'flex';
+            setActiveTagPill(null);
 
             const container = document.getElementById('content-container');
             container.innerHTML = `<div class="books-grid" id="books-grid"><div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--accent);"><i class="fa-solid fa-spinner fa-spin fa-2x"></i><br><br>Поиск книг...</div></div>`;
             const stats = document.getElementById('stats-info');
 
             try {
-                let normQ = (query || '').replace(/ё/g, 'е').replace(/Ё/g, 'Е').trim();
-                if (normQ) {
+                if (pushHistory && normQ) {
                     const targetHash = '#q=' + encodeURIComponent(normQ);
                     if (window.location.hash !== targetHash) {
                         window.history.pushState({ q: normQ }, '', targetHash);
@@ -2831,7 +2843,14 @@
         // ==========================================
         // CURRENTLY READING SHELF (Apple Books Style)
         // ==========================================
-        async function renderContinueReadingShelf(filterOnly = false) {
+        async function renderContinueReadingShelf(filterOnly = false, pushHistory = false) {
+            if (pushHistory && window.location.hash !== '#continue') {
+                window.history.pushState({ view: 'continue' }, '', '#continue');
+            }
+            setActiveTagPill('tag-pill-continue');
+            if (!pushHistory && document.getElementById('books-grid') && document.getElementById('tag-pill-continue')?.classList.contains('active')) {
+                return;
+            }
             document.getElementById('breadcrumb').style.display = 'none';
             document.getElementById('search-section').style.display = 'block';
             document.getElementById('facet-bar').style.display = 'none';
@@ -2890,7 +2909,7 @@
                         <p style="font-size: 14px; line-height: 1.6; margin-bottom: 20px;">
                             Откройте любую книгу в читалке, и ваш прогресс автоматически сохранится здесь для мгновенного продолжения.
                         </p>
-                        <button class="btn-modal-primary" onclick="showHomeScreen()" style="width: auto; margin: 0 auto;">Перейти на главную</button>
+                        <button class="btn-modal-primary" onclick="showHomeScreen(true)" style="width: auto; margin: 0 auto;">Перейти на главную</button>
                     </div>
                 `;
                 return;
@@ -2899,16 +2918,15 @@
             container.innerHTML = `
                 <div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
                     <div>
-                        <h2 style="font-size: 20px; font-weight: 700; color: white;"><i class="fa-solid fa-book-open" style="color: var(--accent);"></i> Сейчас читаю (${booksWithProgress.length})</h2>
-                        <span style="font-size: 12px; color: var(--text-muted);">Книги с сохраненным прогрессом чтения</span>
+                        <h2 style="font-size: 20px; font-weight: 700; color: white;"><i class="fa-solid fa-book-bookmark" style="color: #38bdf8;"></i> Продолжить чтение (${booksWithProgress.length})</h2>
+                        <span style="font-size: 12px; color: var(--text-muted);">Книги с сохраненным прогрессом</span>
                     </div>
-                    <button class="btn-modal-secondary" onclick="clearAllReadingProgress()" style="width: auto; font-size: 12px; padding: 6px 12px;">Очистить историю</button>
+                    <button class="btn-modal-secondary" onclick="clearAllReadingProgress()" style="width: auto; font-size: 12px; padding: 6px 12px;">Сбросить историю</button>
                 </div>
                 <div class="books-grid" id="books-grid">
                     ${booksWithProgress.map(b => {
                         const cleanTitle = escapeHtml(b.title || 'Книга');
                         const cleanAuthor = escapeHtml(b.author || 'Автор');
-                        const estMin = Math.max(1, Math.round((b.total - b.page - 1) * 2.2));
                         const coverSrc = b.coverData || (API_BASE ? `${API_BASE}/api/book/${b.id}/cover` : SVG_FALLBACK_COVER);
                         return `
                             <div class="book-card">
@@ -2916,21 +2934,22 @@
                                     <img src="${coverSrc}" class="book-card-cover" alt="Обложка" onerror="handleCoverError(this)" onclick="openReader(${b.id}, '${cleanTitle.replace(/'/g, "\\'")}')">
                                     <div class="book-info-col">
                                         <div class="book-title" onclick="openReader(${b.id}, '${cleanTitle.replace(/'/g, "\\'")}')">${cleanTitle}</div>
-                                        <div class="book-author-link" onclick="openAuthor('${cleanAuthor.replace(/'/g, "\\'")}')">${cleanAuthor}</div>
-                                        <div style="margin-top: 8px;">
-                                            <div style="font-size: 11px; color: var(--accent); font-weight: 600; margin-bottom: 4px;">Стр. ${b.page + 1} из ${b.total} · ${b.percent}% · ~${estMin} мин</div>
-                                            <div style="height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; max-width: 220px;">
-                                                <div style="height: 100%; width: ${b.percent}%; background: var(--accent-gradient);"></div>
-                                            </div>
+                                        <div class="book-author-link" onclick="openAuthor('${cleanAuthor.replace(/'/g, "\\'")}', true)">${cleanAuthor}</div>
+                                        <div class="book-badges">
+                                            <span class="badge" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border-color: rgba(56, 189, 248, 0.3);"><i class="fa-solid fa-bookmark"></i> ${b.percent}%</span>
+                                            ${b.series ? `<span class="badge badge-series">${escapeHtml(b.series)}</span>` : ''}
                                         </div>
                                     </div>
                                 </div>
                                 <div class="book-actions">
-                                    <button class="btn-action btn-read" onclick="openReader(${b.id}, '${cleanTitle.replace(/'/g, "\\'")}')" style="flex: 1;">
-                                        <i class="fa-solid fa-book-open"></i> Читать
+                                    <button class="btn-action btn-read" onclick="openReader(${b.id}, '${cleanTitle.replace(/'/g, "\\'")}', true)" style="background: linear-gradient(135deg, #0284c7, #0369a1); flex: 1;">
+                                        <i class="fa-solid fa-book-open"></i> Читать (с. ${b.page + 1})
                                     </button>
-                                    <button class="btn-action" onclick="resetBookProgress(${b.id}, event)" title="Сбросить прогресс" style="background: rgba(255,255,255,0.06); color: var(--text-dim); width: 36px; padding: 0;">
-                                        <i class="fa-solid fa-rotate-left"></i>
+                                    <button class="btn-action btn-epub" onclick="downloadBookFile(event, ${b.id}, 'epub', '${cleanTitle.replace(/'/g, "\\'")}')" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.35); padding: 0 10px;" title="Скачать EPUB в Apple Books">
+                                        <i class="fa-brands fa-apple"></i> EPUB
+                                    </button>
+                                    <button class="btn-action" onclick="resetBookProgress(${b.id}, event)" title="Сбросить прогресс" style="background: rgba(239, 68, 68, 0.15); color: #f87171; border-color: rgba(239, 68, 68, 0.3); width: 36px; padding: 0;">
+                                        <i class="fa-solid fa-xmark"></i>
                                     </button>
                                 </div>
                             </div>
@@ -2945,7 +2964,7 @@
             localStorage.removeItem('flibusta_read_pos_' + bookId);
             localStorage.removeItem('flibusta_read_total_' + bookId);
             showToast('Прогресс чтения сброшен');
-            renderContinueReadingShelf(true);
+            renderContinueReadingShelf(true, false);
         }
 
         function clearAllReadingProgress() {
@@ -2957,25 +2976,34 @@
                 }
             }
             showToast('История чтения очищена');
-            renderContinueReadingShelf(true);
+            renderContinueReadingShelf(true, false);
         }
 
         // ==========================================
         // HOME SCREEN: CURATED SHELVES & HERO BANNER
         // ==========================================
-        async function showHomeScreen() {
+        async function showHomeScreen(pushHistory = false) {
+            if (pushHistory && window.location.hash) {
+                window.history.pushState(null, '', window.location.pathname + window.location.search);
+            }
+            setActiveTagPill('tag-pill-shelves');
             document.getElementById('breadcrumb').style.display = 'none';
             document.getElementById('search-section').style.display = 'block';
             document.getElementById('facet-bar').style.display = 'none';
             document.getElementById('query-input').value = '';
             document.getElementById('clear-btn').style.display = 'none';
 
+            const curShelves = document.getElementById('shelves-anchor');
+            if (!pushHistory && curShelves && curShelves.children.length > 0 && curShelves.querySelector('.shelf-section')) {
+                renderContinueReadingHero();
+                return;
+            }
+
             const container = document.getElementById('content-container');
+            const spinnerHtml = _cachedShelvesData ? '' : '<div style="text-align: center; padding: 40px; color: var(--accent);"><i class="fa-solid fa-spinner fa-spin fa-2x"></i><br><br>Загрузка витрины книг...</div>';
             container.innerHTML = `
                 <div id="continue-reading-anchor"></div>
-                <div id="shelves-anchor">
-                    <div style="text-align: center; padding: 40px; color: var(--accent);"><i class="fa-solid fa-spinner fa-spin fa-2x"></i><br><br>Загрузка витрины книг...</div>
-                </div>
+                <div id="shelves-anchor">${spinnerHtml}</div>
             `;
 
             // 1. Render Continue Reading Hero if user has recent books
@@ -3134,7 +3162,14 @@
             anchor.innerHTML = html || `<div style="text-align: center; padding: 40px; color: var(--text-muted);">Полки формируются. Воспользуйтесь строкой поиска выше.</div>`;
         }
 
-        async function showOfflineShelf() {
+        async function showOfflineShelf(pushHistory = false) {
+            if (pushHistory && window.location.hash !== '#offline') {
+                window.history.pushState({ view: 'offline' }, '', '#offline');
+            }
+            setActiveTagPill('tag-pill-offline');
+            if (!pushHistory && document.getElementById('books-grid') && document.getElementById('tag-pill-offline')?.classList.contains('active')) {
+                return;
+            }
             document.getElementById('breadcrumb').style.display = 'none';
             document.getElementById('search-section').style.display = 'block';
             document.getElementById('facet-bar').style.display = 'none';
@@ -3150,7 +3185,7 @@
                         <p style="font-size: 14px; line-height: 1.6; margin-bottom: 20px;">
                             Нажмите <b>«В память»</b> на карточке любой книги, чтобы читать ее без интернета в самолете или поездке.
                         </p>
-                        <button class="btn-modal-primary" onclick="showHomeScreen()" style="width: auto; margin: 0 auto;">Перейти в каталог</button>
+                        <button class="btn-modal-primary" onclick="showHomeScreen(true)" style="width: auto; margin: 0 auto;">Перейти в каталог</button>
                     </div>
                 `;
                 return;
@@ -3172,10 +3207,10 @@
                         return `
                             <div class="book-card">
                                 <div class="book-card-main">
-                                    <img src="${coverSrc}" class="book-card-cover" alt="Обложка" onerror="handleCoverError(this)" onclick="openReader(${b.id}, '${cleanTitle.replace(/'/g, "\\'")}')">
+                                    <img src="${coverSrc}" class="book-card-cover" alt="Обложка" onerror="handleCoverError(this)" onclick="openReader(${b.id}, '${cleanTitle.replace(/'/g, "\\'")}', true)">
                                     <div class="book-info-col">
-                                        <div class="book-title" onclick="openReader(${b.id}, '${cleanTitle.replace(/'/g, "\\'")}')">${cleanTitle}</div>
-                                        <div class="book-author-link" onclick="openAuthor('${cleanAuthor.replace(/'/g, "\\'")}')">${cleanAuthor}</div>
+                                        <div class="book-title" onclick="openReader(${b.id}, '${cleanTitle.replace(/'/g, "\\'")}', true)">${cleanTitle}</div>
+                                        <div class="book-author-link" onclick="openAuthor('${cleanAuthor.replace(/'/g, "\\'")}', true)">${cleanAuthor}</div>
                                         <div class="book-badges">
                                             <span class="badge" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.3);"><i class="fa-solid fa-check"></i> Офлайн</span>
                                             ${b.series ? `<span class="badge badge-series">${escapeHtml(b.series)}</span>` : ''}
@@ -3183,7 +3218,7 @@
                                     </div>
                                 </div>
                                 <div class="book-actions">
-                                    <button class="btn-action btn-read" onclick="openReader(${b.id}, '${cleanTitle.replace(/'/g, "\\'")}')" style="background: linear-gradient(135deg, #0284c7, #0369a1); flex: 1;">
+                                    <button class="btn-action btn-read" onclick="openReader(${b.id}, '${cleanTitle.replace(/'/g, "\\'")}', true)" style="background: linear-gradient(135deg, #0284c7, #0369a1); flex: 1;">
                                         <i class="fa-solid fa-book-open"></i> Читать
                                     </button>
                                     <button class="btn-action btn-epub" onclick="downloadBookFile(event, ${b.id}, 'epub', '${cleanTitle.replace(/'/g, "\\'")}')" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.35); padding: 0 10px;" title="Скачать EPUB в Apple Books">
@@ -3262,8 +3297,18 @@
         // ==========================================
         // FLIBUSTA-STYLE AUTHOR PROFILE PAGE
         // ==========================================
-        async function openAuthor(authorName) {
+        async function openAuthor(authorName, pushHistory = true) {
             const displayName = cleanAuthorName(authorName);
+            if (!pushHistory && document.querySelector('.flibusta-author-view') && document.getElementById('breadcrumb-current')?.innerText === displayName) {
+                return;
+            }
+            if (pushHistory) {
+                const targetHash = '#author=' + encodeURIComponent(authorName);
+                if (window.location.hash !== targetHash) {
+                    window.history.pushState({ author: authorName }, '', targetHash);
+                }
+            }
+            setActiveTagPill(null);
             document.getElementById('breadcrumb').style.display = 'flex';
             document.getElementById('breadcrumb-current').innerText = displayName;
             document.getElementById('search-section').style.display = 'none';
@@ -3392,7 +3437,17 @@
         // ==========================================
         // FLIBUSTA SERIES PAGE & CHRONOLOGY LADDER
         // ==========================================
-        async function openSeries(seriesName) {
+        async function openSeries(seriesName, pushHistory = true) {
+            if (!pushHistory && document.querySelector('.flibusta-series-view') && document.getElementById('breadcrumb-current')?.innerText === `Серия: ${seriesName}`) {
+                return;
+            }
+            if (pushHistory) {
+                const targetHash = '#series=' + encodeURIComponent(seriesName);
+                if (window.location.hash !== targetHash) {
+                    window.history.pushState({ series: seriesName }, '', targetHash);
+                }
+            }
+            setActiveTagPill(null);
             document.getElementById('breadcrumb').style.display = 'flex';
             document.getElementById('breadcrumb-current').innerText = `Серия: ${seriesName}`;
             document.getElementById('search-section').style.display = 'none';
@@ -3477,14 +3532,14 @@
                 <div style="text-align: center; padding: 50px; color: var(--text-muted);">
                     <i class="fa-solid fa-folder-minus fa-3x" style="color: #f87171; margin-bottom: 14px;"></i><br>
                     Серия «<b>${escapeHtml(seriesName)}</b>» не найдена.<br><br>
-                    <button class="btn-modal-primary" style="width: auto; margin: 0 auto;" onclick="showHomeScreen()"><i class="fa-solid fa-arrow-left"></i> Вернуться в каталог</button>
+                    <button class="btn-modal-primary" style="width: auto; margin: 0 auto;" onclick="showHomeScreen(true)"><i class="fa-solid fa-arrow-left"></i> Вернуться в каталог</button>
                 </div>`;
         }
 
         // ==========================================
         // BOOK DETAILS MODAL
         // ==========================================
-        async function openBookDetails(bookId) {
+        async function openBookDetails(bookId, pushHistory = true) {
             const modal = document.getElementById('book-modal');
             const titleEl = document.getElementById('modal-title');
             const authorEl = document.getElementById('modal-author');
@@ -3495,13 +3550,20 @@
             const annoEl = document.getElementById('modal-annotation');
             const coverEl = document.getElementById('modal-cover');
             
+            if (pushHistory) {
+                const targetHash = '#book=' + bookId;
+                if (window.location.hash !== targetHash) {
+                    window.history.pushState({ bookId: bookId }, '', targetHash);
+                }
+            }
+
             const cachedBook = _booksMap.get(Number(bookId));
             
             if (cachedBook) {
                 titleEl.innerText = cachedBook.title || 'Без названия';
                 const cleanA = cleanAuthorName(cachedBook.author);
                 authorEl.innerText = cleanA;
-                authorEl.onclick = () => { closeModal(modal); openAuthor(cachedBook.author); };
+                authorEl.onclick = () => { closeBookDetailsModal(); openAuthor(cachedBook.author, true); };
                 seriesEl.innerText = cachedBook.series ? `${cachedBook.series} ${cachedBook.ser_no ? '#' + cachedBook.ser_no : ''}` : 'Вне серий';
                 genreEl.innerText = cachedBook.genre || 'Не указан';
                 sizeEl.innerText = cachedBook.size ? `${Math.round(cachedBook.size/1024)} KB` : 'Неизвестен';
@@ -3512,7 +3574,7 @@
                 document.getElementById('modal-dl-fb2').onclick = (e) => downloadBookFile(e, bookId, 'fb2', cachedBook.title);
                 document.getElementById('modal-btn-read').onclick = () => {
                     closeModal(modal);
-                    openReader(bookId, cachedBook.title);
+                    openReader(bookId, cachedBook.title, true);
                 };
                 document.getElementById('modal-btn-save-offline').onclick = async () => {
                     const btn = document.getElementById('modal-btn-save-offline');
@@ -3539,6 +3601,7 @@
                         titleEl.innerText = b.title || 'Без названия';
                         const cleanA = cleanAuthorName(b.author);
                         authorEl.innerText = cleanA;
+                        authorEl.onclick = () => { closeBookDetailsModal(); openAuthor(b.author, true); };
                         seriesEl.innerText = b.series ? `${b.series} ${b.ser_no ? '#' + b.ser_no : ''}` : 'Вне серий';
                         genreEl.innerText = b.genre || 'Не указан';
                         sizeEl.innerText = `${b.size_kb} KB`;
@@ -3549,7 +3612,7 @@
                         document.getElementById('modal-dl-fb2').onclick = (e) => downloadBookFile(e, bookId, 'fb2', b.title);
                         document.getElementById('modal-btn-read').onclick = () => {
                             closeModal(modal);
-                            openReader(bookId, b.title);
+                            openReader(bookId, b.title, true);
                         };
                         document.getElementById('modal-btn-save-offline').onclick = async () => {
                             const btn = document.getElementById('modal-btn-save-offline');
@@ -3565,9 +3628,21 @@
             }
         }
 
+        function closeBookDetailsModal() {
+            const bModal = document.getElementById('book-modal');
+            if (bModal) closeModal(bModal);
+            if (window.location.hash.startsWith('#book=')) {
+                if (window.history.length > 1) {
+                    window.history.back();
+                } else {
+                    window.history.replaceState(null, '', window.location.pathname + window.location.search);
+                }
+            }
+        }
+
         function closeBookModal(e) {
             if (e.target.id === 'book-modal') {
-                closeModal(document.getElementById('book-modal'));
+                closeBookDetailsModal();
             }
         }
 
@@ -3646,8 +3721,16 @@
         // ==========================================
         async function openReader(bookId, title, pushHistory = true) {
             const modal = document.getElementById('reader-modal');
+            const bModal = document.getElementById('book-modal');
+            if (bModal && bModal.style.display === 'flex') {
+                closeModal(bModal);
+            }
             if (pushHistory) {
-                window.history.pushState({ modal: 'reader', bookId: bookId }, '', '#read-' + bookId);
+                if (window.location.hash.startsWith('#book=')) {
+                    window.history.replaceState({ modal: 'reader', bookId: bookId }, '', '#read-' + bookId);
+                } else {
+                    window.history.pushState({ modal: 'reader', bookId: bookId }, '', '#read-' + bookId);
+                }
             }
             applySavedReaderPreferences();
             document.getElementById('reader-title').innerText = title || 'Книга';
@@ -4036,31 +4119,35 @@
             }
 
             if (hash.startsWith('#read-')) {
-                openReader(hash.replace('#read-', ''), 'Книга');
+                openReader(hash.replace('#read-', ''), 'Книга', false);
             } else if (hash.startsWith('#read=')) {
-                openReader(hash.replace('#read=', ''), 'Книга');
-            } else if (hash.startsWith('#author=')) {
-                openAuthor(decodeURIComponent(hash.replace('#author=', '')));
-            } else if (params.get('author')) {
-                openAuthor(params.get('author'));
-            } else if (hash.startsWith('#series=')) {
-                openSeries(decodeURIComponent(hash.replace('#series=', '')));
-            } else if (params.get('series')) {
-                openSeries(params.get('series'));
+                openReader(hash.replace('#read=', ''), 'Книга', false);
             } else if (hash.startsWith('#book=')) {
-                openBookDetails(hash.replace('#book=', ''));
+                openBookDetails(hash.replace('#book=', ''), false);
             } else if (params.get('book')) {
-                openBookDetails(params.get('book'));
+                openBookDetails(params.get('book'), false);
+            } else if (hash === '#offline') {
+                showOfflineShelf(false);
+            } else if (hash === '#continue') {
+                renderContinueReadingShelf(true, false);
+            } else if (hash.startsWith('#author=')) {
+                openAuthor(decodeURIComponent(hash.replace('#author=', '')), false);
+            } else if (params.get('author')) {
+                openAuthor(params.get('author'), false);
+            } else if (hash.startsWith('#series=')) {
+                openSeries(decodeURIComponent(hash.replace('#series=', '')), false);
+            } else if (params.get('series')) {
+                openSeries(params.get('series'), false);
             } else if (hash.startsWith('#q=')) {
                 const q = decodeURIComponent(hash.replace('#q=', ''));
                 document.getElementById('query-input').value = q;
-                performSearch(q);
+                performSearch(q, false);
             } else if (params.get('q')) {
                 const q = params.get('q');
                 document.getElementById('query-input').value = q;
-                performSearch(q);
+                performSearch(q, false);
             } else {
-                showHomeScreen();
+                showHomeScreen(false);
             }
         }
 
