@@ -2787,11 +2787,11 @@
         let _navigationEpoch = 0;
 
         async function performSearch(query, pushHistory = true) {
-            const currentEpoch = ++_navigationEpoch;
             let normQ = (query || '').replace(/ё/g, 'е').replace(/Ё/g, 'Е').trim();
-            if (!pushHistory && currentSearchQuery === normQ && document.getElementById('books-grid')) {
+            if (!pushHistory && currentSearchQuery === normQ && document.getElementById('books-grid')?.querySelector('.book-card')) {
                 return;
             }
+            const currentEpoch = ++_navigationEpoch;
             currentSearchQuery = normQ;
             document.getElementById('breadcrumb').style.display = 'none';
             document.getElementById('search-section').style.display = 'block';
@@ -3321,7 +3321,6 @@
         // FLIBUSTA-STYLE AUTHOR PROFILE PAGE
         // ==========================================
         async function openAuthor(authorName, pushHistory = true) {
-            const currentEpoch = ++_navigationEpoch;
             const displayName = cleanAuthorName(authorName);
             const bModal = document.getElementById('book-modal');
             if (bModal && bModal.style.display === 'flex') {
@@ -3330,6 +3329,7 @@
             if (!pushHistory && document.querySelector('.flibusta-author-view') && document.getElementById('breadcrumb-current')?.innerText === displayName) {
                 return;
             }
+            const currentEpoch = ++_navigationEpoch;
             if (pushHistory) {
                 const targetHash = '#author=' + encodeURIComponent(authorName);
                 if (window.location.hash.startsWith('#book=')) {
@@ -3473,7 +3473,6 @@
         // FLIBUSTA SERIES PAGE & CHRONOLOGY LADDER
         // ==========================================
         async function openSeries(seriesName, pushHistory = true) {
-            const currentEpoch = ++_navigationEpoch;
             const bModal = document.getElementById('book-modal');
             if (bModal && bModal.style.display === 'flex') {
                 closeModal(bModal);
@@ -3481,6 +3480,7 @@
             if (!pushHistory && document.querySelector('.flibusta-series-view') && document.getElementById('breadcrumb-current')?.innerText === `Серия: ${seriesName}`) {
                 return;
             }
+            const currentEpoch = ++_navigationEpoch;
             if (pushHistory) {
                 const targetHash = '#series=' + encodeURIComponent(seriesName);
                 if (window.location.hash.startsWith('#book=')) {
@@ -4135,7 +4135,18 @@
             return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
         }
 
+        let _lastHandledHash = null;
+        let _lastHandledTime = 0;
+
         async function handleRoute() {
+            const hash = window.location.hash || '';
+            const now = performance.now();
+            if (hash === _lastHandledHash && (now - _lastHandledTime) < 150) {
+                return;
+            }
+            _lastHandledHash = hash;
+            _lastHandledTime = now;
+
             if (!apiBaseInitialized) {
                 await initApiBase();
             }
