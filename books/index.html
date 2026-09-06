@@ -3059,9 +3059,15 @@
         }
 
         let _cachedShelvesData = null;
+        let _cachedShelvesHtml = '';
         async function renderCuratedShelves() {
             const anchor = document.getElementById('shelves-anchor');
             if (!anchor) return;
+
+            if (_cachedShelvesHtml) {
+                anchor.innerHTML = _cachedShelvesHtml;
+                return;
+            }
 
             // Try backend /api/shelves first (with in-memory caching to prevent flicker on back navigation)
             let shelvesData = _cachedShelvesData;
@@ -3115,6 +3121,7 @@
                         const r = await fetch(u);
                         const d = await r.json();
                         books = d.books || [];
+                        shelf.books = books;
                     } catch(e) {}
                 }
 
@@ -3127,7 +3134,7 @@
                                     <h2>${shelf.title}</h2>
                                     <div class="shelf-subtitle">${shelf.subtitle}</div>
                                 </div>
-                                <a class="shelf-see-all" onclick="document.getElementById('query-input').value='${shelf.query}'; performSearch('${shelf.query}');">
+                                <a class="shelf-see-all" onclick="document.getElementById('query-input').value='${shelf.query}'; performSearch('${shelf.query}', true);">
                                     Все книги <i class="fa-solid fa-chevron-right" style="font-size: 11px;"></i>
                                 </a>
                             </div>
@@ -3143,7 +3150,7 @@
                                             <div class="shelf-card-author">${cleanAuthor}</div>
                                             ${seqBadge}
                                             <div class="shelf-card-actions">
-                                                <button class="shelf-btn-read" onclick="event.stopPropagation(); openReader(${b.id}, '${cleanTitle.replace(/'/g, "\\'")}')">
+                                                <button class="shelf-btn-read" onclick="event.stopPropagation(); openReader(${b.id}, '${cleanTitle.replace(/'/g, "\\'")}', true)">
                                                     <i class="fa-solid fa-book-open"></i> Читать
                                                 </button>
                                                 <button class="shelf-btn-epub" onclick="event.stopPropagation(); downloadBookFile(event, ${b.id}, 'epub', '${cleanTitle.replace(/'/g, "\\'")}')" title="Скачать EPUB в Apple Books">
@@ -3159,6 +3166,9 @@
                 }
             }
 
+            if (html) {
+                _cachedShelvesHtml = html;
+            }
             anchor.innerHTML = html || `<div style="text-align: center; padding: 40px; color: var(--text-muted);">Полки формируются. Воспользуйтесь строкой поиска выше.</div>`;
         }
 
@@ -3299,12 +3309,18 @@
         // ==========================================
         async function openAuthor(authorName, pushHistory = true) {
             const displayName = cleanAuthorName(authorName);
+            const bModal = document.getElementById('book-modal');
+            if (bModal && bModal.style.display === 'flex') {
+                closeModal(bModal);
+            }
             if (!pushHistory && document.querySelector('.flibusta-author-view') && document.getElementById('breadcrumb-current')?.innerText === displayName) {
                 return;
             }
             if (pushHistory) {
                 const targetHash = '#author=' + encodeURIComponent(authorName);
-                if (window.location.hash !== targetHash) {
+                if (window.location.hash.startsWith('#book=')) {
+                    window.history.replaceState({ author: authorName }, '', targetHash);
+                } else if (window.location.hash !== targetHash) {
                     window.history.pushState({ author: authorName }, '', targetHash);
                 }
             }
@@ -3438,12 +3454,18 @@
         // FLIBUSTA SERIES PAGE & CHRONOLOGY LADDER
         // ==========================================
         async function openSeries(seriesName, pushHistory = true) {
+            const bModal = document.getElementById('book-modal');
+            if (bModal && bModal.style.display === 'flex') {
+                closeModal(bModal);
+            }
             if (!pushHistory && document.querySelector('.flibusta-series-view') && document.getElementById('breadcrumb-current')?.innerText === `Серия: ${seriesName}`) {
                 return;
             }
             if (pushHistory) {
                 const targetHash = '#series=' + encodeURIComponent(seriesName);
-                if (window.location.hash !== targetHash) {
+                if (window.location.hash.startsWith('#book=')) {
+                    window.history.replaceState({ series: seriesName }, '', targetHash);
+                } else if (window.location.hash !== targetHash) {
                     window.history.pushState({ series: seriesName }, '', targetHash);
                 }
             }
@@ -3563,7 +3585,7 @@
                 titleEl.innerText = cachedBook.title || 'Без названия';
                 const cleanA = cleanAuthorName(cachedBook.author);
                 authorEl.innerText = cleanA;
-                authorEl.onclick = () => { closeBookDetailsModal(); openAuthor(cachedBook.author, true); };
+                authorEl.onclick = () => { closeModal(modal); openAuthor(cachedBook.author, true); };
                 seriesEl.innerText = cachedBook.series ? `${cachedBook.series} ${cachedBook.ser_no ? '#' + cachedBook.ser_no : ''}` : 'Вне серий';
                 genreEl.innerText = cachedBook.genre || 'Не указан';
                 sizeEl.innerText = cachedBook.size ? `${Math.round(cachedBook.size/1024)} KB` : 'Неизвестен';
@@ -3601,7 +3623,7 @@
                         titleEl.innerText = b.title || 'Без названия';
                         const cleanA = cleanAuthorName(b.author);
                         authorEl.innerText = cleanA;
-                        authorEl.onclick = () => { closeBookDetailsModal(); openAuthor(b.author, true); };
+                        authorEl.onclick = () => { closeModal(modal); openAuthor(b.author, true); };
                         seriesEl.innerText = b.series ? `${b.series} ${b.ser_no ? '#' + b.ser_no : ''}` : 'Вне серий';
                         genreEl.innerText = b.genre || 'Не указан';
                         sizeEl.innerText = `${b.size_kb} KB`;
@@ -4119,35 +4141,35 @@
             }
 
             if (hash.startsWith('#read-')) {
-                openReader(hash.replace('#read-', ''), 'Книга', false);
+                await openReader(hash.replace('#read-', ''), 'Книга', false);
             } else if (hash.startsWith('#read=')) {
-                openReader(hash.replace('#read=', ''), 'Книга', false);
+                await openReader(hash.replace('#read=', ''), 'Книга', false);
             } else if (hash.startsWith('#book=')) {
-                openBookDetails(hash.replace('#book=', ''), false);
+                await openBookDetails(hash.replace('#book=', ''), false);
             } else if (params.get('book')) {
-                openBookDetails(params.get('book'), false);
+                await openBookDetails(params.get('book'), false);
             } else if (hash === '#offline') {
-                showOfflineShelf(false);
+                await showOfflineShelf(false);
             } else if (hash === '#continue') {
-                renderContinueReadingShelf(true, false);
+                await renderContinueReadingShelf(true, false);
             } else if (hash.startsWith('#author=')) {
-                openAuthor(decodeURIComponent(hash.replace('#author=', '')), false);
+                await openAuthor(decodeURIComponent(hash.replace('#author=', '')), false);
             } else if (params.get('author')) {
-                openAuthor(params.get('author'), false);
+                await openAuthor(params.get('author'), false);
             } else if (hash.startsWith('#series=')) {
-                openSeries(decodeURIComponent(hash.replace('#series=', '')), false);
+                await openSeries(decodeURIComponent(hash.replace('#series=', '')), false);
             } else if (params.get('series')) {
-                openSeries(params.get('series'), false);
+                await openSeries(params.get('series'), false);
             } else if (hash.startsWith('#q=')) {
                 const q = decodeURIComponent(hash.replace('#q=', ''));
                 document.getElementById('query-input').value = q;
-                performSearch(q, false);
+                await performSearch(q, false);
             } else if (params.get('q')) {
                 const q = params.get('q');
                 document.getElementById('query-input').value = q;
-                performSearch(q, false);
+                await performSearch(q, false);
             } else {
-                showHomeScreen(false);
+                await showHomeScreen(false);
             }
         }
 
