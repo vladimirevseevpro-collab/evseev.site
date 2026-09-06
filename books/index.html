@@ -2784,7 +2784,10 @@
             }
         }
 
+        let _navigationEpoch = 0;
+
         async function performSearch(query, pushHistory = true) {
+            const currentEpoch = ++_navigationEpoch;
             let normQ = (query || '').replace(/ё/g, 'е').replace(/Ё/g, 'Е').trim();
             if (!pushHistory && currentSearchQuery === normQ && document.getElementById('books-grid')) {
                 return;
@@ -2813,6 +2816,8 @@
                 const res = await fetch(url);
                 const data = await res.json();
                 
+                if (currentEpoch !== _navigationEpoch) return;
+
                 let booksList = data.books || [];
                 
                 // Client-side language facet filter
@@ -2844,6 +2849,7 @@
         // CURRENTLY READING SHELF (Apple Books Style)
         // ==========================================
         async function renderContinueReadingShelf(filterOnly = false, pushHistory = false) {
+            const currentEpoch = ++_navigationEpoch;
             if (pushHistory && window.location.hash !== '#continue') {
                 window.history.pushState({ view: 'continue' }, '', '#continue');
             }
@@ -2858,6 +2864,7 @@
 
             const container = document.getElementById('content-container');
             const allOffline = await getAllOfflineBooks();
+            if (currentEpoch !== _navigationEpoch) return;
             
             const booksWithProgress = [];
             const seenIds = new Set();
@@ -2983,6 +2990,7 @@
         // HOME SCREEN: CURATED SHELVES & HERO BANNER
         // ==========================================
         async function showHomeScreen(pushHistory = false) {
+            const currentEpoch = ++_navigationEpoch;
             if (pushHistory && window.location.hash) {
                 window.history.pushState(null, '', window.location.pathname + window.location.search);
             }
@@ -3008,9 +3016,10 @@
 
             // 1. Render Continue Reading Hero if user has recent books
             await renderContinueReadingHero();
+            if (currentEpoch !== _navigationEpoch) return;
 
             // 2. Fetch and render Curated Shelves
-            await renderCuratedShelves();
+            await renderCuratedShelves(currentEpoch);
         }
 
         async function renderContinueReadingHero() {
@@ -3041,12 +3050,9 @@
                         <div class="hero-progress-bar">
                             <div class="hero-progress-fill" style="width: ${percent}%;"></div>
                         </div>
-                        <div class="hero-meta">
-                            <span>Страница ${savedPos + 1} из ${totalPages} (${percent}%)</span>
-                            <span>В памяти офлайн ✓</span>
-                        </div>
+                        <div class="hero-progress-text">Прочитано ${percent}% (страница ${savedPos + 1} из ${totalPages})</div>
                     </div>
-                    <div style="display: flex; flex-direction: column; gap: 8px; justify-content: center;">
+                    <div class="hero-actions">
                         <button class="hero-btn" onclick="openReader(${latest.id}, '${escapeHtml(latest.title)}')">
                             <i class="fa-solid fa-book-open"></i> Читать
                         </button>
@@ -3060,7 +3066,7 @@
 
         let _cachedShelvesData = null;
         let _cachedShelvesHtml = '';
-        async function renderCuratedShelves() {
+        async function renderCuratedShelves(currentEpoch) {
             const anchor = document.getElementById('shelves-anchor');
             if (!anchor) return;
 
@@ -3080,6 +3086,8 @@
                     }
                 } catch(e) {}
             }
+
+            if (currentEpoch && currentEpoch !== _navigationEpoch) return;
 
             // Fallback default shelves
             const defaultShelves = [
@@ -3113,6 +3121,7 @@
             let html = '';
 
             for (const shelf of shelves) {
+                if (currentEpoch && currentEpoch !== _navigationEpoch) return;
                 let books = shelf.books || [];
                 if (books.length === 0) {
                     try {
@@ -3120,10 +3129,12 @@
                         if (isCloudBackend) u = `${API_BASE}/api/books/search?q=${encodeURIComponent(shelf.query)}&limit=8`;
                         const r = await fetch(u);
                         const d = await r.json();
+                        if (currentEpoch && currentEpoch !== _navigationEpoch) return;
                         books = d.books || [];
                         shelf.books = books;
                     } catch(e) {}
                 }
+                if (currentEpoch && currentEpoch !== _navigationEpoch) return;
 
                 if (books.length > 0) {
                     books.forEach(b => { if (b && b.id) _booksMap.set(Number(b.id), b); });
@@ -3173,6 +3184,7 @@
         }
 
         async function showOfflineShelf(pushHistory = false) {
+            const currentEpoch = ++_navigationEpoch;
             if (pushHistory && window.location.hash !== '#offline') {
                 window.history.pushState({ view: 'offline' }, '', '#offline');
             }
@@ -3186,6 +3198,7 @@
 
             const container = document.getElementById('content-container');
             const offlineBooks = await getAllOfflineBooks();
+            if (currentEpoch !== _navigationEpoch) return;
 
             if (offlineBooks.length === 0) {
                 container.innerHTML = `
@@ -3308,6 +3321,7 @@
         // FLIBUSTA-STYLE AUTHOR PROFILE PAGE
         // ==========================================
         async function openAuthor(authorName, pushHistory = true) {
+            const currentEpoch = ++_navigationEpoch;
             const displayName = cleanAuthorName(authorName);
             const bModal = document.getElementById('book-modal');
             if (bModal && bModal.style.display === 'flex') {
@@ -3349,11 +3363,14 @@
                     const res = await fetch(`${API_BASE}/api/author?name=${encodeURIComponent(authorName)}`);
                     if (res.ok) {
                         const data = await res.json();
+                        if (currentEpoch !== _navigationEpoch) return;
                         renderAuthorPageView(data, bioInfo, authorPhotoUrl, container);
                         return;
                     }
                 } catch(e) {}
             }
+
+            if (currentEpoch !== _navigationEpoch) return;
 
             // Cloud fallback: search author books
             try {
@@ -3361,6 +3378,7 @@
                 if (isCloudBackend) url = `${API_BASE}/api/books/search?q=${encodeURIComponent(authorName)}&limit=100`;
                 const res = await fetch(url);
                 const data = await res.json();
+                if (currentEpoch !== _navigationEpoch) return;
                 const books = data.books || [];
                 const mockAuthorData = {
                     author: authorName,
@@ -3373,6 +3391,7 @@
                 };
                 renderAuthorPageView(mockAuthorData, bioInfo, authorPhotoUrl, container);
             } catch(err) {
+                if (currentEpoch !== _navigationEpoch) return;
                 container.innerHTML = `<div style="text-align:center; padding:40px; color:var(--text-muted);">Не удалось загрузить книги автора.</div>`;
             }
         }
@@ -3454,6 +3473,7 @@
         // FLIBUSTA SERIES PAGE & CHRONOLOGY LADDER
         // ==========================================
         async function openSeries(seriesName, pushHistory = true) {
+            const currentEpoch = ++_navigationEpoch;
             const bModal = document.getElementById('book-modal');
             if (bModal && bModal.style.display === 'flex') {
                 closeModal(bModal);
@@ -3485,11 +3505,14 @@
                     const res = await fetch(`${API_BASE}/api/series?name=${encodeURIComponent(seriesName)}`);
                     if (res.ok) {
                         const data = await res.json();
+                        if (currentEpoch !== _navigationEpoch) return;
                         books = data.books || [];
                         total = data.total_books || books.length;
                     }
                 } catch (e) {}
             }
+
+            if (currentEpoch !== _navigationEpoch) return;
 
             if (books.length === 0) {
                 try {
@@ -3497,10 +3520,13 @@
                     if (isCloudBackend) url = `${API_BASE}/api/books/search?q=${encodeURIComponent(seriesName)}&limit=100`;
                     const res = await fetch(url);
                     const data = await res.json();
+                    if (currentEpoch !== _navigationEpoch) return;
                     books = data.books || [];
                     total = books.length;
                 } catch(e) {}
             }
+
+            if (currentEpoch !== _navigationEpoch) return;
 
             if (books.length > 0) {
                 const firstBook = books[0];
