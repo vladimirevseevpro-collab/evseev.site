@@ -1463,9 +1463,37 @@
             color: #3f2e1e !important;
         }
         .reader-theme-sepia .reader-ctrl-btn,
-        .reader-theme-sepia .reader-back-btn {
+        .reader-theme-sepia .reader-back-btn,
+        .reader-theme-sepia .reader-nav-btn {
             background: rgba(63, 46, 30, 0.08) !important;
+            border-color: rgba(63, 46, 30, 0.2) !important;
             color: #3f2e1e !important;
+        }
+        .reader-theme-sepia .reader-nav-btn:hover {
+            background: rgba(63, 46, 30, 0.16) !important;
+        }
+        .reader-theme-sepia .reader-page-counter {
+            color: #573e27 !important;
+        }
+        .reader-theme-sepia .reader-scrubber {
+            background: rgba(63, 46, 30, 0.22) !important;
+        }
+        .reader-theme-sepia .reader-bookmarks-drawer {
+            background: #fbf0d9 !important;
+            border-color: rgba(63, 46, 30, 0.2) !important;
+            color: #3f2e1e !important;
+        }
+        .reader-theme-sepia .drawer-header {
+            border-bottom-color: rgba(63, 46, 30, 0.15) !important;
+        }
+        .reader-theme-sepia .drawer-title {
+            color: #3f2e1e !important;
+        }
+        .reader-theme-sepia .drawer-close-btn {
+            color: #7c6853 !important;
+        }
+        .reader-theme-sepia .bookmark-item:hover {
+            background: rgba(63, 46, 30, 0.08) !important;
         }
 
         .reader-theme-light {
@@ -1487,9 +1515,37 @@
             color: #1e293b !important;
         }
         .reader-theme-light .reader-ctrl-btn,
-        .reader-theme-light .reader-back-btn {
+        .reader-theme-light .reader-back-btn,
+        .reader-theme-light .reader-nav-btn {
             background: rgba(0, 0, 0, 0.06) !important;
+            border-color: rgba(0, 0, 0, 0.15) !important;
             color: #1e293b !important;
+        }
+        .reader-theme-light .reader-nav-btn:hover {
+            background: rgba(0, 0, 0, 0.12) !important;
+        }
+        .reader-theme-light .reader-page-counter {
+            color: #475569 !important;
+        }
+        .reader-theme-light .reader-scrubber {
+            background: rgba(0, 0, 0, 0.18) !important;
+        }
+        .reader-theme-light .reader-bookmarks-drawer {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.12) !important;
+            color: #1e293b !important;
+        }
+        .reader-theme-light .drawer-header {
+            border-bottom-color: rgba(0, 0, 0, 0.1) !important;
+        }
+        .reader-theme-light .drawer-title {
+            color: #1e293b !important;
+        }
+        .reader-theme-light .drawer-close-btn {
+            color: #64748b !important;
+        }
+        .reader-theme-light .bookmark-item:hover {
+            background: rgba(0, 0, 0, 0.05) !important;
         }
 
         /* Font Stacks */
@@ -1587,16 +1643,149 @@
             background: rgba(255, 255, 255, 0.16);
         }
 
-        /* Tap Zones (Kindle / Apple Books UX) */
-        .tap-zone-left, .tap-zone-right, .tap-zone-center {
-            position: absolute;
-            top: 50px;
-            bottom: 70px;
-            z-index: 2510;
+        /* Fluid Desktop Gutter Navs (Apple Books Style) */
+        .reader-gutter-nav {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 84px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            color: var(--text-muted);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            opacity: 0.25;
+            transition: opacity 0.2s, background 0.2s, color 0.2s;
+            z-index: 2520;
         }
-        .tap-zone-left { left: 0; width: 22%; cursor: w-resize; }
-        .tap-zone-center { left: 22%; width: 56%; cursor: pointer; }
-        .tap-zone-right { right: 0; width: 22%; cursor: e-resize; }
+        .reader-gutter-nav:hover {
+            opacity: 0.95;
+            background: rgba(255, 255, 255, 0.14);
+            color: white;
+        }
+        .gutter-prev { left: 16px; }
+        .gutter-next { right: 16px; }
+        @media (max-width: 860px) {
+            .reader-gutter-nav { display: none; }
+        }
+
+        .reader-theme-sepia .reader-gutter-nav {
+            background: rgba(63, 46, 30, 0.04);
+            border-color: rgba(63, 46, 30, 0.12);
+            color: #3f2e1e;
+        }
+        .reader-theme-sepia .reader-gutter-nav:hover {
+            background: rgba(63, 46, 30, 0.1);
+            color: #3f2e1e;
+        }
+        .reader-theme-light .reader-gutter-nav {
+            background: rgba(0, 0, 0, 0.03);
+            border-color: rgba(0, 0, 0, 0.08);
+            color: #1e293b;
+        }
+        .reader-theme-light .reader-gutter-nav:hover {
+            background: rgba(0, 0, 0, 0.08);
+            color: #1e293b;
+        }
+
+        /* Bookmarks Drawer Component */
+        .reader-bookmarks-drawer {
+            position: absolute;
+            top: 54px;
+            right: 18px;
+            width: 320px;
+            max-height: 400px;
+            background: #0f172a;
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.8);
+            z-index: 2600;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .drawer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .drawer-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .drawer-close-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 15px;
+            padding: 4px;
+        }
+        .drawer-list {
+            padding: 8px;
+            overflow-y: auto;
+            max-height: 340px;
+        }
+        .bookmark-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.15s;
+            margin-bottom: 4px;
+        }
+        .bookmark-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+        .bookmark-info {
+            flex: 1;
+            min-width: 0;
+            margin-right: 8px;
+        }
+        .bookmark-page {
+            font-size: 12px;
+            font-weight: 600;
+            color: #f59e0b;
+        }
+        .bookmark-snippet {
+            font-size: 11px;
+            color: var(--text-muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .bookmark-del-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-dim);
+            cursor: pointer;
+            padding: 4px;
+            font-size: 12px;
+            transition: color 0.15s;
+        }
+        .bookmark-del-btn:hover {
+            color: #ef4444;
+        }
+        #btn-bookmark.active {
+            color: #f59e0b !important;
+            border-color: rgba(245, 158, 11, 0.5) !important;
+            background: rgba(245, 158, 11, 0.15) !important;
+        }
 
         /* ==========================================
            CONNECTION DIAGNOSTICS MODAL
@@ -1873,22 +2062,34 @@
                     <span id="font-size-val" style="font-size: 11px; font-weight: 600; min-width: 28px; text-align: center;">18</span>
                     <button class="reader-ctrl-btn" onclick="changeFontSize(2)" title="Увеличить шрифт">A+</button>
                     <button class="reader-ctrl-btn" onclick="cycleTheme()" id="btn-theme-toggle" title="Тема (Темная, Нордик, Сепия, Светлая)"><i class="fa-solid fa-circle-half-stroke"></i></button>
-                    <button class="reader-ctrl-btn" onclick="toggleBookmark()" id="btn-bookmark" title="Добавить закладку"><i class="fa-regular fa-bookmark"></i></button>
+                    <button class="reader-ctrl-btn" onclick="toggleBookmark()" id="btn-bookmark" title="Закладка на странице (B)"><i class="fa-regular fa-bookmark"></i></button>
+                    <button class="reader-ctrl-btn" onclick="toggleBookmarksDrawer()" id="btn-bookmarks-list" title="Все закладки книги (M)"><i class="fa-solid fa-list-ul"></i></button>
                     <button class="reader-ctrl-btn" onclick="toggleFullscreen()" id="btn-fullscreen" title="Полноэкранный режим (F)"><i class="fa-solid fa-expand"></i></button>
                 </div>
             </div>
 
-            <!-- Reading Body with Touch Tap Zones -->
+            <!-- Reading Body with Fluid Tap/Click Navigation and Uninhibited Text Selection -->
             <div class="reader-canvas" id="reader-canvas">
-                <div class="tap-zone-left" onclick="prevReaderPage()" title="Предыдущая страница"></div>
-                <div class="tap-zone-center" onclick="toggleReaderToolbar()" title="Скрыть/показать панель"></div>
-                <div class="tap-zone-right" onclick="nextReaderPage()" title="Следующая страница"></div>
-                
+                <button class="reader-gutter-nav gutter-prev" onclick="prevReaderPage(); event.stopPropagation();" title="Предыдущая страница (←, PgUp)">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
                 <div class="reader-content-wrap">
                     <div class="reader-body font-serif" id="reader-content">
                         Загрузка книги...
                     </div>
                 </div>
+                <button class="reader-gutter-nav gutter-next" onclick="nextReaderPage(); event.stopPropagation();" title="Следующая страница (→, Пробел, PgDn)">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- Bookmarks Drawer -->
+            <div class="reader-bookmarks-drawer" id="reader-bookmarks-drawer" style="display: none;">
+                <div class="drawer-header">
+                    <div class="drawer-title"><i class="fa-solid fa-bookmark" style="color: #f59e0b;"></i> Закладки книги</div>
+                    <button class="drawer-close-btn" onclick="toggleBookmarksDrawer()"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="drawer-list" id="reader-bookmarks-list"></div>
             </div>
 
             <!-- Footer Toolbar with Scrubber -->
@@ -2005,7 +2206,11 @@
         // ==========================================
         // MULTI-TIER NETWORK & FAILOVER ENGINE
         // ==========================================
+        let apiBaseInitialized = false;
+
         async function initApiBase(forceDiagnostic = false) {
+            if (apiBaseInitialized && !forceDiagnostic) return;
+
             const badge = document.getElementById('conn-badge');
             const dot = document.getElementById('conn-dot');
             const text = document.getElementById('conn-text');
@@ -2018,6 +2223,7 @@
             if (!window.location.origin.includes('evseev.site') && !window.location.origin.includes('github.io')) {
                 API_BASE = '';
                 isCloudBackend = false;
+                apiBaseInitialized = true;
                 if (dot) dot.style.background = '#10b981';
                 if (text) text.innerText = 'Локальный 8TB';
                 if (diagLan) { diagLan.innerText = 'Активен (0ms)'; diagLan.className = 'conn-status-badge status-active'; }
@@ -2040,6 +2246,7 @@
                     if (dot) dot.style.background = '#38bdf8';
                     if (text) text.innerText = `Tailscale 8TB (${dt}ms)`;
                     if (diagTs) { diagTs.innerText = `Подключен (${dt}ms)`; diagTs.className = 'conn-status-badge status-active'; }
+                    apiBaseInitialized = true;
                     return;
                 }
             } catch(e) {
@@ -2057,6 +2264,7 @@
                     const dt = Math.round(performance.now() - t0);
                     API_BASE = CLOUD_BASE;
                     isCloudBackend = true;
+                    apiBaseInitialized = true;
                     if (dot) dot.style.background = '#818cf8';
                     if (text) text.innerText = `Облако 24/7 (${dt}ms)`;
                     if (diagCloud) { diagCloud.innerText = `Подключен (${dt}ms)`; diagCloud.className = 'conn-status-badge status-active'; }
@@ -2069,6 +2277,7 @@
             // 4. Offline Fallback
             API_BASE = '';
             isCloudBackend = true;
+            apiBaseInitialized = true;
             if (dot) dot.style.background = '#f59e0b';
             if (text) text.innerText = 'Офлайн режим';
             showToast('Работа в автономном режиме. Доступны сохраненные книги.');
@@ -2113,6 +2322,23 @@
         async function saveBookOffline(bookId, bookData, bookMeta = null) {
             try {
                 const db = await getIDB();
+
+                let coverData = (bookMeta && bookMeta.coverData) || null;
+                if (!coverData && !isCloudBackend && API_BASE) {
+                    try {
+                        const coverRes = await fetch(`${API_BASE}/api/book/${bookId}/cover`);
+                        if (coverRes.ok) {
+                            const blob = await coverRes.blob();
+                            coverData = await new Promise((res) => {
+                                const fr = new FileReader();
+                                fr.onloadend = () => res(fr.result);
+                                fr.onerror = () => res(null);
+                                fr.readAsDataURL(blob);
+                            });
+                        }
+                    } catch(e) {}
+                }
+
                 const tx = db.transaction('books', 'readwrite');
                 const store = tx.objectStore('books');
                 
@@ -2124,6 +2350,7 @@
                     series: (bookMeta && bookMeta.series) || '',
                     ser_no: (bookMeta && bookMeta.ser_no) || null,
                     genre: (bookMeta && bookMeta.genre) || '',
+                    coverData: coverData,
                     savedAt: Date.now(),
                     lastReadAt: Date.now()
                 };
@@ -2133,6 +2360,45 @@
             } catch (e) {
                 console.warn('IDB Save failed', e);
                 return false;
+            }
+        }
+
+        async function deleteBookOffline(bookId, e) {
+            if (e) e.stopPropagation();
+            if (!confirm('Удалить эту книгу из памяти устройства?')) return;
+            try {
+                const db = await getIDB();
+                const tx = db.transaction('books', 'readwrite');
+                tx.objectStore('books').delete(String(bookId));
+                await new Promise((resolve, reject) => {
+                    tx.oncomplete = resolve;
+                    tx.onerror = reject;
+                });
+                try { sessionStorage.removeItem('flibusta_book_cache_' + bookId); } catch(err){}
+                await updateOfflineBadge();
+                showToast('Книга удалена из памяти устройства');
+                showOfflineShelf();
+            } catch (e) {
+                console.warn('IDB Delete failed', e);
+                showToast('Не удалось удалить книгу');
+            }
+        }
+
+        async function clearAllOfflineBooks() {
+            if (!confirm('Удалить ВСЕ книги из офлайн-памяти устройства?')) return;
+            try {
+                const db = await getIDB();
+                const tx = db.transaction('books', 'readwrite');
+                tx.objectStore('books').clear();
+                await new Promise((resolve, reject) => {
+                    tx.oncomplete = resolve;
+                    tx.onerror = reject;
+                });
+                await updateOfflineBadge();
+                showToast('Офлайн-библиотека полностью очищена');
+                showOfflineShelf();
+            } catch (e) {
+                showToast('Ошибка очистки офлайн-памяти');
             }
         }
 
@@ -2168,6 +2434,147 @@
                     badge.innerText = books.length > 0 ? `(${books.length})` : '';
                 }
             } catch(e) {}
+        }
+
+
+        // ==========================================
+        // PERSISTED READER PREFERENCES & BOOKMARKS
+        // ==========================================
+        function applySavedReaderPreferences() {
+            try {
+                const savedTheme = localStorage.getItem('flibusta_pref_theme');
+                if (savedTheme) {
+                    readerTheme = savedTheme;
+                    const vp = document.getElementById('reader-viewport');
+                    if (vp) vp.className = 'reader-viewport reader-theme-' + savedTheme;
+                }
+
+                const savedFont = localStorage.getItem('flibusta_pref_fontFamily');
+                if (savedFont) {
+                    readerFontFamily = savedFont;
+                    const el = document.getElementById('reader-content');
+                    const btn = document.getElementById('btn-font-family');
+                    if (el) el.className = 'reader-body font-' + savedFont;
+                    if (btn) btn.innerText = savedFont === 'serif' ? 'Аа' : (savedFont === 'sans' ? 'Sans' : 'Mono');
+                }
+
+                const savedSize = localStorage.getItem('flibusta_pref_fontSize');
+                if (savedSize) {
+                    readerFontSize = parseInt(savedSize, 10) || 18;
+                    document.documentElement.style.setProperty('--reader-font-size', readerFontSize + 'px');
+                    const valEl = document.getElementById('font-size-val');
+                    if (valEl) valEl.innerText = readerFontSize;
+                }
+            } catch(e) {}
+        }
+
+        function getBookBookmarks(bookId) {
+            try {
+                const str = localStorage.getItem('flibusta_bookmarks_' + bookId);
+                return str ? JSON.parse(str) : [];
+            } catch(e) { return []; }
+        }
+
+        function saveBookBookmarks(bookId, list) {
+            try {
+                localStorage.setItem('flibusta_bookmarks_' + bookId, JSON.stringify(list));
+            } catch(e) {}
+        }
+
+        function updateBookmarkButtonState() {
+            const btn = document.getElementById('btn-bookmark');
+            if (!btn || !currentReadingBook || !currentReadingBook.id) return;
+            const list = getBookBookmarks(currentReadingBook.id);
+            const isBookmarked = list.some(b => b.page === currentReaderPage);
+            if (isBookmarked) {
+                btn.classList.add('active');
+                btn.innerHTML = '<i class="fa-solid fa-bookmark" style="color: #f59e0b;"></i>';
+            } else {
+                btn.classList.remove('active');
+                btn.innerHTML = '<i class="fa-regular fa-bookmark"></i>';
+            }
+        }
+
+        function toggleBookmark() {
+            if (!currentReadingBook || !currentReadingBook.id) return;
+            const bId = currentReadingBook.id;
+            let list = getBookBookmarks(bId);
+            const existingIdx = list.findIndex(b => b.page === currentReaderPage);
+            const btn = document.getElementById('btn-bookmark');
+            
+            if (existingIdx !== -1) {
+                list.splice(existingIdx, 1);
+                saveBookBookmarks(bId, list);
+                if (btn) {
+                    btn.classList.remove('active');
+                    btn.innerHTML = '<i class="fa-regular fa-bookmark"></i>';
+                }
+                showToast(`Закладка со страницы ${currentReaderPage + 1} удалена`);
+            } else {
+                const rawText = (readerPages[currentReaderPage] || '').trim();
+                const snippet = rawText.replace(/\s+/g, ' ').substring(0, 60) + '...';
+                list.push({
+                    page: currentReaderPage,
+                    percent: Math.min(100, Math.round(((currentReaderPage + 1) / readerPages.length) * 100)),
+                    snippet: snippet,
+                    createdAt: Date.now()
+                });
+                list.sort((a, b) => a.page - b.page);
+                saveBookBookmarks(bId, list);
+                if (btn) {
+                    btn.classList.add('active');
+                    btn.innerHTML = '<i class="fa-solid fa-bookmark" style="color: #f59e0b;"></i>';
+                }
+                showToast(`Закладка сохранена на странице ${currentReaderPage + 1}`);
+            }
+            renderBookmarksDrawer();
+        }
+
+        function renderBookmarksDrawer() {
+            const listEl = document.getElementById('reader-bookmarks-list');
+            if (!listEl || !currentReadingBook || !currentReadingBook.id) return;
+            const list = getBookBookmarks(currentReadingBook.id);
+            if (list.length === 0) {
+                listEl.innerHTML = '<div style="text-align: center; padding: 24px 8px; color: var(--text-dim); font-size: 12px;">Нет сохраненных закладок.<br>Нажмите на иконку закладки вверху, чтобы отметить страницу.</div>';
+                return;
+            }
+            listEl.innerHTML = list.map(b => `
+                <div class="bookmark-item" onclick="jumpToBookmarkPage(${b.page})">
+                    <div class="bookmark-info">
+                        <div class="bookmark-page">Стр. ${b.page + 1} (${b.percent}%)</div>
+                        <div class="bookmark-snippet">${escapeHtml(b.snippet)}</div>
+                    </div>
+                    <button class="bookmark-del-btn" onclick="deleteBookmark(${b.page}, event)" title="Удалить"><i class="fa-solid fa-trash-can"></i></button>
+                </div>
+            `).join('');
+        }
+
+        function toggleBookmarksDrawer() {
+            const drawer = document.getElementById('reader-bookmarks-drawer');
+            if (drawer) {
+                const isOpen = drawer.style.display === 'flex';
+                drawer.style.display = isOpen ? 'none' : 'flex';
+                if (!isOpen) renderBookmarksDrawer();
+            }
+        }
+
+        function jumpToBookmarkPage(pageNo) {
+            if (pageNo >= 0 && pageNo < readerPages.length) {
+                currentReaderPage = pageNo;
+                renderCurrentReaderPage();
+                const drawer = document.getElementById('reader-bookmarks-drawer');
+                if (drawer) drawer.style.display = 'none';
+            }
+        }
+
+        function deleteBookmark(pageNo, e) {
+            if (e) e.stopPropagation();
+            if (!currentReadingBook || !currentReadingBook.id) return;
+            const bId = currentReadingBook.id;
+            let list = getBookBookmarks(bId).filter(b => b.page !== pageNo);
+            saveBookBookmarks(bId, list);
+            renderBookmarksDrawer();
+            updateBookmarkButtonState();
         }
 
         // ==========================================
@@ -2315,6 +2722,139 @@
             if (currentSearchQuery) {
                 performSearch(currentSearchQuery);
             }
+        }
+
+
+        // ==========================================
+        // CURRENTLY READING SHELF (Apple Books Style)
+        // ==========================================
+        async function renderContinueReadingShelf(filterOnly = false) {
+            document.getElementById('breadcrumb').style.display = 'none';
+            document.getElementById('search-section').style.display = 'block';
+            document.getElementById('facet-bar').style.display = 'none';
+            document.getElementById('query-input').value = '';
+
+            const container = document.getElementById('content-container');
+            const allOffline = await getAllOfflineBooks();
+            
+            const booksWithProgress = [];
+            const seenIds = new Set();
+
+            for (const b of allOffline) {
+                const pos = parseInt(localStorage.getItem('flibusta_read_pos_' + b.id) || '0', 10);
+                const total = parseInt(localStorage.getItem('flibusta_read_total_' + b.id) || '1', 10);
+                if (b.lastReadAt || pos > 0) {
+                    seenIds.add(String(b.id));
+                    booksWithProgress.push({
+                        ...b,
+                        page: pos,
+                        total: total,
+                        percent: Math.min(100, Math.round(((pos + 1) / Math.max(1, total)) * 100)),
+                        lastRead: b.lastReadAt || 0
+                    });
+                }
+            }
+
+            for (const [id, b] of _booksMap.entries()) {
+                const sId = String(id);
+                if (!seenIds.has(sId)) {
+                    const pos = parseInt(localStorage.getItem('flibusta_read_pos_' + sId) || '-1', 10);
+                    if (pos >= 0) {
+                        const total = parseInt(localStorage.getItem('flibusta_read_total_' + sId) || '1', 10);
+                        seenIds.add(sId);
+                        booksWithProgress.push({
+                            id: sId,
+                            title: b.title || 'Книга',
+                            author: b.author || 'Автор',
+                            series: b.series || '',
+                            ser_no: b.ser_no || null,
+                            page: pos,
+                            total: total,
+                            percent: Math.min(100, Math.round(((pos + 1) / Math.max(1, total)) * 100)),
+                            lastRead: Date.now()
+                        });
+                    }
+                }
+            }
+
+            booksWithProgress.sort((a, b) => b.lastRead - a.lastRead);
+
+            if (booksWithProgress.length === 0) {
+                container.innerHTML = `
+                    <div style="text-align: center; padding: 60px 20px; color: var(--text-muted); max-width: 500px; margin: 0 auto;">
+                        <i class="fa-solid fa-book-open-reader fa-3x" style="color: var(--accent); margin-bottom: 16px;"></i>
+                        <h3 style="color: white; margin-bottom: 8px;">Список чтения пуст</h3>
+                        <p style="font-size: 14px; line-height: 1.6; margin-bottom: 20px;">
+                            Откройте любую книгу в читалке, и ваш прогресс автоматически сохранится здесь для мгновенного продолжения.
+                        </p>
+                        <button class="btn-modal-primary" onclick="showHomeScreen()" style="width: auto; margin: 0 auto;">Перейти на главную</button>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = `
+                <div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                    <div>
+                        <h2 style="font-size: 20px; font-weight: 700; color: white;"><i class="fa-solid fa-book-open" style="color: var(--accent);"></i> Сейчас читаю (${booksWithProgress.length})</h2>
+                        <span style="font-size: 12px; color: var(--text-muted);">Книги с сохраненным прогрессом чтения</span>
+                    </div>
+                    <button class="btn-modal-secondary" onclick="clearAllReadingProgress()" style="width: auto; font-size: 12px; padding: 6px 12px;">Очистить историю</button>
+                </div>
+                <div class="books-grid" id="books-grid">
+                    ${booksWithProgress.map(b => {
+                        const cleanTitle = escapeHtml(b.title || 'Книга');
+                        const cleanAuthor = escapeHtml(b.author || 'Автор');
+                        const estMin = Math.max(1, Math.round((b.total - b.page - 1) * 2.2));
+                        const coverSrc = b.coverData || (API_BASE ? `${API_BASE}/api/book/${b.id}/cover` : SVG_FALLBACK_COVER);
+                        return `
+                            <div class="book-card">
+                                <div class="book-card-main">
+                                    <img src="${coverSrc}" class="book-card-cover" alt="Обложка" onerror="this.src='${SVG_FALLBACK_COVER}';" onclick="openReader(${b.id}, '${cleanTitle.replace(/'/g, "\\'")}')">
+                                    <div class="book-info-col">
+                                        <div class="book-title" onclick="openReader(${b.id}, '${cleanTitle.replace(/'/g, "\\'")}')">${cleanTitle}</div>
+                                        <div class="book-author-link" onclick="openAuthor('${cleanAuthor.replace(/'/g, "\\'")}')">${cleanAuthor}</div>
+                                        <div style="margin-top: 8px;">
+                                            <div style="font-size: 11px; color: var(--accent); font-weight: 600; margin-bottom: 4px;">Стр. ${b.page + 1} из ${b.total} · ${b.percent}% · ~${estMin} мин</div>
+                                            <div style="height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; max-width: 220px;">
+                                                <div style="height: 100%; width: ${b.percent}%; background: var(--accent-gradient);"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="book-actions">
+                                    <button class="btn-action btn-read" onclick="openReader(${b.id}, '${cleanTitle.replace(/'/g, "\\'")}')" style="flex: 1;">
+                                        <i class="fa-solid fa-book-open"></i> Читать
+                                    </button>
+                                    <button class="btn-action" onclick="resetBookProgress(${b.id}, event)" title="Сбросить прогресс" style="background: rgba(255,255,255,0.06); color: var(--text-dim); width: 36px; padding: 0;">
+                                        <i class="fa-solid fa-rotate-left"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
+            `;
+        }
+
+        function resetBookProgress(bookId, e) {
+            if (e) e.stopPropagation();
+            localStorage.removeItem('flibusta_read_pos_' + bookId);
+            localStorage.removeItem('flibusta_read_total_' + bookId);
+            showToast('Прогресс чтения сброшен');
+            renderContinueReadingShelf(true);
+        }
+
+        function clearAllReadingProgress() {
+            if (!confirm('Очистить всю историю прогресса чтения?')) return;
+            for (let i = 0; i < localStorage.length; i++) {
+                const k = localStorage.key(i);
+                if (k && (k.startsWith('flibusta_read_pos_') || k.startsWith('flibusta_read_total_'))) {
+                    localStorage.removeItem(k);
+                }
+            }
+            showToast('История чтения очищена');
+            renderContinueReadingShelf(true);
         }
 
         // ==========================================
@@ -2498,21 +3038,25 @@
             }
 
             container.innerHTML = `
-                <div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
-                    <h2 style="font-size: 20px; font-weight: 700; color: white;"><i class="fa-solid fa-hard-drive" style="color: #10b981;"></i> Книги в памяти устройства (${offlineBooks.length})</h2>
-                    <span style="font-size: 12px; color: var(--text-muted);">Доступны 100% без интернета</span>
+                <div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                    <div>
+                        <h2 style="font-size: 20px; font-weight: 700; color: white;"><i class="fa-solid fa-hard-drive" style="color: #10b981;"></i> Книги в памяти устройства (${offlineBooks.length})</h2>
+                        <span style="font-size: 12px; color: var(--text-muted);">Доступны 100% без интернета</span>
+                    </div>
+                    <button class="btn-modal-secondary" onclick="clearAllOfflineBooks()" style="width: auto; font-size: 12px; padding: 6px 12px;">Очистить все</button>
                 </div>
                 <div class="books-grid" id="books-grid">
                     ${offlineBooks.map(b => {
                         const cleanTitle = escapeHtml(b.title || 'Книга');
                         const cleanAuthor = escapeHtml(b.author || 'Автор');
+                        const coverSrc = b.coverData || (API_BASE ? `${API_BASE}/api/book/${b.id}/cover` : SVG_FALLBACK_COVER);
                         return `
                             <div class="book-card">
                                 <div class="book-card-main">
-                                    <img src="${API_BASE}/api/book/${b.id}/cover" class="book-card-cover" alt="Обложка" onerror="this.src='${SVG_FALLBACK_COVER}';" onclick="openReader(${b.id}, '${cleanTitle.replace(/'/g, "\\'")}')">
+                                    <img src="${coverSrc}" class="book-card-cover" alt="Обложка" onerror="this.src='${SVG_FALLBACK_COVER}';" onclick="openReader(${b.id}, '${cleanTitle.replace(/'/g, "\\'")}')">
                                     <div class="book-info-col">
                                         <div class="book-title" onclick="openReader(${b.id}, '${cleanTitle.replace(/'/g, "\\'")}')">${cleanTitle}</div>
-                                        <div class="book-author-link">${cleanAuthor}</div>
+                                        <div class="book-author-link" onclick="openAuthor('${cleanAuthor.replace(/'/g, "\\'")}')">${cleanAuthor}</div>
                                         <div class="book-badges">
                                             <span class="badge" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.3);"><i class="fa-solid fa-check"></i> Офлайн</span>
                                             ${b.series ? `<span class="badge badge-series">${escapeHtml(b.series)}</span>` : ''}
@@ -2520,8 +3064,11 @@
                                     </div>
                                 </div>
                                 <div class="book-actions">
-                                    <button class="btn-action btn-epub" onclick="openReader(${b.id}, '${cleanTitle.replace(/'/g, "\\'")}')" style="background: linear-gradient(135deg, #10b981, #059669);">
-                                        <i class="fa-solid fa-book-open"></i> Читать офлайн
+                                    <button class="btn-action btn-epub" onclick="openReader(${b.id}, '${cleanTitle.replace(/'/g, "\\'")}')" style="background: linear-gradient(135deg, #10b981, #059669); flex: 1;">
+                                        <i class="fa-solid fa-book-open"></i> Читать
+                                    </button>
+                                    <button class="btn-action" onclick="deleteBookOffline(${b.id}, event)" title="Удалить из памяти" style="background: rgba(239, 68, 68, 0.15); color: #f87171; border-color: rgba(239, 68, 68, 0.3); width: 36px; padding: 0;">
+                                        <i class="fa-solid fa-trash-can"></i>
                                     </button>
                                 </div>
                             </div>
@@ -2958,6 +3505,7 @@
             if (pushHistory) {
                 window.history.pushState({ modal: 'reader', bookId: bookId }, '', '#read-' + bookId);
             }
+            applySavedReaderPreferences();
             document.getElementById('reader-title').innerText = title || 'Книга';
             document.getElementById('reader-author').innerText = 'Загрузка...';
             document.getElementById('reader-content').innerHTML = '<div style="text-align:center; padding: 60px 0;"><i class="fa-solid fa-spinner fa-spin fa-2x" style="color: var(--accent);"></i><br><br><span style="color: var(--text-muted); font-size: 14px;">Мгновенная подготовка текста книги...</span></div>';
@@ -3035,6 +3583,23 @@
                     let paraBreak = fullText.indexOf('\n\n', nextIdx - 500);
                     if (paraBreak !== -1 && paraBreak < nextIdx + 500) {
                         nextIdx = paraBreak + 2;
+                    } else {
+                        // Sentence or word boundary fallback to prevent splitting words
+                        let lastSentence = -1;
+                        for (const punct of ['. ', '! ', '? ', '.\n', '!\n', '?\n']) {
+                            const p = fullText.lastIndexOf(punct, nextIdx);
+                            if (p > idx + PAGE_SIZE - 600 && p > lastSentence) {
+                                lastSentence = p + punct.length;
+                            }
+                        }
+                        if (lastSentence !== -1) {
+                            nextIdx = lastSentence;
+                        } else {
+                            let lastSpace = fullText.lastIndexOf(' ', nextIdx);
+                            if (lastSpace > idx + PAGE_SIZE - 300) {
+                                nextIdx = lastSpace + 1;
+                            }
+                        }
                     }
                 }
                 readerPages.push(fullText.substring(idx, nextIdx).trim());
@@ -3084,7 +3649,20 @@
 
             if (currentReadingBook && currentReadingBook.id) {
                 localStorage.setItem('flibusta_read_pos_' + currentReadingBook.id, currentReaderPage);
+                // Update lastReadAt asynchronously in IndexedDB
+                getIDB().then(db => {
+                    const tx = db.transaction('books', 'readwrite');
+                    const store = tx.objectStore('books');
+                    const req = store.get(String(currentReadingBook.id));
+                    req.onsuccess = () => {
+                        if (req.result) {
+                            req.result.lastReadAt = Date.now();
+                            store.put(req.result);
+                        }
+                    };
+                }).catch(() => {});
             }
+            updateBookmarkButtonState();
         }
 
         function prevReaderPage() {
@@ -3118,19 +3696,26 @@
         }
 
         function closeReader() {
-            document.getElementById('reader-modal').style.display = 'none';
+            const modal = document.getElementById('reader-modal');
+            if (modal) modal.style.display = 'none';
             if (document.fullscreenElement) {
                 try { document.exitFullscreen(); } catch(e){}
+            }
+            const drawer = document.getElementById('reader-bookmarks-drawer');
+            if (drawer) drawer.style.display = 'none';
+            if (window.location.hash.startsWith('#read-') || window.location.hash.startsWith('#read=')) {
+                window.history.pushState(null, '', window.location.pathname + window.location.search);
             }
             renderContinueReadingHero();
         }
 
-        // Reader controls
+        // Reader controls with persistent preferences
         function changeFontSize(delta) {
             readerFontSize = Math.max(14, Math.min(32, readerFontSize + delta));
             document.documentElement.style.setProperty('--reader-font-size', readerFontSize + 'px');
             const valEl = document.getElementById('font-size-val');
             if (valEl) valEl.innerText = readerFontSize;
+            try { localStorage.setItem('flibusta_pref_fontSize', readerFontSize); } catch(e){}
         }
 
         function cycleFontFamily() {
@@ -3149,6 +3734,7 @@
                 el.className = 'reader-body font-serif';
                 if (btn) btn.innerText = 'Аа';
             }
+            try { localStorage.setItem('flibusta_pref_fontFamily', readerFontFamily); } catch(e){}
         }
 
         function cycleTheme() {
@@ -3166,12 +3752,7 @@
                 readerTheme = 'dark';
                 vp.className = 'reader-viewport reader-theme-dark';
             }
-        }
-
-        function toggleBookmark() {
-            const btn = document.getElementById('btn-bookmark');
-            btn.classList.toggle('active');
-            showToast(`Закладка сохранена на странице ${currentReaderPage + 1}`);
+            try { localStorage.setItem('flibusta_pref_theme', readerTheme); } catch(e){}
         }
 
         function toggleFullscreen() {
@@ -3182,10 +3763,31 @@
             }
         }
 
+        // Fluid Uninhibited Tap / Click Navigation (Allows normal text selection & copying)
+        const canvasEl = document.getElementById('reader-canvas');
+
+        canvasEl.addEventListener('click', (e) => {
+            // If user has highlighted / selected text, do not turn page or toggle toolbar!
+            const sel = window.getSelection();
+            if (sel && sel.toString().trim().length > 0) return;
+            if (e.target.closest('button') || e.target.closest('a') || e.target.closest('input') || e.target.closest('.reader-bookmarks-drawer')) return;
+
+            const rect = canvasEl.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const ratio = x / rect.width;
+
+            if (ratio < 0.22) {
+                prevReaderPage();
+            } else if (ratio > 0.78) {
+                nextReaderPage();
+            } else {
+                toggleReaderToolbar();
+            }
+        });
+
         // Touch Swipe Navigation for iOS / Mobile
         let touchStartX = 0;
         let touchStartY = 0;
-        const canvasEl = document.getElementById('reader-canvas');
 
         canvasEl.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
@@ -3205,15 +3807,18 @@
             }
         }, { passive: true });
 
-        // Keyboard arrow navigation
+        // Keyboard navigation
         window.addEventListener('keydown', (e) => {
             if (document.getElementById('reader-modal').style.display === 'block') {
                 if (e.key === 'ArrowLeft' || e.key === 'PageUp') prevReaderPage();
                 if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') nextReaderPage();
                 if (e.key.toLowerCase() === 'f') toggleFullscreen();
                 if (e.key.toLowerCase() === 't') cycleTheme();
+                if (e.key.toLowerCase() === 'b') toggleBookmark();
+                if (e.key.toLowerCase() === 'm') toggleBookmarksDrawer();
                 if (e.key === '+' || e.key === '=') changeFontSize(2);
                 if (e.key === '-' || e.key === '_') changeFontSize(-2);
+                if (e.key === 'Escape') closeReader();
             }
         });
 
@@ -3249,11 +3854,35 @@
         }
 
         async function handleRoute() {
-            await initApiBase();
+            if (!apiBaseInitialized) {
+                await initApiBase();
+            }
             updateOfflineBadge();
+            applySavedReaderPreferences();
 
             const hash = window.location.hash || '';
             const params = new URLSearchParams(window.location.search);
+
+            // If navigating away from reader, ensure reader modal is closed
+            if (!hash.startsWith('#read-') && !hash.startsWith('#read=')) {
+                const rModal = document.getElementById('reader-modal');
+                if (rModal && rModal.style.display === 'block') {
+                    rModal.style.display = 'none';
+                    if (document.fullscreenElement) {
+                        try { document.exitFullscreen(); } catch(e){}
+                    }
+                    const drawer = document.getElementById('reader-bookmarks-drawer');
+                    if (drawer) drawer.style.display = 'none';
+                }
+            }
+
+            // If navigating away from book modal, ensure book modal is closed
+            if (!hash.startsWith('#book=') && !params.get('book')) {
+                const bModal = document.getElementById('book-modal');
+                if (bModal && bModal.style.display === 'flex') {
+                    closeModal(bModal);
+                }
+            }
 
             if (hash.startsWith('#read-')) {
                 openReader(hash.replace('#read-', ''), 'Книга');
@@ -3285,6 +3914,7 @@
         }
 
         window.addEventListener('hashchange', handleRoute);
+        window.addEventListener('popstate', handleRoute);
         handleRoute();
     </script>
 </body>
