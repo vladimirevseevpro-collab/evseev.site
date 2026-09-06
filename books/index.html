@@ -2311,7 +2311,7 @@
                 const t0 = performance.now();
                 const tsRes = await Promise.race([
                     fetch(`${TAILSCALE_BASE}/api/search?limit=1`, { mode: 'cors' }),
-                    new Promise((_, reject) => setTimeout(() => reject('timeout'), 1600))
+                    new Promise((_, reject) => setTimeout(() => reject('timeout'), 2500))
                 ]);
                 if (tsRes && tsRes.ok) {
                     const dt = Math.round(performance.now() - t0);
@@ -2332,8 +2332,8 @@
             try {
                 const t0 = performance.now();
                 const cloudRes = await Promise.race([
-                    fetch(`${CLOUD_BASE}/api/books/search?q=несбе&limit=1`, { mode: 'cors' }),
-                    new Promise((_, reject) => setTimeout(() => reject('timeout'), 3000))
+                    fetch(`${CLOUD_BASE}/api/books/search?q=the&limit=1`, { mode: 'cors' }),
+                    new Promise((_, reject) => setTimeout(() => reject('timeout'), 6000))
                 ]);
                 if (cloudRes && cloudRes.ok) {
                     const dt = Math.round(performance.now() - t0);
