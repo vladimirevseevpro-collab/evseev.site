@@ -378,7 +378,7 @@
           </div>
         </div>
         <div class="card-actions">
-          <a href="https://nucbox-k8-plus.tail374af0.ts.net/photos/?k=GT342EU06RGK1Csaxx-Z1g" class="btn btn-primary hub-link-photo">📷 Открыть PhotoHub</a>
+          <a href="https://nucbox-k8-plus.tail374af0.ts.net/photos/" class="btn btn-primary hub-link-photo">📷 Открыть PhotoHub</a>
         </div>
       </div>
 
@@ -419,7 +419,7 @@
     <a href="/games/foldwink/" class="tab-item"><i class="fa-solid fa-dice"></i><span>Foldwink</span></a>
     <a href="/games/screencreep/" class="tab-item"><i class="fa-solid fa-ghost"></i><span>Creep</span></a>
     <a href="/verbum/" class="tab-item"><i class="fa-solid fa-microphone"></i><span>Verbum</span></a>
-    <a href="https://nucbox-k8-plus.tail374af0.ts.net/photos/?k=GT342EU06RGK1Csaxx-Z1g" class="tab-item hub-link-photo"><i class="fa-solid fa-images"></i><span>Фото</span></a>
+    <a href="https://nucbox-k8-plus.tail374af0.ts.net/photos/" class="tab-item hub-link-photo"><i class="fa-solid fa-images"></i><span>Фото</span></a>
     <a href="/books/" class="tab-item"><i class="fa-solid fa-book-open"></i><span>Книги</span></a>
   </nav>
 
@@ -792,35 +792,16 @@
   </style>
 
   <script>
+    function escapeHtml(s){return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+
     // Fast Non-Blocking Connection & Home Server Status Resolver
     (async function() {
-      const token = 'GT342EU06RGK1Csaxx-Z1g';
-      try { localStorage.setItem('hub_auth', token); } catch(e){}
-
       const statusBadge = document.querySelector('.status-badge');
-      let photoTarget = `/photos/`;
-      let booksTarget = `/books/`;
+      let photoTarget = 'https://nucbox-k8-plus.tail374af0.ts.net/photos/';
+      let booksTarget = 'https://nucbox-k8-plus.tail374af0.ts.net/library/';
       let isServerOnline = false;
       
       const isLocal = window.location.hostname === '192.168.178.118' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-
-      // Permanent Dual-Path: Local LAN (2ms) or Permanent Tailscale Funnel
-      booksTarget = 'https://nucbox-k8-plus.tail374af0.ts.net/library/?k=' + token;
-      photoTarget = 'https://nucbox-k8-plus.tail374af0.ts.net/photos/?k=' + token;
-
-      try {
-        // Test fast local Wi-Fi ping (200ms max timeout)
-        const lanPing = new AbortController();
-        const lanTimer = setTimeout(() => lanPing.abort(), 250);
-        const lanCheck = await fetch('http://192.168.178.118:8081/api/photos/stats?k=' + token, { signal: lanPing.signal });
-        clearTimeout(lanTimer);
-        if (lanCheck.ok) {
-          isServerOnline = true;
-          booksTarget = 'http://192.168.178.118:8081/library/?k=' + token;
-          photoTarget = 'http://192.168.178.118:8081/photos/?k=' + token;
-          if (statusBadge) statusBadge.innerHTML = '<span class="status-dot" style="background:#10b981;"></span> Домашний Wi-Fi (2ms)';
-        }
-      } catch (err) {}
 
       if (!isServerOnline) {
         // External HTTPS (evseev.site)
@@ -833,8 +814,19 @@
           if (resp.ok) {
             const data = await resp.json();
             if (data && data.online && data.photos_url && data.books_url) {
-              photoTarget = data.photos_url;
-              booksTarget = data.books_url;
+              try {
+                const pu = new URL(data.photos_url);
+                pu.searchParams.delete('k');
+                pu.searchParams.delete('token');
+                photoTarget = pu.toString();
+                const bu = new URL(data.books_url);
+                bu.searchParams.delete('k');
+                bu.searchParams.delete('token');
+                booksTarget = bu.toString();
+              } catch(e) {
+                photoTarget = data.photos_url;
+                booksTarget = data.books_url;
+              }
               isServerOnline = true;
               if (statusBadge) statusBadge.innerHTML = '<span class="status-dot" style="background:#38bdf8; box-shadow:0 0 8px #38bdf8;"></span> Онлайн (Домашний ПК)';
             }
@@ -889,7 +881,6 @@
     let searchDebounceTimer = null;
     const CLOUD_API_BASE = 'https://34.27.195.78.sslip.io';
     const FALLBACK_TUNNEL_URL = 'https://nucbox-k8-plus.tail374af0.ts.net';
-    const AUTH_TOKEN = 'GT342EU06RGK1Csaxx-Z1g';
     let cachedTunnelBase = FALLBACK_TUNNEL_URL;
 
     function normalizeBookQuery(text) {
@@ -933,41 +924,41 @@
         if (spinner) spinner.style.display = 'none';
 
         if (!data.books || data.books.length === 0) {
-          resultsContainer.innerHTML = `<div class="results-empty"><p>Ничего не найдено по запросу «${query}»</p></div>`;
+          resultsContainer.innerHTML = `<div class="results-empty"><p>Ничего не найдено по запросу «${escapeHtml(query)}»</p></div>`;
           return;
         }
 
         // Resolve active tunnel base URL (use cached or booksTarget or fallback)
         let tunnelBase = cachedTunnelBase || (booksTarget && !booksTarget.includes('/books/') ? booksTarget.split('/books')[0].split('/library')[0] : FALLBACK_TUNNEL_URL);
 
-        let html = `<div style="font-size:11px; color:#94a3b8; margin-bottom:8px; font-family:'JetBrains Mono';">Найдено: ${data.count} книг (${data.duration_ms} мс)</div>`;
+        let html = `<div style="font-size:11px; color:#94a3b8; margin-bottom:8px; font-family:'JetBrains Mono';">Найдено: ${escapeHtml(data.count)} книг (${escapeHtml(data.duration_ms)} мс)</div>`;
         data.books.forEach(b => {
           const author = b.author ? b.author.replace(/,/g, ' ').trim() : 'Неизвестный автор';
           const sizeKb = Math.round((b.size || 0) / 1024);
           const ext = (b.ext || 'fb2').toUpperCase();
-          const series = b.series ? ` · <span style="cursor:pointer; color:#a5b4fc;" onclick="event.stopPropagation(); searchFor('${b.series.replace(/'/g, "\\'")}')"><i>Серия: ${b.series}${b.ser_no ? ' #' + b.ser_no : ''}</i></span>` : '';
+          const series = b.series ? ` · <span style="cursor:pointer; color:#a5b4fc;" onclick="event.stopPropagation(); searchFor(${escapeHtml(JSON.stringify(b.series))})"><i>Серия: ${escapeHtml(b.series)}${b.ser_no ? ' #' + escapeHtml(b.ser_no) : ''}</i></span>` : '';
           const safeTitle = (b.title || 'book').replace(/'/g, "\\'");
 
           // Download URL via tunnel (falls back to Cloud API)
           const dlBase = tunnelBase || CLOUD_API_BASE;
-          const epubUrl = `${dlBase}/api/book/${b.id}/download?format=epub&k=${AUTH_TOKEN}`;
-          const fb2Url = `${dlBase}/api/book/${b.id}/download?format=fb2&k=${AUTH_TOKEN}`;
-          const readUrl = `${dlBase}/books?k=${AUTH_TOKEN}#read-${b.id}`;
+          const bookId = encodeURIComponent(b.id);
+          const epubUrl = `${dlBase}/api/book/${bookId}/download?format=epub`;
+          const fb2Url = `${dlBase}/api/book/${bookId}/download?format=fb2`;
 
           html += `
-            <div class="book-item" style="cursor: pointer;" onclick="window.location.href='/books/#book=${b.id}'">
-              <div class="book-title" style="color: #818cf8;">${b.title || 'Без названия'}</div>
-              <div class="book-author" style="cursor:pointer;" onclick="event.stopPropagation(); window.location.href='/books/#author=' + encodeURIComponent('${author.replace(/'/g, "\\'")}')">✍️ ${author}</div>
+            <div class="book-item" style="cursor: pointer;" onclick="window.location.href='/books/#book=${bookId}'">
+              <div class="book-title" style="color: #818cf8;">${escapeHtml(b.title || 'Без названия')}</div>
+              <div class="book-author" style="cursor:pointer;" onclick="event.stopPropagation(); window.location.href='/books/#author=' + encodeURIComponent(${escapeHtml(JSON.stringify(author))})">✍️ ${escapeHtml(author)}</div>
               <div class="book-meta">
-                <span class="badge-fmt">${ext}</span>
-                <span>${sizeKb} KB</span>
-                ${b.date ? `<span>📅 ${b.date}</span>` : ''}
+                <span class="badge-fmt">${escapeHtml(ext)}</span>
+                <span>${escapeHtml(sizeKb)} KB</span>
+                ${b.date ? `<span>📅 ${escapeHtml(b.date)}</span>` : ''}
                 ${series}
               </div>
               <div style="display:flex; gap:6px; margin-top:8px;">
-                <a href="${epubUrl}" target="_blank" onclick="event.stopPropagation();" style="flex:1; text-align:center; padding:7px 0; border-radius:8px; background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.3); color:#10b981; font-size:12px; font-weight:700; text-decoration:none; transition:all 0.15s;">📥 EPUB</a>
-                <a href="${fb2Url}" target="_blank" onclick="event.stopPropagation();" style="flex:1; text-align:center; padding:7px 0; border-radius:8px; background:rgba(129,140,248,0.1); border:1px solid rgba(129,140,248,0.25); color:#a5b4fc; font-size:12px; font-weight:700; text-decoration:none; transition:all 0.15s;">📥 FB2</a>
-                <a href="/books/#read-${b.id}" onclick="event.stopPropagation();" style="flex:1; text-align:center; padding:7px 0; border-radius:8px; background:rgba(56,189,248,0.1); border:1px solid rgba(56,189,248,0.25); color:#38bdf8; font-size:12px; font-weight:700; text-decoration:none; transition:all 0.15s;">📖 Читать</a>
+                <a href="${escapeHtml(epubUrl)}" target="_blank" onclick="event.stopPropagation();" style="flex:1; text-align:center; padding:7px 0; border-radius:8px; background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.3); color:#10b981; font-size:12px; font-weight:700; text-decoration:none; transition:all 0.15s;">📥 EPUB</a>
+                <a href="${escapeHtml(fb2Url)}" target="_blank" onclick="event.stopPropagation();" style="flex:1; text-align:center; padding:7px 0; border-radius:8px; background:rgba(129,140,248,0.1); border:1px solid rgba(129,140,248,0.25); color:#a5b4fc; font-size:12px; font-weight:700; text-decoration:none; transition:all 0.15s;">📥 FB2</a>
+                <a href="/books/#read-${bookId}" onclick="event.stopPropagation();" style="flex:1; text-align:center; padding:7px 0; border-radius:8px; background:rgba(56,189,248,0.1); border:1px solid rgba(56,189,248,0.25); color:#38bdf8; font-size:12px; font-weight:700; text-decoration:none; transition:all 0.15s;">📖 Читать</a>
               </div>
             </div>
           `;
