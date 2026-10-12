@@ -1,10 +1,13 @@
 {
   "online": true,
+  "local_health": true,
+  "funnel_confirmed": true,
+  "public_dns": "ok",
   "public_url": "https://nucbox-k8-plus.tail374af0.ts.net",
-  "one_click_url": "https://nucbox-k8-plus.tail374af0.ts.net/?k=GT342EU06RGK1Csaxx-Z1g",
-  "photos_url": "https://nucbox-k8-plus.tail374af0.ts.net/photos/?k=GT342EU06RGK1Csaxx-Z1g",
-  "books_url": "https://nucbox-k8-plus.tail374af0.ts.net/library?k=GT342EU06RGK1Csaxx-Z1g",
+  "one_click_url": "https://nucbox-k8-plus.tail374af0.ts.net/",
+  "photos_url": "https://nucbox-k8-plus.tail374af0.ts.net/photos/",
+  "books_url": "https://nucbox-k8-plus.tail374af0.ts.net/library/",
   "verbum_url": "https://nucbox-k8-plus.tail374af0.ts.net/verbum",
-  "local_url": "http://192.168.178.118:8081/?k=GT342EU06RGK1Csaxx-Z1g",
-  "updated_at": "2026-09-06 17:09:13"
+  "local_url": "http://192.168.178.118:8081/",
+  "updated_at": "2026-10-12 16:29:14"
 }
