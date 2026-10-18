@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Инженерный 3D-стенд: Аэратор бездрожжевого теста Евсеева (Поколение 2.0)</title>
+  <style>
+    :root {
+      --bg: #0b0f17;
+      --panel: rgba(15, 23, 36, 0.92);
+      --border: rgba(56, 189, 248, 0.25);
+      --accent: #38bdf8;
+      --accent2: #f59e0b;
+      --ok: #10b981;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; user-select: none; }
+    body {
+      margin: 0; overflow: hidden; background: radial-gradient(circle at 50% 35%, #1e293b 0%, #090d14 100%);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text);
+    }
+
+    /* Верхняя шапка паспорта проекта */
+    #header {
+      position: absolute; top: 0; left: 0; right: 0; height: 58px;
+      background: rgba(9, 13, 20, 0.88); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between; padding: 0 24px; z-index: 20;
+    }
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .brand-badge {
+      background: linear-gradient(135deg, #0284c7, #0369a1); color: #fff;
+      font-weight: 800; font-size: 12px; padding: 5px 10px; border-radius: 6px; letter-spacing: 0.5px;
+    }
+    .brand-title { font-size: 16px; font-weight: 700; color: #f8fafc; }
+    .brand-sub { font-size: 12px; color: var(--muted); }
+    .specs-bar { display: flex; gap: 22px; font-size: 12px; }
+    .spec-item span { color: var(--muted); display: block; font-size: 10px; text-transform: uppercase; }
+    .spec-item b { color: var(--accent); font-family: monospace; font-size: 13px; }
+
+    /* Левая панель управления стендом */
+    #left-panel {
+      position: absolute; top: 72px; left: 16px; width: 340px;
+      background: var(--panel); backdrop-filter: blur(14px);
+      border: 1px solid var(--border); border-radius: 12px; padding: 16px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6); z-index: 20;
+      max-height: calc(100vh - 90px); overflow-y: auto;
+    }
+    .section-title {
+      font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+      color: var(--accent); margin: 14px 0 8px 0; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 4px;
+    }
+    .section-title:first-child { margin-top: 0; }
+
+    .control-row { margin-bottom: 12px; }
+    .control-label { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 5px; color: #cbd5e1; }
+    input[type="range"] {
+      width: 100%; accent-color: var(--accent); cursor: pointer; height: 6px; border-radius: 3px;
+    }
+
+    .btn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+    .btn {
+      padding: 9px 12px; border-radius: 8px; border: 1px solid rgba(56, 189, 248, 0.35);
+      background: rgba(30, 41, 59, 0.85); color: #f8fafc; font-weight: 600; font-size: 12px;
+      cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 6px;
+    }
+    .btn:hover { background: rgba(56, 189, 248, 0.2); border-color: var(--accent); }
+    .btn.active { background: #0284c7; border-color: #7dd3fc; box-shadow: 0 0 15px rgba(2, 132, 199, 0.5); }
+    .btn-primary {
+      grid-column: span 2; background: linear-gradient(135deg, #059669, #047857);
+      border-color: #34d399; font-size: 13px; padding: 11px;
+    }
+    .btn-primary:hover { background: linear-gradient(135deg, #10b981, #059669); }
+    .btn-primary.running { background: linear-gradient(135deg, #d97706, #b45309); border-color: #fbbf24; }
+
+    /* Список инженерных узлов */
+    .node-list { display: flex; flex-direction: column; gap: 6px; }
+    .node-btn {
+      text-align: left; padding: 8px 10px; border-radius: 7px; background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255,255,255,0.07); color: #cbd5e1; font-size: 12px; cursor: pointer;
+      transition: 0.15s; display: flex; align-items: center; gap: 8px;
+    }
+    .node-btn:hover, .node-btn.selected {
+      background: rgba(56, 189, 248, 0.15); border-color: var(--accent); color: #fff;
+    }
+    .node-num {
+      width: 20px; height: 20px; border-radius: 50%; background: var(--accent); color: #090d14;
+      font-weight: 800; font-size: 11px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+
+    /* Правая панель: Инженерный разбор узла + Осциллограф */
+    #right-panel {
+      position: absolute; top: 72px; right: 16px; width: 380px;
+      background: var(--panel); backdrop-filter: blur(14px);
+      border: 1px solid var(--border); border-radius: 12px; padding: 16px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6); z-index: 20;
+      max-height: calc(100vh - 90px); overflow-y: auto;
+    }
+    #node-card h2 { margin: 0 0 6px 0; font-size: 15px; color: var(--accent); }
+    .compare-box {
+      background: rgba(9, 13, 20, 0.65); border-radius: 8px; padding: 10px; margin: 8px 0;
+      border-left: 3px solid var(--accent2); font-size: 12px; line-height: 1.45;
+    }
+    .compare-box.new { border-left-color: var(--ok); }
+    .compare-tag { font-size: 10px; font-weight: 800; text-transform: uppercase; display: block; margin-bottom: 3px; }
+    .tech-desc { font-size: 12.5px; line-height: 1.55; color: #cbd5e1; margin-top: 8px; }
+
+    /* Осциллограф телеметрии */
+    #telemetry-box {
+      margin-top: 14px; background: #06090f; border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 8px; padding: 10px;
+    }
+    .tele-header { display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 6px; font-family: monospace; }
+    canvas#scope { width: 100%; height: 120px; display: block; background: #04070b; border-radius: 4px; }
+    .tele-legend { display: flex; gap: 12px; font-size: 10px; margin-top: 6px; color: var(--muted); }
+
+    /* 3D выноски (Hotspots) поверх модели */
+    .hotspot {
+      position: absolute; width: 26px; height: 26px; margin-left: -13px; margin-top: -13px;
+      border-radius: 50%; background: rgba(2, 132, 199, 0.9); border: 2px solid #fff;
+      color: #fff; font-weight: 800; font-size: 12px; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; z-index: 15; box-shadow: 0 0 12px rgba(56, 189, 248, 0.8);
+      transition: transform 0.15s, background 0.15s;
+    }
+    .hotspot:hover, .hotspot.active { transform: scale(1.25); background: var(--accent2); }
+
+    #bottom-hint {
+      position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
+      background: rgba(9, 13, 20, 0.85); border: 1px solid rgba(255,255,255,0.1);
+      padding: 7px 16px; border-radius: 20px; font-size: 12px; color: var(--muted); z-index: 15;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+
+  <!-- Верхний технический паспорт -->
+  <div id="header">
+    <div class="brand">
+      <div class="brand-badge">ПАТЕНТ РФ № 2475028</div>
+      <div>
+        <div class="brand-title">Аэратор бездрожжевого теста Н. В. Евсеева — Концепт 2.0 (Бытовая серия)</div>
+        <div class="brand-sub">Замес и вспенивание непосредственно в хлебной форме | Байонетный затвор | CO₂ / Воздух</div>
+      </div>
+    </div>
+    <div class="specs-bar">
+      <div class="spec-item"><span>Давление</span><b id="hud-press">3.0 бар</b></div>
+      <div class="spec-item"><span>Камера (P·V)</span><b>4.2 бар·л (SEP)</b></div>
+      <div class="spec-item"><span>Привод SELV</span><b id="hud-rpm">24V BLDC / 0 об/м</b></div>
+      <div class="spec-item"><span>Цикл до печи</span><b>60 сек</b></div>
+    </div>
+  </div>
+
+  <!-- Левая панель управления -->
+  <div id="left-panel">
+    <div class="section-title">Интерактивный 3D-разбор конструкции</div>
+
+    <div class="control-row">
+      <div class="control-label">
+        <span>🔧 Взрыв-схема (Exploded View)</span>
+        <b id="val-explode">0%</b>
+      </div>
+      <input type="range" id="slider-explode" min="0" max="100" value="0">
+    </div>
+
+    <div class="control-row">
+      <div class="control-label">
+        <span>🔪 Глубина 3D-разреза камеры</span>
+        <b id="val-cut">По оси валов</b>
+      </div>
+      <input type="range" id="slider-cut" min="-80" max="80" value="0">
+    </div>
+
+    <div class="btn-grid">
+      <button class="btn active" id="btn-cut-toggle" onclick="toggleClipping()">🔍 Разрез: ВКЛ</button>
+      <button class="btn" id="btn-bayonet" onclick="toggleBayonetLock()">🔒 Байонет: ЗАПЕРТ</button>
+      <button class="btn" onclick="resetCamera()">🎥 Общий вид</button>
+      <button class="btn" onclick="focusSealView()">🔬 Макро: Сальник</button>
+      <button class="btn btn-primary" id="btn-cycle" onclick="toggleCycle()">▶ ЗАПУСТИТЬ ЦИКЛ АЭРАЦИИ (60с)</button>
+    </div>
+
+    <div class="section-title">6 ключевых инженерных узлов (Кликните)</div>
+    <div class="node-list" id="node-list"></div>
+  </div>
+
+  <!-- Правая панель: Детальное описание выбранного узла + Осциллограф -->
+  <div id="right-panel">
+    <div id="node-card"></div>
+
+    <div id="telemetry-box">
+      <div class="tele-header">
+        <span style="color:#38bdf8;">📊 ТЕЛЕМЕТРИЯ ESP32 (КОНТРОЛЬ ВЯЗКОСТИ)</span>
+        <span id="cycle-phase" style="color:#10b981;">ОЖИДАНИЕ</span>
+      </div>
+      <canvas id="scope" width="340" height="120"></canvas>
+      <div class="tele-legend">
+        <span><b style="color:#f59e0b;">━━</b> Ток мотора I(t) [Вязкость]</span>
+        <span><b style="color:#38bdf8;">━━</b> Давление CO₂ (бар)</span>
+        <span><b style="color:#10b981;">━━</b> Подъем пены (%)</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="hotspots-container"></div>
+  <div id="bottom-hint">🖱️ ЛКМ — вращение 3D-модели | Колесико — зум | ПКМ — панорама | Клик по точкам [1–6] — фокус на узел</div>
+
+<script>
+// ============================================================================
+// 1. БАЗА ЗНАНИЙ ИНЖЕНЕРНЫХ УЗЛОВ (ДЛЯ ОТЦА — Н. В. ЕВСЕЕВА)
+// ============================================================================
+const ENGINEERING_NODES = [
+  {
+    id: 1,
+    title: "Байонетный силовой затвор (8 зубьев)",
+    pos: new THREE.Vector3(0, 15.8, 2.2),
+    camPos: new THREE.Vector3(16, 19, 18),
+    camTarget: new THREE.Vector3(0, 15.5, 1.5),
+    oldWay: "В промышленном прототипе отрывное усилие крышки (~1,2 тонны при 3 бар) удерживалось мощной сварной станиной и пневмоцилиндром.",
+    newWay: "Чаша-обойма поворачивается за ручки на 22.5° и входит 8 стальными зубьями в ответный венец крышки (принцип автоклава / рожка эспрессо).",
+    details: "Вся осевая нагрузка в 12 кН замыкается внутри стального кольца толщиной 8 мм (сталь 1.4301). Несущий корпус прибора полностью разгружен от давления, что снижает массу машины с 45 кг до 6,8 кг."
+  },
+  {
+    id: 2,
+    title: "Сальник с газовым затвором (Air-Purged Seal)",
+    pos: new THREE.Vector3(-2.1, 17.6, 1.5),
+    camPos: new THREE.Vector3(-8, 19.5, 11),
+    camTarget: new THREE.Vector3(-1.5, 17.3, 1.5),
+    oldWay: "Мучная пыль под давлением 3 бара попадает в кромку манжеты вращающегося вала, вызывая износ или требуя дорогого торцевого уплотнения.",
+    newWay: "Подача рабочего газа (CO₂ / воздух) заведена в кольцевую камеру МЕЖДУ подшипником S6001-2RS и нижней фторопластовой (PTFE) манжетой.",
+    details: "Чистый газ дует сверху вниз вдоль вала со скоростью >15 м/с (на модели показан голубым потоком частиц). Мучная пыль и тесто физически не могут подняться против потока давления к сальнику и подшипникам."
+  },
+  {
+    id: 3,
+    title: "Два встречных геликоидальных венчика + HTD привод",
+    pos: new THREE.Vector3(1.8, 12.2, 1.5),
+    camPos: new THREE.Vector3(14, 14, 16),
+    camTarget: new THREE.Vector3(0, 12.0, 1.5),
+    oldWay: "Одиночный вал в некруглой форме оставляет непромешанную муку в углах либо требует сложного планетарного редуктора внутри зоны давления.",
+    newWay: "Два параллельных вала (Ø12 мм h6), синхронизированных сверху зубчатым ремнем HTD 5M. Вращаются навстречу друг другу с перекрытием зон.",
+    details: "Спиральные рамные лопасти создают в центре формы мощный восходящий вихрь, захватывающий сжатый газ из верхней части камеры и разбивающий его на микропузырьки Ø 50–100 мкм по всему объему."
+  },
+  {
+    id: 4,
+    title: "Замес прямо в форме + Малый объем (P·V < 5 бар·л)",
+    pos: new THREE.Vector3(0, 9.2, 1.5),
+    camPos: new THREE.Vector3(18, 11, 19),
+    camTarget: new THREE.Vector3(0, 10.5, 1.5),
+    oldWay: "Крупный воздушный колокол вокруг формы имеет большой объем сжатого воздуха и подпадает под жесткую сертификацию сосудов под давлением.",
+    newWay: "Плотный теплоизоляционный ложемент вокруг антипригарной формы оставляет всего 1,2 литра свободного газового объема над тестом.",
+    details: "Сохранено главное преимущество патента № 2475028: тесто НЕ перекачивается после взбивания — форма сразу вынимается и ставится в печь. При этом P·V = 3.6 бар·л (в 10 раз ниже порога директивы PED ЕС)."
+  },
+  {
+    id: 5,
+    title: "Гибридный газовый модуль: SodaStream (CO₂) + Насос",
+    pos: new THREE.Vector3(5.0, 11.5, -5.5),
+    camPos: new THREE.Vector3(22, 15, -12),
+    camTarget: new THREE.Vector3(3.5, 12.0, -5.0),
+    oldWay: "Требовался внешний шумный компрессор и пневмомагистраль.",
+    newWay: "Интегрирован порт TR21-4 под стандартный бытовой баллон пищевого CO₂ (SodaStream, 425 г = ~80 буханок) + тихий 24V мембранный компрессор.",
+    details: "Растворимость CO₂ в воде в 50 раз выше, чем у воздуха! Под давлением 3 бара углекислый газ растворяется в водной фазе теста, а при посадке в духовку бурно расширяется, давая вдвое более пышный мякиш."
+  },
+  {
+    id: 6,
+    title: "BLDC-привод 24V и авто-стоп по вязкости пены",
+    pos: new THREE.Vector3(0, 21.2, -3.5),
+    camPos: new THREE.Vector3(-16, 24, 12),
+    camTarget: new THREE.Vector3(0, 20.0, -1.5),
+    oldWay: "Работа жестко по таймеру: при смене партии или влажности муки тесто могло недобиться или осесть.",
+    newWay: "Бесколлекторный мотор 400W (24V SELV) с контроллером ESP32 непрерывно считывает ток фаз (крутящий момент на валах).",
+    details: "По мере насыщения теста газом его плотность и вязкость падают — ток мотора снижается по экспоненте (см. желтый график на осциллографе). Как только производная тока выходит на плато, цикл автоматически завершается."
+  }
+];
+
+// ============================================================================
+// 2. ИНИЦИАЛИЗАЦИЯ СЦЕНЫ И СТУДИЙНОГО PBR-ОКРУЖЕНИЯ (PMREMGenerator)
+// ============================================================================
+const scene = new THREE.Scene();
+
+const camera = new THREE.PerspectiveCamera(38, window.innerWidth / window.innerHeight, 0.5, 300);
+camera.position.set(25, 21, 29);
+
+const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.15;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.localClippingEnabled = true;
+document.body.appendChild(renderer.domElement);
+
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.target.set(0, 13.5, 0);
+controls.enableDamping = true;
+controls.dampingFactor = 0.06;
+controls.maxPolarAngle = Math.PI / 2 + 0.15;
+
+// Создаем процедурную студию (HDR-боксы) для реалистичных бликов на нержавейке
+function createStudioEnvironment(renderer) {
+  const pmrem = new THREE.PMREMGenerator(renderer);
+  const envScene = new THREE.Scene();
+  envScene.background = new THREE.Color(0x111827);
+
+  const boxGeo = new THREE.PlaneGeometry(30, 30);
+  const topLight = new THREE.Mesh(boxGeo, new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.DoubleSide }));
+  topLight.position.set(0, 25, 0); topLight.rotation.x = Math.PI / 2;
+  envScene.add(topLight);
+
+  const sideLight1 = new THREE.Mesh(boxGeo, new THREE.MeshBasicMaterial({ color: 0xbae6fd, side: THREE.DoubleSide }));
+  sideLight1.position.set(25, 10, 15); sideLight1.lookAt(0, 0, 0);
+  envScene.add(sideLight1);
+
+  const sideLight2 = new THREE.Mesh(boxGeo, new THREE.MeshBasicMaterial({ color: 0xfde68a, side: THREE.DoubleSide }));
+  sideLight2.position.set(-25, 12, -15); sideLight2.lookAt(0, 0, 0);
+  envScene.add(sideLight2);
+
+  const envMap = pmrem.fromScene(envScene, 0.04).texture;
+  pmrem.dispose();
+  return envMap;
+}
+scene.environment = createStudioEnvironment(renderer);
+
+// Источники света и тени
+const keyLight = new THREE.DirectionalLight(0xffffff, 1.4);
+keyLight.position.set(18, 35, 25);
+keyLight.castShadow = true;
+keyLight.shadow.mapSize.set(2048, 2048);
+scene.add(keyLight);
+
+const fillLight = new THREE.DirectionalLight(0x38bdf8, 0.55);
+fillLight.position.set(-22, 18, 12);
+scene.add(fillLight);
+
+const rimLight = new THREE.PointLight(0xf59e0b, 0.7, 50);
+rimLight.position.set(12, 16, -18);
+scene.add(rimLight);
+
+// Плоскость динамического 3D-разреза
+const clipPlane = new THREE.Plane(new THREE.Vector3(0, 0, -1), 1.5);
+
+// Инженерная сетка стола
+const grid = new THREE.GridHelper(60, 60, 0x1e3a8a, 0x0f172a);
+grid.position.y = 0;
+scene.add(grid);
+
+// ============================================================================
+// 3. PBR-МАТЕРИАЛЫ (НЕРЖАВЕЙКА 1.4301, ЛАТУНЬ, МЕДЬ, СИЛИКОН FDA, PTFE)
+// ============================================================================
+const mats = {
+  brushedSteel: new THREE.MeshPhysicalMaterial({
+    color: 0xdbe2ea, metalness: 0.88, roughness: 0.24, clearcoat: 0.1
+  }),
+  polishedSteel: new THREE.MeshPhysicalMaterial({
+    color: 0xf1f5f9, metalness: 0.96, roughness: 0.08
+  }),
+  cutSteel: new THREE.MeshPhysicalMaterial({
+    color: 0xcbd5e1, metalness: 0.85, roughness: 0.22,
+    side: THREE.DoubleSide, clippingPlanes: [clipPlane]
+  }),
+  darkAnodized: new THREE.MeshPhysicalMaterial({
+    color: 0x1e293b, metalness: 0.7, roughness: 0.35
+  }),
+  darkCut: new THREE.MeshPhysicalMaterial({
+    color: 0x263346, metalness: 0.65, roughness: 0.4,
+    side: THREE.DoubleSide, clippingPlanes: [clipPlane]
+  }),
+  brass: new THREE.MeshPhysicalMaterial({
+    color: 0xfbbf24, metalness: 0.9, roughness: 0.18
+  }),
+  copper: new THREE.MeshPhysicalMaterial({
+    color: 0xd97706, metalness: 0.88, roughness: 0.25
+  }),
+  panTeflon: new THREE.MeshPhysicalMaterial({
+    color: 0xb45309, metalness: 0.45, roughness: 0.35,
+    side: THREE.DoubleSide, clippingPlanes: [clipPlane]
+  }),
+  siliconeRed: new THREE.MeshPhysicalMaterial({
+    color: 0xef4444, roughness: 0.3, transmission: 0.2, transparent: true, opacity: 0.92,
+    side: THREE.DoubleSide, clippingPlanes: [clipPlane]
+  }),
+  ptfeBlue: new THREE.MeshPhysicalMaterial({
+    color: 0x0284c7, roughness: 0.25,
+    side: THREE.DoubleSide, clippingPlanes: [clipPlane]
+  }),
+  co2Cylinder: new THREE.MeshPhysicalMaterial({
+    color: 0x059669, metalness: 0.5, roughness: 0.28, clearcoat: 0.4
+  }),
+  beltRubber: new THREE.MeshStandardMaterial({
+    color: 0x0f172a, roughness: 0.85, metalness: 0.1
+  })
+};
+
+// Процедурная ячеистая текстура вспененного теста для реализма в разрезе
+function createFoamTexture() {
+  const c = document.createElement('canvas');
+  c.width = 256; c.height = 256;
+  const ctx = c.getContext('2d');
+  ctx.fillStyle = '#fde68a';
+  ctx.fillRect(0, 0, 256, 256);
+  for (let i = 0; i < 420; i++) {
+    const x = Math.random() * 256;
+    const y = Math.random() * 256;
+    const r = 1 + Math.random() * 4.5;
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.fillStyle = i % 3 === 0 ? '#d97706' : '#fef3c7';
+    ctx.fill();
+  }
+  const tex = new THREE.CanvasTexture(c);
+  tex.wrapS = tex.wrapT = THREE.RepeatWrapping;
+  return tex;
+}
+const doughMat = new THREE.MeshStandardMaterial({
+  map: createFoamTexture(), bumpMap: createFoamTexture(), bumpScale: 0.15,
+  roughness: 0.65, side: THREE.DoubleSide, clippingPlanes: [clipPlane]
+});
+
+// ============================================================================
+// 4. СБОРОЧНЫЕ ЕДИНИЦЫ МАШИНЫ (ДЛЯ ВЗРЫВ-СХЕМЫ И АНИМАЦИИ)
+// ============================================================================
+const groups = {
+  baseFrame: new THREE.Group(),    // Несущее шасси в стиле кофемашин ECM
+  headPlate: new THREE.Group(),    // Силовая плита крышки + байонетный венец
+  sealCartridge: new THREE.Group(),// Подшипниково-сальниковые стаканы с продувкой
+  agitators: new THREE.Group(),    // 2 геликоидальных венчика + зажимные муфты
+  driveUnit: new THREE.Group(),    // BLDC мотор, редуктор, шкивы и ремень HTD
+  topCover: new THREE.Group(),     // Верхний кожух с манометром и тумблерами
+  bakingPan: new THREE.Group(),    // Хлебопекарная форма + тесто
+  pressureBowl: new THREE.Group(), // Съемная байонетная колба высокого давления
+  pneumatics: new THREE.Group()    // Баллон SodaStream CO2, редуктор, клапаны
+};
+Object.values(groups).forEach(g => scene.add(g));
+
+// --- 4.1. Шасси и корпус (Base & Column) ---
+const basePlate = new THREE.Mesh(new THREE.BoxGeometry(19, 1.4, 23), mats.darkAnodized);
+basePlate.position.set(0, 0.7, -1.5);
+basePlate.receiveShadow = true;
+groups.baseFrame.add(basePlate);
+
+// Резиновые ножки
+[[-8, -11], [8, -11], [-8, 8], [8, 8]].forEach(([x, z]) => {
+  const foot = new THREE.Mesh(new THREE.CylinderGeometry(1.1, 0.9, 0.5, 24), mats.beltRubber);
+  foot.position.set(x, 0.25, z);
+  groups.baseFrame.add(foot);
+});
+
+// Задняя колонна из шлифованной нержавейки
+const rearColumn = new THREE.Mesh(new THREE.BoxGeometry(17.5, 22, 7.5), mats.brushedSteel);
+rearColumn.position.set(0, 12.4, -8.5);
+groups.baseFrame.add(rearColumn);
+
+// Нижний центрирующий пьедестал под чашу
+const dripTray = new THREE.Mesh(new THREE.CylinderGeometry(5.8, 6.2, 0.6, 48), mats.polishedSteel);
+dripTray.position.set(0, 1.7, 1.5);
+groups.baseFrame.add(dripTray);
+
+// --- 4.2. Силовая крышка камеры + Ответный байонетный венец ---
+// Профиль крышки методом токарного вращения (LatheGeometry)
+const lidPoints = [
+  new THREE.Vector2(3.6, 16.0),
+  new THREE.Vector2(6.5, 16.0),
+  new THREE.Vector2(6.5, 14.8),
+  new THREE.Vector2(5.9, 14.8),
+  new THREE.Vector2(5.9, 15.3),
+  new THREE.Vector2(3.6, 15.3)
+];
+const headFlange = new THREE.Mesh(new THREE.LatheGeometry(lidPoints, 64), mats.cutSteel);
+headFlange.position.set(0, 0, 1.5);
+groups.headPlate.add(headFlange);
+
+// Основная несущая плита 10 мм (AISI 304)
+const mainDeck = new THREE.Mesh(new THREE.BoxGeometry(16.8, 1.0, 16.5), mats.cutSteel);
+mainDeck.position.set(0, 16.5, -0.8);
+groups.headPlate.add(mainDeck);
+
+// 8 ответных зубьев байонета на крышке
+for (let i = 0; i < 8; i++) {
+  const angle = (i * Math.PI) / 4;
+  if (Math.sin(angle) > 0.2) continue; // Не рисуем в зоне переднего разреза для наглядности
+  const lug = new THREE.Mesh(new THREE.BoxGeometry(1.4, 0.45, 0.7), mats.polishedSteel);
+  lug.position.set(Math.cos(angle) * 6.0, 14.95, 1.5 + Math.sin(angle) * 6.0);
+  lug.rotation.y = -angle;
+  groups.headPlate.add(lug);
+}
+
+// Силиконовое кольцо уплотнения торца крышки (FDA O-Ring)
+const mainORing = new THREE.Mesh(new THREE.TorusGeometry(5.35, 0.26, 20, 64), mats.siliconeRed);
+mainORing.rotation.x = Math.PI / 2;
+mainORing.position.set(0, 15.25, 1.5);
+groups.headPlate.add(mainORing);
+
+// --- 4.3. Подшипниково-сальниковые картриджи с продувкой (2 вала) ---
+const SHAFT_X = [-2.1, 2.1];
+
+SHAFT_X.forEach((sx) => {
+  const cart = new THREE.Group();
+  cart.position.set(sx, 16.8, 1.5);
+
+  // Точеный корпус стакана (Латунь / Нержавейка в разрезе)
+  const housingPts = [
+    new THREE.Vector2(0.65, -1.6),
+    new THREE.Vector2(1.55, -1.6),
+    new THREE.Vector2(1.55, 1.6),
+    new THREE.Vector2(0.65, 1.6)
+  ];
+  const housing = new THREE.Mesh(new THREE.LatheGeometry(housingPts, 40), mats.cutSteel);
+  cart.add(housing);
+
+  // 2 подшипника S6001-2RS (Внешняя обойма + внутренняя + 10 стальных шариков!)
+  [-0.9, 1.1].forEach((by) => {
+    const outerRace = new THREE.Mesh(new THREE.CylinderGeometry(1.3, 1.3, 0.5, 32, 1, true), mats.darkCut);
+    outerRace.position.y = by;
+    cart.add(outerRace);
+
+    for (let b = 0; b < 10; b++) {
+      const ba = (b * Math.PI * 2) / 10;
+      const ball = new THREE.Mesh(new THREE.SphereGeometry(0.21, 16, 16), mats.polishedSteel);
+      ball.position.set(Math.cos(ba) * 0.95, by, Math.sin(ba) * 0.95);
+      cart.add(ball);
+    }
+  });
+
+  // Нижняя и средняя манжета PTFE (синие) с воздушной камерой между ними
+  const sealLower = new THREE.Mesh(new THREE.TorusGeometry(0.75, 0.18, 16, 40), mats.ptfeBlue);
+  sealLower.rotation.x = Math.PI / 2;
+  sealLower.position.y = -1.35;
+  cart.add(sealLower);
+
+  const sealUpper = new THREE.Mesh(new THREE.TorusGeometry(0.75, 0.16, 16, 40), mats.siliconeRed);
+  sealUpper.rotation.x = Math.PI / 2;
+  sealUpper.position.y = -0.25;
+  cart.add(sealUpper);
+
+  // Латунный штуцер подачи продувочного газа в камеру сальника
+  const fitting = new THREE.Mesh(new THREE.CylinderGeometry(0.25, 0.25, 0.9, 16), mats.brass);
+  fitting.rotation.z = Math.PI / 2;
+  fitting.position.set(sx < 0 ? -1.7 : 1.7, 0.2, 0);
+  cart.add(fitting);
+
+  groups.sealCartridge.add(cart);
+});
+
+// Частицы продувочного газа (Air-Purge Flow сверху вниз вдоль валов)
+const purgeParticles = [];
+const particleGeo = new THREE.SphereGeometry(0.11, 8, 8);
+const particleMat = new THREE.MeshBasicMaterial({ color: 0x38bdf8 });
+for (let i = 0; i < 50; i++) {
+  const p = new THREE.Mesh(particleGeo, particleMat);
+  const side = i % 2 === 0 ? -2.1 : 2.1;
+  const angle = Math.random() * Math.PI * 2;
+  p.userData = { side, angle, progress: Math.random() };
+  groups.sealCartridge.add(p);
+  purgeParticles.push(p);
+}
+
+// --- 4.4. Два геликоидальных венчика (Agitators) с муфтами Klemmringe ---
+const whiskMeshes = [];
+
+SHAFT_X.forEach((sx, idx) => {
+  const wGroup = new THREE.Group();
+  wGroup.position.set(sx, 14.5, 1.5);
+
+  // Прецизионный вал Ø12 мм h6
+  const shaft = new THREE.Mesh(new THREE.CylinderGeometry(0.45, 0.45, 11.2, 32), mats.polishedSteel);
+  shaft.position.y = -1.2;
+  wGroup.add(shaft);
+
+  // Разрезная зажимная втулка (Klemmring) с винтом под шестигранник
+  const clamp = new THREE.Mesh(new THREE.CylinderGeometry(0.85, 0.85, 0.7, 24), mats.darkAnodized);
+  clamp.position.y = -1.2;
+  wGroup.add(clamp);
+  const bolt = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.18, 1.3, 12), mats.brass);
+  bolt.rotation.z = Math.PI / 2;
+  bolt.position.set(0, -1.2, 0.55);
+  wGroup.add(bolt);
+
+  // 2 геликоидальные спиральные лопасти (TubeGeometry по трехмерной спирали)
+  for (let bladeIdx = 0; bladeIdx < 2; bladeIdx++) {
+    const curvePts = [];
+    const turns = 0.85;
+    const steps = 32;
+    const dir = idx === 0 ? 1 : -1;
+    for (let s = 0; s <= steps; s++) {
+      const t = s / steps;
+      const a = bladeIdx * Math.PI + t * Math.PI * 2 * turns * dir;
+      const r = 1.95 * Math.sin(t * Math.PI * 0.85 + 0.2);
+      const y = -1.5 - t * 5.2;
+      curvePts.push(new THREE.Vector3(Math.cos(a) * r, y, Math.sin(a) * r));
+    }
+    const curve = new THREE.CatmullRomCurve3(curvePts);
+    const bladeGeo = new THREE.TubeGeometry(curve, 36, 0.18, 12, false);
+    const blade = new THREE.Mesh(bladeGeo, mats.polishedSteel);
+    wGroup.add(blade);
+  }
+
+  // Нижняя скребковая перемычка у дна формы
+  const bottomBar = new THREE.Mesh(new THREE.BoxGeometry(3.5, 0.28, 0.35), mats.polishedSteel);
+  bottomBar.position.y = -6.7;
+  wGroup.add(bottomBar);
+
+  groups.agitators.add(wGroup);
+  whiskMeshes.push(wGroup);
+});
+
+// --- 4.5. Привод: BLDC 24V мотор + планетарный редуктор + ремень HTD ---
+// Зубчатые шкивы на валах венчиков
+const pulleys = [];
+SHAFT_X.forEach((sx) => {
+  const pulley = new THREE.Group();
+  pulley.position.set(sx, 19.3, 1.5);
+  const body = new THREE.Mesh(new THREE.CylinderGeometry(1.45, 1.45, 0.8, 36), mats.brushedSteel);
+  pulley.add(body);
+  // Зубчики шкива
+  for (let t = 0; t < 18; t++) {
+    const a = (t * Math.PI * 2) / 18;
+    const tooth = new THREE.Mesh(new THREE.BoxGeometry(0.18, 0.82, 0.18), mats.darkAnodized);
+    tooth.position.set(Math.cos(a) * 1.45, 0, Math.sin(a) * 1.45);
+    tooth.rotation.y = -a;
+    pulley.add(tooth);
+  }
+  groups.driveUnit.add(pulley);
+  pulleys.push(pulley);
+});
+
+// BLDC Мотор с оребрением охлаждения и видимой медной обмоткой
+const motorGroup = new THREE.Group();
+motorGroup.position.set(0, 19.6, -4.2);
+
+const gearbox = new THREE.Mesh(new THREE.CylinderGeometry(2.1, 2.1, 1.8, 32), mats.brushedSteel);
+gearbox.position.y = -1.0;
+motorGroup.add(gearbox);
+
+const statorCore = new THREE.Mesh(new THREE.CylinderGeometry(2.3, 2.3, 2.6, 32), mats.darkAnodized);
+statorCore.position.y = 1.2;
+motorGroup.add(statorCore);
+
+// Охлаждающие ребра и медные катушки статора
+for (let f = 0; f < 6; f++) {
+  const fin = new THREE.Mesh(new THREE.CylinderGeometry(2.55, 2.55, 0.14, 32), mats.darkAnodized);
+  fin.position.y = 0.2 + f * 0.4;
+  motorGroup.add(fin);
+}
+for (let c = 0; c < 12; c++) {
+  const a = (c * Math.PI * 2) / 12;
+  const coil = new THREE.Mesh(new THREE.BoxGeometry(0.45, 2.2, 0.6), mats.copper);
+  coil.position.set(Math.cos(a) * 2.15, 1.2, Math.sin(a) * 2.15);
+  coil.rotation.y = -a;
+  motorGroup.add(coil);
+}
+
+// Ведущий шкив мотора
+const motorPulley = new THREE.Mesh(new THREE.CylinderGeometry(1.2, 1.2, 0.8, 32), mats.brass);
+motorPulley.position.y = -0.3;
+motorGroup.add(motorPulley);
+pulleys.push(motorPulley);
+
+groups.driveUnit.add(motorGroup);
+
+// Зубчатый ремень HTD, огибающий 3 шкива
+const beltCurve = new THREE.CatmullRomCurve3([
+  new THREE.Vector3(-3.4, 19.3, 1.5),
+  new THREE.Vector3(-2.1, 19.3, 2.95),
+  new THREE.Vector3(2.1, 19.3, 2.95),
+  new THREE.Vector3(3.4, 19.3, 1.5),
+  new THREE.Vector3(1.2, 19.3, -4.2),
+  new THREE.Vector3(0, 19.3, -5.4),
+  new THREE.Vector3(-1.2, 19.3, -4.2)
+], true);
+const beltGeo = new THREE.TubeGeometry(beltCurve, 80, 0.22, 8, true);
+const beltMesh = new THREE.Mesh(beltGeo, mats.beltRubber);
+groups.driveUnit.add(beltMesh);
+
+// --- 4.6. Верхний кожух с манометром и панелью управления ---
+const hoodPts = [
+  new THREE.Vector2(0, 0), new THREE.Vector2(17.5, 0),
+  new THREE.Vector2(17.5, 5.2), new THREE.Vector2(0, 5.2)
+];
+const topBox = new THREE.Mesh(new THREE.BoxGeometry(17.5, 5.2, 17.8), mats.cutSteel);
+topBox.position.set(0, 21.8, -0.9);
+groups.topCover.add(topBox);
+
+// Аналоговый манометр с латунным ободком на передней панели
+const gaugeRim = new THREE.Mesh(new THREE.CylinderGeometry(1.75, 1.75, 0.5, 36), mats.brass);
+gaugeRim.rotation.x = Math.PI / 2;
+gaugeRim.position.set(0, 21.8, 8.1);
+groups.topCover.add(gaugeRim);
+
+const gaugeFace = new THREE.Mesh(new THREE.CylinderGeometry(1.5, 1.5, 0.55, 36), new THREE.MeshBasicMaterial({ color: 0xf8fafc }));
+gaugeFace.rotation.x = Math.PI / 2;
+gaugeFace.position.set(0, 21.8, 8.12);
+groups.topCover.add(gaugeFace);
+
+const gaugeNeedle = new THREE.Mesh(new THREE.BoxGeometry(0.12, 1.2, 0.1), new THREE.MeshBasicMaterial({ color: 0xef4444 }));
+gaugeNeedle.position.set(0, 21.8, 8.45);
+gaugeNeedle.rotation.z = 0.8;
+groups.topCover.add(gaugeNeedle);
+
+// --- 4.7. Хлебопекарная форма (Backschüssel) и тесто с микропузырьками ---
+const panPts = [
+  new THREE.Vector2(0, 6.2),
+  new THREE.Vector2(4.5, 6.2),
+  new THREE.Vector2(4.95, 14.8),
+  new THREE.Vector2(5.25, 14.8),
+  new THREE.Vector2(5.25, 14.5),
+  new THREE.Vector2(4.75, 14.5),
+  new THREE.Vector2(4.35, 6.45),
+  new THREE.Vector2(0, 6.45)
+];
+const panMesh = new THREE.Mesh(new THREE.LatheGeometry(panPts, 64), mats.panTeflon);
+panMesh.position.set(0, 0, 1.5);
+groups.bakingPan.add(panMesh);
+
+// Масса теста (динамически поднимается и меняет форму мениска)
+const doughMesh = new THREE.Mesh(new THREE.CylinderGeometry(4.55, 4.35, 4.2, 48), doughMat);
+doughMesh.position.set(0, 8.6, 1.5);
+groups.bakingPan.add(doughMesh);
+
+// Частицы пузырьков CO2 внутри теста
+const foamBubbles = [];
+const bubbleGeo = new THREE.SphereGeometry(0.14, 8, 8);
+const bubbleMat = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.75 });
+for (let i = 0; i < 65; i++) {
+  const b = new THREE.Mesh(bubbleGeo, bubbleMat);
+  b.userData = {
+    r: 0.6 + Math.random() * 3.6,
+    a: Math.random() * Math.PI * 2,
+    yOff: Math.random()
+  };
+  groups.bakingPan.add(b);
+  foamBubbles.push(b);
+}
+
+// --- 4.8. Наружная байонетная чаша высокого давления + ложемент ---
+const bowlPts = [
+  new THREE.Vector2(0, 5.2),
+  new THREE.Vector2(5.85, 5.2),
+  new THREE.Vector2(5.85, 15.2),
+  new THREE.Vector2(6.35, 15.2),
+  new THREE.Vector2(6.35, 14.6),
+  new THREE.Vector2(5.45, 14.6),
+  new THREE.Vector2(5.45, 5.75),
+  new THREE.Vector2(0, 5.75)
+];
+const bowlMesh = new THREE.Mesh(new THREE.LatheGeometry(bowlPts, 64), mats.cutSteel);
+bowlMesh.position.set(0, 0, 1.5);
+groups.pressureBowl.add(bowlMesh);
+
+// Внутренний вытеснитель объема (Ложемент из PETG/PA12 для P*V < 5 бар*л)
+const insertPts = [
+  new THREE.Vector2(4.42, 5.76),
+  new THREE.Vector2(5.42, 5.76),
+  new THREE.Vector2(5.42, 14.4),
+  new THREE.Vector2(4.96, 14.4)
+];
+const insertMesh = new THREE.Mesh(new THREE.LatheGeometry(insertPts, 64), mats.ptfeBlue);
+insertMesh.position.set(0, 0, 1.5);
+groups.pressureBowl.add(insertMesh);
+
+// 8 зубьев байонета на самой чаше + 2 боковые точеные рукоятки с накаткой
+for (let i = 0; i < 8; i++) {
+  const angle = (i * Math.PI) / 4;
+  if (Math.sin(angle) > 0.2) continue;
+  const lug = new THREE.Mesh(new THREE.BoxGeometry(1.35, 0.42, 0.65), mats.brass);
+  lug.position.set(Math.cos(angle) * 6.0, 15.38, 1.5 + Math.sin(angle) * 6.0);
+  lug.rotation.y = -angle;
+  groups.pressureBowl.add(lug);
+}
+
+[-1, 1].forEach((dir) => {
+  const hArm = new THREE.Mesh(new THREE.CylinderGeometry(0.38, 0.38, 2.2, 20), mats.polishedSteel);
+  hArm.rotation.z = Math.PI / 2;
+  hArm.position.set(dir * 6.7, 13.6, 1.5);
+  groups.pressureBowl.add(hArm);
+
+  const grip = new THREE.Mesh(new THREE.CylinderGeometry(0.55, 0.55, 2.4, 24), mats.darkAnodized);
+  grip.rotation.z = Math.PI / 2;
+  grip.position.set(dir * 8.4, 13.6, 1.5);
+  groups.pressureBowl.add(grip);
+});
+
+// --- 4.9. Пневмомодуль: Баллон SodaStream CO2 + Редуктор TR21-4 + Магистраль ---
+const co2Pts = [
+  new THREE.Vector2(0, 2.0),
+  new THREE.Vector2(2.1, 2.0),
+  new THREE.Vector2(2.1, 13.0),
+  new THREE.Vector2(0.75, 14.8),
+  new THREE.Vector2(0.75, 15.6),
+  new THREE.Vector2(0, 15.6)
+];
+const co2Bottle = new THREE.Mesh(new THREE.LatheGeometry(co2Pts, 40), mats.co2Cylinder);
+co2Bottle.position.set(5.2, 0, -6.2);
+groups.pneumatics.add(co2Bottle);
+
+// Латунный редуктор TR21-4 и предохранительный клапан (Sicherheitsventil)
+const regulator = new THREE.Mesh(new THREE.CylinderGeometry(0.95, 0.95, 1.6, 24), mats.brass);
+regulator.position.set(5.2, 16.3, -6.2);
+groups.pneumatics.add(regulator);
+
+const safetyValve = new THREE.Mesh(new THREE.CylinderGeometry(0.4, 0.4, 1.4, 16), mats.siliconeRed);
+safetyValve.rotation.z = -Math.PI / 4;
+safetyValve.position.set(6.1, 16.8, -6.2);
+groups.pneumatics.add(safetyValve);
+
+// Армированная газовая трубка от редуктора к обоим сальникам (Air-Purge Manifold)
+const hoseCurve = new THREE.CatmullRomCurve3([
+  new THREE.Vector3(5.2, 16.8, -5.4),
+  new THREE.Vector3(5.0, 17.5, -1.5),
+  new THREE.Vector3(3.8, 17.0, 1.5),
+  new THREE.Vector3(0, 17.0, 1.5),
+  new THREE.Vector3(-3.8, 17.0, 1.5)
+]);
+const hoseMesh = new THREE.Mesh(new THREE.TubeGeometry(hoseCurve, 48, 0.18, 12, false), mats.polishedSteel);
+groups.pneumatics.add(hoseMesh);
+
+// ============================================================================
+// 5. UI: КАРТОЧКИ УЗЛОВ, 3D-ВЫНОСКИ (HOTSPOTS) И КАМЕРА
+// ============================================================================
+const nodeListEl = document.getElementById('node-list');
+const hotspotsContainer = document.getElementById('hotspots-container');
+const hotspotEls = [];
+let selectedNodeId = 1;
+
+let camAnim = null;
+
+function selectNode(nodeId, animateCam = true) {
+  selectedNodeId = nodeId;
+  const node = ENGINEERING_NODES.find(n => n.id === nodeId);
+
+  document.querySelectorAll('.node-btn').forEach((b, i) => {
+    b.classList.toggle('selected', i + 1 === nodeId);
+  });
+  hotspotEls.forEach((h, i) => {
+    h.el.classList.toggle('active', i + 1 === nodeId);
+  });
+
+  document.getElementById('node-card').innerHTML = `
+    <h2>Узел №${node.id}: ${node.title}</h2>
+    <div class="compare-box">
+      <span class="compare-tag" style="color:#f59e0b;">⚠️ Промышленный прототип 1.0 (2011)</span>
+      ${node.oldWay}
+    </div>
+    <div class="compare-box new">
+      <span class="compare-tag" style="color:#10b981;">✅ Бытовая серия 2.0 (Модернизация)</span>
+      ${node.newWay}
+    </div>
+    <div class="tech-desc">${node.details}</div>
+  `;
+
+  if (animateCam) {
+    camAnim = {
+      startPos: camera.position.clone(),
+      endPos: node.camPos.clone(),
+      startTarget: controls.target.clone(),
+      endTarget: node.camTarget.clone(),
+      t: 0
+    };
+  }
+}
+
+ENGINEERING_NODES.forEach((n) => {
+  const btn = document.createElement('button');
+  btn.className = 'node-btn';
+  btn.innerHTML = `<span class="node-num">${n.id}</span><span>${n.title}</span>`;
+  btn.onclick = () => selectNode(n.id, true);
+  nodeListEl.appendChild(btn);
+
+  const hs = document.createElement('div');
+  hs.className = 'hotspot';
+  hs.textContent = n.id;
+  hs.onclick = () => selectNode(n.id, true);
+  hotspotsContainer.appendChild(hs);
+  hotspotEls.push({ el: hs, pos: n.pos });
+});
+selectNode(1, false);
+
+function resetCamera() {
+  camAnim = {
+    startPos: camera.position.clone(),
+    endPos: new THREE.Vector3(25, 21, 29),
+    startTarget: controls.target.clone(),
+    endTarget: new THREE.Vector3(0, 13.5, 0),
+    t: 0
+  };
+}
+
+function focusSealView() {
+  selectNode(2, true);
+}
+
+// ============================================================================
+// 6. УПРАВЛЕНИЕ ВЗРЫВ-СХЕМОЙ, РАЗРЕЗОМ, БАЙОНЕТОМ И ОСЦИЛЛОГРАФОМ
+// ============================================================================
+let explodeFactor = 0;
+let isClipping = true;
+let isBayonetLocked = true;
+let isRunningCycle = false;
+let cycleTime = 0;
+
+document.getElementById('slider-explode').addEventListener('input', (e) => {
+  explodeFactor = parseFloat(e.target.value) / 100;
+  document.getElementById('val-explode').textContent = `${e.target.value}%`;
+});
+
+document.getElementById('slider-cut').addEventListener('input', (e) => {
+  const val = parseFloat(e.target.value) / 10;
+  clipPlane.constant = 1.5 + val;
+  document.getElementById('val-cut').textContent = `${val > 0 ? '+' : ''}${val.toFixed(1)} см`;
+});
+
+function toggleClipping() {
+  isClipping = !isClipping;
+  renderer.localClippingEnabled = isClipping;
+  const btn = document.getElementById('btn-cut-toggle');
+  btn.textContent = isClipping ? '🔍 Разрез: ВКЛ' : '🔍 Разрез: ВЫКЛ';
+  btn.classList.toggle('active', isClipping);
+}
+
+function toggleBayonetLock() {
+  if (isRunningCycle) toggleCycle();
+  isBayonetLocked = !isBayonetLocked;
+  const btn = document.getElementById('btn-bayonet');
+  btn.textContent = isBayonetLocked ? '🔒 Байонет: ЗАПЕРТ' : '🔓 Байонет: ОТКРЫТ';
+  btn.classList.toggle('active', !isBayonetLocked);
+}
+
+// Осциллограф (Canvas 2D)
+const scopeCanvas = document.getElementById('scope');
+const sCtx = scopeCanvas.getContext('2d');
+const historyData = [];
+
+function toggleCycle() {
+  if (!isBayonetLocked) toggleBayonetLock();
+  isRunningCycle = !isRunningCycle;
+  const btn = document.getElementById('btn-cycle');
+  if (isRunningCycle) {
+    cycleTime = 0;
+    historyData.length = 0;
+    btn.textContent = '⏹ ОСТАНОВИТЬ ЦИКЛ (ИДЕТ АЭРАЦИЯ...)';
+    btn.classList.add('running');
+  } else {
+    btn.textContent = '▶ ЗАПУСТИТЬ ЦИКЛ АЭРАЦИИ (60с)';
+    btn.classList.remove('running');
+    document.getElementById('cycle-phase').textContent = 'ОСТАНОВЛЕНО';
+    document.getElementById('hud-rpm').textContent = '24V BLDC / 0 об/м';
+  }
+}
+
+function drawScope() {
+  sCtx.clearRect(0, 0, scopeCanvas.width, scopeCanvas.height);
+
+  // Сетка осциллографа
+  sCtx.strokeStyle = 'rgba(56, 189, 248, 0.12)';
+  sCtx.lineWidth = 1;
+  for (let x = 0; x < scopeCanvas.width; x += 34) {
+    sCtx.beginPath(); sCtx.moveTo(x, 0); sCtx.lineTo(x, scopeCanvas.height); sCtx.stroke();
+  }
+  for (let y = 0; y < scopeCanvas.height; y += 30) {
+    sCtx.beginPath(); sCtx.moveTo(0, y); sCtx.lineTo(scopeCanvas.width, y); sCtx.stroke();
+  }
+
+  if (historyData.length < 2) return;
+
+  const drawCurve = (key, color) => {
+    sCtx.strokeStyle = color;
+    sCtx.lineWidth = 2;
+    sCtx.beginPath();
+    historyData.forEach((pt, idx) => {
+      const x = (idx / 240) * scopeCanvas.width;
+      const y = scopeCanvas.height - pt[key] * (scopeCanvas.height - 14) - 6;
+      if (idx === 0) sCtx.moveTo(x, y);
+      else sCtx.lineTo(x, y);
+    });
+    sCtx.stroke();
+  };
+
+  drawCurve('pressure', '#38bdf8');
+  drawCurve('current', '#f59e0b');
+  drawCurve('foam', '#10b981');
+}
+
+// ============================================================================
+// 7. ГЛАВНЫЙ ЦИКЛ СИМУЛЯЦИИ И РЕНДЕРИНГА
+// ============================================================================
+let bayoLift = 0;
+let bayoRot = 0;
+
+function animate() {
+  requestAnimationFrame(animate);
+
+  // Плавный подлет камеры к выбранному узлу
+  if (camAnim) {
+    camAnim.t += 0.045;
+    const k = 1 - Math.pow(1 - Math.min(camAnim.t, 1), 3);
+    camera.position.lerpVectors(camAnim.startPos, camAnim.endPos, k);
+    controls.target.lerpVectors(camAnim.startTarget, camAnim.endTarget, k);
+    if (camAnim.t >= 1) camAnim = null;
+  }
+  controls.update();
+
+  // Кинематика взрыв-схемы (Exploded View) и запирания байонета
+  const targetLift = isBayonetLocked ? 0 : -4.4;
+  const targetRot = isBayonetLocked ? 0 : -0.39; // Поворот на 22.5° (шаг 8 зубьев)
+  bayoLift += (targetLift - bayoLift) * 0.1;
+  bayoRot += (targetRot - bayoRot) * 0.1;
+
+  groups.topCover.position.y = explodeFactor * 6.5;
+  groups.driveUnit.position.y = explodeFactor * 3.8;
+  groups.sealCartridge.position.y = explodeFactor * 1.8;
+  groups.agitators.position.y = -explodeFactor * 1.4;
+  groups.bakingPan.position.y = bayoLift - explodeFactor * 4.2;
+  groups.pressureBowl.position.y = bayoLift - explodeFactor * 8.2;
+  groups.pressureBowl.rotation.y = bayoRot * (1 - explodeFactor);
+  groups.pneumatics.position.x = explodeFactor * 3.5;
+
+  // Симуляция физического цикла замеса и аэрации под давлением
+  let currentRpm = 0;
+  let currentPress = isBayonetLocked ? 3.0 : 0.0;
+  let foamLevel = 0.0;
+
+  if (isRunningCycle) {
+    cycleTime += 0.04;
+    const progress = Math.min(cycleTime / 24, 1.0); // Полный цикл за ~24 сек демонстрации
+
+    let motorCurrentNorm = 0.1;
+    if (progress < 0.15) {
+      // Фаза 1: Наддув CO2 и продувка сальников
+      currentPress = (progress / 0.15) * 3.2;
+      currentRpm = 120;
+      motorCurrentNorm = 0.35;
+      document.getElementById('cycle-phase').textContent = '1/4: НАДДУВ CO₂ (3.2 БАР)';
+    } else if (progress < 0.42) {
+      // Фаза 2: Замес густого теста (Пик момента на валах)
+      currentPress = 3.2;
+      currentRpm = 220;
+      motorCurrentNorm = 0.88 + Math.sin(cycleTime * 6) * 0.05;
+      foamLevel = ((progress - 0.15) / 0.27) * 0.25;
+      document.getElementById('cycle-phase').textContent = '2/4: ЗАМЕС (ПИК ВЯЗКОСТИ)';
+    } else if (progress < 0.88) {
+      // Фаза 3: Скоростная аэрация 900 об/мин — падение вязкости и тока по мере сбивания пены
+      currentPress = 3.0;
+      currentRpm = 900;
+      const aerProg = (progress - 0.42) / 0.46;
+      motorCurrentNorm = 0.85 * Math.exp(-1.9 * aerProg) + 0.18;
+      foamLevel = 0.25 + aerProg * 0.72;
+      document.getElementById('cycle-phase').textContent = '3/4: АЭРАЦИЯ 900 ОБ/М (СБИВАНИЕ ПЕНЫ)';
+    } else {
+      // Фаза 4: Выход на плато вязкости (dI/dt -> 0) и плавный сброс давления
+      const decProg = (progress - 0.88) / 0.12;
+      currentPress = 3.0 * (1 - decProg);
+      currentRpm = 0;
+      motorCurrentNorm = 0.05;
+      foamLevel = 0.98;
+      document.getElementById('cycle-phase').textContent = '4/4: ГОТОВО! АВТО-СТОП ПО ТОКУ';
+      if (progress >= 1.0) {
+        isRunningCycle = false;
+        const btn = document.getElementById('btn-cycle');
+        btn.textContent = '▶ ЗАПУСТИТЬ ЦИКЛ ЗАНОВО';
+        btn.classList.remove('running');
+      }
+    }
+
+    // Запись в осциллограф
+    if (historyData.length < 240) {
+      historyData.push({
+        pressure: currentPress / 4.0,
+        current: motorCurrentNorm,
+        foam: foamLevel
+      });
+    }
+
+    // Вращение встречных венчиков и шкивов
+    const rotSpeed = (currentRpm / 900) * 0.28;
+    whiskMeshes[0].rotation.y += rotSpeed;
+    whiskMeshes[1].rotation.y -= rotSpeed;
+    pulleys.forEach((p, idx) => { p.rotation.y += (idx === 1 ? -rotSpeed : rotSpeed); });
+
+    // Подъем вспененного теста в форме
+    const scaleY = 1.0 + foamLevel * 0.75;
+    doughMesh.scale.set(1, scaleY, 1);
+    doughMesh.position.y = 8.6 + (scaleY - 1) * 2.0;
+  }
+
+  // Обновление манометра и HUD
+  document.getElementById('hud-press').textContent = `${currentPress.toFixed(1)} бар`;
+  document.getElementById('hud-rpm').textContent = `24V BLDC / ${Math.round(currentRpm)} об/м`;
+  gaugeNeedle.rotation.z = 0.85 - (currentPress / 4.0) * 1.7;
+
+  // Анимация голубых частиц газового затвора (продувка сальников сверху вниз)
+  purgeParticles.forEach((p) => {
+    p.userData.progress += isBayonetLocked ? 0.035 : 0.005;
+    if (p.userData.progress > 1) p.userData.progress = 0;
+    const pr = p.userData.progress;
+    const r = 0.58 + pr * 0.55;
+    p.position.set(
+      p.userData.side + Math.cos(p.userData.angle + pr * 4) * r,
+      16.9 - pr * 2.8,
+      1.5 + Math.sin(p.userData.angle + pr * 4) * r
+    );
+  });
+
+  // Анимация микропузырьков CO2 внутри теста
+  const dTop = doughMesh.position.y + 2.0 * doughMesh.scale.y;
+  foamBubbles.forEach((b) => {
+    if (isRunningCycle) {
+      b.userData.a += 0.08;
+      b.userData.yOff = (b.userData.yOff + 0.02) % 1;
+    }
+    b.position.set(
+      Math.cos(b.userData.a) * b.userData.r,
+      6.6 + b.userData.yOff * (dTop - 6.8),
+      1.5 + Math.sin(b.userData.a) * b.userData.r
+    );
+  });
+
+  drawScope();
+
+  // Проекция 3D-точек узлов [1-6] на экран
+  hotspotEls.forEach((h) => {
+    const worldPos = h.pos.clone();
+    const v = worldPos.project(camera);
+    const x = (v.x * 0.5 + 0.5) * window.innerWidth;
+    const y = (-(v.y * 0.5) + 0.5) * window.innerHeight;
+    h.el.style.left = `${x}px`;
+    h.el.style.top = `${y}px`;
+    h.el.style.display = v.z > 1 ? 'none' : 'flex';
+  });
+
+  renderer.render(scene, camera);
+}
+animate();
+
+window.addEventListener('resize', () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
+</script>
+</body>
+</html>
