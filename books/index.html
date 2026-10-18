@@ -5,15 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Домашняя библиотека</title>
   <style>body{font:16px system-ui,sans-serif;max-width:42rem;margin:12vh auto;padding:1rem;background:#070a13;color:#f8fafc}a{color:#38bdf8}</style>
-</head>
-<body>
-  <main>
-    <h1>Домашняя библиотека</h1>
-    <p id="status" role="status">Открываем домашнюю библиотеку…</p>
-    <p><a id="home-link" href="https://nucbox-k8-plus.tail374af0.ts.net/books/">Перейти в домашнюю библиотеку</a></p>
-  </main>
   <script>
-    (function () {
+    window.__onEvseevAuthUnlocked = function () {
       var destination = new URL('https://nucbox-k8-plus.tail374af0.ts.net/books/');
       destination.search = window.location.search;
       destination.hash = window.location.hash;
@@ -25,16 +18,28 @@
             params.set('k', savedToken);
             destination.search = params.toString();
           }
-        } catch (error) { /* Storage can be unavailable in private browsing. */ }
+        } catch (error) {}
       }
       var link = document.getElementById('home-link');
-      link.href = destination.href;
+      if (link) link.href = destination.href;
       try { window.location.replace(destination.href); }
-      catch (error) { document.getElementById('status').textContent = 'Автоматический переход не сработал. Используйте ссылку выше.'; }
+      catch (error) {
+        var st = document.getElementById('status');
+        if (st) st.textContent = 'Автоматический переход не сработал. Используйте ссылку выше.';
+      }
       window.setTimeout(function () {
-        document.getElementById('status').textContent = 'Если переход не начался, откройте домашнюю библиотеку по ссылке выше.';
+        var st = document.getElementById('status');
+        if (st) st.textContent = 'Если переход не начался, откройте домашнюю библиотеку по ссылке выше.';
       }, 1800);
-    }());
+    };
   </script>
+  <script src="/auth-1978.js"></script>
+</head>
+<body>
+  <main>
+    <h1>Домашняя библиотека</h1>
+    <p id="status" role="status">Открываем домашнюю библиотеку…</p>
+    <p><a id="home-link" href="https://nucbox-k8-plus.tail374af0.ts.net/books/">Перейти в домашнюю библиотеку</a></p>
+  </main>
 </body>
 </html>
