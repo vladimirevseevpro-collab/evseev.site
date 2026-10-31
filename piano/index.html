@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#faf9f5" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#1c1b19" media="(prefers-color-scheme: dark)" />
+  <title>Piano Trainer</title>
+  <script type="module" crossorigin src="/piano/assets/index-CmzZodaC.js"></script>
+  <link rel="stylesheet" crossorigin href="/piano/assets/index-CKDgcubw.css">
+</head>
+<body>
+  <header class="bar">
+    <button id="pieceBtn" class="title" aria-haspopup="listbox">
+      <span class="composer" id="composer"></span>
+      <span class="name"><span id="pieceName"></span>
+        <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" /></svg>
+      </span>
+    </button>
+
+    <div class="seg" id="hands" role="radiogroup" aria-label="Руки" data-pos="1">
+      <button data-hands="left" role="radio">Левая</button>
+      <button data-hands="both" role="radio" class="on">Обе</button>
+      <button data-hands="right" role="radio">Правая</button>
+      <i class="seg-thumb" aria-hidden="true"></i>
+    </div>
+
+    <div class="tools">
+      <div class="stepper" aria-label="Темп">
+        <button id="slower" aria-label="Медленнее"><svg viewBox="0 0 16 16"><path d="M4 8h8" /></svg></button>
+        <span id="tempoVal">100%</span>
+        <button id="faster" aria-label="Быстрее"><svg viewBox="0 0 16 16"><path d="M4 8h8M8 4v8" /></svg></button>
+      </div>
+      <button id="demo" class="demo-btn" type="button" aria-pressed="false" title="Слушать мелодию (режим симуляции)">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 11v-1a6 6 0 0 1 12 0v1" /><rect x="2.5" y="11" width="3" height="5" rx="1.5" /><rect x="14.5" y="11" width="3" height="5" rx="1.5" /></svg>
+        <span>Слушать</span>
+      </button>
+      <button id="sound" class="icon" aria-label="Звук" title="Звук" aria-pressed="true">
+        <svg class="i-sound-on" viewBox="0 0 20 20"><path d="M4 8h3l4-3.5v11L7 12H4z" /><path d="M13.8 7.5a3.5 3.5 0 0 1 0 5M15.8 5.5a6.3 6.3 0 0 1 0 9" /></svg>
+        <svg class="i-sound-off" viewBox="0 0 20 20"><path d="M4 8h3l4-3.5v11L7 12H4z" /><path d="M13.5 8l4 4M17.5 8l-4 4" /></svg>
+      </button>
+      <button id="restart" class="icon" aria-label="Сначала" title="Сначала">
+        <svg viewBox="0 0 20 20"><path d="M4.5 10a5.5 5.5 0 1 0 1.7-4" /><path d="M5.5 2.8v3.6h3.6" /></svg>
+      </button>
+      <button id="start" class="play" aria-label="Старт">
+        <svg class="i-play" viewBox="0 0 20 20"><path d="M7 4.8v10.4L15.2 10z" /></svg>
+        <svg class="i-pause" viewBox="0 0 20 20"><path d="M7 5v10M13 5v10" /></svg>
+      </button>
+    </div>
+  </header>
+
+  <div id="progress"><i></i></div>
+
+  <main id="stage">
+    <div id="scroller"></div>
+    <div id="clefs"></div>
+    <div id="fade"></div>
+    <div id="ink"></div>
+    <div id="playhead"><i></i></div>
+    <div id="loading" hidden><i></i><i></i><i></i><i></i><i></i></div>
+
+    <section id="card" class="card" hidden>
+      <p class="eyebrow" id="cardEyebrow"></p>
+      <h1 id="cardTitle"></h1>
+      <p class="sub" id="cardSub"></p>
+      <div class="actions" id="cardActions"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="meta">
+      <div class="meta-left">
+        <span id="midi" class="midi"><i></i><span>MIDI</span></span>
+        <button id="kbdToggle" class="kbd-toggle" type="button" aria-pressed="false" title="Тест с клавиатуры ПК (A–K, Z/X)">
+          <svg viewBox="0 0 16 12" aria-hidden="true"><rect x="1" y="1" width="14" height="10" rx="2" /><path d="M4 4h1M7.5 4h1M11 4h1M4 7.5h8" /></svg>
+          <span>Клавиатура ПК</span>
+        </button>
+        <button id="pedalInd" class="kbd-toggle pedal-ind" type="button" aria-pressed="false" title="Правая педаль (сустейн)">
+          <svg viewBox="0 0 16 12" aria-hidden="true"><path d="M5 2h6l1.5 7.5a1.5 1.5 0 0 1-1.5 1.5H5a1.5 1.5 0 0 1-1.5-1.5z" /><path d="M2 11h12" /></svg>
+          <span>Педаль</span>
+        </button>
+      </div>
+      <span id="streak"></span>
+      <span id="stat"></span>
+    </div>
+    <div id="keys"></div>
+  </footer>
+
+  <div id="sheet" class="sheet" hidden>
+    <aside class="library" role="dialog" aria-label="Ноты">
+      <header class="lib-head">
+        <h2>Ноты</h2>
+        <button id="libClose" class="icon" aria-label="Закрыть">
+          <svg viewBox="0 0 20 20"><path d="M5 5l10 10M15 5L5 15" /></svg>
+        </button>
+      </header>
+
+      <label class="search">
+        <svg viewBox="0 0 20 20"><circle cx="9" cy="9" r="5.5" /><path d="M13 13l3.5 3.5" /></svg>
+        <input id="q" type="search" placeholder="Бах, вальс, Элиза…" autocomplete="off" spellcheck="false" />
+      </label>
+
+      <div class="add">
+        <label class="tile">
+          <svg viewBox="0 0 20 20"><path d="M11 3H6.5A1.5 1.5 0 0 0 5 4.5v11A1.5 1.5 0 0 0 6.5 17h7a1.5 1.5 0 0 0 1.5-1.5V7z" /><path d="M11 3v4h4M10 10v4M8 12h4" /></svg>
+          <span><b>Из файлов</b><small>iCloud, Google Drive, «На iPad»</small></span>
+          <input id="file" type="file" multiple accept=".musicxml,.xml,.mxl,.mei,.abc,.mid,.midi" hidden />
+        </label>
+        <button id="byUrl" class="tile">
+          <svg viewBox="0 0 20 20"><path d="M8.5 11.5a3 3 0 0 0 4.2 0l2.6-2.6a3 3 0 0 0-4.2-4.2l-.9.9" /><path d="M11.5 8.5a3 3 0 0 0-4.2 0l-2.6 2.6a3 3 0 0 0 4.2 4.2l.9-.9" /></svg>
+          <span><b>По ссылке</b><small>Прямая ссылка на файл</small></span>
+        </button>
+      </div>
+      <form id="urlForm" class="urlrow" hidden>
+        <input id="url" type="url" inputmode="url" placeholder="https://…/score.mxl" required />
+        <button class="pill primary" type="submit">Добавить</button>
+      </form>
+
+      <div id="levels" class="chips" role="tablist" aria-label="Уровень">
+        <button data-level="0" class="on">Все</button>
+        <button data-level="1">Начальный</button>
+        <button data-level="2">Лёгкий</button>
+        <button data-level="3">Средний</button>
+        <button data-level="4">Продвинутый</button>
+      </div>
+
+      <div id="libBody" class="lib-body" role="listbox" aria-label="Пьесы"></div>
+      <p class="formats">MusicXML · MXL · ABC · MEI. Всё хранится только на этом устройстве.</p>
+    </aside>
+  </div>
+
+  <div id="drop" class="drop" hidden>
+    <div>
+      <svg viewBox="0 0 40 40"><path d="M20 8v18M12 18l8 8 8-8" /><path d="M8 30v2h24v-2" /></svg>
+      <b>Отпустите, чтобы добавить ноты</b>
+      <small>MusicXML · MXL · ABC · MEI</small>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+</body>
+</html>

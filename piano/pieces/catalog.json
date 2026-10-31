@@ -1,0 +1,734 @@
+{
+ "source": "OpenTiles catalogue (CC0), github.com/KunalGehlot/OpenTiles",
+ "pieces": [
+  {
+   "slug": "when-the-saints-melody",
+   "title": "When the Saints Go Marching In",
+   "composer": "Народная",
+   "level": 1,
+   "hands": 1,
+   "score": "when-the-saints-melody/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "bella-ciao-melody",
+   "title": "Белла чао",
+   "composer": "Народная",
+   "level": 1,
+   "hands": 1,
+   "score": "bella-ciao-melody/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "we-wish-you-a-merry-christmas-melody",
+   "title": "Весёлого Рождества",
+   "composer": "Народная",
+   "level": 1,
+   "hands": 1,
+   "score": "we-wish-you-a-merry-christmas-melody/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "good-king-wenceslas-melody",
+   "title": "Добрый король Вацлав",
+   "composer": "Народная",
+   "level": 1,
+   "hands": 1,
+   "score": "good-king-wenceslas-melody/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "fur-elise-opening-melody",
+   "title": "К Элизе (начало)",
+   "composer": "Бетховен",
+   "level": 1,
+   "hands": 1,
+   "score": "fur-elise-opening-melody/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "brahms-lullaby-melody",
+   "title": "Колыбельная",
+   "composer": "Брамс",
+   "level": 1,
+   "hands": 1,
+   "score": "brahms-lullaby-melody/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "largo-new-world-melody",
+   "title": "Ларго из «Нового света»",
+   "composer": "Дворжак",
+   "level": 1,
+   "hands": 1,
+   "score": "largo-new-world-melody/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "minuet-in-g-melody",
+   "title": "Менуэт соль мажор (начало)",
+   "composer": "Петцольд",
+   "level": 1,
+   "hands": 1,
+   "score": "minuet-in-g-melody/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "amazing-grace-melody",
+   "title": "О, благодать",
+   "composer": "Народная",
+   "level": 1,
+   "hands": 1,
+   "score": "amazing-grace-melody/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "ode-to-joy-melody",
+   "title": "Ода к радости",
+   "composer": "Бетховен",
+   "level": 1,
+   "hands": 1,
+   "score": "ode-to-joy-melody/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "joy-to-the-world-melody",
+   "title": "Радуйся, мир",
+   "composer": "Мейсон",
+   "level": 1,
+   "hands": 1,
+   "score": "joy-to-the-world-melody/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "auld-lang-syne-melody",
+   "title": "Старая дружба",
+   "composer": "Народная",
+   "level": 1,
+   "hands": 1,
+   "score": "auld-lang-syne-melody/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "silent-night-melody",
+   "title": "Тихая ночь",
+   "composer": "Грубер",
+   "level": 1,
+   "hands": 1,
+   "score": "silent-night-melody/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "deck-the-halls-melody",
+   "title": "Украсим залы",
+   "composer": "Народная",
+   "level": 1,
+   "hands": 1,
+   "score": "deck-the-halls-melody/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "hark-the-herald-angels-sing-melody",
+   "title": "Чу! Ангелы поют",
+   "composer": "Мендельсон",
+   "level": 1,
+   "hands": 1,
+   "score": "hark-the-herald-angels-sing-melody/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "jingle-bells",
+   "title": "Jingle Bells (припев)",
+   "composer": "Пьерпонт",
+   "level": 1,
+   "hands": 2,
+   "score": "jingle-bells/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "twinkle-twinkle",
+   "title": "Ах, скажу я вам, мама",
+   "composer": "Народная",
+   "level": 1,
+   "hands": 2,
+   "score": "twinkle-twinkle/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "frere-jacques",
+   "title": "Братец Яков",
+   "composer": "Народная",
+   "level": 1,
+   "hands": 2,
+   "score": "frere-jacques/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "hot-cross-buns",
+   "title": "Горячие булочки",
+   "composer": "Народная",
+   "level": 1,
+   "hands": 2,
+   "score": "hot-cross-buns/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "london-bridge",
+   "title": "Лондонский мост",
+   "composer": "Народная",
+   "level": 1,
+   "hands": 2,
+   "score": "london-bridge/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "haenschen-klein",
+   "title": "Маленький Ганс",
+   "composer": "Народная",
+   "level": 1,
+   "hands": 2,
+   "score": "haenschen-klein/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "alle-meine-entchen",
+   "title": "Мои утята",
+   "composer": "Народная",
+   "level": 1,
+   "hands": 2,
+   "score": "alle-meine-entchen/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "ode-to-joy",
+   "title": "Ода к радости",
+   "composer": "Бетховен",
+   "level": 1,
+   "hands": 2,
+   "score": "ode-to-joy/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "row-row-row-your-boat",
+   "title": "Плыви, лодочка",
+   "composer": "Народная",
+   "level": 1,
+   "hands": 2,
+   "score": "row-row-row-your-boat/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "au-clair-de-la-lune",
+   "title": "При свете луны",
+   "composer": "Народная",
+   "level": 1,
+   "hands": 2,
+   "score": "au-clair-de-la-lune/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "old-macdonald",
+   "title": "Старый Макдональд",
+   "composer": "Народная",
+   "level": 1,
+   "hands": 2,
+   "score": "old-macdonald/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "mary-had-a-little-lamb",
+   "title": "У Мэри был ягнёнок",
+   "composer": "Народная",
+   "level": 1,
+   "hands": 2,
+   "score": "mary-had-a-little-lamb/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "yankee-doodle",
+   "title": "Янки-дудл",
+   "composer": "Народная",
+   "level": 1,
+   "hands": 2,
+   "score": "yankee-doodle/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "hall-of-the-mountain-king-melody",
+   "title": "В пещере горного короля",
+   "composer": "Григ",
+   "level": 2,
+   "hands": 1,
+   "score": "hall-of-the-mountain-king-melody/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "greensleeves-melody",
+   "title": "Зелёные рукава",
+   "composer": "Народная",
+   "level": 2,
+   "hands": 1,
+   "score": "greensleeves-melody/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "canon-in-d-melody",
+   "title": "Канон ре мажор",
+   "composer": "Пахельбель",
+   "level": 2,
+   "hands": 1,
+   "score": "canon-in-d-melody/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "eine-kleine-nachtmusik-melody",
+   "title": "Маленькая ночная серенада",
+   "composer": "Моцарт",
+   "level": 2,
+   "hands": 1,
+   "score": "eine-kleine-nachtmusik-melody/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "prelude-in-c-melody",
+   "title": "Прелюдия до мажор (начало)",
+   "composer": "Бах",
+   "level": 2,
+   "hands": 1,
+   "score": "prelude-in-c-melody/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "when-the-saints",
+   "title": "When the Saints Go Marching In",
+   "composer": "Народная",
+   "level": 2,
+   "hands": 2,
+   "score": "when-the-saints/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "ballade-burgmuller",
+   "title": "Баллада, соч. 100 № 15",
+   "composer": "Бургмюллер",
+   "level": 2,
+   "hands": 2,
+   "score": "ballade-burgmuller/score.musicxml",
+   "licence": "public-domain"
+  },
+  {
+   "slug": "bella-ciao",
+   "title": "Белла чао",
+   "composer": "Народная",
+   "level": 2,
+   "hands": 2,
+   "score": "bella-ciao/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "we-wish-you-a-merry-christmas",
+   "title": "Весёлого Рождества",
+   "composer": "Народная",
+   "level": 2,
+   "hands": 2,
+   "score": "we-wish-you-a-merry-christmas/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "good-king-wenceslas",
+   "title": "Добрый король Вацлав",
+   "composer": "Народная",
+   "level": 2,
+   "hands": 2,
+   "score": "good-king-wenceslas/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "fur-elise-opening",
+   "title": "К Элизе (начало)",
+   "composer": "Бетховен",
+   "level": 2,
+   "hands": 2,
+   "score": "fur-elise-opening/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "brahms-lullaby",
+   "title": "Колыбельная",
+   "composer": "Брамс",
+   "level": 2,
+   "hands": 2,
+   "score": "brahms-lullaby/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "largo-new-world",
+   "title": "Ларго из «Нового света»",
+   "composer": "Дворжак",
+   "level": 2,
+   "hands": 2,
+   "score": "largo-new-world/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "march-of-the-wooden-soldiers",
+   "title": "Марш деревянных солдатиков",
+   "composer": "Чайковский",
+   "level": 2,
+   "hands": 2,
+   "score": "march-of-the-wooden-soldiers/score.musicxml",
+   "licence": "public-domain"
+  },
+  {
+   "slug": "bach-minuet-in-g-complete",
+   "title": "Менуэт соль мажор",
+   "composer": "Петцольд",
+   "level": 2,
+   "hands": 2,
+   "score": "bach-minuet-in-g-complete/score.musicxml",
+   "licence": "public-domain"
+  },
+  {
+   "slug": "minuet-in-g",
+   "title": "Менуэт соль мажор (начало)",
+   "composer": "Петцольд",
+   "level": 2,
+   "hands": 2,
+   "score": "minuet-in-g/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "bach-minuet-in-g-minor",
+   "title": "Менуэт соль минор",
+   "composer": "Петцольд",
+   "level": 2,
+   "hands": 2,
+   "score": "bach-minuet-in-g-minor/score.musicxml",
+   "licence": "public-domain"
+  },
+  {
+   "slug": "bach-musette-in-d",
+   "title": "Мюзет ре мажор",
+   "composer": "Бах",
+   "level": 2,
+   "hands": 2,
+   "score": "bach-musette-in-d/score.musicxml",
+   "licence": "public-domain"
+  },
+  {
+   "slug": "tendre-fleur",
+   "title": "Нежный цветок, соч. 100 № 10",
+   "composer": "Бургмюллер",
+   "level": 2,
+   "hands": 2,
+   "score": "tendre-fleur/score.musicxml",
+   "licence": "public-domain"
+  },
+  {
+   "slug": "amazing-grace",
+   "title": "О, благодать",
+   "composer": "Народная",
+   "level": 2,
+   "hands": 2,
+   "score": "amazing-grace/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "ode-to-joy-full",
+   "title": "Ода к радости (целиком)",
+   "composer": "Бетховен",
+   "level": 2,
+   "hands": 2,
+   "score": "ode-to-joy-full/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "la-candeur",
+   "title": "Откровенность, соч. 100 № 1",
+   "composer": "Бургмюллер",
+   "level": 2,
+   "hands": 2,
+   "score": "la-candeur/score.musicxml",
+   "licence": "public-domain"
+  },
+  {
+   "slug": "joy-to-the-world",
+   "title": "Радуйся, мир",
+   "composer": "Мейсон",
+   "level": 2,
+   "hands": 2,
+   "score": "joy-to-the-world/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "happy-birthday",
+   "title": "С днём рождения",
+   "composer": "Хилл",
+   "level": 2,
+   "hands": 2,
+   "score": "happy-birthday/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "auld-lang-syne",
+   "title": "Старая дружба",
+   "composer": "Народная",
+   "level": 2,
+   "hands": 2,
+   "score": "auld-lang-syne/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "old-french-song",
+   "title": "Старинная французская песенка",
+   "composer": "Чайковский",
+   "level": 2,
+   "hands": 2,
+   "score": "old-french-song/score.musicxml",
+   "licence": "public-domain"
+  },
+  {
+   "slug": "silent-night",
+   "title": "Тихая ночь",
+   "composer": "Грубер",
+   "level": 2,
+   "hands": 2,
+   "score": "silent-night/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "deck-the-halls",
+   "title": "Украсим залы",
+   "composer": "Народная",
+   "level": 2,
+   "hands": 2,
+   "score": "deck-the-halls/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "consolation",
+   "title": "Утешение, соч. 100 № 13",
+   "composer": "Бургмюллер",
+   "level": 2,
+   "hands": 2,
+   "score": "consolation/score.musicxml",
+   "licence": "public-domain"
+  },
+  {
+   "slug": "hark-the-herald-angels-sing",
+   "title": "Чу! Ангелы поют",
+   "composer": "Мендельсон",
+   "level": 2,
+   "hands": 2,
+   "score": "hark-the-herald-angels-sing/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "arabesque-burgmuller",
+   "title": "Арабеска, соч. 100 № 2",
+   "composer": "Бургмюллер",
+   "level": 3,
+   "hands": 2,
+   "score": "arabesque-burgmuller/score.musicxml",
+   "licence": "public-domain"
+  },
+  {
+   "slug": "hall-of-the-mountain-king",
+   "title": "В пещере горного короля",
+   "composer": "Григ",
+   "level": 3,
+   "hands": 2,
+   "score": "hall-of-the-mountain-king/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "chopin-waltz-op69-2",
+   "title": "Вальс си минор, соч. 69 № 2",
+   "composer": "Шопен",
+   "level": 3,
+   "hands": 2,
+   "score": "chopin-waltz-op69-2/score.musicxml",
+   "licence": "public-domain"
+  },
+  {
+   "slug": "greensleeves",
+   "title": "Зелёные рукава",
+   "composer": "Народная",
+   "level": 3,
+   "hands": 2,
+   "score": "greensleeves/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "bach-invention-13",
+   "title": "Инвенция № 13 ля минор",
+   "composer": "Бах",
+   "level": 3,
+   "hands": 2,
+   "score": "bach-invention-13/score.musicxml",
+   "licence": "public-domain"
+  },
+  {
+   "slug": "bach-invention-14",
+   "title": "Инвенция № 14 си-бемоль мажор",
+   "composer": "Бах",
+   "level": 3,
+   "hands": 2,
+   "score": "bach-invention-14/score.musicxml",
+   "licence": "public-domain"
+  },
+  {
+   "slug": "bach-invention-2",
+   "title": "Инвенция № 2 до минор",
+   "composer": "Бах",
+   "level": 3,
+   "hands": 2,
+   "score": "bach-invention-2/score.musicxml",
+   "licence": "public-domain"
+  },
+  {
+   "slug": "bach-invention-4",
+   "title": "Инвенция № 4 ре минор",
+   "composer": "Бах",
+   "level": 3,
+   "hands": 2,
+   "score": "bach-invention-4/score.musicxml",
+   "licence": "public-domain"
+  },
+  {
+   "slug": "bach-invention-8",
+   "title": "Инвенция № 8 фа мажор",
+   "composer": "Бах",
+   "level": 3,
+   "hands": 2,
+   "score": "bach-invention-8/score.musicxml",
+   "licence": "public-domain"
+  },
+  {
+   "slug": "fur-elise-complete",
+   "title": "К Элизе",
+   "composer": "Бетховен",
+   "level": 3,
+   "hands": 2,
+   "score": "fur-elise-complete/score.musicxml",
+   "licence": "public-domain"
+  },
+  {
+   "slug": "canon-in-d",
+   "title": "Канон ре мажор",
+   "composer": "Пахельбель",
+   "level": 3,
+   "hands": 2,
+   "score": "canon-in-d/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "eine-kleine-nachtmusik",
+   "title": "Маленькая ночная серенада",
+   "composer": "Моцарт",
+   "level": 3,
+   "hands": 2,
+   "score": "eine-kleine-nachtmusik/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "beethoven-menuett-woo82",
+   "title": "Менуэт ми-бемоль мажор",
+   "composer": "Бетховен",
+   "level": 3,
+   "hands": 2,
+   "score": "beethoven-menuett-woo82/score.musicxml",
+   "licence": "public-domain"
+  },
+  {
+   "slug": "innocence",
+   "title": "Невинность, соч. 100 № 5",
+   "composer": "Бургмюллер",
+   "level": 3,
+   "hands": 2,
+   "score": "innocence/score.musicxml",
+   "licence": "public-domain"
+  },
+  {
+   "slug": "prelude-in-c",
+   "title": "Прелюдия до мажор (начало)",
+   "composer": "Бах",
+   "level": 3,
+   "hands": 2,
+   "score": "prelude-in-c/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "beethoven-sonata-20-menuetto",
+   "title": "Соната № 20: менуэт",
+   "composer": "Бетховен",
+   "level": 3,
+   "hands": 2,
+   "score": "beethoven-sonata-20-menuetto/score.musicxml",
+   "licence": "public-domain"
+  },
+  {
+   "slug": "progres",
+   "title": "Успех, соч. 100 № 6",
+   "composer": "Бургмюллер",
+   "level": 3,
+   "hands": 2,
+   "score": "progres/score.musicxml",
+   "licence": "public-domain"
+  },
+  {
+   "slug": "morning-prayer",
+   "title": "Утренняя молитва",
+   "composer": "Чайковский",
+   "level": 3,
+   "hands": 2,
+   "score": "morning-prayer/score.musicxml",
+   "licence": "public-domain"
+  },
+  {
+   "slug": "maple-leaf-rag",
+   "title": "Maple Leaf Rag",
+   "composer": "Джоплин",
+   "level": 4,
+   "hands": 2,
+   "score": "maple-leaf-rag/score.musicxml",
+   "licence": "public-domain"
+  },
+  {
+   "slug": "the-entertainer",
+   "title": "The Entertainer",
+   "composer": "Джоплин",
+   "level": 4,
+   "hands": 2,
+   "score": "the-entertainer/score.musicxml",
+   "licence": "public-domain"
+  },
+  {
+   "slug": "la-pastorale",
+   "title": "Пастораль, соч. 100 № 3",
+   "composer": "Бургмюллер",
+   "level": 4,
+   "hands": 2,
+   "score": "la-pastorale/score.musicxml",
+   "licence": "public-domain"
+  },
+  {
+   "slug": "gluckes-genug",
+   "title": "Полное счастье («Детские сцены»)",
+   "composer": "Шуман",
+   "level": 4,
+   "hands": 2,
+   "score": "gluckes-genug/score.musicxml",
+   "licence": "public-domain"
+  },
+  {
+   "slug": "chopin-prelude-4",
+   "title": "Прелюдия ми минор, соч. 28 № 4",
+   "composer": "Шопен",
+   "level": 4,
+   "hands": 2,
+   "score": "chopin-prelude-4/score.musicxml",
+   "licence": "public-domain"
+  }
+ ]
+}
