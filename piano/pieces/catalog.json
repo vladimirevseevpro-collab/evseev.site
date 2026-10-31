@@ -8,7 +8,8 @@
    "level": 1,
    "hands": 1,
    "score": "when-the-saints-melody/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "blues"
   },
   {
    "slug": "bella-ciao-melody",
@@ -17,7 +18,8 @@
    "level": 1,
    "hands": 1,
    "score": "bella-ciao-melody/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "traditional"
   },
   {
    "slug": "we-wish-you-a-merry-christmas-melody",
@@ -26,7 +28,8 @@
    "level": 1,
    "hands": 1,
    "score": "we-wish-you-a-merry-christmas-melody/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "traditional"
   },
   {
    "slug": "good-king-wenceslas-melody",
@@ -35,7 +38,8 @@
    "level": 1,
    "hands": 1,
    "score": "good-king-wenceslas-melody/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "traditional"
   },
   {
    "slug": "fur-elise-opening-melody",
@@ -44,7 +48,8 @@
    "level": 1,
    "hands": 1,
    "score": "fur-elise-opening-melody/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "classical"
   },
   {
    "slug": "brahms-lullaby-melody",
@@ -53,7 +58,8 @@
    "level": 1,
    "hands": 1,
    "score": "brahms-lullaby-melody/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "romantic"
   },
   {
    "slug": "largo-new-world-melody",
@@ -62,7 +68,8 @@
    "level": 1,
    "hands": 1,
    "score": "largo-new-world-melody/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "romantic"
   },
   {
    "slug": "minuet-in-g-melody",
@@ -71,7 +78,8 @@
    "level": 1,
    "hands": 1,
    "score": "minuet-in-g-melody/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "classical"
   },
   {
    "slug": "amazing-grace-melody",
@@ -80,7 +88,8 @@
    "level": 1,
    "hands": 1,
    "score": "amazing-grace-melody/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "blues"
   },
   {
    "slug": "ode-to-joy-melody",
@@ -89,7 +98,8 @@
    "level": 1,
    "hands": 1,
    "score": "ode-to-joy-melody/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "classical"
   },
   {
    "slug": "joy-to-the-world-melody",
@@ -98,7 +108,8 @@
    "level": 1,
    "hands": 1,
    "score": "joy-to-the-world-melody/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "traditional"
   },
   {
    "slug": "auld-lang-syne-melody",
@@ -107,7 +118,8 @@
    "level": 1,
    "hands": 1,
    "score": "auld-lang-syne-melody/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "traditional"
   },
   {
    "slug": "silent-night-melody",
@@ -116,7 +128,8 @@
    "level": 1,
    "hands": 1,
    "score": "silent-night-melody/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "traditional"
   },
   {
    "slug": "deck-the-halls-melody",
@@ -125,7 +138,8 @@
    "level": 1,
    "hands": 1,
    "score": "deck-the-halls-melody/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "traditional"
   },
   {
    "slug": "hark-the-herald-angels-sing-melody",
@@ -134,7 +148,8 @@
    "level": 1,
    "hands": 1,
    "score": "hark-the-herald-angels-sing-melody/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "romantic"
   },
   {
    "slug": "jingle-bells",
@@ -143,7 +158,8 @@
    "level": 1,
    "hands": 2,
    "score": "jingle-bells/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "traditional"
   },
   {
    "slug": "twinkle-twinkle",
@@ -152,7 +168,8 @@
    "level": 1,
    "hands": 2,
    "score": "twinkle-twinkle/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "traditional"
   },
   {
    "slug": "frere-jacques",
@@ -161,7 +178,8 @@
    "level": 1,
    "hands": 2,
    "score": "frere-jacques/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "traditional"
   },
   {
    "slug": "hot-cross-buns",
@@ -170,7 +188,8 @@
    "level": 1,
    "hands": 2,
    "score": "hot-cross-buns/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "traditional"
   },
   {
    "slug": "london-bridge",
@@ -179,7 +198,8 @@
    "level": 1,
    "hands": 2,
    "score": "london-bridge/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "traditional"
   },
   {
    "slug": "haenschen-klein",
@@ -188,7 +208,8 @@
    "level": 1,
    "hands": 2,
    "score": "haenschen-klein/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "traditional"
   },
   {
    "slug": "alle-meine-entchen",
@@ -197,7 +218,8 @@
    "level": 1,
    "hands": 2,
    "score": "alle-meine-entchen/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "traditional"
   },
   {
    "slug": "ode-to-joy",
@@ -206,7 +228,8 @@
    "level": 1,
    "hands": 2,
    "score": "ode-to-joy/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "classical"
   },
   {
    "slug": "row-row-row-your-boat",
@@ -215,7 +238,8 @@
    "level": 1,
    "hands": 2,
    "score": "row-row-row-your-boat/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "traditional"
   },
   {
    "slug": "au-clair-de-la-lune",
@@ -224,7 +248,8 @@
    "level": 1,
    "hands": 2,
    "score": "au-clair-de-la-lune/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "traditional"
   },
   {
    "slug": "old-macdonald",
@@ -233,7 +258,8 @@
    "level": 1,
    "hands": 2,
    "score": "old-macdonald/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "traditional"
   },
   {
    "slug": "mary-had-a-little-lamb",
@@ -242,7 +268,8 @@
    "level": 1,
    "hands": 2,
    "score": "mary-had-a-little-lamb/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "traditional"
   },
   {
    "slug": "yankee-doodle",
@@ -251,7 +278,8 @@
    "level": 1,
    "hands": 2,
    "score": "yankee-doodle/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "traditional"
   },
   {
    "slug": "hall-of-the-mountain-king-melody",
@@ -260,7 +288,8 @@
    "level": 2,
    "hands": 1,
    "score": "hall-of-the-mountain-king-melody/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "romantic"
   },
   {
    "slug": "greensleeves-melody",
@@ -269,7 +298,8 @@
    "level": 2,
    "hands": 1,
    "score": "greensleeves-melody/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "traditional"
   },
   {
    "slug": "canon-in-d-melody",
@@ -278,7 +308,8 @@
    "level": 2,
    "hands": 1,
    "score": "canon-in-d-melody/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "classical"
   },
   {
    "slug": "eine-kleine-nachtmusik-melody",
@@ -287,7 +318,8 @@
    "level": 2,
    "hands": 1,
    "score": "eine-kleine-nachtmusik-melody/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "classical"
   },
   {
    "slug": "prelude-in-c-melody",
@@ -296,7 +328,8 @@
    "level": 2,
    "hands": 1,
    "score": "prelude-in-c-melody/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "classical"
   },
   {
    "slug": "when-the-saints",
@@ -305,7 +338,8 @@
    "level": 2,
    "hands": 2,
    "score": "when-the-saints/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "blues"
   },
   {
    "slug": "ballade-burgmuller",
@@ -314,7 +348,8 @@
    "level": 2,
    "hands": 2,
    "score": "ballade-burgmuller/score.musicxml",
-   "licence": "public-domain"
+   "licence": "public-domain",
+   "style": "romantic"
   },
   {
    "slug": "bella-ciao",
@@ -323,7 +358,8 @@
    "level": 2,
    "hands": 2,
    "score": "bella-ciao/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "traditional"
   },
   {
    "slug": "we-wish-you-a-merry-christmas",
@@ -332,7 +368,8 @@
    "level": 2,
    "hands": 2,
    "score": "we-wish-you-a-merry-christmas/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "traditional"
   },
   {
    "slug": "good-king-wenceslas",
@@ -341,7 +378,8 @@
    "level": 2,
    "hands": 2,
    "score": "good-king-wenceslas/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "traditional"
   },
   {
    "slug": "fur-elise-opening",
@@ -350,7 +388,8 @@
    "level": 2,
    "hands": 2,
    "score": "fur-elise-opening/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "classical"
   },
   {
    "slug": "brahms-lullaby",
@@ -359,7 +398,8 @@
    "level": 2,
    "hands": 2,
    "score": "brahms-lullaby/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "romantic"
   },
   {
    "slug": "largo-new-world",
@@ -368,7 +408,8 @@
    "level": 2,
    "hands": 2,
    "score": "largo-new-world/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "romantic"
   },
   {
    "slug": "march-of-the-wooden-soldiers",
@@ -377,7 +418,8 @@
    "level": 2,
    "hands": 2,
    "score": "march-of-the-wooden-soldiers/score.musicxml",
-   "licence": "public-domain"
+   "licence": "public-domain",
+   "style": "romantic"
   },
   {
    "slug": "bach-minuet-in-g-complete",
@@ -386,7 +428,8 @@
    "level": 2,
    "hands": 2,
    "score": "bach-minuet-in-g-complete/score.musicxml",
-   "licence": "public-domain"
+   "licence": "public-domain",
+   "style": "classical"
   },
   {
    "slug": "minuet-in-g",
@@ -395,7 +438,8 @@
    "level": 2,
    "hands": 2,
    "score": "minuet-in-g/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "classical"
   },
   {
    "slug": "bach-minuet-in-g-minor",
@@ -404,7 +448,8 @@
    "level": 2,
    "hands": 2,
    "score": "bach-minuet-in-g-minor/score.musicxml",
-   "licence": "public-domain"
+   "licence": "public-domain",
+   "style": "classical"
   },
   {
    "slug": "bach-musette-in-d",
@@ -413,7 +458,8 @@
    "level": 2,
    "hands": 2,
    "score": "bach-musette-in-d/score.musicxml",
-   "licence": "public-domain"
+   "licence": "public-domain",
+   "style": "classical"
   },
   {
    "slug": "tendre-fleur",
@@ -422,7 +468,8 @@
    "level": 2,
    "hands": 2,
    "score": "tendre-fleur/score.musicxml",
-   "licence": "public-domain"
+   "licence": "public-domain",
+   "style": "romantic"
   },
   {
    "slug": "amazing-grace",
@@ -431,7 +478,8 @@
    "level": 2,
    "hands": 2,
    "score": "amazing-grace/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "blues"
   },
   {
    "slug": "ode-to-joy-full",
@@ -440,7 +488,8 @@
    "level": 2,
    "hands": 2,
    "score": "ode-to-joy-full/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "classical"
   },
   {
    "slug": "la-candeur",
@@ -449,7 +498,8 @@
    "level": 2,
    "hands": 2,
    "score": "la-candeur/score.musicxml",
-   "licence": "public-domain"
+   "licence": "public-domain",
+   "style": "romantic"
   },
   {
    "slug": "joy-to-the-world",
@@ -458,7 +508,8 @@
    "level": 2,
    "hands": 2,
    "score": "joy-to-the-world/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "traditional"
   },
   {
    "slug": "happy-birthday",
@@ -467,7 +518,8 @@
    "level": 2,
    "hands": 2,
    "score": "happy-birthday/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "traditional"
   },
   {
    "slug": "auld-lang-syne",
@@ -476,7 +528,8 @@
    "level": 2,
    "hands": 2,
    "score": "auld-lang-syne/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "traditional"
   },
   {
    "slug": "old-french-song",
@@ -485,7 +538,8 @@
    "level": 2,
    "hands": 2,
    "score": "old-french-song/score.musicxml",
-   "licence": "public-domain"
+   "licence": "public-domain",
+   "style": "romantic"
   },
   {
    "slug": "silent-night",
@@ -494,7 +548,8 @@
    "level": 2,
    "hands": 2,
    "score": "silent-night/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "traditional"
   },
   {
    "slug": "deck-the-halls",
@@ -503,7 +558,8 @@
    "level": 2,
    "hands": 2,
    "score": "deck-the-halls/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "traditional"
   },
   {
    "slug": "consolation",
@@ -512,7 +568,8 @@
    "level": 2,
    "hands": 2,
    "score": "consolation/score.musicxml",
-   "licence": "public-domain"
+   "licence": "public-domain",
+   "style": "romantic"
   },
   {
    "slug": "hark-the-herald-angels-sing",
@@ -521,7 +578,8 @@
    "level": 2,
    "hands": 2,
    "score": "hark-the-herald-angels-sing/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "romantic"
   },
   {
    "slug": "arabesque-burgmuller",
@@ -530,7 +588,8 @@
    "level": 3,
    "hands": 2,
    "score": "arabesque-burgmuller/score.musicxml",
-   "licence": "public-domain"
+   "licence": "public-domain",
+   "style": "romantic"
   },
   {
    "slug": "hall-of-the-mountain-king",
@@ -539,7 +598,8 @@
    "level": 3,
    "hands": 2,
    "score": "hall-of-the-mountain-king/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "romantic"
   },
   {
    "slug": "chopin-waltz-op69-2",
@@ -548,7 +608,8 @@
    "level": 3,
    "hands": 2,
    "score": "chopin-waltz-op69-2/score.musicxml",
-   "licence": "public-domain"
+   "licence": "public-domain",
+   "style": "tango-waltz"
   },
   {
    "slug": "greensleeves",
@@ -557,7 +618,8 @@
    "level": 3,
    "hands": 2,
    "score": "greensleeves/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "traditional"
   },
   {
    "slug": "bach-invention-13",
@@ -566,7 +628,8 @@
    "level": 3,
    "hands": 2,
    "score": "bach-invention-13/score.musicxml",
-   "licence": "public-domain"
+   "licence": "public-domain",
+   "style": "classical"
   },
   {
    "slug": "bach-invention-14",
@@ -575,7 +638,8 @@
    "level": 3,
    "hands": 2,
    "score": "bach-invention-14/score.musicxml",
-   "licence": "public-domain"
+   "licence": "public-domain",
+   "style": "classical"
   },
   {
    "slug": "bach-invention-2",
@@ -584,7 +648,8 @@
    "level": 3,
    "hands": 2,
    "score": "bach-invention-2/score.musicxml",
-   "licence": "public-domain"
+   "licence": "public-domain",
+   "style": "classical"
   },
   {
    "slug": "bach-invention-4",
@@ -593,7 +658,8 @@
    "level": 3,
    "hands": 2,
    "score": "bach-invention-4/score.musicxml",
-   "licence": "public-domain"
+   "licence": "public-domain",
+   "style": "classical"
   },
   {
    "slug": "bach-invention-8",
@@ -602,7 +668,8 @@
    "level": 3,
    "hands": 2,
    "score": "bach-invention-8/score.musicxml",
-   "licence": "public-domain"
+   "licence": "public-domain",
+   "style": "classical"
   },
   {
    "slug": "fur-elise-complete",
@@ -611,7 +678,8 @@
    "level": 3,
    "hands": 2,
    "score": "fur-elise-complete/score.musicxml",
-   "licence": "public-domain"
+   "licence": "public-domain",
+   "style": "classical"
   },
   {
    "slug": "canon-in-d",
@@ -620,7 +688,8 @@
    "level": 3,
    "hands": 2,
    "score": "canon-in-d/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "classical"
   },
   {
    "slug": "eine-kleine-nachtmusik",
@@ -629,7 +698,8 @@
    "level": 3,
    "hands": 2,
    "score": "eine-kleine-nachtmusik/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "classical"
   },
   {
    "slug": "beethoven-menuett-woo82",
@@ -638,7 +708,8 @@
    "level": 3,
    "hands": 2,
    "score": "beethoven-menuett-woo82/score.musicxml",
-   "licence": "public-domain"
+   "licence": "public-domain",
+   "style": "classical"
   },
   {
    "slug": "innocence",
@@ -647,7 +718,8 @@
    "level": 3,
    "hands": 2,
    "score": "innocence/score.musicxml",
-   "licence": "public-domain"
+   "licence": "public-domain",
+   "style": "romantic"
   },
   {
    "slug": "prelude-in-c",
@@ -656,7 +728,8 @@
    "level": 3,
    "hands": 2,
    "score": "prelude-in-c/score.musicxml",
-   "licence": "CC0-1.0"
+   "licence": "CC0-1.0",
+   "style": "classical"
   },
   {
    "slug": "beethoven-sonata-20-menuetto",
@@ -665,7 +738,8 @@
    "level": 3,
    "hands": 2,
    "score": "beethoven-sonata-20-menuetto/score.musicxml",
-   "licence": "public-domain"
+   "licence": "public-domain",
+   "style": "classical"
   },
   {
    "slug": "progres",
@@ -674,7 +748,8 @@
    "level": 3,
    "hands": 2,
    "score": "progres/score.musicxml",
-   "licence": "public-domain"
+   "licence": "public-domain",
+   "style": "romantic"
   },
   {
    "slug": "morning-prayer",
@@ -683,7 +758,8 @@
    "level": 3,
    "hands": 2,
    "score": "morning-prayer/score.musicxml",
-   "licence": "public-domain"
+   "licence": "public-domain",
+   "style": "romantic"
   },
   {
    "slug": "maple-leaf-rag",
@@ -692,7 +768,8 @@
    "level": 4,
    "hands": 2,
    "score": "maple-leaf-rag/score.musicxml",
-   "licence": "public-domain"
+   "licence": "public-domain",
+   "style": "jazz"
   },
   {
    "slug": "the-entertainer",
@@ -701,7 +778,8 @@
    "level": 4,
    "hands": 2,
    "score": "the-entertainer/score.musicxml",
-   "licence": "public-domain"
+   "licence": "public-domain",
+   "style": "jazz"
   },
   {
    "slug": "la-pastorale",
@@ -710,7 +788,8 @@
    "level": 4,
    "hands": 2,
    "score": "la-pastorale/score.musicxml",
-   "licence": "public-domain"
+   "licence": "public-domain",
+   "style": "romantic"
   },
   {
    "slug": "gluckes-genug",
@@ -719,7 +798,8 @@
    "level": 4,
    "hands": 2,
    "score": "gluckes-genug/score.musicxml",
-   "licence": "public-domain"
+   "licence": "public-domain",
+   "style": "romantic"
   },
   {
    "slug": "chopin-prelude-4",
@@ -728,6 +808,147 @@
    "level": 4,
    "hands": 2,
    "score": "chopin-prelude-4/score.musicxml",
+   "licence": "public-domain",
+   "style": "romantic"
+  },
+  {
+   "slug": "satie-gymnopedie-1",
+   "title": "Гимнопедия № 1 (Gymnopédie No. 1)",
+   "composer": "Эрик Сати",
+   "level": 2,
+   "hands": 2,
+   "style": "impressionism",
+   "score": "satie-gymnopedie-1/score.musicxml",
+   "licence": "public-domain"
+  },
+  {
+   "slug": "satie-gnossienne-1",
+   "title": "Гносьенна № 1 (Gnossienne No. 1)",
+   "composer": "Эрик Сати",
+   "level": 2,
+   "hands": 2,
+   "style": "impressionism",
+   "score": "satie-gnossienne-1/score.musicxml",
+   "licence": "public-domain"
+  },
+  {
+   "slug": "debussy-clair-de-lune-opening",
+   "title": "Лунный свет (Clair de Lune, тема)",
+   "composer": "Клод Дебюсси",
+   "level": 3,
+   "hands": 2,
+   "style": "impressionism",
+   "score": "debussy-clair-de-lune-opening/score.musicxml",
+   "licence": "public-domain"
+  },
+  {
+   "slug": "neoclassical-river-prelude",
+   "title": "Ночной поток (Неоклассическая прелюдия)",
+   "composer": "Современная классика",
+   "level": 2,
+   "hands": 2,
+   "style": "impressionism",
+   "score": "neoclassical-river-prelude/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "autumn-leaves-jazz-ballad",
+   "title": "Осенний ноктюрн (Джазовая баллада)",
+   "composer": "Джазовый стандарт (стиль Б. Эванса)",
+   "level": 3,
+   "hands": 2,
+   "style": "jazz",
+   "score": "autumn-leaves-jazz-ballad/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "midnight-bossa-nova",
+   "title": "Вечер в Рио (Bossa Nova Piano)",
+   "composer": "Бразильский джаз",
+   "level": 3,
+   "hands": 2,
+   "style": "jazz",
+   "score": "midnight-bossa-nova/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "harlem-stride-swing",
+   "title": "Прогулка по Манхэттену (Stride & Swing)",
+   "composer": "Джаз-свинг",
+   "level": 3,
+   "hands": 2,
+   "style": "jazz",
+   "score": "harlem-stride-swing/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "joplin-solace-serenade",
+   "title": "Solace (Мексиканская серенада)",
+   "composer": "Скотт Джоплин",
+   "level": 3,
+   "hands": 2,
+   "style": "jazz",
+   "score": "joplin-solace-serenade/score.musicxml",
+   "licence": "public-domain"
+  },
+  {
+   "slug": "after-hours-slow-blues",
+   "title": "Блюз после полуночи (Slow 12-Bar Blues)",
+   "composer": "Фортепианный блюз",
+   "level": 2,
+   "hands": 2,
+   "style": "blues",
+   "score": "after-hours-slow-blues/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "new-orleans-blues-stomp",
+   "title": "Французский квартал (New Orleans Blues)",
+   "composer": "Новоорлеанский блюз",
+   "level": 3,
+   "hands": 2,
+   "style": "blues",
+   "score": "new-orleans-blues-stomp/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "gospel-evening-hymn",
+   "title": "Тихий свет (Gospel & Soul Ballad)",
+   "composer": "Госпел-хорал",
+   "level": 2,
+   "hands": 2,
+   "style": "blues",
+   "score": "gospel-evening-hymn/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "buenos-aires-milonga",
+   "title": "Ночь в Буэнос-Айресе (Tango Nuevo)",
+   "composer": "Аргентинское танго (стиль А. Пьяццоллы)",
+   "level": 3,
+   "hands": 2,
+   "style": "tango-waltz",
+   "score": "buenos-aires-milonga/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "paris-valse-musette",
+   "title": "Кафе на Монмартре (Valse Musette)",
+   "composer": "Французский вальс",
+   "level": 2,
+   "hands": 2,
+   "style": "tango-waltz",
+   "score": "paris-valse-musette/score.musicxml",
+   "licence": "CC0-1.0"
+  },
+  {
+   "slug": "griboyedov-waltz-e-minor",
+   "title": "Вальс ми минор",
+   "composer": "А. С. Грибоедов",
+   "level": 3,
+   "hands": 2,
+   "style": "tango-waltz",
+   "score": "griboyedov-waltz-e-minor/score.musicxml",
    "licence": "public-domain"
   }
  ]

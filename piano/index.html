@@ -8,8 +8,8 @@
   <meta name="theme-color" content="#faf9f5" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#1c1b19" media="(prefers-color-scheme: dark)" />
   <title>Piano Trainer</title>
-  <script type="module" crossorigin src="/piano/assets/index-CmzZodaC.js"></script>
-  <link rel="stylesheet" crossorigin href="/piano/assets/index-CKDgcubw.css">
+  <script type="module" crossorigin src="/piano/assets/index-Bb3YsKe4.js"></script>
+  <link rel="stylesheet" crossorigin href="/piano/assets/index-BxZY6XDu.css">
 </head>
 <body>
   <header class="bar">
@@ -99,7 +99,7 @@
 
       <label class="search">
         <svg viewBox="0 0 20 20"><circle cx="9" cy="9" r="5.5" /><path d="M13 13l3.5 3.5" /></svg>
-        <input id="q" type="search" placeholder="Бах, вальс, Элиза…" autocomplete="off" spellcheck="false" />
+        <input id="q" type="search" placeholder="Бах, Сати, джаз, блюз, танго…" autocomplete="off" spellcheck="false" />
       </label>
 
       <div class="add">
@@ -118,8 +118,19 @@
         <button class="pill primary" type="submit">Добавить</button>
       </form>
 
+      <div id="styles" class="chips styles-chips" role="tablist" aria-label="Стиль">
+        <button data-style="" class="on">Все стили</button>
+        <button data-style="impressionism">Импрессионизм</button>
+        <button data-style="jazz">Джаз и рэгтайм</button>
+        <button data-style="blues">Блюз и соул</button>
+        <button data-style="tango-waltz">Танго и вальсы</button>
+        <button data-style="classical">Классика и барокко</button>
+        <button data-style="romantic">Романтизм</button>
+        <button data-style="traditional">Традиционные</button>
+      </div>
+
       <div id="levels" class="chips" role="tablist" aria-label="Уровень">
-        <button data-level="0" class="on">Все</button>
+        <button data-level="0" class="on">Все уровни</button>
         <button data-level="1">Начальный</button>
         <button data-level="2">Лёгкий</button>
         <button data-level="3">Средний</button>
