@@ -971,6 +971,95 @@ dl.spec dd {
   25% { transform: translateX(-6px); }
   75% { transform: translateX(6px); }
 }
+
+/* Blender 5.2 Cycles Hyperrealistic Studio Gallery Overlay */
+#cycles-overlay {
+  position: absolute;
+  inset: 54px 12px 62px 12px;
+  z-index: 25;
+  background: rgba(14, 11, 9, 0.94);
+  backdrop-filter: blur(18px);
+  border: 1.5px solid var(--brass);
+  border-radius: 16px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.65);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  pointer-events: auto;
+}
+#cycles-overlay.visible { display: flex; }
+.cyc-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  color: #F4EFE6;
+}
+.cyc-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.cyc-tab {
+  padding: 6px 11px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.06);
+  color: #D5CBB8;
+  font-family: var(--f-body);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.cyc-tab:hover { color: #fff; border-color: var(--brass); }
+.cyc-tab.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.cyc-body {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 10px;
+}
+.cyc-body img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.6);
+}
+.cyc-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  background: rgba(255,255,255,0.03);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  color: #C7BCA8;
+  font-size: 11.5px;
+}
+.cyc-dl {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  border-radius: 7px;
+  background: var(--brass);
+  color: #16120D;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 11.5px;
+}
 </style>
 </head>
 <body>
@@ -1039,6 +1128,37 @@ dl.spec dd {
         <button class="finish-btn" data-finish="dark">
           <span class="swatch" style="background:#222D2A"></span>Графит CAD
         </button>
+        <button class="finish-btn" id="btnToggleCyclesTop" style="border-left:1px solid var(--line-strong);margin-left:2px;padding-left:10px;color:var(--accent)">
+          📸 Blender Cycles (Гиперреализм)
+        </button>
+      </div>
+    </div>
+
+    <!-- Студийная галерея гиперреалистичных рендеров Blender 5.2 Cycles GPU -->
+    <div id="cycles-overlay">
+      <div class="cyc-head">
+        <div class="cyc-tabs">
+          <button class="cyc-tab active" data-shot="renders/blender_cycles_exploded.png" data-caption="Blender 5.2 Cycles GPU (AgX · 192 samples): Полный взрыв-разбор всех 7 узлов и мелкой механики (трубка Бурдона, подшипники 6001-2RS, сальник FKM, 36 зубьев рейки, венчик 14 спиц)">
+            🔧 1. Взрыв-схема (Все детали)
+          </button>
+          <button class="cyc-tab" data-shot="renders/blender_cycles_assembled.png" data-caption="Blender 5.2 Cycles GPU (AgX · 192 samples): Собранный аппарат DRUCKBROT Nº 1 под давлением 4,0 бар на дубовом столе">
+            ✨ 2. Собранный аппарат (Студия)
+          </button>
+          <button class="cyc-tab" data-shot="renders/blender_cycles_internals_closeup.png" data-caption="Blender 5.2 Cycles GPU (Макро 75 мм f/4.0): Вскрытый конический редуктор 1:8 (Z=40/8), подшипники 6001-2RS с красными пыльниками, сальник вала и 14-проволочный венчик">
+            🔬 3. Макро: Редуктор 1:8 и венчик
+          </button>
+        </div>
+        <button class="ph-close" id="cycClose" title="Вернуться к интерактивному 3D-стенду" style="background:#C83226;color:#fff;width:28px;height:28px">×</button>
+      </div>
+      <div class="cyc-body">
+        <img id="cycImg" src="renders/blender_cycles_exploded.png" alt="Blender 5.2 Cycles Studio Render">
+      </div>
+      <div class="cyc-foot">
+        <span id="cycCaption">Blender 5.2 Cycles GPU (AgX · 192 samples): Полный взрыв-разбор всех 7 узлов и мелкой механики</span>
+        <div style="display:flex;gap:8px;align-items:center">
+          <a class="cyc-dl" href="renders/druckbrot_n1.glb" download="druckbrot_n1.glb">⬇ Скачать 3D (.GLB)</a>
+          <button class="cyc-tab" id="cycBackBtn" style="background:rgba(255,255,255,0.12);color:#fff">🎮 В живой 3D-стенд</button>
+        </div>
       </div>
     </div>
 
@@ -1102,6 +1222,9 @@ dl.spec dd {
         <button class="btn" id="btnXray" aria-pressed="false" title="Сделать наружные литые кожухи полупрозрачными">👻 Рентген кожухов</button>
         <button class="btn" id="cut" aria-pressed="false">🔪 Осевой разрез</button>
         <button class="btn" id="btnResetAll" title="Собрать всё в исходное состояние">↺ Собрать</button>
+      </div>
+      <div class="row" style="margin-top:4px">
+        <button class="btn" id="btnOpenCyclesSide" style="border-color:var(--brass);font-weight:700">📸 Студийный рендер Blender 5.2 (Cycles GPU)</button>
       </div>
     </div>
 
@@ -1972,7 +2095,14 @@ dl.spec dd {
   const p404G = new THREE.Group(); head.add(p404G);
   const dispPart = revolved(p404G, [[0.5,0],[5.35,0],[5.35,-1.2],[4.8,-1.9],[3.5,-2.15],[0.5,-2.2]], mat.steel, mat.capSteel);
   dispPart.full.position.z = 2; dispPart.cut.position.z = 2;
-  regPart('404', 'G4', 'Купол-вытеснитель мёртвого объёма', 'Нержавеющая сталь AISI 304 · штамповка', 'Сокращает паразитный объём сжатого воздуха над тестом до 0,30 л (в 3 раза меньше качков насосом!).', p404G, [0, -4.8, 0], 4);
+  // 6 countersunk mounting screws on displacement dome flange
+  for (let i = 0; i < 6; i++){
+    const a = (i / 6) * Math.PI * 2 + 0.25;
+    const sc = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.12, 0.35, 12), mat.brass);
+    sc.position.set(Math.cos(a) * 4.95, -0.15, 2 + Math.sin(a) * 4.95);
+    p404G.add(sc);
+  }
+  regPart('404', 'G4', 'Купол-вытеснитель мёртвого объёма (6 винтов)', 'Нержавеющая сталь AISI 304 · штамповка', 'Сокращает паразитный объём сжатого воздуха над тестом до 0,30 л (в 3 раза меньше качков насосом!).', p404G, [0, -4.8, 0], 4);
 
   const collar = new THREE.Group();
   collar.position.z = 2;
@@ -2014,18 +2144,23 @@ dl.spec dd {
 
   const p502G = new THREE.Group(); p502G.position.set(3.65, GEAR_Y, 2); head.add(p502G);
   p502G.add(cylX(0.36, 8.8, mat.chrome));
-  [-5.0, 1.95].forEach(dx => {
+  const shaftBrgs = [];
+  [[-5.0, -1], [1.95, 1]].forEach(([dx, sgn]) => {
     // Detailed ball bearing 6001-2RS (outer ring, red seal, inner ring)
     const brg = new THREE.Group(); brg.position.x = dx;
+    brg.userData = { baseX: dx, sgn };
     brg.add(cylX(0.85, 0.65, mat.steel, 32));
     brg.add(cylX(0.72, 0.68, mat.red, 32));
     brg.add(cylX(0.48, 0.72, mat.chrome, 24));
     p502G.add(brg);
+    shaftBrgs.push(brg);
   });
   regPart('502', 'G5', 'Горизонтальный вал с двумя подшипниками 6001-2RS', 'Сталь 40Х · закрытые шарикоподшипники', 'Обеспечивает лёгкое вращение приводного вала без люфтов под радиальной нагрузкой.', p502G, [4.8, 6.0, 0], 3);
 
   const p503G = new THREE.Group(); p503G.position.set(7.0, GEAR_Y, 2); head.add(p503G);
   p503G.add(cylX(2.75, 1.05, mat.enamel));
+  const gearGasket = new THREE.Mesh(new THREE.TorusGeometry(2.52, 0.12, 12, 48), mat.seal);
+  gearGasket.rotation.y = Math.PI / 2; gearGasket.position.x = -0.55; p503G.add(gearGasket);
   const gearRing = new THREE.Mesh(new THREE.TorusGeometry(2.75, 0.20, 14, 56), mat.chrome);
   gearRing.rotation.y = Math.PI / 2; gearRing.position.x = 0.5; p503G.add(gearRing);
   // 6 hex socket bolts around inspection cover
@@ -2511,6 +2646,31 @@ dl.spec dd {
     if (targetExplodeK < 0.05) setDisassemblyStage(3);
   });
 
+  // Blender 5.2 Cycles GPU Studio Render Overlay Controls
+  const cyclesOverlay = document.getElementById('cycles-overlay');
+  const cycImg = document.getElementById('cycImg');
+  const cycCaption = document.getElementById('cycCaption');
+  function toggleCyclesOverlay(show){
+    const next = show !== undefined ? show : !cyclesOverlay.classList.contains('visible');
+    cyclesOverlay.classList.toggle('visible', next);
+    const topBtn = document.getElementById('btnToggleCyclesTop');
+    if (topBtn) topBtn.classList.toggle('active', next);
+  }
+  const btnTopCyc = document.getElementById('btnToggleCyclesTop');
+  if (btnTopCyc) btnTopCyc.addEventListener('click', () => toggleCyclesOverlay());
+  const btnSideCyc = document.getElementById('btnOpenCyclesSide');
+  if (btnSideCyc) btnSideCyc.addEventListener('click', () => toggleCyclesOverlay(true));
+  document.getElementById('cycClose').addEventListener('click', () => toggleCyclesOverlay(false));
+  document.getElementById('cycBackBtn').addEventListener('click', () => toggleCyclesOverlay(false));
+  document.querySelectorAll('.cyc-tab[data-shot]').forEach(tb => {
+    tb.addEventListener('click', () => {
+      document.querySelectorAll('.cyc-tab[data-shot]').forEach(x => x.classList.remove('active'));
+      tb.classList.add('active');
+      cycImg.src = tb.dataset.shot;
+      cycCaption.textContent = tb.dataset.caption || '';
+    });
+  });
+
   // ---------- STATE & 6-STEP WORKING ANIMATION ENGINE ----------
   const S = {};
   function initState(){
@@ -2823,6 +2983,29 @@ dl.spec dd {
     crown.rotation.x = S.crankA;
     whisk.position.set(0, -5.7 - explodeK * 5.5, 2);
     whisk.rotation.y = S.whiskA;
+
+    // Fine internal sub-part explosion ("мелкое": Bourdon C-tube, 6001-2RS bearings, FKM seal, calibrated springs)
+    const subExp = Math.max(0, (explodeK - 0.15) / 0.85);
+    bourdon.position.z = 10.4 + subExp * 1.65;
+    gFace.position.z   = 11.64 + subExp * 3.10;
+    needle.position.z  = 11.74 + subExp * 4.25;
+    nCap.position.z    = 11.80 + subExp * 4.35;
+    gBezel.position.z  = 11.66 + subExp * 5.60;
+    glass.position.z   = 11.86 + subExp * 7.10;
+
+    sealRing.position.y     = -0.15 - subExp * 1.35;
+    shaftBushing.position.y = 0.35;
+    glandNut.position.y     = 0.95 + subExp * 1.55;
+
+    jet.position.y       = 11.8 + subExp * 1.1;
+    btnSpring.position.y = 12.1 + subExp * 2.4;
+    btnRing.position.y   = 12.5 + subExp * 3.6;
+    if (!S.releasing) btn.position.y = 12.95 + subExp * 4.9;
+
+    svSpring.position.y = 0.2 + subExp * 1.6;
+    sCap.position.y     = 0.68 + subExp * 3.1;
+    gearGasket.position.x = -0.55 - subExp * 1.8;
+    shaftBrgs.forEach(b => { b.position.x = b.userData.baseX + b.userData.sgn * subExp * 2.1; });
 
     needle.rotation.z = gAng(S.p);
     setDough(S.doughH, S.bake);
