@@ -1895,30 +1895,36 @@ dl.spec dd {
   }
   regPart('201', 'G2', 'Опорный фланец цилиндра насоса', 'Нержавеющая сталь · 4 болта М5', 'Герметичное основание цилиндра с выпускным каналом высокого давления.', p201G, [-4.5, 0, 0], 5);
 
-  const p202G = new THREE.Group(); p202G.position.y = 5.2 + 5.7; pump.add(p202G);
-  p202G.add(new THREE.Mesh(new THREE.CylinderGeometry(1.75, 1.75, 11.4, 48, 1, true), mat.chrome));
+  const p202G = new THREE.Group(); p202G.position.y = 5.2; pump.add(p202G);
+  revolved(
+    p202G,
+    [[1.54, 0], [1.75, 0], [1.75, 11.4], [1.54, 11.4]],
+    mat.chrome,
+    mat.capChrome,
+    48
+  );
   [-4.3, -3.6, -2.9, 3.6, 4.3].forEach(ry => {
-    const fin = new THREE.Mesh(new THREE.TorusGeometry(1.82, 0.12, 12, 40), mat.chrome);
-    fin.rotation.x = Math.PI / 2; fin.position.y = ry; p202G.add(fin);
+    const fin = new THREE.Mesh(new THREE.TorusGeometry(1.82, 0.12, 12, 40), mat.chromeClip);
+    fin.rotation.x = Math.PI / 2; fin.position.y = 5.7 + ry; p202G.add(fin);
   });
   regPart('202', 'G2', 'Оребрённая гильза цилиндра Ø32×110 мм', 'Сталь AISI 304 · хонингование Ra 0,2', 'Рабочий цилиндр насоса с внешними рёбрами охлаждения воздуха при адиабатном сжатии до 4 бар.', p202G, [-7.5, 4.5, 3.0], 5, true);
 
   // Internal Piston + Cup Seal (moves with rod, explodes out in disassembly!)
-  const p203G = new THREE.Group(); p203G.position.y = 10.8; pump.add(p203G);
-  p203G.add(new THREE.Mesh(new THREE.CylinderGeometry(1.52, 1.52, 1.4, 36), mat.brass));
-  const cupSeal = new THREE.Mesh(new THREE.TorusGeometry(1.48, 0.18, 12, 36), mat.seal);
+  const p203G = new THREE.Group(); p203G.position.y = 13.5; pump.add(p203G);
+  p203G.add(new THREE.Mesh(new THREE.CylinderGeometry(1.50, 1.50, 1.4, 36), mat.brass));
+  const cupSeal = new THREE.Mesh(new THREE.TorusGeometry(1.46, 0.18, 12, 36), mat.seal);
   cupSeal.rotation.x = Math.PI / 2; cupSeal.position.y = -0.45; p203G.add(cupSeal);
-  const topSeal = new THREE.Mesh(new THREE.TorusGeometry(1.46, 0.14, 12, 36), mat.red);
+  const topSeal = new THREE.Mesh(new THREE.TorusGeometry(1.44, 0.14, 12, 36), mat.red);
   topSeal.rotation.x = Math.PI / 2; topSeal.position.y = 0.45; p203G.add(topSeal);
-  regPart('203', 'G2', 'Поршень компрессора с манжетой FKM', 'Латунь Л63 · фторкаучук Viton', 'Сжимает воздух при ходе вниз; при ходе вверх пропускает свежую порцию через лепестковый клапан.', p203G, [-11.5, 6.2, 0], 5);
+  regPart('203', 'G2', 'Поршень компрессора с манжетой FKM', 'Латунь Л63 · фторкаучук Viton', 'Сжимает воздух при ходе вниз и вытесняет его через обратный клапан в камеру над тестом.', p203G, [-11.5, 6.2, 0], 5);
 
   const p204G = new THREE.Group(); p204G.position.y = 8.2; pump.add(p204G);
   p204G.add(helixSpring(1.18, 0.11, 7, 4.6, mat.wire));
   regPart('204', 'G2', 'Возвратно-буферная пружина поршня', 'Пружинная сталь 65Г · 7 витков', 'Смягчает нижнюю мёртвую точку и помогает возврату кулисного рычага.', p204G, [-11.5, 2.0, -3.5], 5);
 
-  const rod = new THREE.Mesh(new THREE.CylinderGeometry(0.38, 0.38, 1, 24), mat.chrome);
+  const rod = new THREE.Mesh(new THREE.CylinderGeometry(0.36, 0.36, 7.2, 24), mat.chrome);
   pump.add(rod);
-  regPart('205', 'G2', 'Шток поршня Ø8 мм с шарнирной проушиной', 'Закалённая сталь · полированный хром', 'Передаёт усилие от двуплечего рычага на поршень внутри гильзы.', rod, [-11.5, 9.5, 0], 5);
+  regPart('205', 'G2', 'Шток поршня Ø8 мм с шарнирной проушиной', 'Закалённая сталь · полированный хром', 'Жёстко передаёт усилие от двуплечего рычага вниз на поршень внутри гильзы.', rod, [-11.5, 9.5, 0], 5);
 
   const p206G = new THREE.Group(); p206G.position.y = 16.5; pump.add(p206G);
   p206G.add(lathe([[0.4,0],[2.05,0],[2.1,0.55],[1.5,0.85],[0.4,0.85]], mat.brassKnurl, 48));
@@ -1950,9 +1956,19 @@ dl.spec dd {
   const ROD_ARM = 4.5;
   const p209G = new THREE.Group(); machine.add(p209G);
   const unionNut = cylX(0.65, 0.9, mat.brassKnurl, 6);
-  unionNut.position.set(-10.3, 7.5, -2); p209G.add(unionNut);
-  p209G.add(tube([[-10.5, 7.5, -2], [-7.6, 6.6, -2.6], [-5.2, 8.2, -6.2], [-3.9, 10, -8]], 0.46, mat.rubber));
-  regPart('209', 'G2', 'Напорный рукав высокого давления с штуцером', 'Армированный EPDM · латунная гайка G1/4"', 'Подаёт сжатый воздух от цилиндра насоса в канал вертикальной колонны.', p209G, [-6.5, -2.0, 4.5], 5);
+  unionNut.position.set(-10.3, 6.0, -2.0); p209G.add(unionNut);
+  let hoseMesh = tube([[-10.3, 6.0, -2.0], [-9.2, 8.5, -1.2], [-8.0, 14.2, 0.2], [-6.6, 17.8, 1.2]], 0.44, mat.rubber);
+  p209G.add(hoseMesh);
+  const airPulses = [];
+  for (let i = 0; i < 5; i++){
+    const ap = new THREE.Mesh(
+      new THREE.SphereGeometry(0.56, 16, 12),
+      new THREE.MeshBasicMaterial({ color: 0x4fc3f7, transparent: true, opacity: 0.0, depthWrite: false })
+    );
+    p209G.add(ap);
+    airPulses.push(ap);
+  }
+  regPart('209', 'G2', 'Напорный рукав высокого давления G1/4"', 'Армированный EPDM · штуцер прямого ввода в купол', 'Подаёт сжатый воздух от нижней камеры насоса напрямую во впускной обратный клапан напорного колокола над тестом.', p209G, [-6.5, -2.0, 4.5], 5);
 
   // -------------------------------------------------------------------------
   // УЗЕЛ III: СЪЁМНАЯ ХЛЕБНАЯ ФОРМА И ТЕСТО (Детали 301..304)
@@ -2238,13 +2254,15 @@ dl.spec dd {
   // УЗЕЛ VII: ПНЕВМОАРМАТУРА, МАНОМЕТР БУРДОНА И КЛАПАНЫ (Детали 701..704)
   // -------------------------------------------------------------------------
   const p701G = new THREE.Group(); head.add(p701G);
-  p701G.add(tube([[-1.8, 7.0, -5.2], [-2.6, 6.2, -1.0], [-3.2, 5.1, 1.4], [-3.2, 4.7, 1.6]], 0.24, mat.copper));
-  const checkValve = cylX(0.48, 1.15, mat.brassKnurl, 6);
-  checkValve.position.set(-2.6, 6.2, -1.0); p701G.add(checkValve);
+  const checkValve = cylX(0.55, 1.35, mat.brassKnurl, 6);
+  checkValve.position.set(-6.15, 3.2, 1.2); p701G.add(checkValve);
   // Internal check ball & spring
-  const cvBall = new THREE.Mesh(new THREE.SphereGeometry(0.24, 16, 12), mat.chrome);
-  cvBall.position.set(-2.4, 6.2, -1.0); p701G.add(cvBall);
-  regPart('701', 'G7', 'Впускной обратный клапан с медной магистралью', 'Медь М1 Ø6×1 мм · латунный клапан с шариком ШХ15', 'Пропускает сжатый воздух от насоса в купол камеры и запирает давление 4 бар.', p701G, [-6.5, 7.5, -2.5], 6);
+  const cvBall = new THREE.Mesh(new THREE.SphereGeometry(0.26, 16, 12), mat.chrome);
+  cvBall.position.set(-5.75, 3.2, 1.2); p701G.add(cvBall);
+  // Copper inlet channel feeding straight into the pressure dome above the dough + branch to manometer
+  p701G.add(tube([[-5.6, 3.2, 1.2], [-4.5, 4.1, 1.6], [-3.2, 4.5, 2.0]], 0.25, mat.copper));
+  p701G.add(tube([[-4.5, 4.1, 1.6], [-3.0, 6.4, 4.8], [-1.0, 8.2, 8.8]], 0.22, mat.copper));
+  regPart('701', 'G7', 'Впускной обратный клапан купола с магистралью', 'Медь М1 Ø6×1 мм · латунный клапан с шариком ШХ15', 'Врезан непосредственно в левый борт напорного колокола: принимает воздух от шланга насоса в камеру над тестом и к манометру.', p701G, [-6.5, 3.5, 2.5], 6);
 
   const front = new THREE.Group();
   head.add(front);
@@ -2704,11 +2722,13 @@ dl.spec dd {
     await tween(0.65, k => S.lock = ease(k));
   }
   async function stepPump(){
+    S.pumping = true;
     for (const target of [1.5, 2.6, 3.4, 4.0]){
       const p0 = S.p;
-      await tween(0.36, k => { S.leverA = lerp(-0.42, 0.22, ease(k)); S.p = lerp(p0, target, ease(k)); });
-      await tween(0.30, k => { S.leverA = lerp(0.22, -0.42, ease(k)); });
+      await tween(0.38, k => { S.leverA = lerp(-0.42, 0.22, ease(k)); S.p = lerp(p0, target, ease(k)); S.pumpPhase = k; });
+      await tween(0.30, k => { S.leverA = lerp(0.22, -0.42, ease(k)); S.pumpPhase = 0; });
     }
+    S.pumping = false;
   }
   async function stepCrank(){
     await tween(0.5, k => S.crankRate = ease(k));
@@ -2809,7 +2829,7 @@ dl.spec dd {
       document.querySelectorAll('.cam-btn').forEach(x => x.classList.remove('active'));
       b.classList.add('active');
       const vKey = b.dataset.cam;
-      if (vKey === 'cut' && !cutOn) setCut(true, false);
+      if ((vKey === 'cut' || vKey === 'pump') && !cutOn) setCut(true, false);
       if (vKey === 'gauge' && cutOn) setCut(false, false);
       flyTo(VIEWS[vKey] || VIEWS.home, 0.95);
     });
@@ -2828,7 +2848,7 @@ dl.spec dd {
 
   const LBL = [
     { n: '501', t: 'Коническая пара', s: '1:8 (Z=48/6)', f: () => hv(-0.7, GEAR_Y + 3.0, 2), side: -1, dy: -22 },
-    { n: '701', t: 'Обратный клапан', s: 'шариковый', f: () => hv(-2.6, 6.2, -1.0), side: -1, dy: 4 },
+    { n: '701', t: 'Впускной клапан', s: 'в купол 4 бар', f: () => hv(-6.15, 3.2, 1.2), side: -1, dy: -6 },
     { n: '405', t: 'Байонетный затвор', s: '6 зубьев', f: () => hv(-7.15, 0.8, 2), side: -1, dy: 2 },
     { n: '404', t: 'Купол-вытеснитель', s: 'AISI 304', f: () => hv(-4.0, -1.7, 2), side: -1, dy: 16 },
     { n: '304', t: 'Аэрированное тесто', s: '3D-срез', f: () => pv(-3.0, 0.45 + S.doughH * 0.45, 0), side: -1, dy: 24 },
@@ -2969,13 +2989,32 @@ dl.spec dd {
     lever.rotation.x = S.leverA;
     lever.position.addScaledVector(PARTS.find(p => p.code === '208').explodeVec, explodeK * 0.45);
 
+    // Rigid piston & rod kinematics: pushing lever down (+0.22) drives rod and piston down inside cylinder
     const pinY = 18.6 - ROD_ARM * Math.sin(S.leverA);
-    const rLen = Math.max(0.5, pinY - 16.6);
-    rod.scale.y = rLen;
-    rod.position.set(0, 16.6 + rLen / 2 + explodeK * 5.0, 0);
+    const strokeK = (pinY - 17.62) / (20.44 - 17.62); // 1 = top (lever up), 0 = bottom (lever down)
+    const pistonY = 8.2 + strokeK * 5.6;
+    p203G.position.y = pistonY + explodeK * 4.5;
+    rod.position.set(0, pistonY + 4.1 + explodeK * 6.5, 0);
+    p204G.scale.y = 0.55 + strokeK * 0.45;
+    p204G.position.y = 5.8 + (pistonY - 6.5) * 0.38;
 
-    // Move internal pump piston with lever
-    p203G.position.y = 10.8 - ROD_ARM * Math.sin(S.leverA) * 0.65 + explodeK * 4.5;
+    // Animate compressed air pulses travelling from pump cylinder through hose into the pressure dome (part 701)
+    const hosePts = [
+      new THREE.Vector3(-10.3, 6.0, -2.0),
+      new THREE.Vector3(-9.2, 8.5, -1.2),
+      new THREE.Vector3(-8.0, 14.2, 0.2),
+      new THREE.Vector3(-6.4, head.position.y + 3.2, 1.2)
+    ];
+    const hoseCurve = new THREE.CatmullRomCurve3(hosePts);
+    airPulses.forEach((ap, idx) => {
+      if (S.pumping && S.pumpPhase > 0){
+        const u = (S.pumpPhase * 1.4 + idx * 0.2) % 1.0;
+        ap.position.copy(hoseCurve.getPoint(u));
+        ap.material.opacity = Math.sin(u * Math.PI) * 0.85;
+      } else {
+        ap.material.opacity = 0;
+      }
+    });
 
     crank.position.set(8.1 + explodeK * 6.5, GEAR_Y + explodeK * 1.5, 2);
     crank.rotation.x = S.crankA;
@@ -3007,7 +3046,8 @@ dl.spec dd {
     gearGasket.position.x = -0.55 - subExp * 1.8;
     shaftBrgs.forEach(b => { b.position.x = b.userData.baseX + b.userData.sgn * subExp * 2.1; });
 
-    needle.rotation.z = gAng(S.p);
+    // Clockwise manometer needle rotation: 0 bar (7:30 o'clock) -> 4 bar (12:00 top green zone) -> 8 bar (4:30 o'clock)
+    needle.rotation.z = -gAng(S.p);
     setDough(S.doughH, S.bake);
 
     mat.dough.color.copy(rawC).lerp(bakeC, S.bake);
