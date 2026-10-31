@@ -1,159 +1,132 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru" data-theme="vintage">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Ручная хлебная машина «DRUCKBROT Nº 1» — Фотореалистичный 3D-стенд</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>DRUCKBROT Nº 1 — Полный CAD-аппарат и движок поузлового разбора (Патент Н. В. Евсеева РФ № 2475028)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #DDD5C7;
-  --bg-grad: radial-gradient(circle at 35% 25%, #F5EFE6 0%, #DFD5C5 55%, #C7B9A5 100%);
-  --stage-bg:
-    radial-gradient(ellipse at 50% 22%, rgba(255, 248, 231, 0.95) 0%, rgba(235, 223, 204, 0.55) 45%, rgba(186, 169, 145, 0.85) 100%),
-    linear-gradient(180deg, #EFE7DA 0%, #D8CBB8 62%, #BBA992 100%);
-  --panel: rgba(252, 249, 243, 0.93);
-  --card: #FFFFFF;
-  --card-alt: #F4EFE6;
-  --fg: #1E1915;
-  --muted: #655A4E;
-  --line: #D6CBB9;
-  --line-strong: #B5A690;
-  --accent: #8F281E;
-  --accent-hover: #A83226;
-  --accent-soft: rgba(143, 40, 30, 0.11);
-  --accent-fg: #FFF8F5;
+  --bg: #E7DFCF;
+  --bg-grad: radial-gradient(circle at 38% 28%, #FAF5EA 0%, #E7DFCF 56%, #CFC2AC 100%);
+  --panel: rgba(250, 246, 237, 0.94);
+  --card: #F3ECE0;
+  --card-alt: #EAE0CE;
+  --fg: #1C1915;
+  --muted: #685F52;
+  --line: rgba(28, 25, 21, 0.13);
+  --line-strong: rgba(28, 25, 21, 0.25);
+  --accent: #8F241A;
+  --accent-hover: #A83024;
+  --accent-fg: #FAF5EC;
+  --accent-soft: rgba(143, 36, 26, 0.11);
   --brass: #B58328;
-  --ok: #247848;
-  --ok-soft: rgba(36, 120, 72, 0.13);
-  --leader: rgba(30, 25, 21, 0.62);
-  --shadow-lg: 0 24px 60px rgba(28, 20, 12, 0.18), 0 4px 14px rgba(28, 20, 12, 0.08);
-  --shadow-sm: 0 2px 8px rgba(28, 20, 12, 0.06);
-  --f-display: "Fraunces", Georgia, serif;
-  --f-body: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --f-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+  --ok: #2D6B45;
+  --ok-soft: rgba(45, 107, 69, 0.13);
+  --f-display: 'Fraunces', Georgia, serif;
+  --f-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --f-mono: 'IBM Plex Mono', monospace;
+  --shadow-lg: 0 22px 54px rgba(32, 24, 14, 0.18), 0 3px 10px rgba(32, 24, 14, 0.08);
+  --shadow-sm: 0 4px 14px rgba(32, 24, 14, 0.09);
 }
 
 html[data-theme="dark"] {
-  --bg: #0D1113;
-  --bg-grad: radial-gradient(circle at 38% 30%, #1C2428 0%, #101518 60%, #080B0D 100%);
-  --stage-bg:
-    radial-gradient(ellipse at 50% 28%, rgba(46, 62, 68, 0.7) 0%, rgba(18, 25, 28, 0.9) 62%, #090D0F 100%);
-  --panel: rgba(20, 26, 29, 0.93);
-  --card: #171F22;
-  --card-alt: #11181A;
-  --fg: #ECF2F0;
-  --muted: #8FA19E;
-  --line: #283539;
-  --line-strong: #3C4F55;
+  --bg: #12161A;
+  --bg-grad: radial-gradient(circle at 38% 32%, #232B32 0%, #151A1F 60%, #0C0F12 100%);
+  --panel: rgba(24, 29, 35, 0.94);
+  --card: #1E252D;
+  --card-alt: #262F39;
+  --fg: #F0ECE1;
+  --muted: #9BA3AC;
+  --line: rgba(240, 236, 225, 0.11);
+  --line-strong: rgba(240, 236, 225, 0.24);
   --accent: #E05A47;
   --accent-hover: #EB6E5C;
+  --accent-fg: #14171A;
   --accent-soft: rgba(224, 90, 71, 0.16);
-  --accent-fg: #180907;
-  --brass: #E0B25B;
-  --ok: #4CC37A;
-  --ok-soft: rgba(76, 195, 122, 0.15);
-  --leader: rgba(236, 242, 240, 0.62);
-  --shadow-lg: 0 26px 65px rgba(0, 0, 0, 0.6), 0 4px 16px rgba(0, 0, 0, 0.4);
-  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.35);
-  color-scheme: dark;
+  --brass: #E0A948;
+  --ok: #4BB573;
+  --ok-soft: rgba(75, 181, 115, 0.16);
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.55);
 }
 
 html[data-theme="marble"] {
-  --bg: #E5E8E7;
-  --bg-grad: radial-gradient(circle at 38% 32%, #F8FAFA 0%, #E2E8E6 58%, #CFD8D5 100%);
-  --stage-bg:
-    radial-gradient(ellipse at 50% 25%, #FFFFFF 0%, #E5ECEA 58%, #C8D4D0 100%);
-  --panel: rgba(249, 252, 251, 0.93);
-  --card: #FFFFFF;
-  --card-alt: #F1F5F4;
-  --fg: #16201D;
-  --muted: #556660;
-  --line: #C6D3CE;
-  --line-strong: #9FB2AB;
-  --accent: #8F281E;
-  --accent-hover: #A83226;
-  --accent-soft: rgba(143, 40, 30, 0.1);
-  --accent-fg: #FFF8F5;
-  --brass: #B88933;
-  --ok: #247848;
-  --ok-soft: rgba(36, 120, 72, 0.12);
-  --leader: rgba(20, 30, 27, 0.55);
+  --bg: #EAECEF;
+  --bg-grad: radial-gradient(circle at 38% 32%, #FFFFFF 0%, #E6EBEF 58%, #CFD8DF 100%);
+  --panel: rgba(252, 253, 255, 0.93);
+  --card: #F2F5F8;
+  --card-alt: #E5EBF0;
+  --fg: #182026;
+  --muted: #5C6B73;
+  --line: rgba(24, 32, 38, 0.12);
+  --line-strong: rgba(24, 32, 38, 0.24);
+  --accent: #9E2A22;
+  --accent-hover: #B8342B;
+  --accent-fg: #FFFFFF;
+  --accent-soft: rgba(158, 42, 34, 0.10);
+  --brass: #B58328;
+  --ok: #297347;
+  --ok-soft: rgba(41, 115, 71, 0.12);
 }
 
-* { box-sizing: border-box; }
-html, body { height: 100%; margin: 0; padding: 0; }
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { height: 100%; margin: 0; }
 body {
-  background: var(--bg-grad);
-  color: var(--fg);
   font-family: var(--f-body);
   font-size: 13.5px;
-  line-height: 1.45;
+  line-height: 1.42;
+  color: var(--fg);
+  background: var(--bg);
+  background-image: var(--bg-grad);
   overflow: hidden;
-  -webkit-font-smoothing: antialiased;
+  user-select: none;
 }
 
 .app {
-  height: 100%;
   display: flex;
-  gap: 16px;
-  padding: 14px;
-  max-width: 1920px;
-  margin: 0 auto;
+  height: 100vh;
+  width: 100vw;
+  padding: 12px;
+  gap: 12px;
 }
 
-/* ==================== 3D STAGE ==================== */
+/* 3D STAGE */
 #stage {
+  position: relative;
   flex: 1;
   min-width: 0;
-  position: relative;
-  background: var(--stage-bg);
-  border: 1px solid var(--line);
   border-radius: 18px;
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-}
-
-/* Ambient studio bokeh & vignette overlay */
-#stage::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
   background:
-    radial-gradient(circle at 22% 18%, rgba(255, 243, 214, 0.35) 0%, transparent 36%),
-    radial-gradient(circle at 78% 14%, rgba(255, 255, 255, 0.28) 0%, transparent 32%),
-    radial-gradient(circle at 50% 50%, transparent 58%, rgba(20, 15, 10, 0.18) 100%);
-  z-index: 1;
+    radial-gradient(circle at 50% 42%, rgba(255, 250, 240, 0.35) 0%, rgba(0, 0, 0, 0.08) 100%),
+    linear-gradient(160deg, rgba(255,255,255,0.18) 0%, rgba(0,0,0,0.08) 100%);
+  border: 1px solid var(--line-strong);
+  box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255,255,255,0.45);
+  overflow: hidden;
 }
-
 #stage canvas {
-  position: relative;
-  z-index: 2;
   display: block;
   width: 100%;
   height: 100%;
-  touch-action: none;
   cursor: grab;
 }
 #stage canvas:active { cursor: grabbing; }
 
-/* Top Floating Stage Bar */
+/* Top Floating Bar */
 .stage-topbar {
   position: absolute;
-  top: 14px;
-  left: 14px;
-  right: 14px;
+  top: 12px;
+  left: 12px;
+  right: 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   pointer-events: none;
   z-index: 10;
+  flex-wrap: wrap;
 }
-
 .badge-patent {
   pointer-events: auto;
   display: inline-flex;
@@ -163,11 +136,11 @@ body {
   border-radius: 999px;
   background: var(--panel);
   backdrop-filter: blur(12px);
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-strong);
   box-shadow: var(--shadow-sm);
   font-family: var(--f-mono);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--fg);
 }
 .badge-patent .dot {
@@ -193,7 +166,7 @@ body {
 .finish-btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   padding: 5px 10px;
   border-radius: 999px;
   border: none;
@@ -203,7 +176,7 @@ body {
   font-size: 11.5px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.18s ease;
+  transition: all 0.16s ease;
 }
 .finish-btn:hover { color: var(--fg); }
 .finish-btn.active {
@@ -215,29 +188,123 @@ body {
   width: 11px;
   height: 11px;
   border-radius: 50%;
-  border: 1px solid rgba(0,0,0,0.22);
+  border: 1px solid rgba(0,0,0,0.25);
 }
 
-/* Camera & Explode Floating Dock */
+/* Selected Part Floating Inspector Card on Stage */
+#part-hud {
+  position: absolute;
+  top: 58px;
+  left: 12px;
+  width: 320px;
+  max-width: calc(100% - 24px);
+  background: var(--panel);
+  backdrop-filter: blur(16px);
+  border: 1.5px solid var(--brass);
+  border-radius: 14px;
+  padding: 12px 14px;
+  box-shadow: var(--shadow-lg);
+  z-index: 12;
+  display: none;
+  flex-direction: column;
+  gap: 7px;
+  pointer-events: auto;
+}
+#part-hud.visible { display: flex; }
+.ph-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.ph-code {
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: var(--accent);
+  color: var(--accent-fg);
+}
+.ph-sub {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.ph-close {
+  border: none;
+  background: var(--card-alt);
+  color: var(--fg);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: 700;
+}
+.ph-title {
+  font-family: var(--f-display);
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--fg);
+}
+.ph-mat {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--brass);
+  font-weight: 600;
+}
+.ph-desc {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.4;
+  margin: 0;
+}
+.ph-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 2px;
+}
+.ph-btn {
+  flex: 1;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--line-strong);
+  background: var(--card);
+  color: var(--fg);
+  font-family: var(--f-body);
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.14s;
+}
+.ph-btn:hover { border-color: var(--accent); }
+.ph-btn.active {
+  background: var(--accent);
+  color: var(--accent-fg);
+  border-color: var(--accent);
+}
+
+/* Bottom Camera & Quick X-Ray Dock */
 .stage-bottombar {
   position: absolute;
-  left: 14px;
-  right: 14px;
+  left: 12px;
+  right: 12px;
   bottom: 12px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  gap: 12px;
+  gap: 10px;
   pointer-events: none;
   z-index: 10;
 }
-
 .cam-dock {
   pointer-events: auto;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
   padding: 5px;
   border-radius: 12px;
   background: var(--panel);
@@ -250,35 +317,37 @@ body {
   border-radius: 8px;
   border: 1px solid transparent;
   background: transparent;
-  color: var(--muted);
+  color: var(--fg);
   font-family: var(--f-body);
   font-size: 11.5px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: all 0.15s;
 }
-.cam-btn:hover { color: var(--fg); background: var(--card-alt); }
+.cam-btn:hover { background: var(--card); }
 .cam-btn.active {
   background: var(--accent);
   color: var(--accent-fg);
 }
-
 .stage-meta {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 3px;
-  font-family: var(--f-mono);
-  font-size: 10.5px;
-  color: var(--fg);
+  pointer-events: auto;
+  padding: 7px 11px;
+  border-radius: 10px;
   background: var(--panel);
-  backdrop-filter: blur(8px);
-  padding: 5px 10px;
-  border-radius: 8px;
+  backdrop-filter: blur(12px);
   border: 1px solid var(--line);
+  font-size: 11px;
+  color: var(--muted);
+  text-align: right;
+  line-height: 1.35;
+}
+.stage-meta #tag {
+  font-family: var(--f-mono);
+  font-weight: 600;
+  color: var(--fg);
 }
 
-/* Section Callouts (SVG + HTML Pills) */
+/* SVG Callout Leaders */
 svg.leaders {
   position: absolute;
   inset: 0;
@@ -286,338 +355,252 @@ svg.leaders {
   height: 100%;
   pointer-events: none;
   overflow: visible;
-  z-index: 5;
+  z-index: 6;
 }
 svg.leaders polyline {
   fill: none;
-  stroke: var(--leader);
-  stroke-width: 1.4;
+  stroke: var(--fg);
+  stroke-width: 1.35;
   stroke-dasharray: 3 2;
+  opacity: 0.72;
 }
 svg.leaders circle.anchor {
   fill: var(--accent);
-  stroke: var(--card);
-  stroke-width: 1.8;
+  stroke: var(--panel);
+  stroke-width: 1.6;
 }
-
 .labels {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 6;
+  z-index: 7;
 }
 .lbl {
   position: absolute;
-  top: 0;
-  left: 0;
-  pointer-events: auto;
-  white-space: nowrap;
-  font-size: 11.5px;
-  font-weight: 600;
-  line-height: 1.15;
-  padding: 5px 10px 5px 7px;
-  border-radius: 999px;
+  transform: translate(0, -50%);
   background: var(--panel);
   backdrop-filter: blur(10px);
-  color: var(--fg);
   border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  padding: 4px 8px 4px 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--fg);
+  white-space: nowrap;
   box-shadow: var(--shadow-sm);
-  transform: translate(0, -50%);
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  gap: 5px;
+  pointer-events: auto;
   cursor: pointer;
 }
+.lbl:hover { border-color: var(--accent); }
 .lbl.left { transform: translate(-100%, -50%); }
-.lbl:hover {
-  border-color: var(--accent);
-  background: var(--card);
-  z-index: 20;
-}
 .lbl .idx {
-  width: 17px;
-  height: 17px;
-  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 4px;
   background: var(--accent);
   color: var(--accent-fg);
   font-family: var(--f-mono);
-  font-size: 10px;
-  font-weight: 600;
-  display: inline-grid;
-  place-items: center;
-  flex-shrink: 0;
+  font-size: 9.5px;
+  font-weight: 700;
 }
 .lbl small {
+  color: var(--muted);
   font-family: var(--f-mono);
   font-weight: 500;
-  color: var(--muted);
-  font-size: 10.5px;
-  padding-left: 4px;
-  border-left: 1px solid var(--line);
+  font-size: 10px;
 }
 
-/* ==================== RIGHT CONTROL PANEL ==================== */
+/* RIGHT CONTROL & DISASSEMBLY ENGINE PANEL */
 aside {
-  width: 390px;
-  flex: none;
+  width: 440px;
+  flex-shrink: 0;
   background: var(--panel);
   backdrop-filter: blur(16px);
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-strong);
   border-radius: 18px;
-  padding: 18px;
+  padding: 15px 16px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 11px;
   overflow-y: auto;
   box-shadow: var(--shadow-lg);
 }
-aside > * { flex-shrink: 0; }
 
 .eyebrow {
   font-family: var(--f-mono);
   font-size: 10.5px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
   text-transform: uppercase;
+  letter-spacing: 0.11em;
   color: var(--accent);
+  font-weight: 600;
   margin-bottom: 2px;
 }
 h1 {
   font-family: var(--f-display);
+  font-size: 22px;
   font-weight: 700;
-  font-size: 26px;
-  line-height: 1.08;
-  margin: 0;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+  margin: 0 0 4px 0;
+  line-height: 1.12;
 }
 .lede {
-  margin: 5px 0 0;
+  margin: 0;
   color: var(--muted);
-  font-size: 13px;
-  line-height: 1.45;
+  font-size: 12.2px;
+  line-height: 1.42;
 }
 
-/* Telemetry Readout Cards */
+/* Mode Switcher Tabs (Цикл работы vs Движок разбора 42 деталей) */
+.mode-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  padding: 4px;
+  background: var(--card);
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+}
+.mode-tab {
+  padding: 8px 10px;
+  border-radius: 9px;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--f-body);
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.16s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.mode-tab:hover { color: var(--fg); }
+.mode-tab.active {
+  background: var(--accent);
+  color: var(--accent-fg);
+  box-shadow: 0 2px 8px rgba(143, 36, 26, 0.28);
+}
+
+/* Telemetry Readout */
 .readout {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
+  gap: 7px;
 }
-.cell {
+.readout .cell {
   background: var(--card);
   border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 9px 11px;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  box-shadow: var(--shadow-sm);
+  border-radius: 10px;
+  padding: 7px 9px;
   position: relative;
   overflow: hidden;
 }
-.cell .bar-fill {
+.readout .k {
+  display: block;
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+.readout .v {
+  font-family: var(--f-mono);
+  font-size: 17px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  display: block;
+  margin-top: 1px;
+}
+.readout .v small {
+  font-size: 10.5px;
+  color: var(--muted);
+  font-weight: 500;
+  margin-left: 2px;
+}
+.bar-fill {
   position: absolute;
   left: 0;
   bottom: 0;
   height: 3px;
   width: 0%;
   background: var(--accent);
-  transition: width 0.15s ease;
-}
-.cell .k {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.cell .v {
-  font-family: var(--f-mono);
-  font-size: 20px;
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
-  color: var(--fg);
-}
-.cell .v small {
-  font-size: 11.5px;
-  font-weight: 400;
-  color: var(--muted);
-  margin-left: 3px;
+  transition: width 0.12s linear;
 }
 
-/* Live Status Banner */
 .status-box {
-  padding: 10px 12px;
-  border-radius: 12px;
   background: var(--card);
   border: 1px solid var(--line);
-  border-left: 4px solid var(--accent);
+  border-left: 3.5px solid var(--accent);
+  border-radius: 10px;
+  padding: 8px 11px;
+  font-size: 12.2px;
+  font-weight: 500;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  box-shadow: var(--shadow-sm);
-}
-.status-text {
-  font-weight: 500;
-  font-size: 13px;
-  color: var(--fg);
+  gap: 8px;
 }
 .foam-pill {
   font-family: var(--f-mono);
   font-size: 10.5px;
-  padding: 3px 8px;
+  padding: 2px 7px;
   border-radius: 999px;
-  background: var(--card-alt);
-  border: 1px solid var(--line);
-  color: var(--muted);
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
   white-space: nowrap;
 }
 
-/* Action Buttons Row */
+/* Buttons */
 .row {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 0.8fr;
-  gap: 7px;
+  display: flex;
+  gap: 6px;
 }
 .btn {
-  font: inherit;
-  font-size: 12.5px;
+  flex: 1;
+  font-family: var(--f-body);
+  font-size: 12.2px;
   font-weight: 600;
-  padding: 9px 12px;
+  padding: 8px 10px;
   border-radius: 10px;
   border: 1px solid var(--line-strong);
   background: var(--card);
   color: var(--fg);
   cursor: pointer;
+  transition: all 0.15s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  transition: all 0.16s ease;
-  box-shadow: var(--shadow-sm);
+  gap: 5px;
 }
 .btn:hover:not(:disabled) {
-  border-color: var(--accent);
+  background: var(--card-alt);
   transform: translateY(-1px);
 }
+.btn:disabled { opacity: 0.48; cursor: not-allowed; }
 .btn.primary {
+  flex: 1.5;
   background: var(--accent);
   color: var(--accent-fg);
   border-color: var(--accent);
 }
-.btn.primary:hover:not(:disabled) {
-  background: var(--accent-hover);
-}
-.btn[aria-pressed="true"] {
-  background: var(--accent-soft);
-  border-color: var(--accent);
-  color: var(--accent);
-}
-.btn:disabled {
-  opacity: 0.5;
-  cursor: default;
+.btn.primary:hover:not(:disabled) { background: var(--accent-hover); }
+.btn[aria-pressed="true"], .btn.active {
+  background: var(--fg);
+  color: var(--bg);
+  border-color: var(--fg);
 }
 
-/* Section Heading */
-h2 {
-  font-size: 10.5px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin: 0 0 7px;
-  font-weight: 700;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-h2 span.sub {
-  font-family: var(--f-mono);
-  font-weight: 400;
-  letter-spacing: 0;
-  text-transform: none;
-}
-
-/* Interactive Steps List */
-ol.steps {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-.step {
-  display: grid;
-  grid-template-columns: 30px 1fr auto;
-  gap: 10px;
-  align-items: center;
-  width: 100%;
-  text-align: left;
-  padding: 8px 11px;
-  border-radius: 11px;
-  border: 1px solid var(--line);
-  background: var(--card);
-  color: var(--fg);
-  font: inherit;
-  cursor: pointer;
-  transition: all 0.16s ease;
-}
-.step:hover:not(:disabled) {
-  border-color: var(--accent);
-  background: var(--card-alt);
-}
-.step .n {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-family: var(--f-mono);
-  font-size: 12px;
-  font-weight: 600;
-  border: 1.5px solid var(--line-strong);
-  color: var(--muted);
-  transition: all 0.16s ease;
-}
-.step b {
-  display: block;
-  font-weight: 600;
-  font-size: 13px;
-}
-.step span.d {
-  display: block;
-  font-size: 11.5px;
-  color: var(--muted);
-}
-.step .tag-time {
-  font-family: var(--f-mono);
-  font-size: 10.5px;
-  color: var(--muted);
-  padding: 2px 6px;
-  border-radius: 6px;
-  background: var(--card-alt);
-}
-.step:disabled { cursor: wait; opacity: 0.65; }
-.step.current {
-  border-color: var(--accent);
-  background: var(--accent-soft);
-  box-shadow: 0 0 0 1px var(--accent);
-}
-.step.current .n {
-  background: var(--accent);
-  color: var(--accent-fg);
-  border-color: var(--accent);
-}
-.step.done .n {
-  background: var(--ok-soft);
-  color: var(--ok);
-  border-color: var(--ok);
-}
-
-/* Interactive Sliders (Explode & Crumb Preview) */
+/* Sliders */
 .slider-card {
   background: var(--card);
   border: 1px solid var(--line);
@@ -644,46 +627,223 @@ input[type="range"] {
   cursor: pointer;
 }
 
+h2 {
+  font-size: 10.5px;
+  font-family: var(--f-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--muted);
+  margin: 0 0 6px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+h2 span.sub { font-weight: 400; text-transform: none; letter-spacing: 0; }
+
+/* Steps list */
+ol.steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 5px;
+}
+.step {
+  width: 100%;
+  text-align: left;
+  font-family: var(--f-body);
+  font-size: 12.2px;
+  padding: 7px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--fg);
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 22px 1fr auto;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.15s ease;
+}
+.step:hover:not(:disabled) {
+  border-color: var(--line-strong);
+  background: var(--card-alt);
+}
+.step .n {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  font-weight: 600;
+  border: 1.5px solid var(--line-strong);
+  color: var(--muted);
+}
+.step b { display: block; font-weight: 600; font-size: 12.5px; }
+.step span.d { display: block; font-size: 11px; color: var(--muted); }
+.step .tag-time {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  color: var(--muted);
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: var(--card-alt);
+}
+.step.current {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+.step.current .n {
+  background: var(--accent);
+  color: var(--accent-fg);
+  border-color: var(--accent);
+}
+.step.done .n {
+  background: var(--ok-soft);
+  color: var(--ok);
+  border-color: var(--ok);
+}
+
+/* DISASSEMBLY ENGINE TREE (7 SUBASSEMBLIES / 42 PARTS) */
+#disassembly-pane {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+#disassembly-pane.active { display: flex; }
+#cycle-pane.hidden { display: none; }
+
+.dis-stages-bar {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 4px;
+}
+.dis-stage-btn {
+  padding: 6px 2px;
+  border-radius: 7px;
+  border: 1px solid var(--line-strong);
+  background: var(--card);
+  color: var(--muted);
+  font-family: var(--f-mono);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.14s;
+}
+.dis-stage-btn:hover { color: var(--fg); border-color: var(--accent); }
+.dis-stage-btn.active {
+  background: var(--accent);
+  color: var(--accent-fg);
+  border-color: var(--accent);
+}
+
+.bom-tree {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 360px;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+.bom-group {
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: var(--card);
+  overflow: hidden;
+}
+.bom-group-head {
+  width: 100%;
+  padding: 8px 10px;
+  background: var(--card-alt);
+  border: none;
+  color: var(--fg);
+  font-family: var(--f-body);
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  text-align: left;
+}
+.bom-group-head:hover { background: var(--accent-soft); }
+.bom-group-head .g-badge {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 5px;
+  background: var(--panel);
+  color: var(--accent);
+}
+.bom-parts {
+  display: grid;
+  gap: 2px;
+  padding: 5px;
+}
+.bom-GroupCollapsed .bom-parts { display: none; }
+.bom-part {
+  width: 100%;
+  padding: 5px 8px;
+  border-radius: 7px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--fg);
+  font-family: var(--f-body);
+  font-size: 11.5px;
+  text-align: left;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 34px 1fr auto;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.12s;
+}
+.bom-part:hover {
+  background: var(--card-alt);
+  border-color: var(--line-strong);
+}
+.bom-part.selected {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+.bom-part .p-code {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--accent);
+}
+.bom-part .p-mat {
+  font-family: var(--f-mono);
+  font-size: 9.5px;
+  color: var(--muted);
+}
+
 /* Cut Legend & Crumb Micro-Inspector */
 .cut-card {
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 12px;
-  padding: 11px 12px;
+  padding: 10px 12px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-}
-.legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 12px;
-  font-size: 11.5px;
-  color: var(--muted);
-}
-.legend span {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-}
-.legend i {
-  width: 11px;
-  height: 11px;
-  border-radius: 3px;
-  display: inline-block;
-  border: 1px solid rgba(0,0,0,0.18);
+  gap: 7px;
 }
 .crumb-stages {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 6px;
-  padding-top: 4px;
 }
 .crumb-chip {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 3px;
   padding: 5px;
   border-radius: 8px;
   border: 1px solid var(--line);
@@ -691,7 +851,7 @@ input[type="range"] {
   font-size: 10px;
   color: var(--muted);
   text-align: center;
-  transition: all 0.15s;
+  cursor: pointer;
 }
 .crumb-chip.active {
   border-color: var(--accent);
@@ -700,52 +860,44 @@ input[type="range"] {
   background: var(--accent-soft);
 }
 .crumb-chip canvas {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   border: 1px solid var(--line-strong);
 }
 
-/* Engineering Spec Table */
 dl.spec {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 5px 12px;
+  gap: 4px 10px;
   margin: 0;
-  padding: 10px 12px;
+  padding: 9px 11px;
   background: var(--card);
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: 11px;
 }
-dl.spec dt {
-  color: var(--muted);
-  font-size: 12px;
-}
+dl.spec dt { color: var(--muted); font-size: 11.5px; }
 dl.spec dd {
   margin: 0;
   font-family: var(--f-mono);
-  font-size: 12px;
-  font-variant-numeric: tabular-nums;
+  font-size: 11.5px;
   text-align: right;
   color: var(--fg);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 920px) {
   body { overflow: auto; }
   .app { flex-direction: column; height: auto; padding: 8px; gap: 10px; }
-  #stage { height: 58vh; min-height: 375px; flex: none; border-radius: 14px; }
+  #stage { height: 58vh; min-height: 380px; flex: none; border-radius: 14px; }
   aside { width: auto; overflow: visible; padding: 14px; border-radius: 14px; }
   .stage-topbar { top: 8px; left: 8px; right: 8px; justify-content: center; }
   .badge-patent { display: none; }
-  .finish-btn { padding: 4px 8px; font-size: 11px; }
   .stage-bottombar { left: 8px; right: 8px; bottom: 8px; }
   .stage-meta { display: none; }
-  .cam-dock { width: 100%; overflow-x: auto; flex-wrap: nowrap; justify-content: flex-start; scrollbar-width: none; }
+  .cam-dock { width: 100%; overflow-x: auto; flex-wrap: nowrap; scrollbar-width: none; }
   .cam-dock::-webkit-scrollbar { display: none; }
   .cam-btn { white-space: nowrap; flex-shrink: 0; font-size: 11px; padding: 5px 8px; }
-  .lbl { font-size: 9.5px; padding: 3px 6px 3px 4px; gap: 4px; }
-  .lbl .idx { width: 14px; height: 14px; font-size: 9px; }
-  .lbl small { display: none; }
+  #part-hud { top: 48px; left: 8px; right: 8px; width: auto; }
 }
 
 /* PIN 1978 Lock Screen */
@@ -753,7 +905,7 @@ dl.spec dd {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: rgba(20, 16, 12, 0.72);
+  background: rgba(20, 16, 12, 0.76);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   display: flex;
@@ -795,11 +947,7 @@ dl.spec dd {
   margin: 0;
   color: var(--fg);
 }
-.auth-sub {
-  font-size: 13px;
-  color: var(--muted);
-  margin: 0;
-}
+.auth-sub { font-size: 13px; color: var(--muted); margin: 0; }
 .pin-input {
   width: 100%;
   text-align: center;
@@ -813,11 +961,6 @@ dl.spec dd {
   background: var(--card);
   color: var(--fg);
   outline: none;
-  transition: border-color 0.15s, box-shadow 0.15s;
-}
-.pin-input:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-soft);
 }
 .pin-input.err {
   border-color: #d93829;
@@ -881,21 +1024,37 @@ dl.spec dd {
     <div class="stage-topbar">
       <div class="badge-patent">
         <span class="dot"></span>
-        <span>МЕТОД Н. В. ЕВСЕЕВА · ПАТЕНТ РФ № 2475028 · ФОТОРЕАЛИСТИЧНЫЙ СТЕНД</span>
+        <span>МЕТОД Н. В. ЕВСЕЕВА · ПАТЕНТ РФ № 2475028 · CAD-СТЕНД (42 ДЕТАЛИ)</span>
       </div>
       <div class="finish-bar" role="group" aria-label="Отделка и окружение">
-        <button class="finish-btn active" data-finish="mint" title="Винтажная мятная эмаль на дубовой столешнице">
+        <button class="finish-btn active" data-finish="mint">
           <span class="swatch" style="background:#8FC4B0"></span>Мята + Дуб
         </button>
-        <button class="finish-btn" data-finish="cream" title="Слоновая кость и орех на дубовом столе">
+        <button class="finish-btn" data-finish="cream">
           <span class="swatch" style="background:#EAE0C8"></span>Крем + Орех
         </button>
-        <button class="finish-btn" data-finish="ruby" title="Итальянский кармин на каррарском мраморе">
+        <button class="finish-btn" data-finish="ruby">
           <span class="swatch" style="background:#9E2A22"></span>Кармин + Мрамор
         </button>
-        <button class="finish-btn" data-finish="dark" title="Тёмный инженерный графит на сланцевой плите">
+        <button class="finish-btn" data-finish="dark">
           <span class="swatch" style="background:#222D2A"></span>Графит CAD
         </button>
+      </div>
+    </div>
+
+    <!-- Карточка выбранной при клике 3D-детали -->
+    <div id="part-hud">
+      <div class="ph-top">
+        <span class="ph-code" id="phCode">ДЕТ. 501</span>
+        <span class="ph-sub" id="phGroup">Узел V · Редуктор 1:8</span>
+        <button class="ph-close" id="phClose" title="Снять выделение">×</button>
+      </div>
+      <h3 class="ph-title" id="phTitle">Ведущее коническое колесо Z=48</h3>
+      <div class="ph-mat" id="phMat">Бронза БрАЖ9-4 · m = 1,25 мм</div>
+      <p class="ph-desc" id="phDesc">Передаёт крутящий момент от рукоятки с восьмикратным ускорением на шпиндель венчика.</p>
+      <div class="ph-actions">
+        <button class="ph-btn" id="phIsolate">🔍 Изолировать деталь</button>
+        <button class="ph-btn" id="phPullOut">📤 Выдвинуть деталь</button>
       </div>
     </div>
 
@@ -905,154 +1064,192 @@ dl.spec dd {
     <div class="stage-bottombar">
       <div class="cam-dock">
         <button class="cam-btn active" data-cam="home">🎥 Общий вид</button>
-        <button class="cam-btn" data-cam="cut">🔪 Осевой разрез</button>
+        <button class="cam-btn" data-cam="cut">🔪 Разрез</button>
         <button class="cam-btn" data-cam="gear">⚙️ Редуктор 1:8</button>
-        <button class="cam-btn" data-cam="pump">🔧 Рычаг насоса</button>
-        <button class="cam-btn" data-cam="gauge">⏱️ Манометр</button>
+        <button class="cam-btn" data-cam="seal">🔩 Сальник и венчик</button>
+        <button class="cam-btn" data-cam="pump">🔧 Насос в разрезе</button>
+        <button class="cam-btn" data-cam="gauge">⏱️ Манометр Бурдона</button>
       </div>
       <div class="stage-meta">
-        <div id="tag">PBR-ТЕКСТУРЫ: ДУБ · ТОЧЁНАЯ СТАЛЬ · ОРЕХ · НАКАТКА ЛАТУНИ</div>
-        <div>Вращайте мышью или пальцем · Колесо / щипок — зум</div>
+        <div id="tag">КЛИК ПО ЛЮБОЙ ДЕТАЛИ В 3D — ПАСПОРТ И ИЗОЛЯЦИЯ УЗЛА</div>
+        <div>ЛКМ / палец — вращение · Колесо / щипок — зум · ПКМ — сдвиг</div>
       </div>
     </div>
   </div>
 
-  <!-- ПРАВАЯ ПРИБОРНАЯ ПАНЕЛЬ -->
+  <!-- ПРАВАЯ ИНЖЕНЕРНАЯ ПАНЕЛЬ -->
   <aside>
     <div>
-      <div class="eyebrow">Механический аэратор теста</div>
+      <div class="eyebrow">Механический аэратор теста · 7 узлов · 42 детали</div>
       <h1>Ручная хлебная машина</h1>
-      <p class="lede">Тесто взбивается венчиком под давлением 4 бар прямо в хлебной форме. После сброса давления пена удваивается в объёме, и форма сразу ставится в духовку — без дрожжей, мотора и перекладывания теста.</p>
+      <p class="lede">Полная CAD-модель с внутренними механизмами (коническая пара 1:8 на подшипниках, поршень с манжетой и пружиной, трубка Бурдона, сальник FKM и 14-проволочный венчик).</p>
     </div>
 
-    <div class="readout" aria-live="polite">
-      <div class="cell">
-        <span class="k">Давление</span>
-        <span class="v" id="rP">0,0<small>бар</small></span>
-        <div class="bar-fill" id="barP"></div>
-      </div>
-      <div class="cell">
-        <span class="k">Объём теста</span>
-        <span class="v" id="rV">0,30<small>л</small></span>
-        <div class="bar-fill" id="barV" style="background:var(--ok)"></div>
-      </div>
-      <div class="cell">
-        <span class="k">Венчик</span>
-        <span class="v" id="rW">0<small>об/м</small></span>
-        <div class="bar-fill" id="barW" style="background:var(--brass)"></div>
-      </div>
+    <!-- Переключатель: Рабочий цикл vs Движок разбора -->
+    <div class="mode-tabs">
+      <button class="mode-tab active" id="tabCycle">▶ Рабочий цикл (6 шагов)</button>
+      <button class="mode-tab" id="tabDisassembly">🔧 Движок разбора (42 дет.)</button>
     </div>
 
-    <div class="status-box">
-      <span class="status-text" id="status">Тесто в форме. Опустите голову.</span>
-      <span class="foam-pill" id="foamLabel">Сырое тесто</span>
-    </div>
-
-    <div class="row">
-      <button class="btn primary" id="auto">▶ Показать весь цикл</button>
-      <button class="btn" id="cut" aria-pressed="false">🔪 Разрез</button>
-      <button class="btn" id="reset">↺ Сброс</button>
-    </div>
-
+    <!-- ГЛАВНЫЙ ПОЛЗУНОК РАЗБОРКИ (РАБОТАЕТ В ОБОИХ РЕЖИМАХ) -->
     <div class="slider-card">
       <div class="slider-head">
-        <span>🔧 Разнос узлов по высоте (Взрыв-схема)</span>
+        <span>🔧 Полнота разборки аппарата (Взрыв-схема)</span>
         <span class="val" id="explodeVal">0%</span>
       </div>
       <input type="range" id="explodeSlider" min="0" max="100" value="0">
-    </div>
-
-    <div>
-      <h2>
-        <span>Цикл приготовления (6 шагов)</span>
-        <span class="sub">кликните на любой шаг</span>
-      </h2>
-      <ol class="steps">
-        <li>
-          <button class="step" data-step="0" id="s0">
-            <span class="n">1</span>
-            <span><b>Закрыть камеру</b><span class="d">Опускание головы по стойке, запирание байонета</span></span>
-            <span class="tag-time">2 с</span>
-          </button>
-        </li>
-        <li>
-          <button class="step" data-step="1" id="s1">
-            <span class="n">2</span>
-            <span><b>Накачать 4 бар</b><span class="d">Нагнетание воздуха кулисным рычагом, стрелка в зелёной зоне</span></span>
-            <span class="tag-time">15 с</span>
-          </button>
-        </li>
-        <li>
-          <button class="step" data-step="2" id="s2">
-            <span class="n">3</span>
-            <span><b>Взбить венчиком</b><span class="d">Конический редуктор 1:8, венчик ~800 об/мин</span></span>
-            <span class="tag-time">60 с</span>
-          </button>
-        </li>
-        <li>
-          <button class="step" data-step="3" id="s3">
-            <span class="n">4</span>
-            <span><b>Плавный сброс газа</b><span class="d">Через жиклёр Ø0,6 мм, расширение пузырьков ×2</span></span>
-            <span class="tag-time">10 с</span>
-          </button>
-        </li>
-        <li>
-          <button class="step" data-step="4" id="s4">
-            <span class="n">5</span>
-            <span><b>Открыть затвор</b><span class="d">Поворот байонетного кольца и подъём головы</span></span>
-            <span class="tag-time">2 с</span>
-          </button>
-        </li>
-        <li>
-          <button class="step" data-step="5" id="s5">
-            <span class="n">6</span>
-            <span><b>Выпечка в духовке</b><span class="d">Форма сразу идёт в печь, фиксация пористого мякиша</span></span>
-            <span class="tag-time">35 мин</span>
-          </button>
-        </li>
-      </ol>
-    </div>
-
-    <div class="cut-card">
-      <h2>
-        <span>Структура в разрезе и 3D-рельеф пористости</span>
-      </h2>
-      <div class="legend">
-        <span><i style="background:#cfd5d8"></i>нержавейка</span>
-        <span><i style="background:#9fcdba"></i>эмаль литья</span>
-        <span><i style="background:#d4a64a"></i>бронза / накатка</span>
-        <span><i style="background:#c47435"></i>медные трубки</span>
-        <span><i style="background:#74b3e8"></i>сжатый воздух</span>
-      </div>
-      <div class="crumb-stages">
-        <div class="crumb-chip active" data-crumb="0">
-          <canvas width="64" height="64" id="cPrev0"></canvas>
-          <span>1. Сырое</span>
-        </div>
-        <div class="crumb-chip" data-crumb="1">
-          <canvas width="64" height="64" id="cPrev1"></canvas>
-          <span>2. 4 бар</span>
-        </div>
-        <div class="crumb-chip" data-crumb="2">
-          <canvas width="64" height="64" id="cPrev2"></canvas>
-          <span>3. Сброс</span>
-        </div>
-        <div class="crumb-chip" data-crumb="3">
-          <canvas width="64" height="64" id="cPrev3"></canvas>
-          <span>4. Мякиш</span>
-        </div>
+      <div class="row" style="margin-top:3px">
+        <button class="btn" id="btnXray" aria-pressed="false" title="Сделать наружные литые кожухи полупрозрачными">👻 Рентген кожухов</button>
+        <button class="btn" id="cut" aria-pressed="false">🔪 Осевой разрез</button>
+        <button class="btn" id="btnResetAll" title="Собрать всё в исходное состояние">↺ Собрать</button>
       </div>
     </div>
 
+    <!-- ВКЛАДКА 1: РАБОЧИЙ ЦИКЛ (6 ШАГОВ) -->
+    <div id="cycle-pane">
+      <div class="readout" aria-live="polite">
+        <div class="cell">
+          <span class="k">Давление</span>
+          <span class="v" id="rP">0,0<small>бар</small></span>
+          <div class="bar-fill" id="barP"></div>
+        </div>
+        <div class="cell">
+          <span class="k">Объём теста</span>
+          <span class="v" id="rV">0,30<small>л</small></span>
+          <div class="bar-fill" id="barV" style="background:var(--ok)"></div>
+        </div>
+        <div class="cell">
+          <span class="k">Венчик</span>
+          <span class="v" id="rW">0<small>об/м</small></span>
+          <div class="bar-fill" id="barW" style="background:var(--brass)"></div>
+        </div>
+      </div>
+
+      <div class="status-box" style="margin-top:8px">
+        <span class="status-text" id="status">Тесто в форме. Опустите голову.</span>
+        <span class="foam-pill" id="foamLabel">Сырое тесто</span>
+      </div>
+
+      <div class="row" style="margin-top:8px">
+        <button class="btn primary" id="auto">▶ Показать весь цикл</button>
+        <button class="btn" id="reset">↺ Сброс цикла</button>
+      </div>
+
+      <div style="margin-top:10px">
+        <h2>
+          <span>Цикл приготовления (6 шагов)</span>
+          <span class="sub">кликните на любой шаг</span>
+        </h2>
+        <ol class="steps">
+          <li>
+            <button class="step" data-step="0" id="s0">
+              <span class="n">1</span>
+              <span><b>Закрыть камеру</b><span class="d">Опускание головы по зубчатой рейке, запирание байонета</span></span>
+              <span class="tag-time">2 с</span>
+            </button>
+          </li>
+          <li>
+            <button class="step" data-step="1" id="s1">
+              <span class="n">2</span>
+              <span><b>Накачать 4 бар</b><span class="d">Нагнетание воздуха кулисным рычагом, стрелка в зелёной зоне</span></span>
+              <span class="tag-time">15 с</span>
+            </button>
+          </li>
+          <li>
+            <button class="step" data-step="2" id="s2">
+              <span class="n">3</span>
+              <span><b>Взбить венчиком</b><span class="d">Конический редуктор 1:8, 14-проволочный венчик ~800 об/мин</span></span>
+              <span class="tag-time">60 с</span>
+            </button>
+          </li>
+          <li>
+            <button class="step" data-step="3" id="s3">
+              <span class="n">4</span>
+              <span><b>Плавный сброс газа</b><span class="d">Через жиклёр Ø0,6 мм, расширение пузырьков ×2</span></span>
+              <span class="tag-time">10 с</span>
+            </button>
+          </li>
+          <li>
+            <button class="step" data-step="4" id="s4">
+              <span class="n">5</span>
+              <span><b>Открыть затвор</b><span class="d">Поворот байонетного кольца и подъём головы</span></span>
+              <span class="tag-time">2 с</span>
+            </button>
+          </li>
+          <li>
+            <button class="step" data-step="5" id="s5">
+              <span class="n">6</span>
+              <span><b>Выпечка в духовке</b><span class="d">Форма сразу идёт в печь, фиксация пористого мякиша</span></span>
+              <span class="tag-time">35 мин</span>
+            </button>
+          </li>
+        </ol>
+      </div>
+
+      <div class="cut-card" style="margin-top:10px">
+        <h2><span>Микро-структура пористости теста</span></h2>
+        <div class="crumb-stages">
+          <div class="crumb-chip active" data-crumb="0">
+            <canvas width="64" height="64" id="cPrev0"></canvas>
+            <span>1. Сырое</span>
+          </div>
+          <div class="crumb-chip" data-crumb="1">
+            <canvas width="64" height="64" id="cPrev1"></canvas>
+            <span>2. 4 бар</span>
+          </div>
+          <div class="crumb-chip" data-crumb="2">
+            <canvas width="64" height="64" id="cPrev2"></canvas>
+            <span>3. Сброс</span>
+          </div>
+          <div class="crumb-chip" data-crumb="3">
+            <canvas width="64" height="64" id="cPrev3"></canvas>
+            <span>4. Мякиш</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ВКЛАДКА 2: ДВИЖОК ПОУЗЛОВОГО И ПОДЕТАЛЬНОГО РАЗБОРА -->
+    <div id="disassembly-pane">
+      <div>
+        <h2>
+          <span>Пошаговый порядок разборки (Ступени 0–7)</span>
+          <span class="sub" id="disStageLabel">Собран</span>
+        </h2>
+        <div class="dis-stages-bar" id="disStageBtns">
+          <button class="dis-stage-btn active" data-dstage="0" title="Полностью собранный аппарат">0</button>
+          <button class="dis-stage-btn" data-dstage="1" title="Ступень 1: Снятие хлебной формы">1</button>
+          <button class="dis-stage-btn" data-dstage="2" title="Ступень 2: Снятие байонета и подъём головы">2</button>
+          <button class="dis-stage-btn" data-dstage="3" title="Ступень 3: Вскрытие конического редуктора 1:8">3</button>
+          <button class="dis-stage-btn" data-dstage="4" title="Ступень 4: Демонтаж венчика, купола-вытеснителя и сальника FKM">4</button>
+          <button class="dis-stage-btn" data-dstage="5" title="Ступень 5: Разборка поршневого насоса (гильза, поршень, пружина)">5</button>
+          <button class="dis-stage-btn" data-dstage="6" title="Ступень 6: Разборка манометра Бурдона и клапанной группы">6</button>
+          <button class="dis-stage-btn" data-dstage="7" title="Ступень 7: Полный подетальный разбор всех 42 деталей">7</button>
+        </div>
+        <div class="row" style="margin-top:6px">
+          <button class="btn" id="btnPrevDis">◀ Собрать шаг</button>
+          <button class="btn primary" id="btnNextDis">Разобрать шаг ▶</button>
+        </div>
+      </div>
+
+      <div>
+        <h2>
+          <span>Спецификация узлов и деталей (BOM · 42 поз.)</span>
+          <span class="sub">клик — фокус и разбор</span>
+        </h2>
+        <div class="bom-tree" id="bomTree"></div>
+      </div>
+    </div>
+
     <div>
-      <h2>Паспортные характеристики концепта</h2>
+      <h2>Паспортные характеристики</h2>
       <dl class="spec">
         <dt>Хлебная форма</dt><dd>Ø 11 × 9 см · 0,85 л · AISI 304</dd>
         <dt>Загрузка теста</dt><dd>350 г (≈ 0,30 л сырого)</dd>
         <dt>Рабочее давление</dt><dd>4,0 бар (предохр. 5,5 бар)</dd>
         <dt>Газовый купол над тестом</dt><dd>≈ 0,30 л (с вытеснителем)</dd>
         <dt>Ручной насос</dt><dd>Ø 32 × 110 мм · ~15 качков</dd>
-        <dt>Привод венчика</dt><dd>R 55 мм · коническая пара 1:8</dd>
+        <dt>Привод венчика</dt><dd>R 55 мм · коническая пара 1:8 (Z=48/6)</dd>
         <dt>Дроссель сброса</dt><dd>жиклёр Ø 0,6 мм (~0,06 МПа/с)</dd>
       </dl>
     </div>
@@ -1064,7 +1261,7 @@ dl.spec dd {
 <script>
 (function(){
   const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const SPEED = reduce ? 0.4 : 1;
+  const SPEED = reduce ? 0.45 : 1;
   const stageEl = document.getElementById('stage');
 
   // ---------- RENDERER & SCENE ----------
@@ -1079,473 +1276,306 @@ dl.spec dd {
   stageEl.insertBefore(renderer.domElement, stageEl.firstChild);
 
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(28, 1, 1, 600);
+  const camera = new THREE.PerspectiveCamera(33, 1, 0.5, 400);
+  const controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.07;
+  controls.rotateSpeed = 0.75;
+  controls.minDistance = 12;
+  controls.maxDistance = 165;
+  controls.maxPolarAngle = Math.PI * 0.495;
 
   const VIEWS = {
-    home:  { p: new THREE.Vector3(64, 43, 86), t: new THREE.Vector3(0, 18.8, 0) },
-    cut:   { p: new THREE.Vector3(10, 25, 96), t: new THREE.Vector3(0, 19.0, 2) },
-    gear:  { p: new THREE.Vector3(24, 30, 38), t: new THREE.Vector3(1.5, 23, 2) },
-    pump:  { p: new THREE.Vector3(-42, 28, 46), t: new THREE.Vector3(-10, 14, -2) },
-    gauge: { p: new THREE.Vector3(0, 26, 48),  t: new THREE.Vector3(0, 23, 6) }
+    home:  { p: new THREE.Vector3(44, 32, 58),  t: new THREE.Vector3(0, 17.5, 0) },
+    cut:   { p: new THREE.Vector3(6, 22, 62),   t: new THREE.Vector3(0, 17, 1.5) },
+    gear:  { p: new THREE.Vector3(24, 31, 26),  t: new THREE.Vector3(2.5, 23, 2) },
+    seal:  { p: new THREE.Vector3(18, 20, 26),  t: new THREE.Vector3(0, 15.5, 2) },
+    pump:  { p: new THREE.Vector3(-34, 21, 30), t: new THREE.Vector3(-12.2, 13, -2) },
+    gauge: { p: new THREE.Vector3(0, 26, 36),   t: new THREE.Vector3(0, 23, 7) }
   };
-
   camera.position.copy(VIEWS.home.p);
-  const controls = new THREE.OrbitControls(camera, renderer.domElement);
   controls.target.copy(VIEWS.home.t);
-  controls.enableDamping = true;
-  controls.dampingFactor = 0.06;
-  controls.enablePan = true;
-  controls.minDistance = 24;
-  controls.maxDistance = 165;
-  controls.maxPolarAngle = Math.PI * 0.485;
+  controls.update();
 
-  // ---------- PHOTOREALISTIC BAKERY / STUDIO HDRI ENVIRONMENT ----------
-  (function makePhotorealEnv(){
-    const pm = new THREE.PMREMGenerator(renderer);
-    const s = new THREE.Scene();
-    const geo = new THREE.SphereGeometry(70, 64, 32);
-    const pos = geo.attributes.position, cols = [];
+  // ---------- PROCEDURAL HDRI STUDIO REFLECTIONS ----------
+  function buildStudioEnv(){
+    const envScene = new THREE.Scene();
+    const geo = new THREE.SphereGeometry(80, 64, 32);
+    const pos = geo.attributes.position;
+    const cols = [];
+    const c = new THREE.Color();
     for (let i = 0; i < pos.count; i++){
-      const y = pos.getY(i) / 70;
-      const x = pos.getX(i) / 70;
-      const c = new THREE.Color();
-      if (y > 0) {
-        // Warm sunlit bakery ceiling & skylight gradient
-        c.setHSL(0.10 + 0.04 * x, 0.22, 0.22 + 0.58 * Math.pow(y, 0.85));
+      const x = pos.getX(i), y = pos.getY(i), z = pos.getZ(i);
+      const ny = y / 80, nx = x / 80, nz = z / 80;
+      if (ny > 0){
+        c.setRGB(0.28 + 0.55 * Math.pow(ny, 0.7), 0.25 + 0.50 * Math.pow(ny, 0.7), 0.22 + 0.44 * Math.pow(ny, 0.7));
+        if (nx > 0.35 && nz > 0.2 && ny > 0.2 && ny < 0.85) c.addScalar(0.95);
+        if (nx < -0.4 && nz > -0.3 && ny > 0.15 && ny < 0.75) c.lerp(new THREE.Color(1.3, 0.95, 0.65), 0.65);
+        if (nz < -0.5 && ny > 0.25) c.addScalar(0.6);
       } else {
-        // Warm oak floor bounce reflection
-        c.setHSL(0.08, 0.35, 0.14 + 0.10 * (1 + y));
+        const k = Math.min(1, -ny * 2.0);
+        c.setRGB(0.24 - 0.14 * k, 0.19 - 0.11 * k, 0.14 - 0.08 * k);
       }
       cols.push(c.r, c.g, c.b);
     }
     geo.setAttribute('color', new THREE.Float32BufferAttribute(cols, 3));
-    s.add(new THREE.Mesh(geo, new THREE.MeshBasicMaterial({ vertexColors: true, side: THREE.BackSide })));
+    envScene.add(new THREE.Mesh(geo, new THREE.MeshBasicMaterial({ vertexColors: true, side: THREE.BackSide })));
 
-    const addWindow = (w, h, x, y, z, col, intensity) => {
-      const c = new THREE.Color(col).multiplyScalar(intensity);
-      const m = new THREE.Mesh(
-        new THREE.PlaneGeometry(w, h),
-        new THREE.MeshBasicMaterial({ color: c, side: THREE.DoubleSide })
-      );
-      m.position.set(x, y, z);
-      m.lookAt(0, 15, 0);
-      s.add(m);
-    };
-    // Key studio window with mullions (creates realistic multi-pane reflections in chrome & enamel!)
-    addWindow(16, 36, -42, 26, 28, 0xfff8eb, 5.2);
-    addWindow(16, 36, -22, 26, 38, 0xfff8eb, 4.8);
-    // Top overhead softbox
-    addWindow(46, 18, 0, 54, 18, 0xffffff, 5.5);
-    // Warm tungsten bakery rim light right
-    addWindow(22, 42, 48, 22, -14, 0xffdcb0, 4.0);
-    // Cool sky fill
-    addWindow(34, 14, 24, 16, 48, 0xd8ecff, 2.8);
+    const stripMat = new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.DoubleSide });
+    const s1 = new THREE.Mesh(new THREE.PlaneGeometry(36, 22), stripMat);
+    s1.position.set(35, 38, 32); s1.lookAt(0, 14, 0); envScene.add(s1);
+    const s2 = new THREE.Mesh(new THREE.PlaneGeometry(28, 36), new THREE.MeshBasicMaterial({ color: 0xffe4bc, side: THREE.DoubleSide }));
+    s2.position.set(-38, 26, 22); s2.lookAt(0, 14, 0); envScene.add(s2);
 
-    scene.environment = pm.fromScene(s, 0.02).texture;
-    pm.dispose();
-  })();
+    const pmrem = new THREE.PMREMGenerator(renderer);
+    const tex = pmrem.fromScene(envScene, 0.03).texture;
+    pmrem.dispose();
+    return tex;
+  }
+  scene.environment = buildStudioEnv();
 
-  // Multi-light Studio Setup
-  scene.add(new THREE.HemisphereLight(0xfff8ee, 0x6b5844, 0.58));
-  const sun = new THREE.DirectionalLight(0xfffaf0, 1.65);
-  sun.position.set(30, 58, 38);
-  sun.castShadow = true;
-  sun.shadow.mapSize.set(2048, 2048);
-  Object.assign(sun.shadow.camera, { left: -52, right: 56, top: 50, bottom: -45, near: 1, far: 180 });
-  sun.shadow.bias = -0.0004;
-  scene.add(sun);
+  scene.add(new THREE.HemisphereLight(0xfff6e8, 0x7d6b57, 0.58));
+  const key = new THREE.DirectionalLight(0xfff5e4, 1.32);
+  key.position.set(34, 54, 40);
+  key.castShadow = true;
+  key.shadow.mapSize.set(2048, 2048);
+  key.shadow.camera.near = 10; key.shadow.camera.far = 140;
+  const d = 38;
+  key.shadow.camera.left = -d; key.shadow.camera.right = d;
+  key.shadow.camera.top = d; key.shadow.camera.bottom = -d;
+  key.shadow.bias = -0.0003;
+  scene.add(key);
 
-  const fill = new THREE.DirectionalLight(0xd8ecff, 0.45);
-  fill.position.set(-36, 24, 42);
+  const rim = new THREE.DirectionalLight(0xd8ecff, 0.65);
+  rim.position.set(-34, 30, -28);
+  scene.add(rim);
+
+  const fill = new THREE.DirectionalLight(0xffdfba, 0.42);
+  fill.position.set(-28, 18, 32);
   scene.add(fill);
 
-  const warmRim = new THREE.DirectionalLight(0xffd296, 0.55);
-  warmRim.position.set(18, 28, -46);
-  scene.add(warmRim);
-
-  // ---------- PROCEDURAL HIGH-RES PBR TEXTURE GENERATORS ----------
-  function canvasTex(w, h, draw, repeatX, repeatY, isLinear){
+  // ---------- PROCEDURAL PBR TEXTURES ----------
+  function canvasTex(w, h, draw, repeatX, repeatY){
     const c = document.createElement('canvas');
     c.width = w; c.height = h;
     draw(c.getContext('2d'), w, h);
     const t = new THREE.CanvasTexture(c);
-    if (!isLinear) t.encoding = THREE.sRGBEncoding;
-    t.anisotropy = 8;
-    if (repeatX){
+    t.anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy());
+    if (repeatX || repeatY){
       t.wrapS = t.wrapT = THREE.RepeatWrapping;
-      t.repeat.set(repeatX, repeatY || repeatX);
+      t.repeat.set(repeatX || 1, repeatY || 1);
     }
     return t;
   }
 
-  // 1. Artisan Oak Butcher-Block Countertop Texture + Bump/Roughness + Flour Dusting
-  function makeOakTableTex(mode){
-    return canvasTex(1024, 1024, (g, w, h) => {
-      if (mode === 'marble') {
-        g.fillStyle = '#EAECEF';
-        g.fillRect(0, 0, w, h);
-        let seed = 91;
-        const rnd = () => { seed = (seed * 16807) % 2147483647; return seed / 2147483647; };
-        for (let v = 0; v < 28; v++){
-          g.beginPath();
-          let x = rnd() * w, y = rnd() * h;
-          g.moveTo(x, y);
-          for (let s = 0; s < 14; s++){
-            x += (rnd() - 0.35) * 95;
-            y += (rnd() - 0.45) * 65;
-            g.lineTo(x, y);
-          }
-          g.strokeStyle = v % 3 === 0 ? 'rgba(130,142,148,0.22)' : 'rgba(165,175,180,0.14)';
-          g.lineWidth = 1.5 + rnd() * 5;
-          g.stroke();
-        }
-        return;
-      }
-      if (mode === 'slate') {
-        g.fillStyle = '#1B2326';
-        g.fillRect(0, 0, w, h);
-        g.strokeStyle = 'rgba(90, 140, 150, 0.14)';
-        g.lineWidth = 1.5;
-        for (let i = 0; i <= w; i += 64){
-          g.beginPath(); g.moveTo(i, 0); g.lineTo(i, h); g.stroke();
-          g.beginPath(); g.moveTo(0, i); g.lineTo(w, i); g.stroke();
-        }
-        return;
-      }
-      // Default: Warm Artisan Oak Planks with Woodgrain & Knots
-      const planks = 8, ph = h / planks;
-      let seed = 42;
-      const rnd = () => { seed = (seed * 16807) % 2147483647; return seed / 2147483647; };
-      for (let p = 0; p < planks; p++){
-        const y0 = p * ph;
-        const hue = 28 + (rnd() - 0.5) * 5;
-        const lit = 48 + (rnd() - 0.5) * 8;
-        g.fillStyle = `hsl(${hue}, 42%, ${lit}%)`;
-        g.fillRect(0, y0, w, ph);
-
-        // Wood fibers & cathedral grain
-        const knotX = (0.18 + 0.64 * rnd()) * w;
-        const knotY = y0 + (0.25 + 0.5 * rnd()) * ph;
-        for (let f = 0; f < 85; f++){
-          const fy = y0 + (f / 85) * ph;
-          g.beginPath();
-          for (let x = 0; x <= w; x += 16){
-            const dx = x - knotX, dy = fy - knotY;
-            const dist = Math.sqrt(dx * dx + dy * dy * 14);
-            const warp = Math.exp(-dist / 120) * (dy > 0 ? 7 : -7);
-            const yy = fy + warp + Math.sin(x * 0.015 + p * 2 + f * 0.1) * 1.8;
-            if (x === 0) g.moveTo(x, yy); else g.lineTo(x, yy);
-          }
-          g.strokeStyle = f % 2 === 0 ? 'rgba(68, 38, 14, 0.13)' : 'rgba(255, 225, 185, 0.08)';
-          g.lineWidth = 1.2 + (f % 4 === 0 ? 1.4 : 0);
-          g.stroke();
-        }
-        // Plank seam groove
-        g.fillStyle = 'rgba(42, 22, 8, 0.48)';
-        g.fillRect(0, y0, w, 2.5);
-      }
-      // Subtle artisan flour dusting near the pan area
-      for (let i = 0; i < 650; i++){
-        const a = rnd() * Math.PI * 2, r = 40 + Math.pow(rnd(), 0.7) * 260;
-        const fx = w * 0.46 + Math.cos(a) * r, fy = h * 0.54 + Math.sin(a) * r;
-        g.fillStyle = `rgba(255, 250, 240, ${0.04 + rnd() * 0.14})`;
-        g.beginPath(); g.arc(fx, fy, 0.8 + rnd() * 2.4, 0, Math.PI * 2); g.fill();
-      }
-    }, 1, 1, false);
-  }
-
-  const woodBumpTex = canvasTex(512, 512, (g, w, h) => {
-    g.fillStyle = '#808080';
+  const oakTex = canvasTex(1024, 1024, (g, w, h) => {
+    g.fillStyle = '#9D744E';
     g.fillRect(0, 0, w, h);
-    for (let y = 0; y < h; y += 2){
-      const v = 115 + Math.sin(y * 0.35) * 20 + (y % 64 < 2 ? -45 : 0);
-      g.fillStyle = `rgb(${v},${v},${v})`;
-      g.fillRect(0, y, w, 2);
+    const planks = 6, pw = h / planks;
+    for (let p = 0; p < planks; p++){
+      const y0 = p * pw;
+      g.fillStyle = ['#9A704B','#A57A54','#8E6542','#A17650','#936B46','#A87E58'][p % 6];
+      g.fillRect(0, y0, w, pw);
+      for (let i = 0; i < 420; i++){
+        const y = y0 + Math.random() * pw;
+        g.strokeStyle = i % 2 ? 'rgba(62,38,18,0.12)' : 'rgba(235,200,160,0.08)';
+        g.lineWidth = 0.6 + Math.random() * 1.8;
+        g.beginPath(); g.moveTo(0, y);
+        for (let x = 0; x <= w; x += 64) g.lineTo(x, y + Math.sin(x * 0.012 + p) * 3.5);
+        g.stroke();
+      }
+      g.fillStyle = 'rgba(38,22,10,0.38)';
+      g.fillRect(0, y0, w, 2);
     }
-  }, 2, 2, true);
+  });
+  oakTex.encoding = THREE.sRGBEncoding;
 
-  // 2. Anisotropic Brushed Stainless Steel Bump & Roughness Map
+  const marbleTex = canvasTex(1024, 1024, (g, w, h) => {
+    g.fillStyle = '#F2F4F7'; g.fillRect(0, 0, w, h);
+    for (let v = 0; v < 28; v++){
+      let x = Math.random() * w, y = Math.random() * h, a = Math.random() * Math.PI;
+      g.strokeStyle = v % 3 === 0 ? 'rgba(110,122,135,0.16)' : 'rgba(150,160,172,0.09)';
+      g.lineWidth = 1 + Math.random() * 3.5;
+      g.beginPath(); g.moveTo(x, y);
+      for (let s = 0; s < 40; s++){
+        a += (Math.random() - 0.5) * 0.45;
+        x += Math.cos(a) * 24; y += Math.sin(a) * 24;
+        g.lineTo(x, y);
+      }
+      g.stroke();
+    }
+  });
+  marbleTex.encoding = THREE.sRGBEncoding;
+
+  const slateTex = canvasTex(512, 512, (g, w, h) => {
+    g.fillStyle = '#1B2326'; g.fillRect(0, 0, w, h);
+    g.strokeStyle = 'rgba(255,255,255,0.04)'; g.lineWidth = 1;
+    for (let i = 0; i < w; i += 32){
+      g.beginPath(); g.moveTo(i, 0); g.lineTo(i, h); g.stroke();
+      g.beginPath(); g.moveTo(0, i); g.lineTo(w, i); g.stroke();
+    }
+  });
+  slateTex.encoding = THREE.sRGBEncoding;
+
   const brushedSteelBump = canvasTex(512, 512, (g, w, h) => {
-    g.fillStyle = '#808080';
-    g.fillRect(0, 0, w, h);
-    let s = 17;
-    const rnd = () => { s = (s * 16807) % 2147483647; return s / 2147483647; };
+    g.fillStyle = '#808080'; g.fillRect(0, 0, w, h);
     for (let y = 0; y < h; y++){
-      const v = Math.round(110 + rnd() * 36 + Math.sin(y * 0.6) * 8);
+      const v = 115 + Math.floor(Math.random() * 26);
       g.fillStyle = `rgb(${v},${v},${v})`;
       g.fillRect(0, y, w, 1);
     }
-  }, 2, 3, true);
+  }, 2, 3);
 
-  // 3. Cast Enamel Micro-Orange-Peel Bump Map
-  const castEnamelBump = canvasTex(256, 256, (g, w, h) => {
-    g.fillStyle = '#808080';
-    g.fillRect(0, 0, w, h);
-    let s = 33;
-    const rnd = () => { s = (s * 16807) % 2147483647; return s / 2147483647; };
-    for (let i = 0; i < 2400; i++){
-      const v = rnd() > 0.5 ? 148 : 108;
-      g.fillStyle = `rgba(${v},${v},${v},0.25)`;
-      g.beginPath();
-      g.arc(rnd() * w, rnd() * h, 1.5 + rnd() * 3.5, 0, Math.PI * 2);
-      g.fill();
+  const knurlBump = canvasTex(256, 256, (g, w, h) => {
+    g.fillStyle = '#505050'; g.fillRect(0, 0, w, h);
+    g.strokeStyle = '#ffffff'; g.lineWidth = 2.6;
+    const step = 16;
+    for (let i = -h; i < w + h; i += step){
+      g.beginPath(); g.moveTo(i, 0); g.lineTo(i + h, h); g.stroke();
+      g.beginPath(); g.moveTo(i, h); g.lineTo(i + h, 0); g.stroke();
     }
-  }, 6, 6, true);
+  }, 6, 2);
 
-  // 4. Diamond Knurling Bump Map for Brass Nuts & Fittings
-  const knurlBump = canvasTex(128, 128, (g, w, h) => {
-    g.fillStyle = '#707070';
-    g.fillRect(0, 0, w, h);
-    g.strokeStyle = '#ffffff';
-    g.lineWidth = 3;
-    for (let i = -128; i <= 256; i += 16){
-      g.beginPath(); g.moveTo(i, 0); g.lineTo(i + 128, 128); g.stroke();
-      g.beginPath(); g.moveTo(i, 128); g.lineTo(i + 128, 0); g.stroke();
+  const enamelBump = canvasTex(256, 256, (g, w, h) => {
+    g.fillStyle = '#808080'; g.fillRect(0, 0, w, h);
+    for (let i = 0; i < 1800; i++){
+      const x = Math.random() * w, y = Math.random() * h, r = 1 + Math.random() * 2.5;
+      const v = 118 + Math.floor(Math.random() * 20);
+      g.fillStyle = `rgb(${v},${v},${v})`;
+      g.beginPath(); g.arc(x, y, r, 0, Math.PI * 2); g.fill();
     }
-  }, 6, 2, true);
+  }, 4, 4);
 
-  // 5. Turned Walnut / Bakelite Handle Texture
-  const walnutTex = canvasTex(256, 256, (g, w, h) => {
-    g.fillStyle = '#6A2218';
-    g.fillRect(0, 0, w, h);
-    for (let y = 0; y < h; y += 2){
-      const d = Math.sin(y * 0.14) * 12;
-      g.fillStyle = y % 6 === 0 ? 'rgba(30, 8, 4, 0.28)' : `rgba(${120 + d}, 38, 26, 0.22)`;
-      g.fillRect(0, y, w, 2);
-    }
-  }, 1, 1, false);
-
-  // 6. Baked Contact Shadow Under Machine & Pan
-  const contactShadowTex = canvasTex(512, 512, (g, w, h) => {
-    g.clearRect(0, 0, w, h);
-    const drawBlob = (cx, cy, rx, ry, alpha) => {
-      g.save();
-      g.translate(cx, cy);
-      g.scale(rx, ry);
-      const grd = g.createRadialGradient(0, 0, 0.1, 0, 0, 1);
-      grd.addColorStop(0, `rgba(15, 10, 5, ${alpha})`);
-      grd.addColorStop(0.6, `rgba(15, 10, 5, ${alpha * 0.45})`);
-      grd.addColorStop(1, 'rgba(15, 10, 5, 0)');
-      g.fillStyle = grd;
-      g.beginPath(); g.arc(0, 0, 1, 0, Math.PI * 2); g.fill();
-      g.restore();
-    };
-    // Main base soft ambient occlusion
-    drawBlob(210, 248, 135, 115, 0.52);
-    // 4 rubber feet contact dark spots
-    drawBlob(115, 170, 26, 26, 0.65);
-    drawBlob(305, 170, 26, 26, 0.65);
-    drawBlob(115, 315, 26, 26, 0.65);
-    drawBlob(305, 315, 26, 26, 0.65);
-    // Baking oven stone contact shadow on the right
-    drawBlob(410, 305, 78, 78, 0.42);
-  }, 0, 0, false);
-
-  function hatch(base, line, step = 12){
-    return canvasTex(64, 64, (g) => {
-      g.fillStyle = base;
-      g.fillRect(0, 0, 64, 64);
-      g.strokeStyle = line;
-      g.lineWidth = 2.2;
-      for (let i = -64; i <= 128; i += step){
-        g.beginPath();
-        g.moveTo(i, 64);
-        g.lineTo(i + 64, 0);
-        g.stroke();
+  function hatch(bg, line){
+    return canvasTex(128, 128, g => {
+      g.fillStyle = bg; g.fillRect(0, 0, 128, 128);
+      g.strokeStyle = line; g.lineWidth = 3;
+      for (let i = -128; i < 256; i += 14){
+        g.beginPath(); g.moveTo(i, 0); g.lineTo(i + 128, 128); g.stroke();
       }
-    }, 1.8);
+    }, 3, 3);
   }
 
-  // 7. 3D Crumb Color + Matching Deep Bump Map (so every pore has 3D depth!)
-  function drawFoamCanvas(g, w, h, base, bubble, rimCol, n, rmin, rmax, isBump){
-    g.fillStyle = isBump ? '#D8D8D8' : base;
-    g.fillRect(0, 0, w, h);
-    let seed = n * 7 + Math.round(rmax * 13);
-    const rnd = () => { seed = (seed * 16807) % 2147483647; return seed / 2147483647; };
-    for (let i = 0; i < n; i++){
-      const x = rnd() * w, y = rnd() * h;
-      const r = rmin + (rmax - rmin) * Math.pow(rnd(), 1.55);
-      const e = 0.76 + 0.38 * rnd(), a = rnd() * Math.PI;
-      for (const dx of [-w, 0, w]) for (const dy of [-h, 0, h]){
-        const X = x + dx, Y = y + dy;
-        if (X < -rmax || X > w + rmax || Y < -rmax || Y > h + rmax) continue;
-        if (isBump){
-          // Recessed dark pit for 3D bump map
-          g.beginPath();
-          g.ellipse(X, Y, r, r * e, a, 0, Math.PI * 2);
-          g.fillStyle = '#303030';
-          g.fill();
-          g.lineWidth = Math.max(0.8, r * 0.18);
-          g.strokeStyle = '#FFFFFF';
-          g.stroke();
-        } else {
-          g.beginPath();
-          g.ellipse(X, Y, r, r * e, a, 0, Math.PI * 2);
-          g.fillStyle = bubble;
-          g.fill();
-          g.lineWidth = Math.max(0.6, r * 0.14);
-          g.strokeStyle = rimCol;
-          g.stroke();
-          g.beginPath();
-          g.ellipse(X - r * 0.25, Y - r * 0.25, r * 0.42, r * 0.32 * e, a, 0, Math.PI * 2);
-          g.fillStyle = 'rgba(255,250,235,0.40)';
-          g.fill();
+  function makeFoamStageAssets(stage){
+    let s = 42;
+    const rnd = () => (s = (s * 16807) % 2147483647) / 2147483647;
+    const bgs = ['#E8DAB8', '#EFE2C2', '#F3E6C4', '#D9AE6E'];
+    const rims = ['#C6B38B', '#CEB98E', '#C9AE7A', '#9A6930'];
+    const holes = ['#B5A078', '#AA9268', '#987B4E', '#5E3B16'];
+    const count = [28, 190, 260, 320][stage];
+    const rMin = [1.5, 1.5, 3.0, 2.5][stage];
+    const rMax = [3.8, 4.5, 9.5, 11.5][stage];
+    const cells = [];
+    for (let i = 0; i < count; i++){
+      cells.push({
+        x: rnd() * 512, y: rnd() * 512,
+        r: rMin + Math.pow(rnd(), 1.55) * (rMax - rMin),
+        e: 0.72 + rnd() * 0.5, a: rnd() * Math.PI
+      });
+    }
+    const colorTex = canvasTex(512, 512, g => {
+      g.fillStyle = bgs[stage]; g.fillRect(0, 0, 512, 512);
+      for (const c of cells){
+        for (const ox of [-512, 0, 512]) for (const oy of [-512, 0, 512]){
+          const X = c.x + ox, Y = c.y + oy;
+          if (X < -24 || X > 536 || Y < -24 || Y > 536) continue;
+          g.fillStyle = rims[stage];
+          g.beginPath(); g.ellipse(X, Y, c.r * 1.16, c.r * 1.16 * c.e, c.a, 0, Math.PI * 2); g.fill();
+          g.fillStyle = holes[stage];
+          g.beginPath(); g.ellipse(X, Y, c.r, c.r * c.e, c.a, 0, Math.PI * 2); g.fill();
         }
       }
+    }, 1, 1);
+    colorTex.encoding = THREE.sRGBEncoding;
+
+    const bumpTex = canvasTex(512, 512, g => {
+      g.fillStyle = '#d8d8d8'; g.fillRect(0, 0, 512, 512);
+      for (const c of cells){
+        for (const ox of [-512, 0, 512]) for (const oy of [-512, 0, 512]){
+          const X = c.x + ox, Y = c.y + oy;
+          if (X < -24 || X > 536 || Y < -24 || Y > 536) continue;
+          const grd = g.createRadialGradient(X, Y, c.r * 0.1, X, Y, c.r * 1.2);
+          grd.addColorStop(0, '#181818'); grd.addColorStop(0.75, '#505050'); grd.addColorStop(1, '#ececec');
+          g.fillStyle = grd;
+          g.beginPath(); g.ellipse(X, Y, c.r * 1.15, c.r * 1.15 * c.e, c.a, 0, Math.PI * 2); g.fill();
+        }
+      }
+    }, 1, 1);
+
+    const prevCanvas = document.getElementById('cPrev' + stage);
+    if (prevCanvas){
+      const pg = prevCanvas.getContext('2d');
+      pg.drawImage(colorTex.image, 0, 0, 64, 64);
     }
+    return { colorTex, bumpTex };
   }
+  const foamAssets = [0, 1, 2, 3].map(makeFoamStageAssets);
+  const foamTexs = foamAssets.map(a => a.colorTex);
+  const foamBumpTexs = foamAssets.map(a => a.bumpTex);
 
-  const FOAM_SPECS = [
-    { base: '#E4CA96', bub: 'rgba(145,105,50,0.36)', rim: 'rgba(255,244,215,0.4)', n: 75,   rmin: 2.0, rmax: 6.0, label: 'Сырое тесто' },
-    { base: '#ECD5A5', bub: 'rgba(135,95,42,0.42)',  rim: 'rgba(255,248,225,0.5)', n: 2800, rmin: 1.0, rmax: 2.5, label: 'Эмульсия 4 бар (микропоры)' },
-    { base: '#F2E0B6', bub: 'rgba(130,90,40,0.46)',  rim: 'rgba(255,250,230,0.55)',n: 1550, rmin: 2.3, rmax: 5.8, label: 'После сброса (подъём ×2)' },
-    { base: '#E3BE7E', bub: 'rgba(105,65,25,0.55)',  rim: 'rgba(248,222,170,0.55)',n: 820,  rmin: 2.8, rmax: 9.8, label: 'Выпеченный мякиш' }
-  ];
-
-  const foamTexs = FOAM_SPECS.map(s => canvasTex(512, 512, (g, w, h) => {
-    drawFoamCanvas(g, w, h, s.base, s.bub, s.rim, s.n, s.rmin, s.rmax, false);
-  }));
-  const foamBumpTexs = FOAM_SPECS.map(s => canvasTex(512, 512, (g, w, h) => {
-    drawFoamCanvas(g, w, h, s.base, s.bub, s.rim, s.n, s.rmin, s.rmax, true);
-  }, 1, 1, true));
-  foamTexs.forEach(t => { t.wrapS = t.wrapT = THREE.RepeatWrapping; });
-  foamBumpTexs.forEach(t => { t.wrapS = t.wrapT = THREE.RepeatWrapping; });
-
-  FOAM_SPECS.forEach((s, idx) => {
-    const c = document.getElementById('cPrev' + idx);
-    if (c) drawFoamCanvas(c.getContext('2d'), c.width, c.height, s.base, s.bub, s.rim, Math.round(s.n / 18), s.rmin * 0.45, s.rmax * 0.45, false);
-  });
-
-  // Top Bread Loaf Crust Bump Texture (Artisan Score + Flour Dusting)
-  const crustBumpTex = canvasTex(512, 512, (g, w, h) => {
-    g.fillStyle = '#909090';
-    g.fillRect(0, 0, w, h);
-    let s = 55;
-    const rnd = () => { s = (s * 16807) % 2147483647; return s / 2147483647; };
-    for (let i = 0; i < 1800; i++){
-      const v = Math.round(70 + rnd() * 110);
-      g.fillStyle = `rgba(${v},${v},${v},0.35)`;
-      g.beginPath(); g.arc(rnd() * w, rnd() * h, 1 + rnd() * 4, 0, Math.PI * 2); g.fill();
-    }
-    // Baker's slash score across the top of the loaf
-    g.strokeStyle = '#252525';
-    g.lineWidth = 18;
-    g.lineCap = 'round';
-    g.beginPath(); g.arc(w * 0.5, h * 0.55, 130, Math.PI * 1.15, Math.PI * 1.85); g.stroke();
-    g.strokeStyle = '#FFFFFF';
-    g.lineWidth = 4;
-    g.beginPath(); g.arc(w * 0.5, h * 0.55, 139, Math.PI * 1.15, Math.PI * 1.85); g.stroke();
-  }, 1, 1, true);
-
-  // ---------- MATERIALS ----------
-  const clipPlane = new THREE.Plane(new THREE.Vector3(0, 0, -1), 2);
+  // ---------- CLIPPING & MATERIALS ----------
+  const clipPlane = new THREE.Plane(new THREE.Vector3(0, 0, -1), 2.0);
   const mat = {
-    enamel:     new THREE.MeshPhysicalMaterial({
-      color: 0x92C6B1, roughness: 0.22, metalness: 0.05,
-      clearcoat: 1.0, clearcoatRoughness: 0.08,
-      bumpMap: castEnamelBump, bumpScale: 0.018
-    }),
-    enamelHead: new THREE.MeshPhysicalMaterial({
-      color: 0x92C6B1, roughness: 0.22, metalness: 0.05,
-      clearcoat: 1.0, clearcoatRoughness: 0.08,
-      bumpMap: castEnamelBump, bumpScale: 0.018, side: THREE.DoubleSide
-    }),
-    chrome:     new THREE.MeshStandardMaterial({ color: 0xF4F7F9, metalness: 0.99, roughness: 0.06 }),
-    chromeClip: new THREE.MeshStandardMaterial({ color: 0xF4F7F9, metalness: 0.99, roughness: 0.06, side: THREE.DoubleSide }),
-    steel:      new THREE.MeshStandardMaterial({
-      color: 0xD4DCDF, metalness: 0.92, roughness: 0.24,
-      bumpMap: brushedSteelBump, bumpScale: 0.035, roughnessMap: brushedSteelBump, side: THREE.DoubleSide
-    }),
-    steelClip:  new THREE.MeshStandardMaterial({
-      color: 0xD4DCDF, metalness: 0.92, roughness: 0.24,
-      bumpMap: brushedSteelBump, bumpScale: 0.035, roughnessMap: brushedSteelBump, side: THREE.DoubleSide
-    }),
-    brass:      new THREE.MeshStandardMaterial({ color: 0xDAB050, metalness: 0.96, roughness: 0.20 }),
-    brassKnurl: new THREE.MeshStandardMaterial({
-      color: 0xDAB050, metalness: 0.94, roughness: 0.26,
-      bumpMap: knurlBump, bumpScale: 0.08
-    }),
-    copper:     new THREE.MeshStandardMaterial({ color: 0xCC7838, metalness: 0.96, roughness: 0.20 }),
-    bakelite:   new THREE.MeshPhysicalMaterial({
-      color: 0x781E17, map: walnutTex, bumpMap: woodBumpTex, bumpScale: 0.025,
-      roughness: 0.24, clearcoat: 0.9, clearcoatRoughness: 0.1
-    }),
-    red:        new THREE.MeshPhysicalMaterial({ color: 0xC83226, roughness: 0.22, clearcoat: 1.0 }),
-    seal:       new THREE.MeshStandardMaterial({ color: 0xD0382A, roughness: 0.42 }),
-    rubber:     new THREE.MeshStandardMaterial({ color: 0x202425, roughness: 0.82 }),
-    dark:       new THREE.MeshStandardMaterial({ color: 0x242E2C, roughness: 0.48, metalness: 0.45 }),
-    dough:      new THREE.MeshStandardMaterial({
-      color: 0xE9D3A8, roughness: 0.85, bumpMap: crustBumpTex, bumpScale: 0.08, side: THREE.DoubleSide
-    }),
-    doughTop:   new THREE.MeshStandardMaterial({
-      color: 0xEDD8AE, roughness: 0.78, bumpMap: crustBumpTex, bumpScale: 0.18, side: THREE.DoubleSide
-    }),
-    wire:       new THREE.MeshStandardMaterial({ color: 0xF6F8F9, metalness: 0.99, roughness: 0.10 }),
-    capSteel:   new THREE.MeshStandardMaterial({ map: hatch('#d6dbde', '#88949a'), roughness: 0.72, side: THREE.DoubleSide }),
-    capChrome:  new THREE.MeshStandardMaterial({ map: hatch('#e4e7e9', '#99a2a7'), roughness: 0.62, side: THREE.DoubleSide }),
-    capEnamel:  new THREE.MeshStandardMaterial({ map: hatch('#bfe0d1', '#6e9e89'), roughness: 0.72, side: THREE.DoubleSide }),
-    foamCap:    new THREE.MeshStandardMaterial({
-      map: foamTexs[0], bumpMap: foamBumpTexs[0], bumpScale: 0.22, roughness: 0.88, side: THREE.DoubleSide
-    }),
-    gas:        new THREE.MeshBasicMaterial({ color: 0x76B5EC, transparent: true, opacity: 0, depthWrite: false, side: THREE.DoubleSide }),
-    ovenGlass:  new THREE.MeshPhysicalMaterial({ color: 0x221814, transparent: true, opacity: 0.28, roughness: 0.06, metalness: 0.1, clearcoat: 1.0, side: THREE.DoubleSide }),
-    heaterGlow: new THREE.MeshBasicMaterial({ color: 0xFF5511 })
+    enamel:     new THREE.MeshPhysicalMaterial({ color: 0x92C6B1, roughness: 0.24, metalness: 0.04, clearcoat: 0.88, clearcoatRoughness: 0.12, bumpMap: enamelBump, bumpScale: 0.015 }),
+    enamelHead: new THREE.MeshPhysicalMaterial({ color: 0x92C6B1, roughness: 0.24, metalness: 0.04, clearcoat: 0.88, clearcoatRoughness: 0.12, bumpMap: enamelBump, bumpScale: 0.015 }),
+    chrome:     new THREE.MeshPhysicalMaterial({ color: 0xF5F2EB, metalness: 0.96, roughness: 0.09, clearcoat: 0.4 }),
+    steel:      new THREE.MeshStandardMaterial({ color: 0xDCE1E5, metalness: 0.90, roughness: 0.24, bumpMap: brushedSteelBump, bumpScale: 0.025 }),
+    wire:       new THREE.MeshStandardMaterial({ color: 0xEEF2F5, metalness: 0.94, roughness: 0.14 }),
+    brass:      new THREE.MeshStandardMaterial({ color: 0xE2B14C, metalness: 0.92, roughness: 0.20 }),
+    brassKnurl: new THREE.MeshStandardMaterial({ color: 0xDEA942, metalness: 0.90, roughness: 0.26, bumpMap: knurlBump, bumpScale: 0.08 }),
+    copper:     new THREE.MeshStandardMaterial({ color: 0xD87B4A, metalness: 0.88, roughness: 0.22 }),
+    bakelite:   new THREE.MeshPhysicalMaterial({ color: 0x7A2218, roughness: 0.24, metalness: 0.02, clearcoat: 0.82, clearcoatRoughness: 0.14 }),
+    rubber:     new THREE.MeshStandardMaterial({ color: 0x1E1D1B, roughness: 0.78 }),
+    seal:       new THREE.MeshStandardMaterial({ color: 0x141414, roughness: 0.50 }),
+    red:        new THREE.MeshPhysicalMaterial({ color: 0xC83226, roughness: 0.22, clearcoat: 0.9 }),
+    dark:       new THREE.MeshStandardMaterial({ color: 0x222A28, metalness: 0.55, roughness: 0.45 }),
+    dough:      new THREE.MeshStandardMaterial({ color: 0xEFE0BE, roughness: 0.72, bumpMap: foamBumpTexs[0], bumpScale: 0.06 }),
+    doughTop:   new THREE.MeshStandardMaterial({ color: 0xF3E5C4, roughness: 0.58, bumpMap: foamBumpTexs[0], bumpScale: 0.08 }),
+    foamCap:    new THREE.MeshStandardMaterial({ map: foamTexs[0], bumpMap: foamBumpTexs[0], bumpScale: 0.18, roughness: 0.78 }),
+    capSteel:   new THREE.MeshBasicMaterial({ map: hatch('#cfd5d8', '#7c858a'), side: THREE.DoubleSide }),
+    capEnamel:  new THREE.MeshBasicMaterial({ map: hatch('#bfe0d1', '#6e9e89'), side: THREE.DoubleSide }),
+    capChrome:  new THREE.MeshBasicMaterial({ map: hatch('#e5e4de', '#9a9890'), side: THREE.DoubleSide }),
+    gas:        new THREE.MeshBasicMaterial({ color: 0x5aa9e6, transparent: true, opacity: 0, side: THREE.DoubleSide, depthWrite: false }),
+    ovenGlass:  new THREE.MeshPhysicalMaterial({ color: 0xffffff, transparent: true, opacity: 0.18, roughness: 0.05, metalness: 0.05, clearcoat: 1, side: THREE.DoubleSide, depthWrite: false }),
+    heaterGlow: new THREE.MeshStandardMaterial({ color: 0xff4500, emissive: 0xff3300, emissiveIntensity: 0, roughness: 0.4 })
   };
-  const clipMats = [mat.enamelHead, mat.chromeClip, mat.steelClip];
-  Object.values(mat).forEach(m => { if (m.color && !m.map) m.color.convertSRGBToLinear(); });
 
-  // ---------- ARTISAN OAK BUTCHER-BLOCK TABLETOP & CONTACT SHADOWS ----------
-  function rrect(w, h, r, cx, cy){
-    const s = new THREE.Shape(), x = (cx || 0) - w / 2, y = (cy || 0) - h / 2;
-    s.moveTo(x + r, y); s.lineTo(x + w - r, y); s.quadraticCurveTo(x + w, y, x + w, y + r);
+  const clipMats = [mat.enamelHead];
+  function clipped(m){
+    const c = m.clone();
+    clipMats.push(c);
+    return c;
+  }
+  mat.steelClip = clipped(mat.steel);
+  mat.chromeClip = clipped(mat.chrome);
+
+  // ---------- STUDIO TABLETOP ----------
+  function rrect(w, h, r, cx = 0, cy = 0){
+    const s = new THREE.Shape(), x = cx - w / 2, y = cy - h / 2;
+    s.moveTo(x + r, y);
+    s.lineTo(x + w - r, y); s.quadraticCurveTo(x + w, y, x + w, y + r);
     s.lineTo(x + w, y + h - r); s.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
     s.lineTo(x + r, y + h); s.quadraticCurveTo(x, y + h, x, y + h - r);
     s.lineTo(x, y + r); s.quadraticCurveTo(x, y, x + r, y);
     return s;
   }
-
-  const oakTex = makeOakTableTex('oak');
-  const marbleTex = makeOakTableTex('marble');
-  const slateTex = makeOakTableTex('slate');
-
-  const tableMat = new THREE.MeshPhysicalMaterial({
-    map: oakTex,
-    bumpMap: woodBumpTex,
-    bumpScale: 0.04,
-    roughness: 0.42,
-    metalness: 0.02,
-    clearcoat: 0.35,
-    clearcoatRoughness: 0.28
-  });
-
-  const tableGeo = new THREE.ExtrudeGeometry(rrect(86, 56, 5), {
-    depth: 2.8, bevelEnabled: true, bevelThickness: 0.45, bevelSize: 0.45, bevelSegments: 4, curveSegments: 24
+  const tableGeo = new THREE.ExtrudeGeometry(rrect(92, 62, 4), {
+    depth: 2.6, bevelEnabled: true, bevelThickness: 0.45, bevelSize: 0.45, bevelSegments: 4
   });
   tableGeo.rotateX(-Math.PI / 2);
-  tableGeo.translate(9, -3.25, 1);
-  // Normalize planar UVs on top of the butcher block
-  {
-    const pos = tableGeo.attributes.position;
-    const uv = tableGeo.attributes.uv;
-    for (let i = 0; i < pos.count; i++){
-      const vx = pos.getX(i), vy = pos.getY(i), vz = pos.getZ(i);
-      uv.setXY(i, (vx + 36) / 88, (vz + 28 + vy * 0.5) / 58);
-    }
-    uv.needsUpdate = true;
-  }
+  tableGeo.translate(9, -2.6, 1);
+  const tableMat = new THREE.MeshStandardMaterial({ map: oakTex, roughness: 0.52, metalness: 0.02 });
   const studioTable = new THREE.Mesh(tableGeo, tableMat);
   studioTable.receiveShadow = true;
   scene.add(studioTable);
 
-  // Brass inlay trim around the butcher block edge
-  const tableBrassRim = new THREE.Mesh(
-    new THREE.BoxGeometry(86.9, 0.22, 56.9),
-    mat.brass
-  );
-  tableBrassRim.position.set(9, -1.8, 1);
-  scene.add(tableBrassRim);
-
-  // Soft Baked Contact AO Plane right on the tabletop surface
+  const contactShadowTex = canvasTex(512, 512, (g, w, h) => {
+    const grd = g.createRadialGradient(w * 0.42, h * 0.5, 18, w * 0.42, h * 0.5, w * 0.44);
+    grd.addColorStop(0, 'rgba(20,12,6,0.42)');
+    grd.addColorStop(0.55, 'rgba(20,12,6,0.14)');
+    grd.addColorStop(1, 'rgba(20,12,6,0)');
+    g.fillStyle = grd; g.fillRect(0, 0, w, h);
+  });
   const aoPlane = new THREE.Mesh(
     new THREE.PlaneGeometry(78, 52),
     new THREE.MeshBasicMaterial({ map: contactShadowTex, transparent: true, opacity: 0.85, depthWrite: false })
@@ -1564,6 +1594,16 @@ dl.spec dd {
       new THREE.TubeGeometry(new THREE.CatmullRomCurve3(points.map(p => new THREE.Vector3(p[0], p[1], p[2]))), 56, r, 14, false),
       m
     );
+  }
+  function helixSpring(r, wireR, turns, height, m){
+    const pts = [];
+    const steps = turns * 20;
+    for (let i = 0; i <= steps; i++){
+      const t = i / steps;
+      const a = t * turns * Math.PI * 2;
+      pts.push([Math.cos(a) * r, (t - 0.5) * height, Math.sin(a) * r]);
+    }
+    return tube(pts, wireR, m);
   }
   const lerp = (a, b, k) => a + (b - a) * k;
   const ease = k => k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
@@ -1586,169 +1626,252 @@ dl.spec dd {
     return { full, cut };
   }
 
-  // ---------- 1. BASE & COLUMN ----------
+  // =========================================================================
+  // CAD DISASSEMBLY ENGINE REGISTRY (7 SUBASSEMBLIES · 42 ENGINEERED PARTS)
+  // =========================================================================
+  const SUBASSEMBLIES = [
+    { id: 'G1', title: 'Узел I · Станина и силовая колонна', stage: 7 },
+    { id: 'G2', title: 'Узел II · Ручной поршневой насос 4 бар', stage: 5 },
+    { id: 'G3', title: 'Узел III · Хлебная форма и аэрированное тесто', stage: 1 },
+    { id: 'G4', title: 'Узел IV · Напорная голова и байонетный затвор', stage: 2 },
+    { id: 'G5', title: 'Узел V · Конический редуктор 1:8 и сальник вала', stage: 3 },
+    { id: 'G6', title: 'Узел VI · Патентный 14-проволочный венчик', stage: 4 },
+    { id: 'G7', title: 'Узел VII · Манометр Бурдона и клапанная группа', stage: 6 }
+  ];
+
+  const PARTS = [];
+  const meshToPart = new Map();
+
+  function regPart(code, group, name, matSpec, desc, node, explodeVec, disStage, isShell = false){
+    const basePos = node.position.clone();
+    const p = {
+      code, group, name, matSpec, desc, node,
+      basePos,
+      explodeVec: new THREE.Vector3(explodeVec[0], explodeVec[1], explodeVec[2]),
+      disStage: disStage || 1,
+      isShell,
+      pulledOut: false,
+      pullK: 0
+    };
+    PARTS.push(p);
+    node.traverse(o => {
+      if (o.isMesh) meshToPart.set(o, p);
+    });
+    return p;
+  }
+
   const machine = new THREE.Group();
   scene.add(machine);
 
+  // -------------------------------------------------------------------------
+  // УЗЕЛ I: СТАНИНА И КОЛОННА ПОДЪЁМА (Детали 101..111)
+  // -------------------------------------------------------------------------
+  const p101G = new THREE.Group(); machine.add(p101G);
   const baseGeo = new THREE.ExtrudeGeometry(rrect(30.5, 24.5, 6.2), {
     depth: 3.1, bevelEnabled: true, bevelThickness: 0.85, bevelSize: 0.85, bevelSegments: 6, curveSegments: 32
   });
-  baseGeo.rotateX(-Math.PI / 2);
-  baseGeo.translate(0, 1.4, -2);
-  machine.add(new THREE.Mesh(baseGeo, mat.enamel));
+  baseGeo.rotateX(-Math.PI / 2); baseGeo.translate(0, 1.4, -2);
+  p101G.add(new THREE.Mesh(baseGeo, mat.enamel));
+  // Internal cast stiffening ribs inside base
+  [-8, 0, 8].forEach(rx => {
+    const rib = new THREE.Mesh(new THREE.BoxGeometry(0.65, 1.8, 21.0), mat.dark);
+    rib.position.set(rx, 1.9, -2);
+    p101G.add(rib);
+  });
+  regPart('101', 'G1', 'Литая чугунная станина', 'СЧ20 · стеклоэмаль горячего обжига', 'Тяжёлое основание с внутренними рёбрами жёсткости, гасящее вибрации при ручном взбивании.', p101G, [0, -3.5, 0], 7, true);
 
+  const p102G = new THREE.Group(); machine.add(p102G);
   const baseRimGeo = new THREE.ExtrudeGeometry(rrect(31.8, 25.8, 6.6), {
     depth: 0.38, bevelEnabled: true, bevelThickness: 0.1, bevelSize: 0.1, bevelSegments: 2, curveSegments: 28
   });
-  baseRimGeo.rotateX(-Math.PI / 2);
-  baseRimGeo.translate(0, 0.55, -2);
-  machine.add(new THREE.Mesh(baseRimGeo, mat.chrome));
+  baseRimGeo.rotateX(-Math.PI / 2); baseRimGeo.translate(0, 0.55, -2);
+  p102G.add(new THREE.Mesh(baseRimGeo, mat.chrome));
+  regPart('102', 'G1', 'Хромированный молдинг основания', 'Сталь 1.4301 · зеркальный хром', 'Защищает нижнюю кромку эмали станины от сколов при перемещении по столу.', p102G, [0, -5.8, 0], 7);
 
+  const p103G = new THREE.Group(); machine.add(p103G);
   [[-12, -11.5], [12, -11.5], [-12, 7.8], [12, 7.8]].forEach(([x, z]) => {
     const f = new THREE.Mesh(new THREE.CylinderGeometry(1.4, 1.15, 0.65, 28), mat.rubber);
-    f.position.set(x, 0.3, z);
-    machine.add(f);
+    f.position.set(x, 0.3, z); p103G.add(f);
+    const bolt = new THREE.Mesh(new THREE.CylinderGeometry(0.32, 0.32, 1.4, 12), mat.brass);
+    bolt.position.set(x, 0.8, z); p103G.add(bolt);
   });
+  regPart('103', 'G1', 'Противоскользящие виброопоры (4 шт.)', 'Эластомер EPDM 65 Shore A · латунь М6', 'Удерживают аппарат от сдвига по столешнице при работе рычагом насоса и рукояткой.', p103G, [0, -8.5, 0], 7);
 
-  const seat = lathe([[0,0],[7.35,0],[7.2,0.38],[6.2,0.42],[6.0,0.62],[0,0.62]], mat.chrome, 72);
-  seat.position.set(0, 5.2, 2);
-  machine.add(seat);
+  const p104G = new THREE.Group(); p104G.position.set(0, 5.2, 2); machine.add(p104G);
+  p104G.add(lathe([[0,0],[7.35,0],[7.2,0.38],[6.2,0.42],[6.0,0.62],[0,0.62]], mat.chrome, 72));
+  for (let i = 0; i < 3; i++){
+    const a = i * Math.PI * 2 / 3;
+    const stop = new THREE.Mesh(new THREE.BoxGeometry(1.1, 0.55, 0.55), mat.brass);
+    stop.position.set(Math.cos(a) * 6.45, 0.48, Math.sin(a) * 6.45);
+    stop.rotation.y = -a;
+    p104G.add(stop);
+  }
+  regPart('104', 'G1', 'Центрирующий ложемент хлебной формы', 'Сталь AISI 304 · 3 латунных штифта', 'Точно выставляет форму по оси венчика и удерживает её от проворота при закрытии байонета.', p104G, [0, 3.2, 5.5], 7);
 
-  // Front Nameplate Badge with 2 brass rivets
+  const p105G = new THREE.Group(); p105G.position.set(0, 2.9, 11.1); machine.add(p105G);
   const badgeMat = new THREE.MeshStandardMaterial({ metalness: 0.6, roughness: 0.25 });
-  const badgeFrame = new THREE.Mesh(new THREE.BoxGeometry(11.4, 2.3, 0.18), mat.brass);
-  badgeFrame.position.set(0, 2.9, 11.08);
-  machine.add(badgeFrame);
-  const badge = new THREE.Mesh(new THREE.PlaneGeometry(11, 2.06), badgeMat);
-  badge.position.set(0, 2.9, 11.18);
-  machine.add(badge);
+  p105G.add(new THREE.Mesh(new THREE.BoxGeometry(11.4, 2.3, 0.18), mat.brass));
+  const badgeMesh = new THREE.Mesh(new THREE.PlaneGeometry(11, 2.06), badgeMat);
+  badgeMesh.position.z = 0.10; p105G.add(badgeMesh);
   [-5.1, 5.1].forEach(rx => {
-    const riv = cylZ(0.18, 0.26, mat.chrome, 16);
-    riv.position.set(rx, 2.9, 11.14);
-    machine.add(riv);
+    const riv = cylZ(0.18, 0.35, mat.chrome, 16);
+    riv.position.set(rx, 0, 0.08); p105G.add(riv);
   });
+  regPart('105', 'G1', 'Паспортный шильдик DRUCKBROT Nº 1', 'Латунь Л63 · глухие заклёпки Ø3 мм', 'Инженерная табличка серии на фронтальной стенке станины.', p105G, [0, 0, 6.5], 7);
 
-  // Column & Precision Dovetail Guide Rails
+  const p106G = new THREE.Group(); machine.add(p106G);
   const colGeo = new THREE.ExtrudeGeometry(rrect(7.2, 7.2, 2.4), {
     depth: 35.5, bevelEnabled: true, bevelThickness: 0.35, bevelSize: 0.35, bevelSegments: 3, curveSegments: 20
   });
-  colGeo.rotateX(-Math.PI / 2);
-  colGeo.translate(0, 5.2, -8);
-  machine.add(new THREE.Mesh(colGeo, mat.enamel));
-
+  colGeo.rotateX(-Math.PI / 2); colGeo.translate(0, 5.2, -8);
+  p106G.add(new THREE.Mesh(colGeo, mat.enamel));
   const railSlot = new THREE.Mesh(new THREE.BoxGeometry(2.1, 23, 0.32), mat.dark);
-  railSlot.position.set(0, 26.8, -4.1);
-  machine.add(railSlot);
+  railSlot.position.set(0, 26.8, -4.1); p106G.add(railSlot);
+  regPart('106', 'G1', 'Вертикальная силовая колонна', 'Литой чугун · фрезерованный паз', 'Воспринимает осевую реакцию при накачке 4 бар и служит направляющей подъёма головы.', p106G, [0, 0, -9.5], 7, true);
+
+  const p107G = new THREE.Group(); p107G.position.set(0, 26.8, -4.0); machine.add(p107G);
   [-0.85, 0.85].forEach(rx => {
-    const guideRod = new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.22, 22.6, 20), mat.chrome);
-    guideRod.position.set(rx, 26.8, -4.0);
-    machine.add(guideRod);
+    const guideRod = new THREE.Mesh(new THREE.CylinderGeometry(0.24, 0.24, 22.8, 20), mat.chrome);
+    guideRod.position.x = rx; p107G.add(guideRod);
   });
+  regPart('107', 'G1', 'Прецизионные направляющие валы Ø12h6 (2 шт.)', 'Сталь ШХ15 ТВЧ · твёрдый хром', 'Обеспечивают соосность опускания напорной головы без перекосов уплотнения.', p107G, [0, 4.5, -5.0], 7);
 
-  const capTop = lathe([[0,0],[3.5,0],[3.75,0.45],[3.3,1.15],[0.6,1.55],[0,1.75]], mat.chrome, 56);
-  capTop.position.set(0, 41, -8);
-  machine.add(capTop);
+  const p108G = new THREE.Group(); p108G.position.set(0, 26.8, -4.3); machine.add(p108G);
+  p108G.add(new THREE.Mesh(new THREE.BoxGeometry(0.75, 22.0, 0.45), mat.brass));
+  for (let i = -18; i <= 18; i++){
+    const rt = new THREE.Mesh(new THREE.BoxGeometry(0.78, 0.26, 0.28), mat.brass);
+    rt.position.set(0, i * 0.56, 0.28);
+    p108G.add(rt);
+  }
+  regPart('108', 'G1', 'Зубчатая рейка подъёма головы', 'Латунь ЛС59-1 · модуль m = 1,5', 'Зацепляется с шестерней каретки для плавного вертикального перемещения напорного блока.', p108G, [0, 2.0, -7.2], 7);
 
-  // ---------- 2. HAND PUMP WITH KNURLED BRASS GLAND & ARTICULATED LINKAGE ----------
+  const p110G = new THREE.Group(); p110G.position.set(4.1, 24.0, -8.0); machine.add(p110G);
+  p110G.add(cylX(0.45, 2.2, mat.chrome, 20));
+  const lockKnob = cylX(1.15, 0.85, mat.brassKnurl, 32);
+  lockKnob.position.x = 1.2; p110G.add(lockKnob);
+  regPart('110', 'G1', 'Винтовой стопор фиксации высоты', 'Латунь с алмазной накаткой · резьба М10', 'Фиксирует каретку напорной головы в верхнем положении при установке формы.', p110G, [6.5, 0, -2.0], 7);
+
+  const p111G = new THREE.Group(); p111G.position.set(0, 41, -8); machine.add(p111G);
+  p111G.add(lathe([[0,0],[3.5,0],[3.75,0.45],[3.3,1.15],[0.6,1.55],[0,1.75]], mat.chrome, 56));
+  regPart('111', 'G1', 'Верхняя хромированная крышка колонны', 'Нержавеющая сталь 1.4301', 'Закрывает шахту направляющих валов и верхний упор рейки.', p111G, [0, 7.5, -5.0], 7);
+
+  // -------------------------------------------------------------------------
+  // УЗЕЛ II: РУЧНОЙ ПОРШНЕВОЙ КОМПРЕССОР 4 БАР (Детали 201..209)
+  // -------------------------------------------------------------------------
   const pump = new THREE.Group();
   pump.position.set(-12.2, 0, -2);
   machine.add(pump);
 
-  const pBody = new THREE.Mesh(new THREE.CylinderGeometry(1.75, 1.75, 11.4, 48), mat.chrome);
-  pBody.position.y = 5.2 + 5.7;
-  pump.add(pBody);
+  const p201G = new THREE.Group(); p201G.position.y = 5.2; pump.add(p201G);
+  p201G.add(lathe([[0,0],[2.5,0],[2.3,0.65],[1.8,0.8],[0,0.8]], mat.chrome, 48));
+  for (let i = 0; i < 4; i++){
+    const a = (i + 0.5) * Math.PI / 2;
+    const b = new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.22, 0.4, 6), mat.brass);
+    b.position.set(Math.cos(a) * 2.05, 0.45, Math.sin(a) * 2.05);
+    p201G.add(b);
+  }
+  regPart('201', 'G2', 'Опорный фланец цилиндра насоса', 'Нержавеющая сталь · 4 болта М5', 'Герметичное основание цилиндра с выпускным каналом высокого давления.', p201G, [-4.5, 0, 0], 5);
 
-  [6.6, 7.3, 8.0].forEach(ry => {
-    const fin = new THREE.Mesh(new THREE.TorusGeometry(1.78, 0.12, 12, 40), mat.chrome);
-    fin.rotation.x = Math.PI / 2;
-    fin.position.y = ry;
-    pump.add(fin);
+  const p202G = new THREE.Group(); p202G.position.y = 5.2 + 5.7; pump.add(p202G);
+  p202G.add(new THREE.Mesh(new THREE.CylinderGeometry(1.75, 1.75, 11.4, 48, 1, true), mat.chrome));
+  [-4.3, -3.6, -2.9, 3.6, 4.3].forEach(ry => {
+    const fin = new THREE.Mesh(new THREE.TorusGeometry(1.82, 0.12, 12, 40), mat.chrome);
+    fin.rotation.x = Math.PI / 2; fin.position.y = ry; p202G.add(fin);
   });
+  regPart('202', 'G2', 'Оребрённая гильза цилиндра Ø32×110 мм', 'Сталь AISI 304 · хонингование Ra 0,2', 'Рабочий цилиндр насоса с внешними рёбрами охлаждения воздуха при адиабатном сжатии до 4 бар.', p202G, [-7.5, 4.5, 3.0], 5, true);
 
-  // Knurled Brass Gland Nut on Pump Top
-  const pRing = lathe([[0.4,0],[2.05,0],[2.1,0.55],[1.5,0.85],[0.4,0.85]], mat.brassKnurl, 48);
-  pRing.position.y = 16.5;
-  pump.add(pRing);
+  // Internal Piston + Cup Seal (moves with rod, explodes out in disassembly!)
+  const p203G = new THREE.Group(); p203G.position.y = 10.8; pump.add(p203G);
+  p203G.add(new THREE.Mesh(new THREE.CylinderGeometry(1.52, 1.52, 1.4, 36), mat.brass));
+  const cupSeal = new THREE.Mesh(new THREE.TorusGeometry(1.48, 0.18, 12, 36), mat.seal);
+  cupSeal.rotation.x = Math.PI / 2; cupSeal.position.y = -0.45; p203G.add(cupSeal);
+  const topSeal = new THREE.Mesh(new THREE.TorusGeometry(1.46, 0.14, 12, 36), mat.red);
+  topSeal.rotation.x = Math.PI / 2; topSeal.position.y = 0.45; p203G.add(topSeal);
+  regPart('203', 'G2', 'Поршень компрессора с манжетой FKM', 'Латунь Л63 · фторкаучук Viton', 'Сжимает воздух при ходе вниз; при ходе вверх пропускает свежую порцию через лепестковый клапан.', p203G, [-11.5, 6.2, 0], 5);
 
-  const pFoot = lathe([[0,0],[2.5,0],[2.3,0.65],[1.8,0.8],[0,0.8]], mat.chrome, 48);
-  pFoot.position.y = 5.2;
-  pump.add(pFoot);
+  const p204G = new THREE.Group(); p204G.position.y = 8.2; pump.add(p204G);
+  p204G.add(helixSpring(1.18, 0.11, 7, 4.6, mat.wire));
+  regPart('204', 'G2', 'Возвратно-буферная пружина поршня', 'Пружинная сталь 65Г · 7 витков', 'Смягчает нижнюю мёртвую точку и помогает возврату кулисного рычага.', p204G, [-11.5, 2.0, -3.5], 5);
 
   const rod = new THREE.Mesh(new THREE.CylinderGeometry(0.38, 0.38, 1, 24), mat.chrome);
   pump.add(rod);
+  regPart('205', 'G2', 'Шток поршня Ø8 мм с шарнирной проушиной', 'Закалённая сталь · полированный хром', 'Передаёт усилие от двуплечего рычага на поршень внутри гильзы.', rod, [-11.5, 9.5, 0], 5);
 
-  const post = new THREE.Mesh(new THREE.CylinderGeometry(0.58, 0.68, 13.8, 24), mat.chrome);
-  post.position.set(0, 5.2 + 6.9, -4.5);
-  pump.add(post);
+  const p206G = new THREE.Group(); p206G.position.y = 16.5; pump.add(p206G);
+  p206G.add(lathe([[0.4,0],[2.05,0],[2.1,0.55],[1.5,0.85],[0.4,0.85]], mat.brassKnurl, 48));
+  regPart('206', 'G2', 'Накидная крышка-сальник цилиндра', 'Латунь с алмазной накаткой · резьба М36×1,5', 'Центрирует шток поршня и содержит воздушный фильтр впуска.', p206G, [-7.5, 11.5, 0], 5);
 
+  const p207G = new THREE.Group(); p207G.position.set(0, 5.2 + 6.9, -4.5); pump.add(p207G);
+  p207G.add(new THREE.Mesh(new THREE.CylinderGeometry(0.58, 0.68, 13.8, 24), mat.chrome));
   const pivotBlock = new THREE.Mesh(new THREE.BoxGeometry(1.7, 1.8, 1.8), mat.brass);
-  pivotBlock.position.set(0, 18.6, -4.5);
-  pump.add(pivotBlock);
+  pivotBlock.position.y = 6.5; p207G.add(pivotBlock);
   const pivotPin = cylX(0.32, 2.2, mat.chrome, 20);
-  pivotPin.position.set(0, 18.6, -4.5);
-  pump.add(pivotPin);
+  pivotPin.position.y = 6.5; p207G.add(pivotPin);
+  regPart('207', 'G2', 'Опорный пилон кулисы с шарнирной вилкой', 'Сталь AISI 304 · бронзовый шарнир', 'Воспринимает реакцию опоры кулисного рычага при накачке.', p207G, [-5.0, 4.0, -6.5], 5);
 
   const lever = new THREE.Group();
   lever.position.set(0, 18.6, -4.5);
   pump.add(lever);
-
   const lArm = new THREE.Mesh(new THREE.BoxGeometry(0.85, 0.78, 14.5), mat.chrome);
-  lArm.position.z = 6.6;
-  lever.add(lArm);
-
+  lArm.position.z = 6.6; lever.add(lArm);
   const rodPin = cylX(0.3, 1.3, mat.brass, 18);
-  rodPin.position.set(0, 0, 4.5);
-  lever.add(rodPin);
-
+  rodPin.position.set(0, 0, 4.5); lever.add(rodPin);
   const lKnobFerrule = cylX(0.65, 0.6, mat.brass, 24);
-  lKnobFerrule.position.set(-0.6, 0, 13.8);
-  lever.add(lKnobFerrule);
+  lKnobFerrule.position.set(-0.6, 0, 13.8); lever.add(lKnobFerrule);
   const lKnob = cylX(0.88, 4.3, mat.bakelite, 32);
-  lKnob.position.set(-2.2, 0, 13.8);
-  lever.add(lKnob);
+  lKnob.position.set(-2.2, 0, 13.8); lever.add(lKnob);
   const lKnobEnd = new THREE.Mesh(new THREE.SphereGeometry(0.88, 24, 16), mat.bakelite);
-  lKnobEnd.position.set(-4.35, 0, 13.8);
-  lever.add(lKnobEnd);
+  lKnobEnd.position.set(-4.35, 0, 13.8); lever.add(lKnobEnd);
+  regPart('208', 'G2', 'Кулисный рычаг накачки с бакелитовой рукоятью', 'Кованая сталь · фенопласт / орех', 'Даёт выигрыш в силе 3,2:1 для лёгкой накачки 4 бар одной рукой.', lever, [-8.0, 13.5, 5.5], 5);
 
   const ROD_ARM = 4.5;
-  const unionNut = cylX(0.65, 0.8, mat.brassKnurl, 6);
-  unionNut.position.set(-10.3, 7.5, -2);
-  machine.add(unionNut);
-  machine.add(tube([[-10.5, 7.5, -2], [-7.6, 6.6, -2.6], [-5.2, 8.2, -6.2], [-3.9, 10, -8]], 0.46, mat.rubber));
+  const p209G = new THREE.Group(); machine.add(p209G);
+  const unionNut = cylX(0.65, 0.9, mat.brassKnurl, 6);
+  unionNut.position.set(-10.3, 7.5, -2); p209G.add(unionNut);
+  p209G.add(tube([[-10.5, 7.5, -2], [-7.6, 6.6, -2.6], [-5.2, 8.2, -6.2], [-3.9, 10, -8]], 0.46, mat.rubber));
+  regPart('209', 'G2', 'Напорный рукав высокого давления с штуцером', 'Армированный EPDM · латунная гайка G1/4"', 'Подаёт сжатый воздух от цилиндра насоса в канал вертикальной колонны.', p209G, [-6.5, -2.0, 4.5], 5);
 
-  // ---------- 3. REMOVABLE BRUSHED-STEEL BAKING MOULD & DOUGH ----------
+  // -------------------------------------------------------------------------
+  // УЗЕЛ III: СЪЁМНАЯ ХЛЕБНАЯ ФОРМА И ТЕСТО (Детали 301..304)
+  // -------------------------------------------------------------------------
   const potGroup = new THREE.Group();
   potGroup.position.set(0, 5.6, 2);
   machine.add(potGroup);
 
+  const p301G = new THREE.Group(); potGroup.add(p301G);
   revolved(
-    potGroup,
+    p301G,
     [[0,0],[5.7,0],[5.88,0.25],[5.88,8.3],[6.55,8.55],[6.55,9.02],[5.55,9.02],[5.55,0.45],[0,0.45]],
     mat.steel,
     mat.capSteel
   );
+  regPart('301', 'G3', 'Хлебная форма-автоклав Ø110×90 мм', 'Пищевая сталь AISI 304 · стенка 2,2 мм', 'Выдерживает внутреннее давление 4 бар при взбивании и сразу ставится в духовку при 210 °C.', p301G, [0, -1.5, 14.5], 1);
 
+  const p302G = new THREE.Group(); potGroup.add(p302G);
+  [1, -1].forEach(sgn => {
+    const g = new THREE.TorusGeometry(1.55, 0.30, 14, 32, Math.PI);
+    g.rotateX(Math.PI / 2); g.rotateY(sgn * Math.PI / 2);
+    const h = new THREE.Mesh(g, mat.steelClip);
+    h.position.set(sgn * 5.88, 6.8, 0);
+    p302G.add(h);
+  });
+  regPart('302', 'G3', 'Боковые скобы-ручки хлебной формы (2 шт.)', 'Пруток AISI 304 Ø6 мм · контактная сварка', 'Служат для безопасного переноса горячей формы в печь и из печи.', p302G, [0, -1.5, 19.5], 1);
+
+  const p303G = new THREE.Group(); potGroup.add(p303G);
   for (let i = 0; i < 3; i++){
     const a = i * Math.PI * 2 / 3 + 0.3;
     const lug = new THREE.Mesh(new THREE.BoxGeometry(1.9, 0.48, 0.95), mat.steelClip);
     lug.position.set(Math.cos(a) * 6.78, 8.78, Math.sin(a) * 6.78);
     lug.rotation.y = -a;
-    potGroup.add(lug);
+    p303G.add(lug);
   }
-  [1, -1].forEach(sgn => {
-    const g = new THREE.TorusGeometry(1.55, 0.30, 14, 32, Math.PI);
-    g.rotateX(Math.PI / 2);
-    g.rotateY(sgn * Math.PI / 2);
-    const h = new THREE.Mesh(g, mat.steelClip);
-    h.position.set(sgn * 5.88, 6.8, 0);
-    potGroup.add(h);
-  });
+  regPart('303', 'G3', 'Силовые шлицы байонетного венца (3 шт.)', 'Фрезерованная сталь AISI 304', 'Входят в зацепление с поворотным кольцом головы, удерживая отрывное усилие 380 кгс.', p303G, [0, 1.2, 16.5], 1);
 
-  // Dough Full & Cut Section with 3D Bump Crumb
+  const p304G = new THREE.Group(); potGroup.add(p304G);
   const DR = 5.5, DOME = 0.46;
   const doughFull = new THREE.Group();
   doughFull.position.y = 0.45;
-  potGroup.add(doughFull);
+  p304G.add(doughFull);
   const doughBody = new THREE.Mesh(new THREE.CylinderGeometry(DR, DR, 1, 72, 1, true), mat.dough);
   doughFull.add(doughBody);
   const doughCap = new THREE.Mesh(new THREE.SphereGeometry(DR, 72, 20, 0, Math.PI * 2, 0, Math.PI / 2), mat.doughTop);
@@ -1758,7 +1881,7 @@ dl.spec dd {
   const doughCut = new THREE.Group();
   doughCut.position.y = 0.45;
   doughCut.visible = false;
-  potGroup.add(doughCut);
+  p304G.add(doughCut);
   const dcBody = new THREE.Mesh(new THREE.CylinderGeometry(DR, DR, 1, 48, 1, true, Math.PI / 2, Math.PI), mat.dough);
   doughCut.add(dcBody);
   const dcTop = new THREE.Mesh(new THREE.SphereGeometry(DR, 48, 14, Math.PI, Math.PI, 0, Math.PI / 2), mat.doughTop);
@@ -1775,20 +1898,16 @@ dl.spec dd {
   const dcDome = new THREE.Mesh(new THREE.ShapeGeometry(domeShape, 28), mat.doughTop);
   dcDome.position.z = 0.003;
   doughCut.add(dcDome);
+  regPart('304', 'G3', 'Аэрированное бездрожжевое тесто (350 г)', 'Мука + вода + воздух под давлением 4 бар', 'После сброса давления микропузырьки воздуха расширяются, удваивая объём теста без дрожжей.', p304G, [0, 4.5, 14.5], 1);
 
   const POT_AREA = Math.PI * DR * DR;
   function setDough(h, bakeK = 0){
     const domeScale = (DOME + bakeK * 0.85) / DR;
-    doughBody.scale.y = h;
-    doughBody.position.y = h / 2;
-    doughCap.position.y = h;
-    doughCap.scale.y = domeScale;
-    dcBody.scale.y = h;
-    dcBody.position.y = h / 2;
-    dcTop.position.y = h;
-    dcTop.scale.y = domeScale;
-    dcDome.position.y = h;
-    dcDome.scale.y = 1 + bakeK * 1.6;
+    doughBody.scale.y = h; doughBody.position.y = h / 2;
+    doughCap.position.y = h; doughCap.scale.y = domeScale;
+    dcBody.scale.y = h; dcBody.position.y = h / 2;
+    dcTop.position.y = h; dcTop.scale.y = domeScale;
+    dcDome.position.y = h; dcDome.scale.y = 1 + bakeK * 1.6;
     dcFace.scale.y = h;
     foamTexs.forEach(t => t.repeat.set(1, h / (2 * DR)));
     foamBumpTexs.forEach(t => t.repeat.set(1, h / (2 * DR)));
@@ -1802,11 +1921,21 @@ dl.spec dd {
   gasFace.position.z = 0.004;
   gasG.add(gasFace);
 
-  // ---------- 4. HEAD, BAYONET COLLAR & 1:8 BEVEL GEARBOX ----------
+  // -------------------------------------------------------------------------
+  // УЗЕЛ IV: НАПОРНАЯ ГОЛОВА И БАЙОНЕТНЫЙ ЗАТВОР (Детали 401..405 + 109)
+  // -------------------------------------------------------------------------
   const head = new THREE.Group();
   machine.add(head);
   const HEAD_CLOSED = 14.6, HEAD_LIFT = 12;
 
+  // Каретка вертикального хода (Деталь 109 — внутри головы у колонны)
+  const p109G = new THREE.Group(); p109G.position.set(0, 6.2, -5.5); head.add(p109G);
+  p109G.add(new THREE.Mesh(new THREE.BoxGeometry(4.2, 4.8, 3.6), mat.brass));
+  const liftPinion = cylX(1.1, 0.9, mat.steel, 20);
+  liftPinion.position.set(0, 0, 1.2); p109G.add(liftPinion);
+  regPart('109', 'G1', 'Каретка вертикального хода с бронзовыми втулками', 'Бронза БрОФ10-1 · стальная шестерня', 'Скользит по двум направляющим валам колонны и несёт на себе всю напорную голову.', p109G, [0, 2.0, -5.5], 7);
+
+  const p401G = new THREE.Group(); head.add(p401G);
   const hs = new THREE.Shape();
   hs.moveTo(-11, 4.5); hs.lineTo(6.5, 4.5);
   hs.bezierCurveTo(9.2, 4.5, 10.2, 6.5, 9.9, 8.6);
@@ -1818,55 +1947,56 @@ dl.spec dd {
   const headGeo = new THREE.ExtrudeGeometry(hs, {
     depth: 11, bevelEnabled: true, bevelThickness: 1.05, bevelSize: 0.82, bevelSegments: 7, curveSegments: 40
   });
-  headGeo.rotateY(-Math.PI / 2);
-  headGeo.translate(5.5, 0, 0);
-  head.add(new THREE.Mesh(headGeo, mat.enamelHead));
-
+  headGeo.rotateY(-Math.PI / 2); headGeo.translate(5.5, 0, 0);
+  p401G.add(new THREE.Mesh(headGeo, mat.enamelHead));
   const shellOuter = rrect(13.0, 12.37 - 4.7, 1.0, 0, (12.37 + 4.7) / 2);
   shellOuter.holes.push(rrect(12.1, 12.37 - 4.7 - 0.9, 0.6, 0, (12.37 + 4.7) / 2));
   const headCap = new THREE.Mesh(new THREE.ShapeGeometry(shellOuter, 18), mat.capEnamel);
-  headCap.position.z = 2.002;
-  headCap.visible = false;
-  head.add(headCap);
+  headCap.position.z = 2.002; headCap.visible = false;
+  p401G.add(headCap);
   swaps.push({ full: new THREE.Object3D(), cut: headCap });
-
   const trim = new THREE.Mesh(new THREE.BoxGeometry(13.3, 0.38, 17.1), mat.chromeClip);
-  trim.position.set(0, 7.0, -2.6);
-  head.add(trim);
+  trim.position.set(0, 7.0, -2.6); p401G.add(trim);
+  regPart('401', 'G4', 'Верхний литой кожух редукторного отсека', 'Тонкостенное чугунное литьё · эмаль', 'Защищает коническую передачу 1:8, подшипники и внутренние медные пневмолинии.', p401G, [0, 10.5, 0], 2, true);
 
-  const bellPart = revolved(head, [[5.35,0],[6.3,0],[6.3,0.3],[5.9,4.7],[0.5,4.7],[0.5,4.5],[5.35,4.5]], mat.enamelHead, mat.capEnamel);
+  const p402G = new THREE.Group(); head.add(p402G);
+  const bellPart = revolved(p402G, [[5.35,0],[6.3,0],[6.3,0.3],[5.9,4.7],[0.5,4.7],[0.5,4.5],[5.35,4.5]], mat.enamelHead, mat.capEnamel);
   bellPart.full.position.z = 2; bellPart.cut.position.z = 2;
+  regPart('402', 'G4', 'Силовой напорный колокол (свод 4 бар)', 'Кованая сталь / чугун · стенка 5 мм', 'Купол высокого давления, замыкающий объём над хлебной формой.', p402G, [0, 5.2, 0], 2, true);
 
-  const dispPart = revolved(head, [[0.5,0],[5.35,0],[5.35,-1.2],[4.8,-1.9],[3.5,-2.15],[0.5,-2.2]], mat.steel, mat.capSteel);
+  const p403G = new THREE.Group(); p403G.position.set(0, 0.05, 2); head.add(p403G);
+  const bellGasket = new THREE.Mesh(new THREE.TorusGeometry(5.78, 0.22, 16, 64), mat.seal);
+  bellGasket.rotation.x = Math.PI / 2; p403G.add(bellGasket);
+  regPart('403', 'G4', 'Кольцевое уплотнение крышки Ø116×3,5 мм', 'Пищевой силикон / FKM 70 Shore A', 'Герметизирует стык между бортом хлебной формы и напорным колоколом при 4 бар.', p403G, [0, -2.2, 0], 4);
+
+  const p404G = new THREE.Group(); head.add(p404G);
+  const dispPart = revolved(p404G, [[0.5,0],[5.35,0],[5.35,-1.2],[4.8,-1.9],[3.5,-2.15],[0.5,-2.2]], mat.steel, mat.capSteel);
   dispPart.full.position.z = 2; dispPart.cut.position.z = 2;
-
-  const bellGasket = new THREE.Mesh(new THREE.TorusGeometry(5.78, 0.18, 16, 64), mat.seal);
-  bellGasket.rotation.x = Math.PI / 2;
-  bellGasket.position.set(0, 0.05, 2);
-  head.add(bellGasket);
+  regPart('404', 'G4', 'Купол-вытеснитель мёртвого объёма', 'Нержавеющая сталь AISI 304 · штамповка', 'Сокращает паразитный объём сжатого воздуха над тестом до 0,30 л (в 3 раза меньше качков насосом!).', p404G, [0, -4.8, 0], 4);
 
   const collar = new THREE.Group();
   collar.position.z = 2;
   head.add(collar);
   revolved(collar, [[6.35,-0.1],[7.05,-0.1],[7.2,0.2],[7.2,1.25],[7.05,1.55],[6.35,1.55]], mat.chrome, mat.capChrome, 96, 0.012);
+  // 6 internal bayonet locking lugs
+  for (let i = 0; i < 6; i++){
+    const a = (i / 6) * Math.PI * 2;
+    const tooth = new THREE.Mesh(new THREE.BoxGeometry(1.1, 0.38, 0.45), mat.brass);
+    tooth.position.set(Math.cos(a) * 6.25, 0.15, Math.sin(a) * 6.25);
+    tooth.rotation.y = -a;
+    collar.add(tooth);
+  }
   [1, -1].forEach(sgn => {
     const w = new THREE.Mesh(new THREE.BoxGeometry(2.6, 0.95, 1.5), mat.chromeClip);
-    w.position.set(sgn * 8.3, 0.7, 0);
-    collar.add(w);
+    w.position.set(sgn * 8.3, 0.7, 0); collar.add(w);
     const k = new THREE.Mesh(new THREE.SphereGeometry(0.82, 24, 16), mat.bakelite);
-    k.position.set(sgn * 9.65, 0.7, 0);
-    collar.add(k);
+    k.position.set(sgn * 9.65, 0.7, 0); collar.add(k);
   });
+  regPart('405', 'G4', 'Поворотное байонетное кольцо-затвор (6 зубьев)', 'Закалённая сталь 40Х13 · бакелитовые рукояти', 'Поворотом на 30° намертво стягивает венец хлебной формы и напорный колокол по принципу автоклава.', collar, [0, -1.0, 9.0], 2);
 
-  const sealRing = new THREE.Mesh(new THREE.TorusGeometry(0.48, 0.15, 14, 36), mat.seal);
-  sealRing.rotation.x = Math.PI / 2;
-  sealRing.position.set(0, 4.78, 2);
-  head.add(sealRing);
-
-  const shaftBushing = new THREE.Mesh(new THREE.CylinderGeometry(0.62, 0.62, 0.9, 28), mat.brassKnurl);
-  shaftBushing.position.set(0, 5.25, 2);
-  head.add(shaftBushing);
-
+  // -------------------------------------------------------------------------
+  // УЗЕЛ V: КОНИЧЕСКИЙ МУЛЬТИПЛИКАТОР 1:8 И САЛЬНИК ВАЛА (Детали 501..506)
+  // -------------------------------------------------------------------------
   const GEAR_Y = 8.6;
   const crown = new THREE.Group();
   crown.position.set(-0.7, GEAR_Y, 2);
@@ -1880,19 +2010,84 @@ dl.spec dd {
     t.rotation.x = -a;
     crown.add(t);
   }
+  regPart('501', 'G5', 'Ведущее коническое зубчатое колесо Z=48', 'Бронза БрАЖ9-4 · фрезерованный зуб', 'Главное колесо мультипликатора 1:8, разгоняющее венчик до 800 об/мин при плавном вращении ручки.', crown, [-4.5, 6.0, 0], 3);
 
-  const crankShaft = cylX(0.36, 8.8, mat.chrome);
-  crankShaft.position.set(3.65, GEAR_Y, 2);
-  head.add(crankShaft);
-  [-1.35, 5.6].forEach(x => {
-    const b = cylX(0.78, 0.65, mat.chrome);
-    b.position.set(x, GEAR_Y, 2);
-    head.add(b);
+  const p502G = new THREE.Group(); p502G.position.set(3.65, GEAR_Y, 2); head.add(p502G);
+  p502G.add(cylX(0.36, 8.8, mat.chrome));
+  [-5.0, 1.95].forEach(dx => {
+    // Detailed ball bearing 6001-2RS (outer ring, red seal, inner ring)
+    const brg = new THREE.Group(); brg.position.x = dx;
+    brg.add(cylX(0.85, 0.65, mat.steel, 32));
+    brg.add(cylX(0.72, 0.68, mat.red, 32));
+    brg.add(cylX(0.48, 0.72, mat.chrome, 24));
+    p502G.add(brg);
   });
+  regPart('502', 'G5', 'Горизонтальный вал с двумя подшипниками 6001-2RS', 'Сталь 40Х · закрытые шарикоподшипники', 'Обеспечивает лёгкое вращение приводного вала без люфтов под радиальной нагрузкой.', p502G, [4.8, 6.0, 0], 3);
 
+  const p503G = new THREE.Group(); p503G.position.set(7.0, GEAR_Y, 2); head.add(p503G);
+  p503G.add(cylX(2.75, 1.05, mat.enamel));
+  const gearRing = new THREE.Mesh(new THREE.TorusGeometry(2.75, 0.20, 14, 56), mat.chrome);
+  gearRing.rotation.y = Math.PI / 2; gearRing.position.x = 0.5; p503G.add(gearRing);
+  // 6 hex socket bolts around inspection cover
+  for (let i = 0; i < 6; i++){
+    const a = (i / 6) * Math.PI * 2;
+    const b = cylX(0.18, 0.3, mat.brass, 6);
+    b.position.set(0.58, Math.cos(a) * 2.25, Math.sin(a) * 2.25);
+    p503G.add(b);
+  }
+  regPart('503', 'G5', 'Боковая сервисная крышка редуктора (6 винтов М4)', 'Чугунное литьё · хромированный фланец', 'Открывает доступ для смазки конической пары и ревизии подшипников.', p503G, [9.5, 4.0, 0], 3, true);
+
+  const crank = new THREE.Group();
+  crank.position.set(8.1, GEAR_Y, 2);
+  head.add(crank);
+  crank.add(cylX(1.05, 1.25, mat.chrome));
+  const arm = new THREE.Mesh(new THREE.BoxGeometry(0.75, 6.0, 1.15), mat.chrome);
+  arm.position.set(0.55, -2.7, 0); crank.add(arm);
+  const cFerrule = cylX(0.62, 0.5, mat.brass, 24);
+  cFerrule.position.set(0.95, -5.5, 0); crank.add(cFerrule);
+  const cKnob = cylX(0.8, 3.1, mat.bakelite);
+  cKnob.position.set(2.3, -5.5, 0); crank.add(cKnob);
+  const cKnobEnd = new THREE.Mesh(new THREE.SphereGeometry(0.8, 24, 16), mat.bakelite);
+  cKnobEnd.position.set(3.85, -5.5, 0); crank.add(cKnobEnd);
+  regPart('504', 'G5', 'Приводная рукоятка-кривошип R=55 мм', 'Хромированная сталь · бакелитовая ручка', 'Эргономичная рукоятка со свободно вращающимся бакелитовым веретеном.', crank, [14.0, 2.5, 0], 3);
+
+  const p506G = new THREE.Group(); p506G.position.set(0, 4.9, 2); head.add(p506G);
+  const sealRing = new THREE.Mesh(new THREE.TorusGeometry(0.48, 0.16, 14, 36), mat.seal);
+  sealRing.rotation.x = Math.PI / 2; sealRing.position.y = -0.15; p506G.add(sealRing);
+  const shaftBushing = new THREE.Mesh(new THREE.CylinderGeometry(0.68, 0.68, 1.0, 28), mat.brassKnurl);
+  shaftBushing.position.y = 0.35; p506G.add(shaftBushing);
+  const glandNut = new THREE.Mesh(new THREE.CylinderGeometry(0.82, 0.82, 0.45, 6), mat.chrome);
+  glandNut.position.y = 0.95; p506G.add(glandNut);
+  regPart('506', 'G5', 'Гермоузел вала: манжета FKM + бронзовая втулка', 'Фторкаучук Viton · бронза БрОФ · гайка SW14', 'Удерживает давление 4 бар вокруг вращающегося на 800 об/мин шпинделя венчика.', p506G, [0, -2.8, 6.0], 4);
+
+  // -------------------------------------------------------------------------
+  // УЗЕЛ VI: ПАТЕНТНЫЙ 14-ПРОВОЛОЧНЫЙ УПРУГИЙ ВЕНЧИК (Детали 505, 601..603)
+  // -------------------------------------------------------------------------
   const whisk = new THREE.Group();
   whisk.position.set(0, -5.7, 2);
   head.add(whisk);
+
+  const PINION_Y = GEAR_Y - 3.3 + 5.7;
+  const p505G = new THREE.Group(); p505G.position.y = PINION_Y; whisk.add(p505G);
+  p505G.add(new THREE.Mesh(new THREE.CylinderGeometry(0.45, 0.45, 0.8, 28), mat.brass));
+  for (let i = 0; i < 8; i++){
+    const a = (i / 8) * Math.PI * 2;
+    const t = new THREE.Mesh(new THREE.BoxGeometry(0.24, 0.8, 0.22), mat.brass);
+    t.position.set(Math.cos(a) * 0.52, 0, Math.sin(a) * 0.52);
+    t.rotation.y = -a;
+    p505G.add(t);
+  }
+  regPart('505', 'G5', 'Ведомая коническая шестерня Z=6 (1:8)', 'Закалённая бронза / сталь 40Х13', 'Принимает вращение от большого бронзового колеса Z=48, увеличивая обороты в 8 раз.', p505G, [0, 3.8, -4.5], 3);
+
+  const p601G = new THREE.Group(); p601G.position.y = (PINION_Y + 3.0) / 2; whisk.add(p601G);
+  p601G.add(new THREE.Mesh(new THREE.CylinderGeometry(0.35, 0.35, PINION_Y - 3.0, 24), mat.chrome));
+  regPart('601', 'G6', 'Вертикальный приводной шпиндель Ø7 мм', 'Нержавеющая сталь 1.4301 · шлифовка h6', 'Проходит сквозь сальник FKM и купол-вытеснитель в рабочую зону формы.', p601G, [0, -3.5, -3.5], 4);
+
+  const p602G = new THREE.Group(); whisk.add(p602G);
+  p602G.add(lathe([[0,2.4],[0.52,2.4],[0.55,3.0],[0.42,3.6],[0,3.6]], mat.chrome, 32));
+  regPart('602', 'G6', 'Цанговая обжимная втулка венчика', 'Пищевая сталь AISI 304', 'Жёстко фиксирует 14 концов пружинных проволочных дуг на шпинделе.', p602G, [0, -6.2, 4.0], 4);
+
+  const p603G = new THREE.Group(); whisk.add(p603G);
   const wirePts = [
     [0.35, 2.6], [1.65, 1.7], [2.6, 0.1], [2.45, -1.6], [1.28, -2.5],
     [0, -2.8], [-1.28, -2.5], [-2.45, -1.6], [-2.6, 0.1], [-1.65, 1.7], [-0.35, 2.6]
@@ -1900,63 +2095,21 @@ dl.spec dd {
   for (let i = 0; i < 7; i++){
     const phi = (i * Math.PI) / 7, cx = Math.cos(phi), cz = Math.sin(phi);
     const curve = new THREE.CatmullRomCurve3(wirePts.map(([r, y]) => new THREE.Vector3(r * cx, y, r * cz)));
-    whisk.add(new THREE.Mesh(new THREE.TubeGeometry(curve, 80, 0.082, 8, false), mat.wire));
+    p603G.add(new THREE.Mesh(new THREE.TubeGeometry(curve, 80, 0.082, 8, false), mat.wire));
   }
-  const ferrule = lathe([[0,2.4],[0.52,2.4],[0.55,3.0],[0.42,3.6],[0,3.6]], mat.chrome, 32);
-  whisk.add(ferrule);
+  regPart('603', 'G6', 'Упругий 14-проволочный венчик (Патент № 2475028)', 'Пружинная коррозионностойкая сталь 12Х18Н10Т Ø1,4 мм', 'Множество тонких упругих проволок рассекают тесто при 800 об/мин, насыщая его микропузырьками сжатого воздуха.', p603G, [0, -9.2, 6.5], 4);
 
-  const PINION_Y = GEAR_Y - 3.3 + 5.7;
-  const shaft = new THREE.Mesh(new THREE.CylinderGeometry(0.35, 0.35, PINION_Y - 3.0, 24), mat.chrome);
-  shaft.position.y = (PINION_Y + 3.0) / 2;
-  whisk.add(shaft);
-
-  const pinion = new THREE.Mesh(new THREE.CylinderGeometry(0.45, 0.45, 0.8, 28), mat.brass);
-  pinion.position.y = PINION_Y;
-  whisk.add(pinion);
-  for (let i = 0; i < 8; i++){
-    const a = (i / 8) * Math.PI * 2;
-    const t = new THREE.Mesh(new THREE.BoxGeometry(0.24, 0.8, 0.22), mat.brass);
-    t.position.set(Math.cos(a) * 0.52, PINION_Y, Math.sin(a) * 0.52);
-    t.rotation.y = -a;
-    whisk.add(t);
-  }
-
-  head.add(tube([[-1.8, 7.0, -5.2], [-2.6, 6.2, -1.0], [-3.2, 5.1, 1.4], [-3.2, 4.7, 1.6]], 0.24, mat.copper));
+  // -------------------------------------------------------------------------
+  // УЗЕЛ VII: ПНЕВМОАРМАТУРА, МАНОМЕТР БУРДОНА И КЛАПАНЫ (Детали 701..704)
+  // -------------------------------------------------------------------------
+  const p701G = new THREE.Group(); head.add(p701G);
+  p701G.add(tube([[-1.8, 7.0, -5.2], [-2.6, 6.2, -1.0], [-3.2, 5.1, 1.4], [-3.2, 4.7, 1.6]], 0.24, mat.copper));
   const checkValve = cylX(0.48, 1.15, mat.brassKnurl, 6);
-  checkValve.position.set(-2.6, 6.2, -1.0);
-  head.add(checkValve);
-
-  head.add(tube([[2.8, 4.7, 1.4], [2.8, 7.0, 0.2], [2.4, 10.8, 0.6], [1.2, 11.8, 4.4]], 0.24, mat.copper));
-  const jet = new THREE.Mesh(new THREE.CylinderGeometry(0.4, 0.4, 0.9, 6), mat.brassKnurl);
-  jet.position.set(1.2, 11.8, 4.4);
-  head.add(jet);
-
-  head.add(tube([[4.3, 4.7, 0.5], [4.0, 9.0, -1.5], [3.2, 11.8, -3.5]], 0.24, mat.copper));
-
-  const gearCover = cylX(2.75, 1.05, mat.enamel);
-  gearCover.position.set(7.0, GEAR_Y, 2);
-  head.add(gearCover);
-  const gearRing = new THREE.Mesh(new THREE.TorusGeometry(2.75, 0.20, 14, 56), mat.chrome);
-  gearRing.rotation.y = Math.PI / 2;
-  gearRing.position.set(7.5, GEAR_Y, 2);
-  head.add(gearRing);
-
-  const crank = new THREE.Group();
-  crank.position.set(8.1, GEAR_Y, 2);
-  head.add(crank);
-  crank.add(cylX(1.05, 1.25, mat.chrome));
-  const arm = new THREE.Mesh(new THREE.BoxGeometry(0.75, 6.0, 1.15), mat.chrome);
-  arm.position.set(0.55, -2.7, 0);
-  crank.add(arm);
-  const cFerrule = cylX(0.62, 0.5, mat.brass, 24);
-  cFerrule.position.set(0.95, -5.5, 0);
-  crank.add(cFerrule);
-  const cKnob = cylX(0.8, 3.1, mat.bakelite);
-  cKnob.position.set(2.3, -5.5, 0);
-  crank.add(cKnob);
-  const cKnobEnd = new THREE.Mesh(new THREE.SphereGeometry(0.8, 24, 16), mat.bakelite);
-  cKnobEnd.position.set(3.85, -5.5, 0);
-  crank.add(cKnobEnd);
+  checkValve.position.set(-2.6, 6.2, -1.0); p701G.add(checkValve);
+  // Internal check ball & spring
+  const cvBall = new THREE.Mesh(new THREE.SphereGeometry(0.24, 16, 12), mat.chrome);
+  cvBall.position.set(-2.4, 6.2, -1.0); p701G.add(cvBall);
+  regPart('701', 'G7', 'Впускной обратный клапан с медной магистралью', 'Медь М1 Ø6×1 мм · латунный клапан с шариком ШХ15', 'Пропускает сжатый воздух от насоса в купол камеры и запирает давление 4 бар.', p701G, [-6.5, 7.5, -2.5], 6);
 
   const front = new THREE.Group();
   head.add(front);
@@ -1964,70 +2117,70 @@ dl.spec dd {
   gauge.position.set(0, 8.4, 0);
   front.add(gauge);
 
+  const p702CaseG = new THREE.Group(); gauge.add(p702CaseG);
   const gHouse = cylZ(3.05, 2.35, mat.chrome);
-  gHouse.position.z = 10.45;
-  gauge.add(gHouse);
+  gHouse.position.z = 10.45; p702CaseG.add(gHouse);
+  // Internal brass Bourdon C-tube inside manometer!
+  const bourdon = new THREE.Mesh(new THREE.TorusGeometry(1.75, 0.22, 12, 40, Math.PI * 1.45), mat.brass);
+  bourdon.rotation.z = Math.PI * 0.25;
+  bourdon.position.z = 10.4; p702CaseG.add(bourdon);
+
   const gaugeFaceMat = new THREE.MeshStandardMaterial({ roughness: 0.42, metalness: 0.02 });
   const gFace = new THREE.Mesh(new THREE.CircleGeometry(2.74, 64), gaugeFaceMat);
-  gFace.position.z = 11.64;
-  gauge.add(gFace);
-  const gBezel = new THREE.Mesh(new THREE.TorusGeometry(2.88, 0.26, 16, 64), mat.chrome);
-  gBezel.position.z = 11.66;
-  gauge.add(gBezel);
+  gFace.position.z = 11.64; p702CaseG.add(gFace);
 
   const needleG = new THREE.BoxGeometry(2.28, 0.14, 0.06);
   needleG.translate(0.85, 0, 0);
   const needle = new THREE.Mesh(needleG, new THREE.MeshStandardMaterial({ color: 0x141414, roughness: 0.3 }));
-  needle.position.z = 11.74;
-  gauge.add(needle);
+  needle.position.z = 11.74; p702CaseG.add(needle);
   const nCap = cylZ(0.28, 0.22, mat.brass);
-  nCap.position.z = 11.80;
-  gauge.add(nCap);
+  nCap.position.z = 11.80; p702CaseG.add(nCap);
+
+  const gBezel = new THREE.Mesh(new THREE.TorusGeometry(2.88, 0.26, 16, 64), mat.chrome);
+  gBezel.position.z = 11.66; p702CaseG.add(gBezel);
   const glass = new THREE.Mesh(
     new THREE.CircleGeometry(2.76, 64),
-    new THREE.MeshPhysicalMaterial({ color: 0xffffff, transparent: true, opacity: 0.1, roughness: 0.02, clearcoat: 1 })
+    new THREE.MeshPhysicalMaterial({ color: 0xffffff, transparent: true, opacity: 0.14, roughness: 0.02, clearcoat: 1 })
   );
-  glass.position.z = 11.86;
-  gauge.add(glass);
+  glass.position.z = 11.86; p702CaseG.add(glass);
+  regPart('702', 'G7', 'Манометр 0–8 бар с латунной трубкой Бурдона', 'Корпус AISI 304 · упругая трубка Бурдона Л63 · стекло', 'Показывает давление в камере; зелёный сектор 3–5 бар отмечает рабочий режим по патенту.', p702CaseG, [0, 4.5, 11.5], 6);
 
+  const p703G = new THREE.Group(); head.add(p703G);
+  p703G.add(tube([[2.8, 4.7, 1.4], [2.8, 7.0, 0.2], [2.4, 10.8, 0.6], [1.2, 11.8, 4.4]], 0.24, mat.copper));
+  const jet = new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.42, 0.95, 6), mat.brassKnurl);
+  jet.position.set(1.2, 11.8, 4.4); p703G.add(jet);
   const btnRing = new THREE.Mesh(new THREE.CylinderGeometry(1.4, 1.5, 0.52, 40), mat.chrome);
-  btnRing.position.set(0, 12.5, 5.4);
-  front.add(btnRing);
+  btnRing.position.set(0, 12.5, 5.4); p703G.add(btnRing);
   const btn = new THREE.Mesh(new THREE.CylinderGeometry(1.02, 1.02, 0.75, 40), mat.red);
-  btn.position.set(0, 12.95, 5.4);
-  front.add(btn);
+  btn.position.set(0, 12.95, 5.4); p703G.add(btn);
+  const btnSpring = helixSpring(0.55, 0.07, 5, 1.2, mat.wire);
+  btnSpring.position.set(0, 12.1, 5.4); p703G.add(btnSpring);
+  regPart('703', 'G7', 'Клапан плавного сброса с жиклёром Ø0,6 мм', 'Калиброванный латунный дроссель · красная кнопка', 'Стравливает воздух за 10 с (~0,06 МПа/с), чтобы пузырьки в тесте равномерно выросли вдвое без разрыва клейковины.', p703G, [2.5, 14.5, 6.5], 6);
 
   const safety = new THREE.Group();
   safety.position.set(3.2, 12.4, -3.5);
   head.add(safety);
-  safety.add(new THREE.Mesh(new THREE.CylinderGeometry(0.52, 0.52, 1.25, 24), mat.brassKnurl));
+  safety.add(new THREE.Mesh(new THREE.CylinderGeometry(0.55, 0.55, 1.35, 24), mat.brassKnurl));
+  const svSpring = helixSpring(0.32, 0.06, 6, 1.1, mat.wire);
+  svSpring.position.y = 0.2; safety.add(svSpring);
   const sCap = new THREE.Mesh(new THREE.SphereGeometry(0.78, 24, 14, 0, Math.PI * 2, 0, Math.PI / 2), mat.chrome);
-  sCap.position.y = 0.62;
-  safety.add(sCap);
+  sCap.position.y = 0.68; safety.add(sCap);
+  head.add(tube([[4.3, 4.7, 0.5], [4.0, 9.0, -1.5], [3.2, 11.8, -3.5]], 0.24, mat.copper));
+  regPart('704', 'G7', 'Пружинный предохранительный клапан 5,5 бар', 'Латунь Л63 · тарированная пружина 65Г', 'Автоматически стравливает избыточное давление при превышении порога 5,5 бар.', safety, [5.5, 15.0, -5.5], 6);
 
   // ---------- 5. STYLIZED BAKING DECK / MINI-OVEN FOR STEP 6 ----------
   const ovenGroup = new THREE.Group();
   ovenGroup.position.set(26, 0, 8);
   ovenGroup.visible = false;
   scene.add(ovenGroup);
-
   const ovenHearth = new THREE.Mesh(new THREE.CylinderGeometry(8.2, 8.6, 0.7, 64), mat.dark);
-  ovenHearth.position.y = 0.35;
-  ovenGroup.add(ovenHearth);
-
+  ovenHearth.position.y = 0.35; ovenGroup.add(ovenHearth);
   const ovenDome = new THREE.Mesh(new THREE.CylinderGeometry(7.9, 7.9, 11.2, 64, 1, true), mat.ovenGlass);
-  ovenDome.position.y = 6.2;
-  ovenGroup.add(ovenDome);
-
+  ovenDome.position.y = 6.2; ovenGroup.add(ovenDome);
   const ovenTopRing = new THREE.Mesh(new THREE.TorusGeometry(7.9, 0.22, 14, 64), mat.brass);
-  ovenTopRing.rotation.x = Math.PI / 2;
-  ovenTopRing.position.y = 11.8;
-  ovenGroup.add(ovenTopRing);
-
+  ovenTopRing.rotation.x = Math.PI / 2; ovenTopRing.position.y = 11.8; ovenGroup.add(ovenTopRing);
   const heaterCoil = new THREE.Mesh(new THREE.TorusGeometry(6.2, 0.16, 12, 64), mat.heaterGlow);
-  heaterCoil.rotation.x = Math.PI / 2;
-  heaterCoil.position.y = 10.8;
-  ovenGroup.add(heaterCoil);
+  heaterCoil.rotation.x = Math.PI / 2; heaterCoil.position.y = 10.8; ovenGroup.add(heaterCoil);
 
   // ---------- HIGH-RES GAUGE & BADGE TEXTURES ----------
   const A0 = Math.PI * 0.75, A1 = Math.PI * 2.25, PMAX = 8;
@@ -2036,22 +2189,13 @@ dl.spec dd {
   function makeGaugeTex(){
     return canvasTex(512, 512, g => {
       const grd = g.createRadialGradient(256, 256, 30, 256, 256, 256);
-      grd.addColorStop(0, '#FFFDF7');
-      grd.addColorStop(0.85, '#F3ECE0');
-      grd.addColorStop(1, '#DFD5C3');
-      g.fillStyle = grd;
-      g.beginPath(); g.arc(256, 256, 256, 0, Math.PI * 2); g.fill();
-
+      grd.addColorStop(0, '#FFFDF7'); grd.addColorStop(0.85, '#F3ECE0'); grd.addColorStop(1, '#DFD5C3');
+      g.fillStyle = grd; g.beginPath(); g.arc(256, 256, 256, 0, Math.PI * 2); g.fill();
       g.lineWidth = 24;
-      g.strokeStyle = '#3B8E56';
-      g.beginPath(); g.arc(256, 256, 198, gAng(3), gAng(5)); g.stroke();
-      g.strokeStyle = '#C03528';
-      g.beginPath(); g.arc(256, 256, 198, gAng(5.5), gAng(8)); g.stroke();
-
-      g.strokeStyle = '#181818';
-      g.fillStyle = '#181818';
-      g.textAlign = 'center';
-      g.textBaseline = 'middle';
+      g.strokeStyle = '#3B8E56'; g.beginPath(); g.arc(256, 256, 198, gAng(3), gAng(5)); g.stroke();
+      g.strokeStyle = '#C03528'; g.beginPath(); g.arc(256, 256, 198, gAng(5.5), gAng(8)); g.stroke();
+      g.strokeStyle = '#181818'; g.fillStyle = '#181818';
+      g.textAlign = 'center'; g.textBaseline = 'middle';
       for (let i = 0; i <= 40; i++){
         const v = i / 5, a = gAng(v), major = i % 5 === 0;
         g.lineWidth = major ? 6 : 2.5;
@@ -2076,17 +2220,10 @@ dl.spec dd {
   function makeBadgeTex(){
     return canvasTex(1024, 192, g => {
       const grd = g.createLinearGradient(0, 0, 0, 192);
-      grd.addColorStop(0, '#FAF8F2');
-      grd.addColorStop(0.5, '#E5DEC9');
-      grd.addColorStop(1, '#F6F2E8');
-      g.fillStyle = grd;
-      g.fillRect(0, 0, 1024, 192);
-      g.strokeStyle = '#7A1F18';
-      g.lineWidth = 8;
-      g.strokeRect(14, 14, 996, 164);
-      g.fillStyle = '#7A1F18';
-      g.textAlign = 'center';
-      g.textBaseline = 'middle';
+      grd.addColorStop(0, '#FAF8F2'); grd.addColorStop(0.5, '#E5DEC9'); grd.addColorStop(1, '#F6F2E8');
+      g.fillStyle = grd; g.fillRect(0, 0, 1024, 192);
+      g.strokeStyle = '#7A1F18'; g.lineWidth = 8; g.strokeRect(14, 14, 996, 164);
+      g.fillStyle = '#7A1F18'; g.textAlign = 'center'; g.textBaseline = 'middle';
       g.font = '700 88px "Fraunces", Georgia, serif';
       g.fillText('DRUCKBROT  Nº 1', 512, 98);
     });
@@ -2139,27 +2276,243 @@ dl.spec dd {
     dark:  { enamel: 0x2B3835, bakelite: 0x8F281E, table: slateTex,  theme: 'dark',    hatchA: '#465954', hatchB: '#263330' }
   };
 
-  document.querySelectorAll('.finish-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.finish-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const f = FINISHES[btn.dataset.finish] || FINISHES.mint;
+  document.querySelectorAll('.finish-btn').forEach(b => {
+    b.addEventListener('click', () => {
+      document.querySelectorAll('.finish-btn').forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      const f = FINISHES[b.dataset.finish] || FINISHES.mint;
       document.documentElement.setAttribute('data-theme', f.theme);
-      const cEnamel = new THREE.Color(f.enamel).convertSRGBToLinear();
-      const cBake   = new THREE.Color(f.bakelite).convertSRGBToLinear();
-      mat.enamel.color.copy(cEnamel);
-      mat.enamelHead.color.copy(cEnamel);
-      mat.bakelite.color.copy(cBake);
-      tableMat.map = f.table;
-      tableMat.needsUpdate = true;
-      mat.capEnamel.map = hatch(f.hatchA, f.hatchB);
-      mat.capEnamel.needsUpdate = true;
+      mat.enamel.color.copy(new THREE.Color(f.enamel).convertSRGBToLinear());
+      mat.enamelHead.color.copy(new THREE.Color(f.enamel).convertSRGBToLinear());
+      mat.bakelite.color.copy(new THREE.Color(f.bakelite).convertSRGBToLinear());
+      tableMat.map = f.table; tableMat.needsUpdate = true;
+      mat.capEnamel.map = hatch(f.hatchA, f.hatchB); mat.capEnamel.needsUpdate = true;
     });
   });
 
-  // ---------- STATE & STEP ANIMATION ENGINE ----------
-  const S = {};
+  // =========================================================================
+  // INTERACTIVE CAD DISASSEMBLY ENGINE UI, X-RAY SHELLS, ISOLATION & RAYCASTER
+  // =========================================================================
   let explodeK = 0;
+  let targetExplodeK = 0;
+  let currentDisStage = 0; // 0..7
+  let selectedPart = null;
+  let isolatedPart = null;
+  let xrayMode = false;
+
+  const explodeSlider = document.getElementById('explodeSlider');
+  const explodeVal = document.getElementById('explodeVal');
+  const partHud = document.getElementById('part-hud');
+  const phCode = document.getElementById('phCode');
+  const phGroup = document.getElementById('phGroup');
+  const phTitle = document.getElementById('phTitle');
+  const phMat = document.getElementById('phMat');
+  const phDesc = document.getElementById('phDesc');
+  const phIsolate = document.getElementById('phIsolate');
+  const phPullOut = document.getElementById('phPullOut');
+  const bomTreeEl = document.getElementById('bomTree');
+
+  // Build BOM Tree UI in Right Panel
+  SUBASSEMBLIES.forEach(sub => {
+    const grpEl = document.createElement('div');
+    grpEl.className = 'bom-group';
+    const subParts = PARTS.filter(p => p.group === sub.id);
+    const headBtn = document.createElement('button');
+    headBtn.className = 'bom-group-head';
+    headBtn.innerHTML = `<span>${sub.title}</span><span class="g-badge">${subParts.length} дет.</span>`;
+    headBtn.addEventListener('click', () => {
+      grpEl.classList.toggle('bom-GroupCollapsed');
+    });
+    const listEl = document.createElement('div');
+    listEl.className = 'bom-parts';
+    subParts.forEach(p => {
+      const pBtn = document.createElement('button');
+      pBtn.className = 'bom-part';
+      pBtn.dataset.code = p.code;
+      pBtn.innerHTML = `<span class="p-code">№${p.code}</span><span>${p.name}</span><span class="p-mat">${p.matSpec.split('·')[0].trim()}</span>`;
+      pBtn.addEventListener('click', () => selectPart(p, true));
+      p.bomBtn = pBtn;
+      listEl.appendChild(pBtn);
+    });
+    grpEl.appendChild(headBtn);
+    grpEl.appendChild(listEl);
+    bomTreeEl.appendChild(grpEl);
+  });
+
+  function updateGhostMaterials(){
+    PARTS.forEach(p => {
+      const shouldGhost = (isolatedPart && isolatedPart !== p) || (xrayMode && p.isShell && selectedPart !== p);
+      p.node.traverse(o => {
+        if (!o.isMesh || o.material === mat.gas || o.material === glass.material) return;
+        if (shouldGhost){
+          if (!o.userData.origMat) o.userData.origMat = o.material;
+          if (!o.userData.ghostMat){
+            o.userData.ghostMat = o.userData.origMat.clone();
+            o.userData.ghostMat.transparent = true;
+            o.userData.ghostMat.opacity = isolatedPart ? 0.10 : 0.22;
+            o.userData.ghostMat.depthWrite = false;
+          } else {
+            o.userData.ghostMat.opacity = isolatedPart ? 0.10 : 0.22;
+          }
+          o.material = o.userData.ghostMat;
+        } else if (o.userData.origMat){
+          o.material = o.userData.origMat;
+        }
+      });
+    });
+  }
+
+  function selectPart(p, focusCam = false){
+    selectedPart = p;
+    PARTS.forEach(item => {
+      if (item.bomBtn) item.bomBtn.classList.toggle('selected', item === p);
+    });
+    if (!p){
+      partHud.classList.remove('visible');
+      isolatedPart = null;
+      updateGhostMaterials();
+      return;
+    }
+    const sub = SUBASSEMBLIES.find(s => s.id === p.group);
+    phCode.textContent = 'ДЕТ. № ' + p.code;
+    phGroup.textContent = sub ? sub.title : '';
+    phTitle.textContent = p.name;
+    phMat.textContent = p.matSpec;
+    phDesc.textContent = p.desc;
+    phIsolate.classList.toggle('active', isolatedPart === p);
+    phPullOut.classList.toggle('active', p.pulledOut);
+    partHud.classList.add('visible');
+    if (p.bomBtn) p.bomBtn.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    updateGhostMaterials();
+
+    if (focusCam){
+      const box = new THREE.Box3().setFromObject(p.node);
+      const center = new THREE.Vector3();
+      const size = new THREE.Vector3();
+      box.getCenter(center);
+      box.getSize(size);
+      const dist = Math.max(16, size.length() * 2.4);
+      const dir = camera.position.clone().sub(controls.target).normalize();
+      flyTo({ p: center.clone().add(dir.multiplyScalar(dist)), t: center }, 0.75);
+    }
+  }
+
+  document.getElementById('phClose').addEventListener('click', () => selectPart(null));
+  phIsolate.addEventListener('click', () => {
+    if (!selectedPart) return;
+    isolatedPart = (isolatedPart === selectedPart) ? null : selectedPart;
+    phIsolate.classList.toggle('active', isolatedPart === selectedPart);
+    updateGhostMaterials();
+  });
+  phPullOut.addEventListener('click', () => {
+    if (!selectedPart) return;
+    selectedPart.pulledOut = !selectedPart.pulledOut;
+    phPullOut.classList.toggle('active', selectedPart.pulledOut);
+  });
+
+  const btnXray = document.getElementById('btnXray');
+  btnXray.addEventListener('click', () => {
+    xrayMode = !xrayMode;
+    btnXray.setAttribute('aria-pressed', xrayMode ? 'true' : 'false');
+    updateGhostMaterials();
+  });
+
+  // 3D Raycasting on Stage Click (distinguish click from drag)
+  const raycaster = new THREE.Raycaster();
+  const mouse = new THREE.Vector2();
+  let downXY = null;
+  renderer.domElement.addEventListener('pointerdown', e => {
+    downXY = [e.clientX, e.clientY];
+  });
+  renderer.domElement.addEventListener('pointerup', e => {
+    if (!downXY) return;
+    const dx = e.clientX - downXY[0], dy = e.clientY - downXY[1];
+    downXY = null;
+    if (Math.hypot(dx, dy) > 6) return;
+    const rect = renderer.domElement.getBoundingClientRect();
+    mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+    mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+    raycaster.setFromCamera(mouse, camera);
+    const meshes = Array.from(meshToPart.keys()).filter(m => m.visible);
+    const hits = raycaster.intersectObjects(meshes, false);
+    if (hits.length > 0){
+      const hitPart = meshToPart.get(hits[0].object);
+      if (hitPart) selectPart(hitPart, false);
+    }
+  });
+
+  // Disassembly Slider & Step-by-Step Stages (0..7)
+  const STAGE_NAMES = [
+    '0/7 · Полностью собран',
+    '1/7 · Снята хлебная форма',
+    '2/7 · Открыт байонет и поднята голова',
+    '3/7 · Вскрыт конический редуктор 1:8',
+    '4/7 · Извлечён 14-проволочный венчик, вытеснитель и сальник',
+    '5/7 · Разобран поршневой насос (гильза, поршень, пружина)',
+    '6/7 · Разобран манометр Бурдона и клапанная группа',
+    '7/7 · Полный подетальный разбор всех 42 деталей'
+  ];
+
+  function setDisassemblyStage(st){
+    currentDisStage = Math.max(0, Math.min(7, st));
+    document.querySelectorAll('.dis-stage-btn').forEach(b => {
+      b.classList.toggle('active', +b.dataset.dstage === currentDisStage);
+    });
+    document.getElementById('disStageLabel').textContent = STAGE_NAMES[currentDisStage];
+    const pct = Math.round((currentDisStage / 7) * 100);
+    explodeSlider.value = pct;
+    explodeVal.textContent = pct + '%';
+    targetExplodeK = currentDisStage / 7;
+  }
+
+  document.querySelectorAll('.dis-stage-btn').forEach(b => {
+    b.addEventListener('click', () => setDisassemblyStage(+b.dataset.dstage));
+  });
+  document.getElementById('btnPrevDis').addEventListener('click', () => setDisassemblyStage(currentDisStage - 1));
+  document.getElementById('btnNextDis').addEventListener('click', () => setDisassemblyStage(currentDisStage + 1));
+
+  explodeSlider.addEventListener('input', e => {
+    targetExplodeK = (+e.target.value) / 100;
+    explodeVal.textContent = e.target.value + '%';
+    currentDisStage = Math.round(targetExplodeK * 7);
+    document.querySelectorAll('.dis-stage-btn').forEach(b => {
+      b.classList.toggle('active', +b.dataset.dstage === currentDisStage);
+    });
+    document.getElementById('disStageLabel').textContent = STAGE_NAMES[currentDisStage];
+  });
+
+  document.getElementById('btnResetAll').addEventListener('click', () => {
+    isolatedPart = null;
+    xrayMode = false;
+    btnXray.setAttribute('aria-pressed', 'false');
+    PARTS.forEach(p => { p.pulledOut = false; });
+    selectPart(null);
+    setDisassemblyStage(0);
+    setCut(false, true);
+  });
+
+  // Mode Tabs (Рабочий цикл vs Движок разбора)
+  const tabCycle = document.getElementById('tabCycle');
+  const tabDisassembly = document.getElementById('tabDisassembly');
+  const cyclePane = document.getElementById('cycle-pane');
+  const disPane = document.getElementById('disassembly-pane');
+
+  tabCycle.addEventListener('click', () => {
+    tabCycle.classList.add('active');
+    tabDisassembly.classList.remove('active');
+    cyclePane.classList.remove('hidden');
+    disPane.classList.remove('active');
+  });
+  tabDisassembly.addEventListener('click', () => {
+    tabDisassembly.classList.add('active');
+    tabCycle.classList.remove('active');
+    cyclePane.classList.add('hidden');
+    disPane.classList.add('active');
+    if (targetExplodeK < 0.05) setDisassemblyStage(3);
+  });
+
+  // ---------- STATE & 6-STEP WORKING ANIMATION ENGINE ----------
+  const S = {};
   function initState(){
     Object.assign(S, {
       headLift: 1, lock: 0, p: 0, leverA: -0.42, crankA: 0, whiskA: 0,
@@ -2265,7 +2618,7 @@ dl.spec dd {
 
   // ---------- SECTION VIEW & CAMERA PRESETS ----------
   let cutOn = false;
-  function flyTo(view, dur = 1.0){
+  function flyTo(view, dur = 0.95){
     const p0 = camera.position.clone(), t0 = controls.target.clone();
     const narrow = stageEl.clientWidth / Math.max(1, stageEl.clientHeight) < 0.9;
     const p1 = view.p.clone();
@@ -2287,29 +2640,19 @@ dl.spec dd {
     doughFull.visible = !on;
     doughCut.visible = on;
     gasG.visible = on;
-    document.getElementById('tag').textContent = on
-      ? 'ОСЕВОЙ РАЗРЕЗ КАМЕРЫ + 3D-РЕЛЬЕФ ПОР МЯКИША'
-      : 'PBR-ТЕКСТУРЫ: ДУБ · ТОЧЁНАЯ СТАЛЬ · ОРЕХ · НАКАТКА ЛАТУНИ';
-    if (moveCam) flyTo(on ? VIEWS.cut : VIEWS.home, 1.0);
+    if (moveCam) flyTo(on ? VIEWS.cut : VIEWS.home, 0.95);
   }
   cutBtn.addEventListener('click', () => setCut(!cutOn, true));
 
-  document.querySelectorAll('.cam-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.cam-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const vKey = btn.dataset.cam;
+  document.querySelectorAll('.cam-btn').forEach(b => {
+    b.addEventListener('click', () => {
+      document.querySelectorAll('.cam-btn').forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      const vKey = b.dataset.cam;
       if (vKey === 'cut' && !cutOn) setCut(true, false);
       if (vKey === 'gauge' && cutOn) setCut(false, false);
       flyTo(VIEWS[vKey] || VIEWS.home, 0.95);
     });
-  });
-
-  const explodeSlider = document.getElementById('explodeSlider');
-  const explodeVal = document.getElementById('explodeVal');
-  explodeSlider.addEventListener('input', e => {
-    explodeK = (+e.target.value) / 100;
-    explodeVal.textContent = e.target.value + '%';
   });
 
   // ---------- ENGINEERED CALLOUTS IN SECTION VIEW ----------
@@ -2324,22 +2667,26 @@ dl.spec dd {
   }
 
   const LBL = [
-    { n: 1, t: 'Конический редуктор', s: '1:8', f: () => hv(-0.7, GEAR_Y + 3.0, 2), side: -1, dy: -22 },
-    { n: 2, t: 'Обратный клапан', s: 'от насоса', f: () => hv(-2.6, 6.2, -1.0), side: -1, dy: 4 },
-    { n: 3, t: 'Байонетный затвор', s: '3 зуба', f: () => hv(-7.15, 0.8, 2), side: -1, dy: 2 },
-    { n: 4, t: 'Купол-вытеснитель', s: 'нерж.', f: () => hv(-4.0, -1.7, 2), side: -1, dy: 16 },
-    { n: 5, t: 'Аэрированное тесто', s: '3D-срез', f: () => pv(-3.0, 0.45 + S.doughH * 0.45, 0), side: -1, dy: 24 },
-    { n: 6, t: 'Предохр. клапан', s: '5,5 бар', f: () => hv(3.2, 13.0, -3.5), side: 1, dy: -24 },
-    { n: 7, t: 'Дроссель сброса', s: 'Ø 0,6 мм', f: () => hv(1.2, 11.8, 4.4), side: 1, dy: 0 },
-    { n: 8, t: 'Манжета вала', s: 'FKM', f: () => hv(0.45, 4.8, 2), side: 1, dy: -4 },
-    { n: 9, t: 'Сжатый воздух', s: '≈ 0,30 л', f: () => { const [b, t] = gasSpan(); return pv(3.4, (b + t) / 2, 0); }, side: 1, dy: 4, cond: () => S.lock > 0.5 && S.potOut < 0.01 },
-    { n: 10, t: 'Венчик', s: '800 об/м', f: () => hv(2.5, -5.4, 2), side: 1, dy: 20, cond: () => S.potOut < 0.01 }
+    { n: '501', t: 'Коническая пара', s: '1:8 (Z=48/6)', f: () => hv(-0.7, GEAR_Y + 3.0, 2), side: -1, dy: -22 },
+    { n: '701', t: 'Обратный клапан', s: 'шариковый', f: () => hv(-2.6, 6.2, -1.0), side: -1, dy: 4 },
+    { n: '405', t: 'Байонетный затвор', s: '6 зубьев', f: () => hv(-7.15, 0.8, 2), side: -1, dy: 2 },
+    { n: '404', t: 'Купол-вытеснитель', s: 'AISI 304', f: () => hv(-4.0, -1.7, 2), side: -1, dy: 16 },
+    { n: '304', t: 'Аэрированное тесто', s: '3D-срез', f: () => pv(-3.0, 0.45 + S.doughH * 0.45, 0), side: -1, dy: 24 },
+    { n: '704', t: 'Предохр. клапан', s: '5,5 бар', f: () => hv(3.2, 13.0, -3.5), side: 1, dy: -24 },
+    { n: '703', t: 'Жиклёр сброса', s: 'Ø 0,6 мм', f: () => hv(1.2, 11.8, 4.4), side: 1, dy: 0 },
+    { n: '506', t: 'Сальник вала', s: 'FKM + втулка', f: () => hv(0.45, 4.8, 2), side: 1, dy: -4 },
+    { n: '402', t: 'Сжатый воздух', s: '≈ 0,30 л', f: () => { const [b, t] = gasSpan(); return pv(3.4, (b + t) / 2, 0); }, side: 1, dy: 4, cond: () => S.lock > 0.5 && S.potOut < 0.01 },
+    { n: '603', t: 'Упругий венчик', s: '14 проволок', f: () => hv(2.5, -5.4, 2), side: 1, dy: 20, cond: () => S.potOut < 0.01 }
   ];
 
   LBL.forEach(L => {
     L.el = document.createElement('div');
     L.el.className = 'lbl' + (L.side < 0 ? ' left' : '');
     L.el.innerHTML = `<span class="idx">${L.n}</span><span>${L.t}</span>` + (L.s ? `<small>${L.s}</small>` : '');
+    L.el.addEventListener('click', () => {
+      const found = PARTS.find(p => p.code === L.n);
+      if (found) selectPart(found, true);
+    });
     labelLayer.appendChild(L.el);
 
     L.poly = document.createElementNS(SVGNS, 'polyline');
@@ -2360,25 +2707,19 @@ dl.spec dd {
       const show = !L.cond || L.cond();
       pv3.copy(L.f()).project(camera);
       if (!show || pv3.z > 1){
-        L.el.style.display = 'none';
-        L.poly.style.display = 'none';
-        L.dot.style.display = 'none';
+        L.el.style.display = 'none'; L.poly.style.display = 'none'; L.dot.style.display = 'none';
         return;
       }
       const sx = (pv3.x + 1) / 2 * W, sy = (1 - pv3.y) / 2 * H;
-      L.el.style.display = '';
-      L.poly.style.display = '';
-      L.dot.style.display = '';
+      L.el.style.display = ''; L.poly.style.display = ''; L.dot.style.display = '';
       const ew = L.el.offsetWidth || 110;
       let lx = sx + L.side * dx;
       if (L.side < 0) lx = Math.max(ew + 6, lx);
       else lx = Math.min(W - ew - 6, lx);
       const ex = (sx + lx) * 0.5, ey = sy + L.dy, ly = ey;
-      L.el.style.left = lx + 'px';
-      L.el.style.top = ly + 'px';
+      L.el.style.left = lx + 'px'; L.el.style.top = ly + 'px';
       L.poly.setAttribute('points', `${sx},${sy} ${ex},${ey} ${lx},${ly}`);
-      L.dot.setAttribute('cx', sx);
-      L.dot.setAttribute('cy', sy);
+      L.dot.setAttribute('cx', sx); L.dot.setAttribute('cy', sy);
     });
   }
 
@@ -2390,6 +2731,13 @@ dl.spec dd {
   const crumbChips = [...document.querySelectorAll('.crumb-chip')];
   const fmt = (v, d) => v.toFixed(d).replace('.', ',');
 
+  crumbChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      S.foam = +chip.dataset.crumb;
+      syncUI();
+    });
+  });
+
   function syncUI(){
     btns.forEach((b, i) => {
       b.disabled = S.busy;
@@ -2399,141 +2747,146 @@ dl.spec dd {
     document.getElementById('auto').disabled = S.busy;
     document.getElementById('reset').disabled = S.busy;
     elS.textContent = STATUS[Math.min(S.step, STATUS.length - 1)];
+    const foamNames = ['Сырое тесто', 'Микроэмульсия 4 бар', 'Вспенено ×2', 'Выпеченный мякиш'];
+    foamLabel.textContent = foamNames[S.foam] || foamNames[0];
+    crumbChips.forEach((c, idx) => c.classList.toggle('active', idx === S.foam));
   }
-  btns.forEach(b => b.addEventListener('click', () => runToStep(+b.dataset.step)));
+  btns.forEach((b, i) => b.addEventListener('click', () => runToStep(i)));
   document.getElementById('auto').addEventListener('click', runAll);
   document.getElementById('reset').addEventListener('click', () => {
-    if (!S.busy){
-      initState();
-      ovenGroup.visible = false;
-      syncUI();
-    }
+    if (S.busy) return;
+    initState();
+    ovenGroup.visible = false;
+    syncUI();
   });
   syncUI();
 
-  let lastUI = 0;
-  function updateReadout(t){
-    if (t - lastUI < 70) return;
-    lastUI = t;
-    const vol = (S.doughH * POT_AREA) / 1000;
-    const rpm = Math.round(800 * S.crankRate);
-    elP.innerHTML = fmt(S.p, 1) + '<small>бар</small>';
-    elV.innerHTML = fmt(vol, 2) + '<small>л</small>';
-    elW.innerHTML = rpm + '<small>об/м</small>';
-    barP.style.width = Math.min(100, (S.p / 4) * 100) + '%';
-    barV.style.width = Math.min(100, ((vol - 0.25) / 0.5) * 100) + '%';
-    barW.style.width = Math.min(100, (rpm / 800) * 100) + '%';
+  // ---------- MAIN RENDER LOOP ----------
+  const rawC = new THREE.Color(0xEFE0BE).convertSRGBToLinear();
+  const bakeC = new THREE.Color(0xAD5A22).convertSRGBToLinear();
+  const rawTop = new THREE.Color(0xF3E5C4).convertSRGBToLinear();
+  const bakeTop = new THREE.Color(0x8E3F12).convertSRGBToLinear();
 
-    if (S.timeLeft != null) elS.textContent = 'Взбивание под давлением: осталось ' + S.timeLeft + ' с из 60.';
-    foamLabel.textContent = FOAM_SPECS[S.foam]?.label || 'Сырое тесто';
-    crumbChips.forEach((c, idx) => c.classList.toggle('active', idx === S.foam));
-  }
+  let prev = performance.now();
+  function frame(now){
+    const dt = Math.min(0.05, (now - prev) / 1000);
+    prev = now;
 
-  // ---------- APPLY 3D STATE PER FRAME ----------
-  const tmp = new THREE.Vector3();
-  const lin = h => new THREE.Color(h).convertSRGBToLinear();
-  const C_RAW = lin(0xEDD8AE), C_BAKED = lin(0x8C4316), C_SIDE = lin(0xE9D3A8), C_SIDE_B = lin(0xC27E3E);
-  let shownFoam = -1;
-
-  function applyState(dt){
-    const liftTotal = Math.max(S.headLift, explodeK * 1.15);
-    head.position.y = HEAD_CLOSED + HEAD_LIFT * liftTotal;
-    collar.position.y = -explodeK * 2.2;
-    whisk.position.y = -5.7 - explodeK * 3.0;
-    collar.rotation.y = 0.55 * S.lock;
-
-    lever.rotation.x = S.leverA;
-    const attachY = 18.6 - ROD_ARM * Math.sin(S.leverA);
-    const rBottom = 16.2, len = Math.max(0.5, attachY - rBottom);
-    rod.scale.y = len;
-    rod.position.set(0, rBottom + len / 2, 0);
-
-    S.crankA += dt * S.crankRate * Math.PI * 2 * 1.7;
-    S.whiskA += dt * S.crankRate * Math.PI * 2 * 1.7 * 8;
-    crank.rotation.x = S.crankA;
-    crown.rotation.x = S.crankA;
-    crankShaft.rotation.x = S.crankA;
-    whisk.rotation.y = S.whiskA;
-
-    needle.rotation.z = -gAng(S.p);
-    setDough(S.doughH, S.bake);
-
-    if (S.foam !== shownFoam){
-      mat.foamCap.map = foamTexs[S.foam];
-      mat.foamCap.bumpMap = foamBumpTexs[S.foam];
-      mat.foamCap.needsUpdate = true;
-      shownFoam = S.foam;
-    }
-
-    const k = S.potOut;
-    potGroup.position.set(
-      lerp(0, 26, k),
-      5.6 + Math.sin(Math.PI * k) * 7.5 - 4.9 * k - explodeK * 1.2,
-      2 + 6 * k
-    );
-    mat.doughTop.color.copy(C_RAW).lerp(C_BAKED, S.bake);
-    mat.dough.color.copy(C_SIDE).lerp(C_SIDE_B, S.bake * 0.65);
-
-    ovenLight.intensity = S.bake > 0.01 ? 2.8 * Math.sin(Math.PI * Math.min(0.92, S.bake)) : 0;
-    potGroup.getWorldPosition(tmp);
-    ovenLight.position.set(tmp.x, tmp.y + 9.5, tmp.z + 3);
-
-    const [gb, gt] = gasSpan();
-    const gasOn = cutOn && S.lock > 0.02 && k < 0.01 && explodeK < 0.05;
-    gasG.visible = gasOn && gt - gb > 0.05;
-    gasG.position.y = gb;
-    gasG.scale.y = Math.max(0.001, gt - gb);
-    mat.gas.opacity = 0.08 + 0.28 * Math.min(1, S.p / 4);
-
-    if (S.releasing && Math.random() < 0.55) spawnPuff();
-    for (let i = puffs.length - 1; i >= 0; i--){
-      const m = puffs[i], u = m.userData;
-      u.life += dt;
-      m.position.addScaledVector(u.v, dt);
-      u.v.multiplyScalar(0.96);
-      m.scale.setScalar(0.38 + u.life * 2.5);
-      m.material.opacity = Math.max(0, 0.48 * (1 - u.life / 1.3));
-      if (u.life > 1.3){
-        scene.remove(m);
-        m.material.dispose();
-        puffs.splice(i, 1);
-      }
-    }
-  }
-
-  // ---------- RESIZE & RENDER LOOP ----------
-  function resize(){
-    const w = stageEl.clientWidth, h = stageEl.clientHeight;
-    if (!w || !h) return;
-    renderer.setSize(w, h, false);
-    camera.aspect = w / h;
-    camera.fov = w / h < 0.9 ? 38 : 28;
-    camera.updateProjectionMatrix();
-  }
-  new ResizeObserver(resize).observe(stageEl);
-  resize();
-
-  const clock = new THREE.Clock();
-  function loop(t){
-    const dt = Math.min(0.05, clock.getDelta());
     for (let i = anims.length - 1; i >= 0; i--){
       const a = anims[i];
       a.t += dt;
       const k = Math.min(1, a.t / a.dur);
       a.fn(k);
-      if (k >= 1){
-        anims.splice(i, 1);
-        a.res();
+      if (k >= 1){ anims.splice(i, 1); a.res(); }
+    }
+
+    if (S.crankRate > 0){
+      const d = dt * S.crankRate * 9.5;
+      S.crankA += d;
+      S.whiskA += d * 8;
+    }
+
+    // Smoothly interpolate disassembly factor
+    explodeK += (targetExplodeK - explodeK) * Math.min(1, dt * 10);
+
+    // Apply per-part CAD Disassembly vectors + Individual Pull-Out
+    PARTS.forEach(p => {
+      p.pullK += ((p.pulledOut ? 1 : 0) - p.pullK) * Math.min(1, dt * 10);
+      // Stage-aware progressive explosion: parts belonging to earlier disassembly stages explode first
+      const stageFactor = Math.max(0, Math.min(1, (explodeK * 7 - (p.disStage - 1) * 0.65) / Math.max(1, 7 - (p.disStage - 1) * 0.65)));
+      const kTotal = stageFactor + p.pullK * 0.65;
+      if (p.node !== rod && p.node !== lever && p.node !== potGroup && p.node !== head && p.node !== collar && p.node !== crown && p.node !== crank && p.node !== whisk){
+        p.node.position.copy(p.basePos).addScaledVector(p.explodeVec, kTotal);
+      }
+    });
+
+    head.position.y = HEAD_CLOSED + S.headLift * HEAD_LIFT + explodeK * 9.5;
+    collar.position.set(0, 0, 2);
+    collar.rotation.y = (1 - S.lock) * -0.34;
+    collar.position.addScaledVector(PARTS.find(p => p.code === '405').explodeVec, explodeK * 0.45);
+
+    lever.position.set(0, 18.6, -4.5);
+    lever.rotation.x = S.leverA;
+    lever.position.addScaledVector(PARTS.find(p => p.code === '208').explodeVec, explodeK * 0.45);
+
+    const pinY = 18.6 - ROD_ARM * Math.sin(S.leverA);
+    const rLen = Math.max(0.5, pinY - 16.6);
+    rod.scale.y = rLen;
+    rod.position.set(0, 16.6 + rLen / 2 + explodeK * 5.0, 0);
+
+    // Move internal pump piston with lever
+    p203G.position.y = 10.8 - ROD_ARM * Math.sin(S.leverA) * 0.65 + explodeK * 4.5;
+
+    crank.position.set(8.1 + explodeK * 6.5, GEAR_Y + explodeK * 1.5, 2);
+    crank.rotation.x = S.crankA;
+    crown.position.set(-0.7 - explodeK * 2.5, GEAR_Y + explodeK * 3.0, 2);
+    crown.rotation.x = S.crankA;
+    whisk.position.set(0, -5.7 - explodeK * 5.5, 2);
+    whisk.rotation.y = S.whiskA;
+
+    needle.rotation.z = gAng(S.p);
+    setDough(S.doughH, S.bake);
+
+    mat.dough.color.copy(rawC).lerp(bakeC, S.bake);
+    mat.doughTop.color.copy(rawTop).lerp(bakeTop, S.bake);
+    mat.dough.bumpMap = foamBumpTexs[S.foam];
+    mat.doughTop.bumpMap = foamBumpTexs[S.foam];
+    if (mat.foamCap.map !== foamTexs[S.foam]){
+      mat.foamCap.map = foamTexs[S.foam];
+      mat.foamCap.bumpMap = foamBumpTexs[S.foam];
+      mat.foamCap.needsUpdate = true;
+    }
+
+    potGroup.position.set(S.potOut * 26, 5.6 - S.potOut * 4.9 - explodeK * 1.0, 2 + S.potOut * 6 + explodeK * 8.0);
+    ovenLight.position.set(26, 7.5, 8);
+    ovenLight.intensity = S.bake * 2.4;
+    mat.heaterGlow.emissiveIntensity = S.bake * 3.2;
+
+    const [gb, gt] = gasSpan();
+    const gh = Math.max(0.01, gt - gb);
+    gasG.position.y = gb;
+    gasG.scale.y = gh;
+    mat.gas.opacity = Math.max(0, (S.p / 4) * 0.34 * (1 - S.headLift));
+
+    if (S.releasing && Math.random() < 0.65) spawnPuff();
+    for (let i = puffs.length - 1; i >= 0; i--){
+      const m = puffs[i];
+      m.userData.life += dt;
+      m.position.addScaledVector(m.userData.v, dt);
+      m.scale.setScalar(0.38 + m.userData.life * 2.0);
+      m.material.opacity = 0.55 * (1 - m.userData.life / 1.1);
+      if (m.userData.life > 1.1){
+        scene.remove(m);
+        m.material.dispose();
+        puffs.splice(i, 1);
       }
     }
-    applyState(dt);
+
+    const volL = (POT_AREA * S.doughH + (2 / 3) * POT_AREA * DOME) / 1000;
+    const rpm = Math.round(S.crankRate * 800);
+    elP.innerHTML = fmt(S.p, 1) + '<small>бар</small>';
+    elV.innerHTML = fmt(volL, 2) + '<small>л</small>';
+    elW.innerHTML = (S.timeLeft != null ? S.timeLeft + '<small>с · ' + rpm + ' об/м</small>' : rpm + '<small>об/м</small>');
+    barP.style.width = Math.min(100, (S.p / 4) * 100) + '%';
+    barV.style.width = Math.min(100, (volL / 0.75) * 100) + '%';
+    barW.style.width = Math.min(100, (rpm / 800) * 100) + '%';
+
     controls.update();
-    renderer.render(scene, camera);
     updateLabels();
-    updateReadout(t || 0);
-    requestAnimationFrame(loop);
+    renderer.render(scene, camera);
+    requestAnimationFrame(frame);
   }
-  requestAnimationFrame(loop);
+
+  function resize(){
+    const w = stageEl.clientWidth, h = stageEl.clientHeight;
+    if (!w || !h) return;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  }
+  new ResizeObserver(resize).observe(stageEl);
+  resize();
+  requestAnimationFrame(frame);
 })();
 </script>
 </body>
