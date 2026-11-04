@@ -1,0 +1,162 @@
+!!!COM: Hummel, Johann Nepomuk
+!!!CDT: 1778/11/14-1837/10/17
+!!!OTL: Prelude in F major, op. 67, no. 23
+!!!OPS: 67
+!!!ONM: 23
+!!!OMD: Allegro con fuoco.
+!!!ODT: 1815
+!!!AIN: piano
+**kern	**kern	**dynam
+*staff2	*staff1	*staff1/2
+*Ipiano	*Ipiano	*
+*clefF4	*clefG2	*
+*k[b-]	*k[b-]	*
+*F:	*F:	*
+*met(c)	*met(c)	*
+*M4/4	*M4/4	*
+*MM144	*MM144	*
+=1-	=1-	=1-
+*	*^	*
+*Xtuplet	*	*	*
+!	!	!	!LO:DY:rj
+12FFL	2r	2.A	f
+12AA	.	.	.
+12CJ	.	.	.
+12FL	.	.	.
+12E	.	.	.
+12FJ	.	.	.
+12DL	[2f^	.	.
+12C#	.	.	.
+12DJ	.	.	.
+12BB-L	.	(4d	.
+12AA	.	.	.
+12BB-J	.	.	.
+=2	=2	=2	=2
+12GGL	(4f]	2.B-)	.
+12BB-	.	.	.
+12DJ	.	.	.
+12GL	&4e'&))	.	.
+12F#	.	.	.
+12GJ	.	.	.
+12EL	[2g^	.	.
+12D#	.	.	.
+12EJ	.	.	.
+12CL	.	(4e	.
+12BBn	.	.	.
+12CJ	.	.	.
+=3	=3	=3	=3
+12AAL	(4g]	2.c)	.
+12C	.	.	.
+12EJ	.	.	.
+12AL	&()4f&	.	.
+12G#	.	.	.
+12AJ	.	.	.
+12FL	2a^	.	.
+12E	.	.	.
+12FJ	.	.	.
+12DL	.	(4f	.
+12C#	.	.	.
+12DJ	.	.	.
+*	*v	*v	*
+!!LO:LB:g=original
+=4	=4	=4
+*ped	*	*
+(12BB-L	4d')	.
+12D	.	.
+12GJ	.	.
+*	*Xtuplet	*
+4B-'')	(12ddL	.
+.	12g	.
+*Xped	*	*
+.	12b-J	.
+*ped	*	*
+(12CL	4e')	.
+12E	.	.
+12AJ	.	.
+4c'')	(12eeL	.
+.	12a	.
+*Xped	*	*
+.	12ccJ	.
+=5	=5	=5
+*ped	*	*
+(12DL	4f')	.
+12F	.	.
+12B-J	.	.
+4d'')	(12ffL	.
+.	12b-	.
+*Xped	*	*
+.	12ddJ	.
+*ped	*	*
+(12EL	4g')	.
+12G	.	.
+12cJ	.	.
+4e'')	(12ggL	.
+.	12cc	.
+*Xped	*	*
+.	12eeJ	.
+=6	=6	=6
+*ped	*	*
+(12FL	4a')	.
+12A	.	.
+12dJ	.	.
+4f'')	(12aaL	.
+.	12dd	.
+*Xped	*	*
+.	12ffJ	.
+*ped	*	*
+(12GL	4b-')	.
+12B-	.	.
+12eJ	.	.
+4g'')	(12bb-L	.
+.	12ee	.
+*Xped	*	*
+.	12ggJ	.
+!!LO:LB:g=original
+=7	=7	=7
+1r	12a')\	<
+.	(>12ccL>	.
+.	12cccJ)	.
+.	12b-'\	.
+.	(>12ddL>	.
+.	12dddJ)	.
+.	12cc'\	.
+.	(>12eeL>	.
+.	12eeeJ)	.
+.	12dd'\	.
+.	(>12ffL>	[
+!	!	!LO:HP:t=molto cresc.
+.	12fffJ)	<
+=8	=8	=8
+*	*8va	*
+1r	12ee'\	.
+.	(>12ggL>	.
+.	12gggJ)	.
+.	12ff'\	.
+.	(>12aaL>	.
+.	12aaaJ)	.
+.	12gg'\	.
+.	(>12bb-L>	.
+.	12bbb-J)	.
+.	12aa'\	.
+.	(>12cccL>	.
+.	12ccccJ)	.
+=9	=9	=9
+4r	12bb-'\	.
+.	(>12dddL>	.
+.	12ddddJ)	.
+*	*X8va	*
+4r	4r	.
+*ped	*	*
+2CC:: 4EE:: 4GG:: 2C::	2G:: 2B-:: 2c:: 2e::	f
+=10	=10	=10
+*ped	*	*
+1FFF:: 4AAA:: 4CC:: 1FF::	1F:: 1A:: 1c:: 1f::	.
+*Xped	*	*
+==	==	==
+*-	*-	*-
+!!!ENC: Craig Stuart Sapp
+!!!END: 2008/06/12
+!!!EEV: 2025/04/08
+!!!YEC: Copyright 2008 by Craig Stuart Sapp
+!!!YEN: United States of America
+!!!RDF**kern: > = above

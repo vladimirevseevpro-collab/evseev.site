@@ -1,0 +1,136 @@
+!!!COM: Hummel, Johann Nepomuk
+!!!CDT: 1778/11/14-1837/10/17
+!!!OTL: Prelude in E major, op. 67, no. 9
+!!!OPS: 67
+!!!ONM: 9
+!!!OMD: Allegro.
+!!!ODT: 1815
+!!!AIN: piano
+**kern	**kern	**dynam
+*staff2	*staff1	*staff1/2
+*Ipiano	*Ipiano	*
+*clefF4	*clefG2	*
+*k[f#c#g#d#]	*k[f#c#g#d#]	*
+*E:	*E:	*
+*met(c)	*met(c)	*
+*M4/4	*M4/4	*
+*MM120	*MM120	*
+=1-	=1-	=1-
+*	*Xtuplet	*
+*^	*	*
+!	!	!	!LO:DY:rj:b=2
+1BB 1E	(2EE	12r	p
+.	.	(12bL	p
+.	.	12aJ	.
+.	.	12g#L	.
+.	.	12b	.
+.	.	12f#J	.
+.	2GG#	12eL	.
+.	.	12ee	.
+.	.	12dd#J	.
+.	.	12cc#L	.
+.	.	12ee	.
+.	.	12bJ	.
+=2	=2	=2	=2
+2C# [2F#	(4FF#)	12aL)	<
+.	.	(12aa	.
+.	.	12gg#J	.
+.	4AA	12ff#L	.
+.	.	12aa	.
+.	.	12eeJ	.
+4F#]	4BB	12dd#L	.
+.	.	12ff#	.
+.	.	12cc#J	.
+4ryy	4D#	12bL	.
+.	.	12ff#	.
+.	.	12aJ	.
+*v	*v	*	*
+=3	=3	=3
+4E	12g#L)	f
+.	(>12b	.
+.	12f#J	.
+4G#	12eL	.
+.	12g#	.
+.	12d#J	.
+4A	12c#L	.
+.	12e	.
+.	12BJ	.
+4AA	12c#L	.
+.	12A	.
+.	12f#J	.
+!!LO:LB:g=original
+=4	=4	=4
+(>[1BB)	12BL	.
+.	12A	.
+.	12d#J	.
+.	12BL	.
+.	12A	.
+.	12d#J	.
+.	12BL	.
+!	!LO:TX:b:i:t=ritard poco a poco	!
+*	*	*above
+.	12G#	>
+.	12eJ	.
+.	12A#L	.
+.	12Gn	.
+.	12eJ	]]
+=5	=5	=5
+*MM112	*MM112	*MM112
+*	*^	*
+*	*	*	*^
+!	!	!	!	!LO:DY:b=2:rj
+1BBB 1BB]	12AnL	4An	p	p
+*	*	*	*v	*v
+.	12F#	.	.
+.	12eJ	.	.
+.	12cnL	4cn	.
+.	12F#	.	.
+.	12eJ	.	.
+.	12BL	4B	.
+.	12F#	.	.
+.	12d#J	.	.
+.	12AL	4A	.
+.	12F#	.	.
+.	12d#J)	.	.
+*	*v	*v	*
+=6	=6	=6
+*MM92	*MM92	*MM92
+8EE	4r	.
+[[16GG#LL	.	.
+[16BBJJ	.	.
+2GG#]] 2BB] 2E	16r	.
+.	16G#LL	.
+.	16B	.
+.	16eJJ	.
+*	*tuplet	*
+!	!LO:TUP:r=8:b	!
+.	24g#LL	.
+.	24b	.
+.	24g#J	.
+!	!LO:TUP:b	!
+.	24eL	.
+.	24B	.
+.	24G#JJ	.
+*MM80	*MM80	*MM80
+!LO:TUP:a:r=8	!LO:TX:i:c:t=slarg.	!
+24ELL<	4r	.
+24BB	.	.
+24GG#J	.	.
+*MM72	*MM72	*MM72
+!LO:TUP:a:r=8	!	!
+24AAL	.	.
+24FF#	.	.
+24BBJJ	.	.
+=7	=7	=7
+1EE	1r	.
+==	==	==
+*-	*-	*-
+!!!RDF**kern: > = above
+!!!RDF**kern: < = below
+!!!ENC: Craig Stuart Sapp
+!!!EED: 2008/06/14
+!!!EEV: 2022/05/21
+!!!YEC: Copyright 2008 by Craig Stuart Sapp
+!!!YEN: United States of America
+!!!RDF**kern: > = above
+!!!RDF**kern: < = below

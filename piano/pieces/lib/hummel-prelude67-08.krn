@@ -1,0 +1,170 @@
+!!!COM: Hummel, Johann Nepomuk
+!!!CDT: 1778/11/14-1837/10/17
+!!!OTL: Prelude in F-sharp minor, op. 67, no. 8
+!!!OPS: 67
+!!!ONM: 8
+!!!OMD: Allegro, molto animato.
+!!!ODT: 1815
+!!!AIN: piano
+**kern	**kern	**dynam
+*staff2	*staff1	*staff1/2
+*Ipiano	*Ipiano	*
+*clefF4	*clefG2	*
+*k[f#c#g#]	*k[f#c#g#]	*
+*f#:	*f#:	*
+*met(c)	*met(c)	*
+*M4/4	*M4/4	*
+*MM160	*MM160	*
+=1-	=1-	=1-
+*	*	*
+*	*Xbrackettup	*
+!	!	!LO:DY:rj:b=2
+2FF# 2AA 2C#	12rc<	p
+!	!	!LO:DY:rj
+.	(12F#<L	p
+.	12E#<J	.
+.	12F#<L	.
+.	12G#<	.
+.	12A<J	.
+2GG# 2BB 2E#	12B<L	p
+.	12c#<	.
+.	12d#J	.
+!	!LO:TUP:b	!
+.	12e#L	.
+.	12f#	.
+.	12g#J	.
+=2	=2	=2
+*Xtuplet	*Xtuplet	*
+2AA 2C# 2F#	12c#L	.
+.	12B#	.
+.	12c#J	.
+.	12d#L	.
+.	12e#	.
+.	12f#J	.
+!	!	!LO:HP:t=poco a poco %s
+2BB 2D [2G#	12g#L	<
+.	12a	.
+.	12bnJ	.
+.	12cc#L	.
+.	12ddn	.
+.	12f#J	.
+=3	=3	=3
+2C# 2E# 2G#]	12e#L	.
+.	12d#	.
+.	12e#J	.
+.	12f#L	.
+.	12g#	.
+.	12a#J	.
+2D# 2F# 2B#	12b#L	.
+.	12cc#	.
+.	12dd#J	.
+.	12ee#L	.
+.	12ff#	.
+.	12b#J	.
+!!LO:LB:g=original
+=4	=4	=4
+*^	*	*
+2.c#	2E# 2G#	12cc#L	.
+.	.	12b#	.
+.	.	12cc#J	.
+.	.	12dd#L	.
+.	.	12ee#	.
+.	.	12ff#J	.
+.	2F# 2A	12gg#L	.
+.	.	12aa	.
+.	.	12dd#J	.
+[4d#	.	12ee#L	.
+.	.	12ff#	.
+.	.	12gg#J	.
+=5	=5	=5	=5
+4d#]	2G# 2B	12aaL	.
+.	.	12bb	.
+.	.	12ee#J	.
+2e#	.	12ff#L	.
+.	.	12gg#	.
+.	.	12aaJ	.
+.	2A 2c#	12bbL	.
+.	.	12ccc#	.
+.	.	12ff#J	.
+[4f#	.	12gg#L	.
+.	.	12aa	.
+.	.	12bbJ	.
+=6	=6	=6	=6
+4f#/]	2B 2dn	N(12ccc#L)	f
+.	.	12dddn	.
+.	.	12bbJ	.
+*ped	*	*	*
+4gn/	.	12ggnL	.
+.	.	12dd	.
+.	.	12bJ	.
+2rBB	2ryy	12gnL	.
+.	.	12d	.
+.	.	12BJ	.
+.	.	12Gn<L	.
+.	.	12D<	.
+.	.	12BB<J	.
+!!LO:LB:g=original
+=7	=7	=7	=7
+*	*	*^	*
+*ped	*	*	*	*
+12r	2BBBzN)	4r	4r	.
+[[<12GGnL	.	.	.	.
+[12BBJ	.	.	.	.
+4GG]] 4BB]	.	12GnL	4Gn	.
+.	.	12d	.	.
+.	.	12gnJ	.	.
+*ped	*	*	*	*
+12r	2BBB#z	4r	4r	.
+[[<12AAL	.	.	.	.
+[12BB#J	.	.	.	.
+4AA]] 4BB#]	.	12F#L	4F#	.
+.	.	12d#	.	.
+*Xped	*	*	*	*
+.	.	12f#J	.	.
+*	*	*v	*v	*
+=8	=8	=8	=8
+*MM144	*MM144	*MM144	*MM144
+12CC#L	[1CC#	4r	.
+[[<12FF#	.	.	.
+[12AAJ	.	.	.
+!!LO:TX:a:i:t=molto ritard
+2.FF#__ 2.AA_< [2.C#	.	12F#L	.
+.	.	12A	.
+.	.	12c#J	>
+.	.	12f#L	.
+*MM120	*MM120	*MM120	*MM120
+.	.	12a	.
+.	.	12e#J	.
+.	.	12g#^>L	.
+.	.	12f#	.
+.	.	12B#J	.
+*v	*v	*	*
+=9	=9	=9
+*MM100	*MM100	*MM100
+2CC#] 2FF#] 2AA] 2C#]	12dn^>L	.
+.	12c#	]
+.	12G#<J	.
+*MM80	*MM80	*MM80
+.	12B<L	p
+.	12A<	.
+.	12F#<J	.
+*MM60	*MM60	*MM60
+!!LO:TX:a:B:t=Adagio.
+*ped	*	*
+2CC# 2C#	4rA<	.
+!	!	!LO:DY:rj
+.	4E#< 4G#< 4c#<	pp
+=10	=10	=10
+*ped	*	*
+1FFF#:: 1FF#:: 1C#::	1F#<:: 1A<:: 1c#<::	.
+*Xped	*	*
+==	==	==
+*-	*-	*-
+!!!RDF**kern: < = below
+!!!RDF**kern: > = above
+!!!RDF**kern: N = linked
+!!!ENC: Craig Stuart Sapp
+!!!EED: 2008/06/14
+!!!EEV: 2022/05/21
+!!!YEC: Copyright 2008 by Craig Stuart Sapp
+!!!YEN: United States of America

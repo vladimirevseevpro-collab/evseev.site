@@ -1,0 +1,142 @@
+!!!COM: Hummel, Johann Nepomuk
+!!!CDT: 1778/11/14-1837/10/17
+!!!OTL: Prelude in A-flat major, op. 67, no. 17
+!!!OPS: 67
+!!!ONM: 17
+!!!OMD: Allgero moderato.
+!!!ODT: 1815
+!!!AIN: piano
+**kern	**kern	**dynam
+*staff2	*staff1	*staff1/2
+*Ipiano	*Ipiano	*
+*clefF4	*clefG2	*
+*k[b-e-a-d-]	*k[b-e-a-d-]	*
+*A-:	*A-:	*
+*met(c)	*met(c)	*
+*M4/4	*M4/4	*
+*MM120	*MM120	*
+=1-	=1-	=1-
+*^	*^	*
+[2E-	2..AA-	8r	8r	p
+.	.	(8cL	4.c	.
+.	.	8e-	.	.
+.	.	8a-J	.	.
+8E-L]	.	[2cc)	8re	.
+8En	.	.	(8gL	.
+8F	.	.	8a-	.
+8G-J	(8AAn	.	8e-J	.
+=2	=2	=2	=2	=2
+(8FL	[2BB-)	8cc]	[2d-)	.
+8A-	.	(8ccL	.	.
+8Gn	.	8b-	.	.
+8FJ	.	8a-J	.	.
+([2G)	8BB-L]	[2b-)	8d-L]	.
+.	(8D-	.	(8f	.
+.	8C	.	8e-	.
+.	8BB-J	.	8d-J	.
+=3	=3	=3	=3	=3
+8GL]	)[2C)	8b-]	2e-)	<
+(8G	.	(8b-L	.	.
+8A-	.	8ee-	.	.
+8B-J	.	8gJ	.	.
+)[2c	8CL]	8rff	[2a-)	.
+.	(8E-	(8ccL	.	.
+.	8D-	8dd-	.	.
+.	8CJ	8ee-J	.	.
+!!LO:LB:g=z
+!!!Xfilter: slurcheck
+=4	=4	=4	=4	=4
+8cL]	)2D-	[2ff)	8a-]L	.
+(8An	.	.	(8cc	.
+8B-	.	.	8dd-	.
+8cJ	.	.	8anJ	.
+8rb	(8d-)L	8ffL]	8b-L)	.
+8e-L	8c	(8aa-X	8ccJ	.
+8d-	8B-	8gg	[4dd-	.
+8cJ	8A-J	8ffJ	.	.
+=5	=5	=5	=5	=5
+8B-L	8GL	4.ee-)	8dd-L]	f
+8d-J	8B-	.	8gJ	.
+2c	8A-	.	4.a-X	.
+.	8GJ	(8ff	.	.
+.	8FL	4.dd-)	.	.
+.	8A-	.	8f	.
+[4B-	8G	.	[4g	.
+.	8FJ	(8gg	.	.
+=6	=6	=6	=6	=6
+4B-]	8EnL	4.cc)	8gL]	.
+.	8G	.	8en	.
+8A-	8FJ)	.	8fJ	.
+(<8f	8ryy	([8aa-	8cc	p
+8dnL	2ryy	8aa-L]	8cc-L	.
+8e-	.	8gg	8b-	.
+8c	.	8gg-	8an	.
+8d-J	.	8ffJ	8a-J	.
+*v	*v	*	*	*
+=7	=7	=7	=7
+*	*	*^	*
+8AnL	8cc 8ee-L	8g-L	8ryy	.
+8B-	8ddn	8f	4b-	.
+8Gn	8dd-	8f-	.	.
+8A-J	8a- 8ccJ	8e-J	8ryy	<
+8EnL	8gn 8b-L	8d-L	2ryy	.
+8F	8fn 8a-	8c	.	.
+8C	8en 8g	8B-	.	.
+8D-J	8fJ	8A-J	.	.
+*	*v	*v	*v	*
+*	*clefF4	*
+!!LO:LB:g=z
+=8	=8	=8
+*	*^	*
+8AAnL	8G- 8c 8e-XL<	8ryy	.
+8BB-	8F 8dn	4B-/	.
+8EEn	8Gn 8d-	.	.
+8FFJ)	8A-X 8cJ)	8ryy	.
+4DD-`	4F` 4A-` 4B-`	2ryy	f
+4DDn`	4F` 4A-` 4c-`	.	.
+*	*v	*v	*
+=9	=9	=9
+*MM144	*MM144	*
+*	*^	*
+!	!LO:TX:b:i:t=con anima	!	!
+2EE-	2ryy	2E- 2A- 2cn	.
+2EE-	(4c	2D- 2G	mf
+*MM132	*MM132	*MM32	*
+.	8.B-L	.	.
+*MM108	*MM108	*MM108	*
+.	16A-Jk)	.	.
+*	*v	*v	*
+=10	=10	=10
+*MM156	*MM156	*
+*^	*	*
+*ped	*	*	*
+8r	N(>1AAAn	4r	.
+16CCLL	.	.	.
+16EE-JJ	.	.	.
+2AA-	.	16r	.
+.	.	16CLL>	.
+.	.	16E-	.
+.	.	16A-	.
+.	.	[[>16c	.
+!	!	!LO:TX:i:c:t=rall.	!
+.	.	[[>16A-	.
+.	.	[[>16E-	.
+.	.	[<16CJJ	.
+(<(<12AA-L	.	4C_ 4E-__ 4A-__ 4c__N)	.
+12EE-	.	.	.
+12CCJ)	.	.	.
+*v	*v	*	*
+=11	=11	=11
+1AAA-)	1C] 1E-] 1A-] 1c]	.
+*Xped	*	*
+==	==	==
+*-	*-	*-
+!!!RDF**kern: > = above
+!!!RDF**kern: < = below
+!!!RDF**kern: N = linked
+!!!ENC: Craig Stuart Sapp
+!!!END: 2008/06/13
+!!!EEV: Craig Stuart Sapp
+!!!EEV: 2021/01/25
+!!!YEC: Copyright 2008 by Craig Stuart Sapp
+!!!YEN: United States of America

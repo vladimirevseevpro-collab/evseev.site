@@ -1,0 +1,108 @@
+!!!COM: Hummel, Johann Nepomuk
+!!!CDT: 1778/11/14-1837/10/17
+!!!OTL: Prelude in E minor, op. 67, No. 4
+!!!OPS: 67
+!!!ONM: 4
+!!!OMD: Molto allegro.
+!!!ODT: 1815
+!!!AIN: piano
+**kern	**kern	**dynam
+*staff2	*staff1	*staff1/2
+*Ipiano	*Ipiano	*
+*clefF4	*clefG2	*
+*k[f#]	*k[f#]	*
+*e:	*e:	*
+*M4/4	*M4/4	*
+*met(c)	*met(c)	*
+*MM80	*MM80	*
+=1-	=1-	=1-
+!	!	!LO:DY:b=2
+*ped	*	*
+.	(>32E<qLLL	f
+.	32G<q	.
+.	32B<q	.
+.	32e<qJJJ	.
+.	32bqLLL<	.
+.	32eeq	.
+.	32ggqJJJ	.
+*Xped	*	*
+1ryy	4bbz)	.
+.	(>(48aaLLL	.
+.	48ccc	.
+.	48bb	.
+.	48aa	.
+.	48bb	.
+.	&48cccJJJ)	.
+.	(48ff#LLL	.
+.	48aa	.
+.	48gg	.
+.	48ff#	.
+.	48gg	.
+.	48aaJJJ)	.
+.	(48dd#LLL	.
+.	48ff#	.
+.	48ee	.
+.	48dd#	.
+.	48ee	.
+.	48ff#JJJ)	.
+.	(48aLLL	.
+.	48cc	.
+.	48b	.
+.	48a	.
+.	48b	.
+.	48ccJJJ)	.
+!!LO:LB:g=original
+=-	=-	=-
+!	!LO:TUP:b	!
+.	(48f#LLL	.
+.	48a	.
+.	48g	.
+.	48f#	.
+.	48g	.
+.	48aJJJ)	.
+!	!LO:TUP:b	!
+.	(48d#LLL	.
+.	48f#	.
+.	48e	.
+.	48d#	.
+.	48e	.
+.	48f#JJJ))	.
+=2	=2	=2
+!!!OMD: Andante.
+!!*M4/4	*M4/4	*M4/4
+(2.CC#	2r	sf >
+.	2G 2A# 2e	.
+4CCn	.	]]
+=3	=3	=3
+2BBB) 2BB	2G 2B 2e	p
+2BBB:: 4DD#:: 4FF:: 2BB::	2F#:: 2A:: 2B:: 2d#::	.
+=4	=4	=4
+*ped	*	*
+N(>4EE\	8rF<	.
+.	32GG<LLL	.
+.	32BB<	.
+.	32E<JJJ	.
+.	32GLLL<	.
+4r	32B	.
+.	32e	.
+.	32g	.
+.	32bJJ	.
+!	!LO:TUP:a	!
+.	40eeLL	.
+.	40gg	.
+.	40bb	.
+.	40eee	.
+.	40ggg`JJJN)	.
+2EE\	2r	.
+*Xped	*	*
+==	==	==
+*-	*-	*-
+!!!RDF**kern: > = above
+!!!RDF**kern: < = below
+!!!RDF**kern: N = linked
+!!!ENC: Craig Stuart Sapp
+!!!EED: 2008/06/14
+!!!EED: Craig Stuart Sapp
+!!!EEV: 2022/05/21
+!!!YEC: Copyright 2008 by Craig Stuart Sapp
+!!!YEN: United States of America

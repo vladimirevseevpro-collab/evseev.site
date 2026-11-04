@@ -8,8 +8,8 @@
   <meta name="theme-color" content="#faf9f5" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#1c1b19" media="(prefers-color-scheme: dark)" />
   <title>Piano Trainer</title>
-  <script type="module" crossorigin src="./assets/index-CQdCTx2q.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-BErMpudX.css">
+  <script type="module" crossorigin src="./assets/index-Bf2KxES4.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CDfwtVGl.css">
 </head>
 <body>
   <header class="bar">
@@ -98,7 +98,7 @@
   <div id="sheet" class="sheet" hidden>
     <aside class="library" role="dialog" aria-label="Ноты">
       <header class="lib-head">
-        <h2>Ноты</h2>
+        <h2>Ноты <small id="libCount" class="lib-count"></small></h2>
         <button id="libClose" class="icon" aria-label="Закрыть">
           <svg viewBox="0 0 20 20"><path d="M5 5l10 10M15 5L5 15" /></svg>
         </button>
@@ -106,24 +106,39 @@
 
       <label class="search">
         <svg viewBox="0 0 20 20"><circle cx="9" cy="9" r="5.5" /><path d="M13 13l3.5 3.5" /></svg>
-        <input id="q" type="search" placeholder="Бах, Сати, джаз, блюз, танго…" autocomplete="off" spellcheck="false" />
+        <input id="q" type="search" placeholder="Поиск среди 1 020 партитур: Бах, Шопен, BWV, соната, вальс…" autocomplete="off" spellcheck="false" />
       </label>
 
       <div class="add">
         <label class="tile">
           <svg viewBox="0 0 20 20"><path d="M11 3H6.5A1.5 1.5 0 0 0 5 4.5v11A1.5 1.5 0 0 0 6.5 17h7a1.5 1.5 0 0 0 1.5-1.5V7z" /><path d="M11 3v4h4M10 10v4M8 12h4" /></svg>
-          <span><b>Из файлов</b><small>iCloud, Google Drive, «На iPad»</small></span>
-          <input id="file" type="file" multiple accept=".musicxml,.xml,.mxl,.mei,.abc,.mid,.midi" hidden />
+          <span><b>Из файлов</b><small>.mxl, .krn, .musicxml, .mei</small></span>
+          <input id="file" type="file" multiple accept=".musicxml,.xml,.mxl,.krn,.kern,.mei,.abc,.mid,.midi" hidden />
         </label>
         <button id="byUrl" class="tile">
           <svg viewBox="0 0 20 20"><path d="M8.5 11.5a3 3 0 0 0 4.2 0l2.6-2.6a3 3 0 0 0-4.2-4.2l-.9.9" /><path d="M11.5 8.5a3 3 0 0 0-4.2 0l-2.6 2.6a3 3 0 0 0 4.2 4.2l.9-.9" /></svg>
-          <span><b>По ссылке</b><small>Прямая ссылка на файл</small></span>
+          <span><b>По ссылке</b><small>GitHub, VHV Humdrum, MXL</small></span>
         </button>
       </div>
       <form id="urlForm" class="urlrow" hidden>
-        <input id="url" type="url" inputmode="url" placeholder="https://…/score.mxl" required />
+        <input id="url" type="url" inputmode="url" placeholder="https://…/score.krn или .mxl" required />
         <button class="pill primary" type="submit">Добавить</button>
       </form>
+
+      <div id="composers" class="chips composers-chips" role="tablist" aria-label="Композитор">
+        <button data-composer="" class="on">Все авторы</button>
+        <button data-composer="Бах">Бах</button>
+        <button data-composer="Шопен">Шопен</button>
+        <button data-composer="Бетховен">Бетховен</button>
+        <button data-composer="Моцарт">Моцарт</button>
+        <button data-composer="Скрябин">Скрябин</button>
+        <button data-composer="Скарлатти">Скарлатти</button>
+        <button data-composer="Джоплин">Джоплин</button>
+        <button data-composer="Гайдн">Гайдн</button>
+        <button data-composer="Гуммель">Гуммель</button>
+        <button data-composer="Сати|Дебюсси">Дебюсси · Сати</button>
+        <button data-composer="Бургмюллер|Чайковский|Лист|Шуберт|Брамс">Романтики</button>
+      </div>
 
       <div id="styles" class="chips styles-chips" role="tablist" aria-label="Стиль">
         <button data-style="" class="on">Все стили</button>
@@ -145,7 +160,7 @@
       </div>
 
       <div id="libBody" class="lib-body" role="listbox" aria-label="Пьесы"></div>
-      <p class="formats">MusicXML · MXL · ABC · MEI. Всё хранится только на этом устройстве.</p>
+      <p class="formats">Humdrum Urtext (.krn) · MuseScore (.mxl) · MusicXML · MEI · ABC. Более 1 000 эталонных партитур встроено локально.</p>
     </aside>
   </div>
 
