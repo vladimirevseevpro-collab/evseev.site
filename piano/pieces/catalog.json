@@ -2,158 +2,8 @@
  "source": "OpenTiles catalogue (CC0), github.com/KunalGehlot/OpenTiles",
  "pieces": [
   {
-   "slug": "when-the-saints-melody",
-   "title": "When the Saints Go Marching In",
-   "composer": "Народная",
-   "level": 1,
-   "hands": 1,
-   "score": "when-the-saints-melody/score.musicxml",
-   "licence": "CC0-1.0",
-   "style": "blues"
-  },
-  {
-   "slug": "bella-ciao-melody",
-   "title": "Белла чао",
-   "composer": "Народная",
-   "level": 1,
-   "hands": 1,
-   "score": "bella-ciao-melody/score.musicxml",
-   "licence": "CC0-1.0",
-   "style": "traditional"
-  },
-  {
-   "slug": "we-wish-you-a-merry-christmas-melody",
-   "title": "Весёлого Рождества",
-   "composer": "Народная",
-   "level": 1,
-   "hands": 1,
-   "score": "we-wish-you-a-merry-christmas-melody/score.musicxml",
-   "licence": "CC0-1.0",
-   "style": "traditional"
-  },
-  {
-   "slug": "good-king-wenceslas-melody",
-   "title": "Добрый король Вацлав",
-   "composer": "Народная",
-   "level": 1,
-   "hands": 1,
-   "score": "good-king-wenceslas-melody/score.musicxml",
-   "licence": "CC0-1.0",
-   "style": "traditional"
-  },
-  {
-   "slug": "fur-elise-opening-melody",
-   "title": "К Элизе (начало)",
-   "composer": "Бетховен",
-   "level": 1,
-   "hands": 1,
-   "score": "fur-elise-opening-melody/score.musicxml",
-   "licence": "CC0-1.0",
-   "style": "classical"
-  },
-  {
-   "slug": "brahms-lullaby-melody",
-   "title": "Колыбельная",
-   "composer": "Брамс",
-   "level": 1,
-   "hands": 1,
-   "score": "brahms-lullaby-melody/score.musicxml",
-   "licence": "CC0-1.0",
-   "style": "romantic"
-  },
-  {
-   "slug": "largo-new-world-melody",
-   "title": "Ларго из «Нового света»",
-   "composer": "Дворжак",
-   "level": 1,
-   "hands": 1,
-   "score": "largo-new-world-melody/score.musicxml",
-   "licence": "CC0-1.0",
-   "style": "romantic"
-  },
-  {
-   "slug": "minuet-in-g-melody",
-   "title": "Менуэт соль мажор (начало)",
-   "composer": "Петцольд",
-   "level": 1,
-   "hands": 1,
-   "score": "minuet-in-g-melody/score.musicxml",
-   "licence": "CC0-1.0",
-   "style": "classical"
-  },
-  {
-   "slug": "amazing-grace-melody",
-   "title": "О, благодать",
-   "composer": "Народная",
-   "level": 1,
-   "hands": 1,
-   "score": "amazing-grace-melody/score.musicxml",
-   "licence": "CC0-1.0",
-   "style": "blues"
-  },
-  {
-   "slug": "ode-to-joy-melody",
-   "title": "Ода к радости",
-   "composer": "Бетховен",
-   "level": 1,
-   "hands": 1,
-   "score": "ode-to-joy-melody/score.musicxml",
-   "licence": "CC0-1.0",
-   "style": "classical"
-  },
-  {
-   "slug": "joy-to-the-world-melody",
-   "title": "Радуйся, мир",
-   "composer": "Мейсон",
-   "level": 1,
-   "hands": 1,
-   "score": "joy-to-the-world-melody/score.musicxml",
-   "licence": "CC0-1.0",
-   "style": "traditional"
-  },
-  {
-   "slug": "auld-lang-syne-melody",
-   "title": "Старая дружба",
-   "composer": "Народная",
-   "level": 1,
-   "hands": 1,
-   "score": "auld-lang-syne-melody/score.musicxml",
-   "licence": "CC0-1.0",
-   "style": "traditional"
-  },
-  {
-   "slug": "silent-night-melody",
-   "title": "Тихая ночь",
-   "composer": "Грубер",
-   "level": 1,
-   "hands": 1,
-   "score": "silent-night-melody/score.musicxml",
-   "licence": "CC0-1.0",
-   "style": "traditional"
-  },
-  {
-   "slug": "deck-the-halls-melody",
-   "title": "Украсим залы",
-   "composer": "Народная",
-   "level": 1,
-   "hands": 1,
-   "score": "deck-the-halls-melody/score.musicxml",
-   "licence": "CC0-1.0",
-   "style": "traditional"
-  },
-  {
-   "slug": "hark-the-herald-angels-sing-melody",
-   "title": "Чу! Ангелы поют",
-   "composer": "Мендельсон",
-   "level": 1,
-   "hands": 1,
-   "score": "hark-the-herald-angels-sing-melody/score.musicxml",
-   "licence": "CC0-1.0",
-   "style": "romantic"
-  },
-  {
    "slug": "jingle-bells",
-   "title": "Jingle Bells (припев)",
+   "title": "Jingle Bells",
    "composer": "Пьерпонт",
    "level": 1,
    "hands": 2,
@@ -282,56 +132,6 @@
    "style": "traditional"
   },
   {
-   "slug": "hall-of-the-mountain-king-melody",
-   "title": "В пещере горного короля",
-   "composer": "Григ",
-   "level": 2,
-   "hands": 1,
-   "score": "hall-of-the-mountain-king-melody/score.musicxml",
-   "licence": "CC0-1.0",
-   "style": "romantic"
-  },
-  {
-   "slug": "greensleeves-melody",
-   "title": "Зелёные рукава",
-   "composer": "Народная",
-   "level": 2,
-   "hands": 1,
-   "score": "greensleeves-melody/score.musicxml",
-   "licence": "CC0-1.0",
-   "style": "traditional"
-  },
-  {
-   "slug": "canon-in-d-melody",
-   "title": "Канон ре мажор",
-   "composer": "Пахельбель",
-   "level": 2,
-   "hands": 1,
-   "score": "canon-in-d-melody/score.musicxml",
-   "licence": "CC0-1.0",
-   "style": "classical"
-  },
-  {
-   "slug": "eine-kleine-nachtmusik-melody",
-   "title": "Маленькая ночная серенада",
-   "composer": "Моцарт",
-   "level": 2,
-   "hands": 1,
-   "score": "eine-kleine-nachtmusik-melody/score.musicxml",
-   "licence": "CC0-1.0",
-   "style": "classical"
-  },
-  {
-   "slug": "prelude-in-c-melody",
-   "title": "Прелюдия до мажор (начало)",
-   "composer": "Бах",
-   "level": 2,
-   "hands": 1,
-   "score": "prelude-in-c-melody/score.musicxml",
-   "licence": "CC0-1.0",
-   "style": "classical"
-  },
-  {
    "slug": "when-the-saints",
    "title": "When the Saints Go Marching In",
    "composer": "Народная",
@@ -382,16 +182,6 @@
    "style": "traditional"
   },
   {
-   "slug": "fur-elise-opening",
-   "title": "К Элизе (начало)",
-   "composer": "Бетховен",
-   "level": 2,
-   "hands": 2,
-   "score": "fur-elise-opening/score.musicxml",
-   "licence": "CC0-1.0",
-   "style": "classical"
-  },
-  {
    "slug": "brahms-lullaby",
    "title": "Колыбельная",
    "composer": "Брамс",
@@ -429,16 +219,6 @@
    "hands": 2,
    "score": "bach-minuet-in-g-complete/score.musicxml",
    "licence": "public-domain",
-   "style": "classical"
-  },
-  {
-   "slug": "minuet-in-g",
-   "title": "Менуэт соль мажор (начало)",
-   "composer": "Петцольд",
-   "level": 2,
-   "hands": 2,
-   "score": "minuet-in-g/score.musicxml",
-   "licence": "CC0-1.0",
    "style": "classical"
   },
   {
@@ -480,16 +260,6 @@
    "score": "amazing-grace/score.musicxml",
    "licence": "CC0-1.0",
    "style": "blues"
-  },
-  {
-   "slug": "ode-to-joy-full",
-   "title": "Ода к радости (целиком)",
-   "composer": "Бетховен",
-   "level": 2,
-   "hands": 2,
-   "score": "ode-to-joy-full/score.musicxml",
-   "licence": "CC0-1.0",
-   "style": "classical"
   },
   {
    "slug": "la-candeur",
@@ -723,7 +493,7 @@
   },
   {
    "slug": "prelude-in-c",
-   "title": "Прелюдия до мажор (начало)",
+   "title": "Прелюдия до мажор",
    "composer": "Бах",
    "level": 3,
    "hands": 2,
@@ -833,7 +603,7 @@
   },
   {
    "slug": "debussy-clair-de-lune-opening",
-   "title": "Лунный свет (Clair de Lune, тема)",
+   "title": "Лунный свет (Clair de Lune)",
    "composer": "Клод Дебюсси",
    "level": 3,
    "hands": 2,
