@@ -1,3 +1,1485 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 4.0 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
-<score-partwise version="4.0"><work><work-title>Prelude in E minor (Op. 28 No. 4)</work-title></work><identification><creator type="composer">Frédéric Chopin</creator><creator type="arranger">OpenTiles contributors</creator><rights>CC0 1.0: no rights reserved</rights><encoding><software>OpenTiles arrange.py</software></encoding></identification><part-list><score-part id="P1"><part-name>Piano</part-name></score-part></part-list><part id="P1"><measure number="0" implicit="yes"><attributes><divisions>12</divisions><key><fifths>1</fifths><mode>major</mode></key><time><beats>2</beats><beat-type>2</beat-type></time><staves>2</staves><clef number="1"><sign>G</sign><line>2</line></clef><clef number="2"><sign>F</sign><line>4</line></clef></attributes><direction placement="above"><direction-type><metronome><beat-unit>quarter</beat-unit><per-minute>50</per-minute></metronome></direction-type><sound tempo="50"/></direction><note><pitch><step>B</step><octave>3</octave></pitch><duration>9</duration><voice>1</voice><type>eighth</type><dot/><staff>1</staff></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>3</duration><voice>1</voice><type>16th</type><staff>1</staff></note><backup><duration>12</duration></backup><note><rest/><duration>12</duration><voice>5</voice><type>quarter</type><staff>2</staff></note></measure><measure number="1"><note><pitch><step>B</step><octave>4</octave></pitch><duration>36</duration><voice>1</voice><type>half</type><dot/><staff>1</staff></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>12</duration><voice>1</voice><type>quarter</type><staff>1</staff></note><backup><duration>48</duration></backup><note><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note></measure><measure number="2"><note><pitch><step>B</step><octave>4</octave></pitch><duration>36</duration><voice>1</voice><type>half</type><dot/><staff>1</staff></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>12</duration><voice>1</voice><type>quarter</type><staff>1</staff></note><backup><duration>48</duration></backup><note><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><alter>1</alter><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><alter>1</alter><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><alter>1</alter><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><alter>1</alter><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note></measure><measure number="3"><note><pitch><step>B</step><octave>4</octave></pitch><duration>36</duration><voice>1</voice><type>half</type><dot/><staff>1</staff></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>12</duration><voice>1</voice><type>quarter</type><staff>1</staff></note><backup><duration>48</duration></backup><note><pitch><step>F</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><alter>1</alter><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>F</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><alter>1</alter><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>F</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><alter>1</alter><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>F</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><alter>1</alter><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>F</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>F</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>F</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>F</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note></measure><measure number="4"><note><pitch><step>B</step><octave>4</octave></pitch><duration>36</duration><voice>1</voice><type>half</type><dot/><staff>1</staff></note><note><pitch><step>B</step><alter>-1</alter><octave>4</octave></pitch><duration>12</duration><voice>1</voice><type>quarter</type><staff>1</staff></note><backup><duration>48</duration></backup><note><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><alter>1</alter><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><alter>1</alter><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note></measure><measure number="5"><note><pitch><step>A</step><octave>4</octave></pitch><duration>36</duration><voice>1</voice><type>half</type><dot/><staff>1</staff></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>12</duration><voice>1</voice><type>quarter</type><staff>1</staff></note><backup><duration>48</duration></backup><note><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note></measure><measure number="6"><note><pitch><step>A</step><octave>4</octave></pitch><duration>36</duration><voice>1</voice><type>half</type><dot/><staff>1</staff></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>12</duration><voice>1</voice><type>quarter</type><staff>1</staff></note><backup><duration>48</duration></backup><note><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>D</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>D</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>D</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>D</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note></measure><measure number="7"><note><pitch><step>A</step><octave>4</octave></pitch><duration>36</duration><voice>1</voice><type>half</type><dot/><staff>1</staff></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>9</duration><voice>1</voice><type>eighth</type><dot/><staff>1</staff></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>3</duration><voice>1</voice><type>16th</type><staff>1</staff></note><backup><duration>48</duration></backup><note><pitch><step>D</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>D</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>D</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>D</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>D</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>D</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>D</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>D</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note></measure><measure number="8"><note><pitch><step>A</step><octave>4</octave></pitch><duration>36</duration><voice>1</voice><type>half</type><dot/><staff>1</staff></note><note><pitch><step>G</step><alter>1</alter><octave>4</octave></pitch><duration>12</duration><voice>1</voice><type>quarter</type><staff>1</staff></note><backup><duration>48</duration></backup><note><pitch><step>D</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>D</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>D</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>D</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>D</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>D</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>D</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>D</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note></measure><measure number="9"><note><rest/><duration>12</duration><voice>1</voice><type>quarter</type><staff>1</staff></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>6</duration><voice>1</voice><type>eighth</type><staff>1</staff></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>6</duration><voice>1</voice><type>eighth</type><staff>1</staff></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>6</duration><voice>1</voice><type>eighth</type><staff>1</staff></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>6</duration><voice>1</voice><type>eighth</type><staff>1</staff></note><note><pitch><step>E</step><octave>4</octave></pitch><duration>6</duration><voice>1</voice><type>eighth</type><staff>1</staff></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>6</duration><voice>1</voice><type>eighth</type><staff>1</staff></note><backup><duration>48</duration></backup><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note></measure><measure number="10"><note><pitch><step>F</step><alter>1</alter><octave>4</octave></pitch><duration>36</duration><voice>1</voice><type>half</type><dot/><staff>1</staff></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>12</duration><voice>1</voice><type>quarter</type><staff>1</staff></note><backup><duration>48</duration></backup><note><pitch><step>B</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>B</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>B</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>B</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note></measure><measure number="11"><note><pitch><step>F</step><alter>1</alter><octave>4</octave></pitch><duration>36</duration><voice>1</voice><type>half</type><dot/><staff>1</staff></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>12</duration><voice>1</voice><type>quarter</type><staff>1</staff></note><backup><duration>48</duration></backup><note><pitch><step>B</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>B</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>B</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>B</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note></measure><measure number="12"><note><pitch><step>G</step><octave>4</octave></pitch><duration>6</duration><voice>1</voice><type>eighth</type><staff>1</staff></note><note><pitch><step>F</step><alter>1</alter><octave>4</octave></pitch><duration>6</duration><voice>1</voice><type>eighth</type><staff>1</staff></note><note><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>1</voice><type>eighth</type><staff>1</staff></note><note><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>1</voice><type>eighth</type><staff>1</staff></note><note><pitch><step>D</step><alter>1</alter><octave>4</octave></pitch><duration>6</duration><voice>1</voice><type>eighth</type><staff>1</staff></note><note><pitch><step>F</step><alter>1</alter><octave>4</octave></pitch><duration>6</duration><voice>1</voice><type>eighth</type><staff>1</staff></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>3</duration><voice>1</voice><type>16th</type><staff>1</staff></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>6</duration><voice>1</voice><type>eighth</type><staff>1</staff></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>3</duration><voice>1</voice><type>16th</type><staff>1</staff></note><backup><duration>48</duration></backup><note><pitch><step>B</step><octave>2</octave></pitch><duration>12</duration><voice>5</voice><type>quarter</type><staff>2</staff></note><note><chord/><pitch><step>D</step><alter>1</alter><octave>3</octave></pitch><duration>12</duration><voice>5</voice><type>quarter</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>12</duration><voice>5</voice><type>quarter</type><staff>2</staff></note><note><rest/><duration>36</duration><voice>5</voice><type>half</type><dot/><staff>2</staff></note></measure><measure number="13"><note><pitch><step>B</step><octave>4</octave></pitch><duration>36</duration><voice>1</voice><type>half</type><dot/><staff>1</staff></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>12</duration><voice>1</voice><type>quarter</type><staff>1</staff></note><backup><duration>48</duration></backup><note><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note></measure><measure number="14"><note><pitch><step>B</step><octave>4</octave></pitch><duration>36</duration><voice>1</voice><type>half</type><dot/><staff>1</staff></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>12</duration><voice>1</voice><type>quarter</type><staff>1</staff></note><backup><duration>48</duration></backup><note><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>F</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><alter>1</alter><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>F</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><alter>1</alter><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>F</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><alter>1</alter><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>F</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><alter>1</alter><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note></measure><measure number="15"><note><pitch><step>B</step><octave>4</octave></pitch><duration>36</duration><voice>1</voice><type>half</type><dot/><staff>1</staff></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>12</duration><voice>1</voice><type>quarter</type><staff>1</staff></note><backup><duration>48</duration></backup><note><pitch><step>F</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><alter>1</alter><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>F</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><alter>1</alter><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>F</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>F</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note></measure><measure number="16"><note><pitch><step>B</step><octave>4</octave></pitch><duration>9</duration><voice>1</voice><type>eighth</type><dot/><staff>1</staff></note><note><pitch><step>B</step><alter>-1</alter><octave>4</octave></pitch><duration>3</duration><voice>1</voice><type>16th</type><staff>1</staff></note><note><pitch><step>B</step><alter>-1</alter><octave>4</octave></pitch><duration>12</duration><voice>1</voice><type>quarter</type><staff>1</staff></note><note><pitch><step>A</step><octave>5</octave></pitch><duration>12</duration><voice>1</voice><type>quarter</type><staff>1</staff></note><note><pitch><step>F</step><alter>1</alter><octave>5</octave></pitch><duration>9</duration><voice>1</voice><type>eighth</type><dot/><staff>1</staff></note><note><pitch><step>E</step><octave>5</octave></pitch><duration>3</duration><voice>1</voice><type>16th</type><staff>1</staff></note><backup><duration>48</duration></backup><note><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><alter>1</alter><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><alter>1</alter><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><alter>-1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><alter>-1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note></measure><measure number="17"><note><pitch><step>E</step><octave>5</octave></pitch><duration>6</duration><voice>1</voice><type>eighth</type><staff>1</staff></note><note><pitch><step>D</step><alter>1</alter><octave>5</octave></pitch><duration>6</duration><voice>1</voice><type>eighth</type><staff>1</staff></note><note><pitch><step>C</step><octave>6</octave></pitch><duration>6</duration><voice>1</voice><type>eighth</type><staff>1</staff></note><note><pitch><step>D</step><alter>1</alter><octave>5</octave></pitch><duration>6</duration><voice>1</voice><type>eighth</type><staff>1</staff></note><note><pitch><step>D</step><alter>1</alter><octave>5</octave></pitch><duration>6</duration><voice>1</voice><type>eighth</type><staff>1</staff></note><note><pitch><step>E</step><octave>5</octave></pitch><duration>6</duration><voice>1</voice><type>eighth</type><staff>1</staff></note><note><pitch><step>G</step><octave>5</octave></pitch><duration>6</duration><voice>1</voice><type>eighth</type><staff>1</staff></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>6</duration><voice>1</voice><type>eighth</type><staff>1</staff></note><backup><duration>48</duration></backup><note><pitch><step>B</step><octave>1</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><alter>1</alter><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><alter>1</alter><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><alter>1</alter><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><alter>1</alter><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><alter>1</alter><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note></measure><measure number="18"><note><pitch><step>D</step><octave>5</octave></pitch><duration>6</duration><voice>1</voice><type>eighth</type><staff>1</staff></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>6</duration><voice>1</voice><type>eighth</type><staff>1</staff></note><note><pitch><step>E</step><octave>5</octave></pitch><duration>3</duration><voice>1</voice><type>16th</type><staff>1</staff></note><note><pitch><step>E</step><octave>4</octave></pitch><duration>6</duration><voice>1</voice><type>eighth</type><staff>1</staff></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>3</duration><voice>1</voice><type>16th</type><staff>1</staff></note><note><pitch><step>F</step><alter>1</alter><octave>4</octave></pitch><duration>18</duration><voice>1</voice><type>quarter</type><dot/><staff>1</staff></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>6</duration><voice>1</voice><type>eighth</type><staff>1</staff></note><backup><duration>48</duration></backup><note><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>A</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>4</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>B</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>B</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note></measure><measure number="19"><note><pitch><step>F</step><alter>1</alter><octave>4</octave></pitch><duration>36</duration><voice>1</voice><type>half</type><dot/><staff>1</staff></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>12</duration><voice>1</voice><type>quarter</type><staff>1</staff></note><backup><duration>48</duration></backup><note><pitch><step>B</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>B</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>B</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>B</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note></measure><measure number="20"><note><pitch><step>F</step><alter>1</alter><octave>4</octave></pitch><duration>36</duration><voice>1</voice><type>half</type><dot/><staff>1</staff></note><note><rest/><duration>9</duration><voice>1</voice><type>eighth</type><dot/><staff>1</staff></note><note><pitch><step>E</step><octave>4</octave></pitch><duration>3</duration><voice>1</voice><type>16th</type><staff>1</staff></note><backup><duration>48</duration></backup><note><pitch><step>B</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>B</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>B</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>B</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>B</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>B</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>B</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>B</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>D</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note></measure><measure number="21"><note><pitch><step>E</step><octave>4</octave></pitch><duration>36</duration><voice>1</voice><type>half</type><dot/><staff>1</staff></note><note><pitch><step>F</step><alter>1</alter><octave>4</octave></pitch><duration>12</duration><voice>1</voice><type>quarter</type><staff>1</staff></note><backup><duration>48</duration></backup><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><alter>-1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>B</step><alter>-1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>C</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note></measure><measure number="22"><note><pitch><step>E</step><octave>4</octave></pitch><duration>36</duration><voice>1</voice><type>half</type><dot/><staff>1</staff></note><note><pitch><step>F</step><alter>1</alter><octave>4</octave></pitch><duration>12</duration><voice>1</voice><type>quarter</type><staff>1</staff></note><backup><duration>48</duration></backup><note><pitch><step>B</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>B</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>A</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>B</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>B</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><alter>1</alter><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>B</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>B</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>B</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><pitch><step>B</step><octave>2</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note><note><chord/><pitch><step>G</step><octave>3</octave></pitch><duration>6</duration><voice>5</voice><type>eighth</type><staff>2</staff></note></measure><measure number="23"><note><pitch><step>E</step><octave>4</octave></pitch><duration>24</duration><voice>1</voice><type>half</type><staff>1</staff></note><note><rest/><duration>24</duration><voice>1</voice><type>half</type><staff>1</staff></note><backup><duration>48</duration></backup><note><pitch><step>B</step><alter>-1</alter><octave>2</octave></pitch><duration>24</duration><voice>5</voice><type>half</type><staff>2</staff></note><note><chord/><pitch><step>C</step><octave>3</octave></pitch><duration>24</duration><voice>5</voice><type>half</type><staff>2</staff></note><note><chord/><pitch><step>G</step><octave>3</octave></pitch><duration>24</duration><voice>5</voice><type>half</type><staff>2</staff></note><note><rest/><duration>24</duration><voice>5</voice><type>half</type><staff>2</staff></note></measure><measure number="24"><note><pitch><step>E</step><octave>3</octave></pitch><duration>24</duration><voice>1</voice><type>half</type><staff>1</staff></note><note><chord/><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>24</duration><voice>1</voice><type>half</type><staff>1</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>24</duration><voice>1</voice><type>half</type><staff>1</staff></note><note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>24</duration><voice>1</voice><type>half</type><staff>1</staff></note><note><pitch><step>D</step><alter>1</alter><octave>3</octave></pitch><duration>24</duration><voice>1</voice><type>half</type><staff>1</staff></note><note><chord/><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>24</duration><voice>1</voice><type>half</type><staff>1</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>24</duration><voice>1</voice><type>half</type><staff>1</staff></note><note><chord/><pitch><step>D</step><alter>1</alter><octave>4</octave></pitch><duration>24</duration><voice>1</voice><type>half</type><staff>1</staff></note><backup><duration>48</duration></backup><note><pitch><step>B</step><octave>1</octave></pitch><duration>24</duration><voice>5</voice><type>half</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>2</octave></pitch><duration>24</duration><voice>5</voice><type>half</type><staff>2</staff></note><note><pitch><step>B</step><octave>1</octave></pitch><duration>24</duration><voice>5</voice><type>half</type><staff>2</staff></note><note><chord/><pitch><step>F</step><alter>1</alter><octave>2</octave></pitch><duration>24</duration><voice>5</voice><type>half</type><staff>2</staff></note><note><chord/><pitch><step>B</step><octave>2</octave></pitch><duration>24</duration><voice>5</voice><type>half</type><staff>2</staff></note></measure><measure number="25"><note><pitch><step>E</step><octave>3</octave></pitch><duration>48</duration><voice>1</voice><type>whole</type><staff>1</staff></note><note><chord/><pitch><step>G</step><octave>3</octave></pitch><duration>48</duration><voice>1</voice><type>whole</type><staff>1</staff></note><note><chord/><pitch><step>B</step><octave>3</octave></pitch><duration>48</duration><voice>1</voice><type>whole</type><staff>1</staff></note><note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>48</duration><voice>1</voice><type>whole</type><staff>1</staff></note><backup><duration>48</duration></backup><note><pitch><step>E</step><octave>1</octave></pitch><duration>48</duration><voice>5</voice><type>whole</type><staff>2</staff></note><note><chord/><pitch><step>E</step><octave>2</octave></pitch><duration>48</duration><voice>5</voice><type>whole</type><staff>2</staff></note><barline location="right"><bar-style>light-heavy</bar-style></barline></measure></part></score-partwise>
+<?xml-model href="https://music-encoding.org/schema/dev/mei-all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://music-encoding.org/schema/dev/mei-all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<mei xmlns="http://www.music-encoding.org/ns/mei" meiversion="6.0-dev">
+   <meiHead>
+      <fileDesc>
+         <titleStmt>
+            <title>Prelude in E Minor, Op. 28, No. 4, Largo</title>
+         </titleStmt>
+         <pubStmt>
+            <unpub>This MEI file was created by Verovio's Humdrum converter. When published, this unpub element should be removed, and the enclosing pubStmt element should be properly filled out.</unpub>
+         </pubStmt>
+         <sourceDesc>
+            <source type="digital">
+               <bibl xml:id="source0_digital">
+                  <title>Prelude in E Minor, Op. 28, No. 4, Largo</title>
+                  <composer>
+                     <persName>Chopin, Frederic</persName>
+                  </composer>
+                  <respStmt>
+                     <resp>encoder</resp>
+                     <persName analog="humdrum:ENC">Craig Stuart Sapp</persName>
+                  </respStmt>
+                  <edition type="version" analog="humdrum:EEV">4 March 2001</edition>
+                  <availability>
+                     <useRestrict type="copyright" analog="humdrum:YEC">Copyright 2001 by Craig Stuart Sapp</useRestrict>
+                     <useRestrict type="copyrightCountry" analog="humdrum:YEN">United States of America</useRestrict>
+                  </availability>
+                  <relatedItem rel="otherFormat" target="#source1_printed" />
+               </bibl>
+            </source>
+            <source type="printed">
+               <bibl xml:id="source1_printed">
+                  <title>Prelude in E Minor, Op. 28, No. 4, Largo</title>
+                  <composer>
+                     <persName>Chopin, Frederic</persName>
+                  </composer>
+                  <imprint>
+                     <date type="datePublished" analog="humdrum:PDT" isodate="1839">1839///</date>
+                  </imprint>
+                  <relatedItem rel="otherFormat" target="#source0_digital" />
+               </bibl>
+            </source>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <appInfo>
+            <application isodate="2026-11-04T21:40:36" version="6.3.0-425dd7b">
+               <name>Verovio</name>
+               <p>Transcoded from Humdrum</p>
+            </application>
+         </appInfo>
+      </encodingDesc>
+      <workList>
+         <work xml:id="work0_encoded" type="encoded">
+            <identifier analog="humdrum:OPS">Op. 28</identifier>
+            <title type="uniform">
+               <titlePart type="main" analog="humdrum:OTL">Prelude in E Minor, Op. 28, No. 4</titlePart>
+               <titlePart type="movementName" analog="humdrum:OMD">Largo</titlePart>
+               <titlePart type="number" analog="humdrum:ONM">No. 4</titlePart>
+               <titlePart type="opusNumber" analog="humdrum:OPS">Op. 28</titlePart>
+            </title>
+            <composer>
+               <persName analog="humdrum:COM" auth.uri="#mads0">Chopin, Frederic</persName>
+            </composer>
+            <creation>
+               <date analog="humdrum:ODT" startdate="1836" enddate="1839">1836///-1839///</date>
+            </creation>
+            <extMeta>
+               <madsCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/mads/v2 https://www.loc.gov/standards/mads/mads-2-1.xsd" xmlns="http://www.loc.gov/mads/v2">
+                  <mads ID="mads0">
+                     <authority>
+                        <name>
+                           <namePart>Chopin, Frederic</namePart>
+                        </name>
+                     </authority>
+                     <personInfo>
+                        <birthDate encoding="edtf">1810</birthDate>
+                        <deathDate encoding="edtf">1849</deathDate>
+                     </personInfo>
+                  </mads>
+               </madsCollection>
+            </extMeta>
+         </work>
+      </workList>
+      <extMeta>
+         <frames xmlns="http://www.humdrum.org/ns/humxml">
+            <metaFrame n="0" token="!!!COM: Chopin, Frederic" xml:id="L1">
+               <frameInfo>
+                  <startTime float="0" />
+                  <frameType>reference</frameType>
+                  <referenceKey>COM</referenceKey>
+                  <referenceValue>Chopin, Frederic</referenceValue>
+               </frameInfo>
+            </metaFrame>
+            <metaFrame n="1" token="!!!CDT: 1810///-1849///" xml:id="L2">
+               <frameInfo>
+                  <startTime float="0" />
+                  <frameType>reference</frameType>
+                  <referenceKey>CDT</referenceKey>
+                  <referenceValue>1810///-1849///</referenceValue>
+               </frameInfo>
+            </metaFrame>
+            <metaFrame n="2" token="!!!OTL: Prelude in E Minor, Op. 28, No. 4" xml:id="L3">
+               <frameInfo>
+                  <startTime float="0" />
+                  <frameType>reference</frameType>
+                  <referenceKey>OTL</referenceKey>
+                  <referenceValue>Prelude in E Minor, Op. 28, No. 4</referenceValue>
+               </frameInfo>
+            </metaFrame>
+            <metaFrame n="3" token="!!!OPS: Op. 28" xml:id="L4">
+               <frameInfo>
+                  <startTime float="0" />
+                  <frameType>reference</frameType>
+                  <referenceKey>OPS</referenceKey>
+                  <referenceValue>Op. 28</referenceValue>
+               </frameInfo>
+            </metaFrame>
+            <metaFrame n="4" token="!!!ONM: No. 4" xml:id="L5">
+               <frameInfo>
+                  <startTime float="0" />
+                  <frameType>reference</frameType>
+                  <referenceKey>ONM</referenceKey>
+                  <referenceValue>No. 4</referenceValue>
+               </frameInfo>
+            </metaFrame>
+            <metaFrame n="5" token="!!!OMD: Largo" xml:id="L6">
+               <frameInfo>
+                  <startTime float="0" />
+                  <frameType>reference</frameType>
+                  <referenceKey>OMD</referenceKey>
+                  <referenceValue>Largo</referenceValue>
+               </frameInfo>
+            </metaFrame>
+            <metaFrame n="6" token="!!!ODT: 1836///-1839///" xml:id="L7">
+               <frameInfo>
+                  <startTime float="0" />
+                  <frameType>reference</frameType>
+                  <referenceKey>ODT</referenceKey>
+                  <referenceValue>1836///-1839///</referenceValue>
+               </frameInfo>
+            </metaFrame>
+            <metaFrame n="7" token="!!!PDT: 1839///" xml:id="L8">
+               <frameInfo>
+                  <startTime float="0" />
+                  <frameType>reference</frameType>
+                  <referenceKey>PDT</referenceKey>
+                  <referenceValue>1839///</referenceValue>
+               </frameInfo>
+            </metaFrame>
+            <metaFrame n="8" token="!!!ENC: Craig Stuart Sapp" xml:id="L9">
+               <frameInfo>
+                  <startTime float="0" />
+                  <frameType>reference</frameType>
+                  <referenceKey>ENC</referenceKey>
+                  <referenceValue>Craig Stuart Sapp</referenceValue>
+               </frameInfo>
+            </metaFrame>
+            <metaFrame n="9" token="!!!AIN: piano" xml:id="L10">
+               <frameInfo>
+                  <startTime float="0" />
+                  <frameType>reference</frameType>
+                  <referenceKey>AIN</referenceKey>
+                  <referenceValue>piano</referenceValue>
+               </frameInfo>
+            </metaFrame>
+            <metaFrame n="10" token="!!!EEV: 4 March 2001" xml:id="L11">
+               <frameInfo>
+                  <startTime float="0" />
+                  <frameType>reference</frameType>
+                  <referenceKey>EEV</referenceKey>
+                  <referenceValue>4 March 2001</referenceValue>
+               </frameInfo>
+            </metaFrame>
+            <metaFrame n="11" token="!!!YEC: Copyright 2001 by Craig Stuart Sapp" xml:id="L12">
+               <frameInfo>
+                  <startTime float="0" />
+                  <frameType>reference</frameType>
+                  <referenceKey>YEC</referenceKey>
+                  <referenceValue>Copyright 2001 by Craig Stuart Sapp</referenceValue>
+               </frameInfo>
+            </metaFrame>
+            <metaFrame n="12" token="!!!YEN: United States of America" xml:id="L13">
+               <frameInfo>
+                  <startTime float="0" />
+                  <frameType>reference</frameType>
+                  <referenceKey>YEN</referenceKey>
+                  <referenceValue>United States of America</referenceValue>
+               </frameInfo>
+            </metaFrame>
+         </frames>
+      </extMeta>
+   </meiHead>
+   <music decls="#work0_encoded">
+      <body>
+         <mdiv xml:id="d1uiolhx">
+            <score xml:id="e10qbjg6">
+               <scoreDef xml:id="fc6b89q" midi.bpm="72" tempo.dist="3vu">
+                  <pgHead xml:id="pnyxhvm" func="first">
+                     <rend xml:id="q1ibs5ed" halign="center" valign="middle">
+                        <rend xml:id="rhiy80i" fontsize="large">Prelude in E Minor, Op. 28, No. 4</rend>
+                        <lb xml:id="tsvsrtm" /> 
+<lb xml:id="v1lf711b" /> </rend>
+                     <rend xml:id="xxz5awf" halign="right" valign="bottom" fontsize="small">Frederic Chopin</rend>
+                     <rend xml:id="z1sp9177" halign="right" valign="bottom" fontsize="small">1810–49</rend>
+                  </pgHead>
+                  <staffGrp xml:id="m9eg7oq" bar.thru="true" symbol="brace">
+                     <label xml:id="b11ng1n8">Piano</label>
+                     <staffDef xml:id="staffdef-L14F2" n="1" lines="5">
+                        <clef xml:id="clef-L17F2" shape="G" line="2" />
+                        <keySig xml:id="keysig-L18F2" mode="minor" sig="1s" pname="e" />
+                        <meterSig xml:id="metersig-L21F2" count="2" unit="2" visible="false" />
+                        <mensur xml:id="mensur-L20F2" sign="C" slash="1" />
+                        <instrDef xml:id="x1hxp86v" midi.instrnum="0" midi.instrname="Acoustic_Grand_Piano" />
+                     </staffDef>
+                     <staffDef xml:id="staffdef-L14F1" n="2" lines="5">
+                        <clef xml:id="clef-L17F1" shape="F" line="4" />
+                        <keySig xml:id="keysig-L18F1" mode="minor" sig="1s" pname="e" />
+                        <meterSig xml:id="metersig-L21F1" count="2" unit="2" visible="false" />
+                        <mensur xml:id="mensur-L20F1" sign="C" slash="1" />
+                        <instrDef xml:id="l1nxanf2" midi.instrnum="0" midi.instrname="Acoustic_Grand_Piano" />
+                     </staffDef>
+                  </staffGrp>
+               </scoreDef>
+               <section xml:id="section-L14F1">
+                  <measure xml:id="measure-L1">
+                     <staff xml:id="staff-L14F2" n="1">
+                        <layer xml:id="layer-L1F2N1" n="1">
+                           <note xml:id="note-L23F2" dots="1" dur="8" oct="3" pname="b" />
+                           <note xml:id="note-L24F2" dur="16" oct="4" pname="b" />
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-L14F1" n="2">
+                        <layer xml:id="layer-L1F1N1" n="1">
+                           <rest xml:id="rest-L23F1" dur="4" />
+                        </layer>
+                     </staff>
+                     <tempo xml:id="tempo-L6F1" staff="1" tstamp="1">Largo</tempo>
+                  </measure>
+                  <measure xml:id="measure-L25" n="1">
+                     <staff xml:id="staff-L25F2N1" n="1">
+                        <layer xml:id="layer-L25F2N1" n="1">
+                           <note xml:id="note-L26F2" dots="1" dur="2" oct="4" pname="b" />
+                           <note xml:id="note-L32F2" dur="4" oct="5" pname="c" />
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-L25F1N1" n="2">
+                        <layer xml:id="layer-L25F1N1" n="1">
+                           <chord xml:id="chord-L26F1" dur="8">
+                              <note xml:id="note-L26F1S1" oct="3" pname="g" />
+                              <note xml:id="note-L26F1S2" oct="3" pname="b" />
+                              <note xml:id="note-L26F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L27F1" dur="8">
+                              <note xml:id="note-L27F1S1" oct="3" pname="g" />
+                              <note xml:id="note-L27F1S2" oct="3" pname="b" />
+                              <note xml:id="note-L27F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L28F1" dur="8">
+                              <note xml:id="note-L28F1S1" oct="3" pname="g" />
+                              <note xml:id="note-L28F1S2" oct="3" pname="b" />
+                              <note xml:id="note-L28F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L29F1" dur="8">
+                              <note xml:id="note-L29F1S1" oct="3" pname="g" />
+                              <note xml:id="note-L29F1S2" oct="3" pname="b" />
+                              <note xml:id="note-L29F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L30F1" dur="8">
+                              <note xml:id="note-L30F1S1" oct="3" pname="g" />
+                              <note xml:id="note-L30F1S2" oct="3" pname="b" />
+                              <note xml:id="note-L30F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L31F1" dur="8">
+                              <note xml:id="note-L31F1S1" oct="3" pname="g" />
+                              <note xml:id="note-L31F1S2" oct="3" pname="b" />
+                              <note xml:id="note-L31F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L32F1" dur="8">
+                              <note xml:id="note-L32F1S1" oct="3" pname="g" />
+                              <note xml:id="note-L32F1S2" oct="3" pname="b" />
+                              <note xml:id="note-L32F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L33F1" dur="8">
+                              <note xml:id="note-L33F1S1" oct="3" pname="g" />
+                              <note xml:id="note-L33F1S2" oct="3" pname="b" />
+                              <note xml:id="note-L33F1S3" oct="4" pname="e" />
+                           </chord>
+                        </layer>
+                     </staff>
+                  </measure>
+                  <measure xml:id="measure-L34" n="2">
+                     <staff xml:id="staff-L34F2N1" n="1">
+                        <layer xml:id="layer-L34F2N1" n="1">
+                           <note xml:id="note-L35F2" dots="1" dur="2" oct="4" pname="b" />
+                           <note xml:id="note-L41F2" dur="4" oct="5" pname="c" />
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-L34F1N1" n="2">
+                        <layer xml:id="layer-L34F1N1" n="1">
+                           <chord xml:id="chord-L35F1" dur="8">
+                              <note xml:id="note-L35F1S1" oct="3" pname="f" />
+                              <note xml:id="note-L35F1S2" oct="3" pname="a" />
+                              <note xml:id="note-L35F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L36F1" dur="8">
+                              <note xml:id="note-L36F1S1" oct="3" pname="f" />
+                              <note xml:id="note-L36F1S2" oct="3" pname="a" />
+                              <note xml:id="note-L36F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L37F1" dur="8">
+                              <note xml:id="note-L37F1S1" oct="3" pname="f" />
+                              <note xml:id="note-L37F1S2" oct="3" pname="a" />
+                              <note xml:id="note-L37F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L38F1" dur="8">
+                              <note xml:id="note-L38F1S1" oct="3" pname="f" />
+                              <note xml:id="note-L38F1S2" oct="3" pname="a" />
+                              <note xml:id="note-L38F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L39F1" dur="8">
+                              <note xml:id="note-L39F1S1" oct="3" pname="f" />
+                              <note xml:id="note-L39F1S2" oct="3" pname="a" />
+                              <note xml:id="note-L39F1S3" oct="4" pname="e" accid="f" />
+                           </chord>
+                           <chord xml:id="chord-L40F1" dur="8">
+                              <note xml:id="note-L40F1S1" oct="3" pname="f" />
+                              <note xml:id="note-L40F1S2" oct="3" pname="a" />
+                              <note xml:id="note-L40F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L41F1" dur="8">
+                              <note xml:id="note-L41F1S1" oct="3" pname="f" />
+                              <note xml:id="note-L41F1S2" oct="3" pname="a" />
+                              <note xml:id="note-L41F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L42F1" dur="8">
+                              <note xml:id="note-L42F1S1" oct="3" pname="f" />
+                              <note xml:id="note-L42F1S2" oct="3" pname="a" />
+                              <note xml:id="note-L42F1S3" oct="4" pname="e" />
+                           </chord>
+                        </layer>
+                     </staff>
+                  </measure>
+                  <measure xml:id="measure-L43" n="3">
+                     <staff xml:id="staff-L43F2N1" n="1">
+                        <layer xml:id="layer-L43F2N1" n="1">
+                           <note xml:id="note-L44F2" dots="1" dur="2" oct="4" pname="b" />
+                           <note xml:id="note-L50F2" dur="4" oct="5" pname="c" />
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-L43F1N1" n="2">
+                        <layer xml:id="layer-L43F1N1" n="1">
+                           <chord xml:id="chord-L44F1" dur="8">
+                              <note xml:id="note-L44F1S1" oct="3" pname="f" accid="n" />
+                              <note xml:id="note-L44F1S2" oct="3" pname="a" />
+                              <note xml:id="note-L44F1S3" oct="4" pname="e" accid="f" />
+                           </chord>
+                           <chord xml:id="chord-L45F1" dur="8">
+                              <note xml:id="note-L45F1S1" oct="3" pname="f" />
+                              <note xml:id="note-L45F1S2" oct="3" pname="a" />
+                              <note xml:id="note-L45F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L46F1" dur="8">
+                              <note xml:id="note-L46F1S1" oct="3" pname="f" />
+                              <note xml:id="note-L46F1S2" oct="3" pname="a" />
+                              <note xml:id="note-L46F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L47F1" dur="8">
+                              <note xml:id="note-L47F1S1" oct="3" pname="f" />
+                              <note xml:id="note-L47F1S2" oct="3" pname="a" />
+                              <note xml:id="note-L47F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L48F1" dur="8">
+                              <note xml:id="note-L48F1S1" oct="3" pname="f" />
+                              <note xml:id="note-L48F1S2" oct="3" pname="a" />
+                              <note xml:id="note-L48F1S3" oct="4" pname="d" />
+                           </chord>
+                           <chord xml:id="chord-L49F1" dur="8">
+                              <note xml:id="note-L49F1S1" oct="3" pname="f" />
+                              <note xml:id="note-L49F1S2" oct="3" pname="a" />
+                              <note xml:id="note-L49F1S3" oct="4" pname="d" />
+                           </chord>
+                           <chord xml:id="chord-L50F1" dur="8">
+                              <note xml:id="note-L50F1S1" oct="3" pname="f" />
+                              <note xml:id="note-L50F1S2" oct="3" pname="g" accid="s" />
+                              <note xml:id="note-L50F1S3" oct="4" pname="d" />
+                           </chord>
+                           <chord xml:id="chord-L51F1" dur="8">
+                              <note xml:id="note-L51F1S1" oct="3" pname="f" />
+                              <note xml:id="note-L51F1S2" oct="3" pname="g" />
+                              <note xml:id="note-L51F1S3" oct="4" pname="d" />
+                           </chord>
+                        </layer>
+                     </staff>
+                  </measure>
+                  <measure xml:id="measure-L52" n="4">
+                     <staff xml:id="staff-L52F2N1" n="1">
+                        <layer xml:id="layer-L52F2N1" n="1">
+                           <note xml:id="note-L53F2" dots="1" dur="2" oct="4" pname="b" />
+                           <note xml:id="note-L59F2" dur="4" oct="4" pname="b" accid="f" />
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-L52F1N1" n="2">
+                        <layer xml:id="layer-L52F1N1" n="1">
+                           <chord xml:id="chord-L53F1" dur="8">
+                              <note xml:id="note-L53F1S1" oct="3" pname="e" />
+                              <note xml:id="note-L53F1S2" oct="3" pname="g" accid="s" />
+                              <note xml:id="note-L53F1S3" oct="4" pname="d" />
+                           </chord>
+                           <chord xml:id="chord-L54F1" dur="8">
+                              <note xml:id="note-L54F1S1" oct="3" pname="e" />
+                              <note xml:id="note-L54F1S2" oct="3" pname="g" />
+                              <note xml:id="note-L54F1S3" oct="4" pname="d" />
+                           </chord>
+                           <chord xml:id="chord-L55F1" dur="8">
+                              <note xml:id="note-L55F1S1" oct="3" pname="e" />
+                              <note xml:id="note-L55F1S2" oct="3" pname="g" />
+                              <note xml:id="note-L55F1S3" oct="4" pname="d" />
+                           </chord>
+                           <chord xml:id="chord-L56F1" dur="8">
+                              <note xml:id="note-L56F1S1" oct="3" pname="e" />
+                              <note xml:id="note-L56F1S2" oct="3" pname="g" />
+                              <note xml:id="note-L56F1S3" oct="4" pname="d" />
+                           </chord>
+                           <chord xml:id="chord-L57F1" dur="8">
+                              <note xml:id="note-L57F1S1" oct="3" pname="e" />
+                              <note xml:id="note-L57F1S2" oct="3" pname="g" accid="n" />
+                              <note xml:id="note-L57F1S3" oct="4" pname="d" />
+                           </chord>
+                           <chord xml:id="chord-L58F1" dur="8">
+                              <note xml:id="note-L58F1S1" oct="3" pname="e" />
+                              <note xml:id="note-L58F1S2" oct="3" pname="g" />
+                              <note xml:id="note-L58F1S3" oct="4" pname="d" />
+                           </chord>
+                           <chord xml:id="chord-L59F1" dur="8">
+                              <note xml:id="note-L59F1S1" oct="3" pname="e" />
+                              <note xml:id="note-L59F1S2" oct="3" pname="g" />
+                              <note xml:id="note-L59F1S3" oct="4" pname="c" accid="s" />
+                           </chord>
+                           <chord xml:id="chord-L60F1" dur="8">
+                              <note xml:id="note-L60F1S1" oct="3" pname="e" />
+                              <note xml:id="note-L60F1S2" oct="3" pname="g" />
+                              <note xml:id="note-L60F1S3" oct="4" pname="c" />
+                           </chord>
+                        </layer>
+                     </staff>
+                  </measure>
+                  <measure xml:id="measure-L61" n="5">
+                     <staff xml:id="staff-L61F2N1" n="1">
+                        <layer xml:id="layer-L61F2N1" n="1">
+                           <note xml:id="note-L62F2" dots="1" dur="2" oct="4" pname="a" />
+                           <note xml:id="note-L68F2" dur="4" oct="4" pname="b">
+                              <accid xml:id="accid-L68F2" type="caution" accid="n" func="caution" />
+                           </note>
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-L61F1N1" n="2">
+                        <layer xml:id="layer-L61F1N1" n="1">
+                           <chord xml:id="chord-L62F1" dur="8">
+                              <note xml:id="note-L62F1S1" oct="3" pname="e" />
+                              <note xml:id="note-L62F1S2" oct="3" pname="g" />
+                              <note xml:id="note-L62F1S3" oct="4" pname="c">
+                                 <accid xml:id="accid-L62F1S3" type="caution" accid="n" func="caution" />
+                              </note>
+                           </chord>
+                           <chord xml:id="chord-L63F1" dur="8">
+                              <note xml:id="note-L63F1S1" oct="3" pname="e" />
+                              <note xml:id="note-L63F1S2" oct="3" pname="g" />
+                              <note xml:id="note-L63F1S3" oct="4" pname="c" />
+                           </chord>
+                           <chord xml:id="chord-L64F1" dur="8">
+                              <note xml:id="note-L64F1S1" oct="3" pname="e" />
+                              <note xml:id="note-L64F1S2" oct="3" pname="g" />
+                              <note xml:id="note-L64F1S3" oct="4" pname="c" />
+                           </chord>
+                           <chord xml:id="chord-L65F1" dur="8">
+                              <note xml:id="note-L65F1S1" oct="3" pname="e" />
+                              <note xml:id="note-L65F1S2" oct="3" pname="g" />
+                              <note xml:id="note-L65F1S3" oct="4" pname="c" />
+                           </chord>
+                           <chord xml:id="chord-L66F1" dur="8">
+                              <note xml:id="note-L66F1S1" oct="3" pname="e" />
+                              <note xml:id="note-L66F1S2" oct="3" pname="f" />
+                              <note xml:id="note-L66F1S3" oct="4" pname="c" />
+                           </chord>
+                           <chord xml:id="chord-L67F1" dur="8">
+                              <note xml:id="note-L67F1S1" oct="3" pname="e" />
+                              <note xml:id="note-L67F1S2" oct="3" pname="f" />
+                              <note xml:id="note-L67F1S3" oct="4" pname="c" />
+                           </chord>
+                           <chord xml:id="chord-L68F1" dur="8">
+                              <note xml:id="note-L68F1S1" oct="3" pname="e" />
+                              <note xml:id="note-L68F1S2" oct="3" pname="f" />
+                              <note xml:id="note-L68F1S3" oct="4" pname="c" />
+                           </chord>
+                           <chord xml:id="chord-L69F1" dur="8">
+                              <note xml:id="note-L69F1S1" oct="3" pname="e" />
+                              <note xml:id="note-L69F1S2" oct="3" pname="f" />
+                              <note xml:id="note-L69F1S3" oct="4" pname="c" />
+                           </chord>
+                        </layer>
+                     </staff>
+                  </measure>
+                  <measure xml:id="measure-L70" n="6">
+                     <staff xml:id="staff-L70F2N1" n="1">
+                        <layer xml:id="layer-L70F2N1" n="1">
+                           <note xml:id="note-L71F2" dots="1" dur="2" oct="4" pname="a" />
+                           <note xml:id="note-L77F2" dur="4" oct="4" pname="b" />
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-L70F1N1" n="2">
+                        <layer xml:id="layer-L70F1N1" n="1">
+                           <chord xml:id="chord-L71F1" dur="8">
+                              <note xml:id="note-L71F1S1" oct="3" pname="e" />
+                              <note xml:id="note-L71F1S2" oct="3" pname="f" />
+                              <note xml:id="note-L71F1S3" oct="4" pname="c" />
+                           </chord>
+                           <chord xml:id="chord-L72F1" dur="8">
+                              <note xml:id="note-L72F1S1" oct="3" pname="e" />
+                              <note xml:id="note-L72F1S2" oct="3" pname="f" />
+                              <note xml:id="note-L72F1S3" oct="4" pname="c" />
+                           </chord>
+                           <chord xml:id="chord-L73F1" dur="8">
+                              <note xml:id="note-L73F1S1" oct="3" pname="e" />
+                              <note xml:id="note-L73F1S2" oct="3" pname="f" />
+                              <note xml:id="note-L73F1S3" oct="4" pname="c" />
+                           </chord>
+                           <chord xml:id="chord-L74F1" dur="8">
+                              <note xml:id="note-L74F1S1" oct="3" pname="e" />
+                              <note xml:id="note-L74F1S2" oct="3" pname="f" />
+                              <note xml:id="note-L74F1S3" oct="4" pname="c" />
+                           </chord>
+                           <chord xml:id="chord-L75F1" dur="8">
+                              <note xml:id="note-L75F1S1" oct="3" pname="d" accid="s" />
+                              <note xml:id="note-L75F1S2" oct="3" pname="f" />
+                              <note xml:id="note-L75F1S3" oct="4" pname="c" />
+                           </chord>
+                           <chord xml:id="chord-L76F1" dur="8">
+                              <note xml:id="note-L76F1S1" oct="3" pname="d" />
+                              <note xml:id="note-L76F1S2" oct="3" pname="f" />
+                              <note xml:id="note-L76F1S3" oct="4" pname="c" />
+                           </chord>
+                           <chord xml:id="chord-L77F1" dur="8">
+                              <note xml:id="note-L77F1S1" oct="3" pname="d" />
+                              <note xml:id="note-L77F1S2" oct="3" pname="f" />
+                              <note xml:id="note-L77F1S3" oct="4" pname="c" />
+                           </chord>
+                           <chord xml:id="chord-L78F1" dur="8">
+                              <note xml:id="note-L78F1S1" oct="3" pname="d" />
+                              <note xml:id="note-L78F1S2" oct="3" pname="f" />
+                              <note xml:id="note-L78F1S3" oct="4" pname="c" />
+                           </chord>
+                        </layer>
+                     </staff>
+                  </measure>
+                  <measure xml:id="measure-L79" n="7">
+                     <staff xml:id="staff-L79F2N1" n="1">
+                        <layer xml:id="layer-L79F2N1" n="1">
+                           <note xml:id="note-L80F2" dots="1" dur="2" oct="4" pname="a" />
+                           <note xml:id="note-L86F2" dots="1" dur="8" oct="4" pname="b" />
+                           <note xml:id="note-L88F2" dur="16" oct="4" pname="a" />
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-L79F1N1" n="2">
+                        <layer xml:id="layer-L79F1N1" n="1">
+                           <chord xml:id="chord-L80F1" dur="8">
+                              <note xml:id="note-L80F1S1" oct="3" pname="d">
+                                 <accid xml:id="accid-L80F1S1" type="caution" accid="n" func="caution" />
+                              </note>
+                              <note xml:id="note-L80F1S2" oct="3" pname="f" />
+                              <note xml:id="note-L80F1S3" oct="4" pname="c" />
+                           </chord>
+                           <chord xml:id="chord-L81F1" dur="8">
+                              <note xml:id="note-L81F1S1" oct="3" pname="d" />
+                              <note xml:id="note-L81F1S2" oct="3" pname="f" />
+                              <note xml:id="note-L81F1S3" oct="4" pname="c" />
+                           </chord>
+                           <chord xml:id="chord-L82F1" dur="8">
+                              <note xml:id="note-L82F1S1" oct="3" pname="d" />
+                              <note xml:id="note-L82F1S2" oct="3" pname="f" />
+                              <note xml:id="note-L82F1S3" oct="4" pname="c" />
+                           </chord>
+                           <chord xml:id="chord-L83F1" dur="8">
+                              <note xml:id="note-L83F1S1" oct="3" pname="d" />
+                              <note xml:id="note-L83F1S2" oct="3" pname="f" />
+                              <note xml:id="note-L83F1S3" oct="4" pname="c" />
+                           </chord>
+                           <chord xml:id="chord-L84F1" dur="8">
+                              <note xml:id="note-L84F1S1" oct="3" pname="d" />
+                              <note xml:id="note-L84F1S2" oct="3" pname="f" />
+                              <note xml:id="note-L84F1S3" oct="4" pname="c" />
+                           </chord>
+                           <chord xml:id="chord-L85F1" dur="8">
+                              <note xml:id="note-L85F1S1" oct="3" pname="d" />
+                              <note xml:id="note-L85F1S2" oct="3" pname="f" />
+                              <note xml:id="note-L85F1S3" oct="4" pname="c" />
+                           </chord>
+                           <chord xml:id="chord-L86F1" dur="8">
+                              <note xml:id="note-L86F1S1" oct="3" pname="d" />
+                              <note xml:id="note-L86F1S2" oct="3" pname="f" />
+                              <note xml:id="note-L86F1S3" oct="4" pname="c" />
+                           </chord>
+                           <chord xml:id="chord-L87F1" dur="8">
+                              <note xml:id="note-L87F1S1" oct="3" pname="d" />
+                              <note xml:id="note-L87F1S2" oct="3" pname="f" />
+                              <note xml:id="note-L87F1S3" oct="4" pname="c" />
+                           </chord>
+                        </layer>
+                     </staff>
+                  </measure>
+                  <measure xml:id="measure-L89" n="8">
+                     <staff xml:id="staff-L89F2N1" n="1">
+                        <layer xml:id="layer-L89F2N1" n="1">
+                           <note xml:id="note-L90F2" dots="1" dur="2" oct="4" pname="a" />
+                           <note xml:id="note-L96F2" dur="4" oct="4" pname="g" accid="s" />
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-L89F1N1" n="2">
+                        <layer xml:id="layer-L89F1N1" n="1">
+                           <chord xml:id="chord-L90F1" dur="8">
+                              <note xml:id="note-L90F1S1" oct="3" pname="d" />
+                              <note xml:id="note-L90F1S2" oct="3" pname="f" accid="n" />
+                              <note xml:id="note-L90F1S3" oct="4" pname="c" />
+                           </chord>
+                           <chord xml:id="chord-L91F1" dur="8">
+                              <note xml:id="note-L91F1S1" oct="3" pname="d" />
+                              <note xml:id="note-L91F1S2" oct="3" pname="f" />
+                              <note xml:id="note-L91F1S3" oct="4" pname="c" />
+                           </chord>
+                           <chord xml:id="chord-L92F1" dur="8">
+                              <note xml:id="note-L92F1S1" oct="3" pname="d" />
+                              <note xml:id="note-L92F1S2" oct="3" pname="f" />
+                              <note xml:id="note-L92F1S3" oct="4" pname="c" />
+                           </chord>
+                           <chord xml:id="chord-L93F1" dur="8">
+                              <note xml:id="note-L93F1S1" oct="3" pname="d" />
+                              <note xml:id="note-L93F1S2" oct="3" pname="f" />
+                              <note xml:id="note-L93F1S3" oct="4" pname="c" />
+                           </chord>
+                           <chord xml:id="chord-L94F1" dur="8">
+                              <note xml:id="note-L94F1S1" oct="3" pname="d" />
+                              <note xml:id="note-L94F1S2" oct="3" pname="f" />
+                              <note xml:id="note-L94F1S3" oct="3" pname="b" />
+                           </chord>
+                           <chord xml:id="chord-L95F1" dur="8">
+                              <note xml:id="note-L95F1S1" oct="3" pname="d" />
+                              <note xml:id="note-L95F1S2" oct="3" pname="f" />
+                              <note xml:id="note-L95F1S3" oct="3" pname="b" />
+                           </chord>
+                           <chord xml:id="chord-L96F1" dur="8">
+                              <note xml:id="note-L96F1S1" oct="3" pname="d" />
+                              <note xml:id="note-L96F1S2" oct="3" pname="f" />
+                              <note xml:id="note-L96F1S3" oct="3" pname="b" />
+                           </chord>
+                           <chord xml:id="chord-L97F1" dur="8">
+                              <note xml:id="note-L97F1S1" oct="3" pname="d" />
+                              <note xml:id="note-L97F1S2" oct="3" pname="f" />
+                              <note xml:id="note-L97F1S3" oct="3" pname="b" />
+                           </chord>
+                        </layer>
+                     </staff>
+                     <tie xml:id="tie-L96F2-L99F2" startid="#note-L96F2" endid="#note-L99F2" />
+                  </measure>
+                  <measure xml:id="measure-L98" n="9">
+                     <staff xml:id="staff-L98F2N1" n="1">
+                        <layer xml:id="layer-L98F2N1" n="1">
+                           <note xml:id="note-L99F2" dur="4" oct="4" pname="g" />
+                           <note xml:id="note-L101F2" dur="8" oct="4" pname="a" />
+                           <note xml:id="note-L102F2" dur="8" oct="4" pname="b" />
+                           <note xml:id="note-L103F2" dur="8" oct="5" pname="d" />
+                           <note xml:id="note-L104F2" dur="8" oct="5" pname="c" />
+                           <note xml:id="note-L105F2" dur="8" oct="4" pname="e" />
+                           <note xml:id="note-L106F2" dur="8" oct="4" pname="a" />
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-L98F1N1" n="2">
+                        <layer xml:id="layer-L98F1N1" n="1">
+                           <chord xml:id="chord-L99F1" dur="8">
+                              <note xml:id="note-L99F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L99F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L99F1S3" oct="3" pname="b" />
+                           </chord>
+                           <chord xml:id="chord-L100F1" dur="8">
+                              <note xml:id="note-L100F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L100F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L100F1S3" oct="3" pname="b" />
+                           </chord>
+                           <chord xml:id="chord-L101F1" dur="8">
+                              <note xml:id="note-L101F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L101F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L101F1S3" oct="3" pname="a" />
+                           </chord>
+                           <chord xml:id="chord-L102F1" dur="8">
+                              <note xml:id="note-L102F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L102F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L102F1S3" oct="3" pname="a" />
+                           </chord>
+                           <chord xml:id="chord-L103F1" dur="8">
+                              <note xml:id="note-L103F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L103F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L103F1S3" oct="3" pname="a" />
+                           </chord>
+                           <chord xml:id="chord-L104F1" dur="8">
+                              <note xml:id="note-L104F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L104F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L104F1S3" oct="3" pname="a" />
+                           </chord>
+                           <chord xml:id="chord-L105F1" dur="8">
+                              <note xml:id="note-L105F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L105F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L105F1S3" oct="3" pname="a" />
+                           </chord>
+                           <chord xml:id="chord-L106F1" dur="8">
+                              <note xml:id="note-L106F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L106F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L106F1S3" oct="3" pname="a" />
+                           </chord>
+                        </layer>
+                     </staff>
+                  </measure>
+                  <measure xml:id="measure-L107" n="10">
+                     <staff xml:id="staff-L107F2N1" n="1">
+                        <layer xml:id="layer-L107F2N1" n="1">
+                           <note xml:id="note-L108F2" dots="1" dur="2" oct="4" pname="f" />
+                           <note xml:id="note-L114F2" dur="4" oct="4" pname="a" />
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-L107F1N1" n="2">
+                        <layer xml:id="layer-L107F1N1" n="1">
+                           <chord xml:id="chord-L108F1" dur="8">
+                              <note xml:id="note-L108F1S1" oct="2" pname="b" />
+                              <note xml:id="note-L108F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L108F1S3" oct="3" pname="a" />
+                           </chord>
+                           <chord xml:id="chord-L109F1" dur="8">
+                              <note xml:id="note-L109F1S1" oct="2" pname="b" />
+                              <note xml:id="note-L109F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L109F1S3" oct="3" pname="a" />
+                           </chord>
+                           <chord xml:id="chord-L110F1" dur="8">
+                              <note xml:id="note-L110F1S1" oct="2" pname="b" />
+                              <note xml:id="note-L110F1S2" oct="3" pname="d" accid="s" />
+                              <note xml:id="note-L110F1S3" oct="3" pname="a" />
+                           </chord>
+                           <chord xml:id="chord-L111F1" dur="8">
+                              <note xml:id="note-L111F1S1" oct="2" pname="b" />
+                              <note xml:id="note-L111F1S2" oct="3" pname="d" />
+                              <note xml:id="note-L111F1S3" oct="3" pname="a" />
+                           </chord>
+                           <chord xml:id="chord-L112F1" dur="8">
+                              <note xml:id="note-L112F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L112F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L112F1S3" oct="3" pname="a" />
+                           </chord>
+                           <chord xml:id="chord-L113F1" dur="8">
+                              <note xml:id="note-L113F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L113F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L113F1S3" oct="3" pname="a" />
+                           </chord>
+                           <chord xml:id="chord-L114F1" dur="8">
+                              <note xml:id="note-L114F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L114F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L114F1S3" oct="3" pname="a" />
+                           </chord>
+                           <chord xml:id="chord-L115F1" dur="8">
+                              <note xml:id="note-L115F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L115F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L115F1S3" oct="3" pname="a" />
+                           </chord>
+                        </layer>
+                     </staff>
+                  </measure>
+                  <measure xml:id="measure-L116" n="11">
+                     <staff xml:id="staff-L116F2N1" n="1">
+                        <layer xml:id="layer-L116F2N1" n="1">
+                           <note xml:id="note-L117F2" dots="1" dur="2" oct="4" pname="f" />
+                           <note xml:id="note-L123F2" dur="8" oct="4" pname="b" grace="unacc" />
+                           <note xml:id="note-L124F2" dur="4" oct="4" pname="a" />
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-L116F1N1" n="2">
+                        <layer xml:id="layer-L116F1N1" n="1">
+                           <chord xml:id="chord-L117F1" dur="8">
+                              <note xml:id="note-L117F1S1" oct="2" pname="b" />
+                              <note xml:id="note-L117F1S2" oct="3" pname="d" accid="s" />
+                              <note xml:id="note-L117F1S3" oct="3" pname="a" />
+                           </chord>
+                           <chord xml:id="chord-L118F1" dur="8">
+                              <note xml:id="note-L118F1S1" oct="2" pname="b" />
+                              <note xml:id="note-L118F1S2" oct="3" pname="d" />
+                              <note xml:id="note-L118F1S3" oct="3" pname="a" />
+                           </chord>
+                           <chord xml:id="chord-L119F1" dur="8">
+                              <note xml:id="note-L119F1S1" oct="2" pname="b" />
+                              <note xml:id="note-L119F1S2" oct="3" pname="d" />
+                              <note xml:id="note-L119F1S3" oct="3" pname="a" />
+                           </chord>
+                           <chord xml:id="chord-L120F1" dur="8">
+                              <note xml:id="note-L120F1S1" oct="2" pname="b" />
+                              <note xml:id="note-L120F1S2" oct="3" pname="d" />
+                              <note xml:id="note-L120F1S3" oct="3" pname="a" />
+                           </chord>
+                           <chord xml:id="chord-L121F1" dur="8">
+                              <note xml:id="note-L121F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L121F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L121F1S3" oct="3" pname="a" />
+                           </chord>
+                           <chord xml:id="chord-L122F1" dur="8">
+                              <note xml:id="note-L122F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L122F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L122F1S3" oct="3" pname="a" />
+                           </chord>
+                           <chord xml:id="chord-L123F1" dur="8">
+                              <note xml:id="note-L123F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L123F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L123F1S3" oct="3" pname="a" />
+                           </chord>
+                           <chord xml:id="chord-L125F1" dur="8">
+                              <note xml:id="note-L125F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L125F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L125F1S3" oct="3" pname="a" />
+                           </chord>
+                        </layer>
+                     </staff>
+                  </measure>
+                  <measure xml:id="measure-L126" n="12">
+                     <staff xml:id="staff-L126F2N1" n="1">
+                        <layer xml:id="layer-L126F2N1" n="1">
+                           <note xml:id="note-L127F2" dur="8" oct="4" pname="g" />
+                           <note xml:id="note-L128F2" dur="8" oct="4" pname="f" />
+                           <note xml:id="note-L129F2" dur="8" oct="4" pname="c" />
+                           <note xml:id="note-L130F2" dur="8" oct="3" pname="b" />
+                           <note xml:id="note-L131F2" dur="8" oct="4" pname="d" accid="s" />
+                           <note xml:id="note-L132F2" dur="8" oct="4" pname="f" />
+                           <tuplet xml:id="tuplet-L133F2-L135F2" num="3" numbase="2" num.format="count">
+                              <note xml:id="note-L133F2" dur="8" oct="5" pname="d">
+                                 <accid xml:id="accid-L133F2" type="caution" accid="n" func="caution" />
+                              </note>
+                              <note xml:id="note-L134F2" dur="8" oct="5" pname="c" />
+                              <note xml:id="note-L135F2" dur="8" oct="4" pname="b" />
+                           </tuplet>
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-L126F1N1" n="2">
+                        <layer xml:id="layer-L126F1N1" n="1">
+                           <chord xml:id="chord-L127F1" dur="4">
+                              <note xml:id="note-L127F1S1" oct="2" pname="b" />
+                              <note xml:id="note-L127F1S2" oct="3" pname="d" accid="s" />
+                              <note xml:id="note-L127F1S3" oct="3" pname="a" />
+                           </chord>
+                           <rest xml:id="rest-L129F1" dur="4" />
+                           <rest xml:id="rest-L131F1" dur="2" />
+                        </layer>
+                     </staff>
+                  </measure>
+                  <measure xml:id="measure-L136" n="13">
+                     <staff xml:id="staff-L136F2N1" n="1">
+                        <layer xml:id="layer-L136F2N1" n="1">
+                           <note xml:id="note-L137F2" dots="1" dur="2" oct="4" pname="b" />
+                           <note xml:id="note-L143F2" dur="4" oct="5" pname="c" />
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-L136F1N1" n="2">
+                        <layer xml:id="layer-L136F1N1" n="1">
+                           <chord xml:id="chord-L137F1" dur="8">
+                              <note xml:id="note-L137F1S1" oct="3" pname="g" />
+                              <note xml:id="note-L137F1S2" oct="3" pname="b" />
+                              <note xml:id="note-L137F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L138F1" dur="8">
+                              <note xml:id="note-L138F1S1" oct="3" pname="g" />
+                              <note xml:id="note-L138F1S2" oct="3" pname="b" />
+                              <note xml:id="note-L138F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L139F1" dur="8">
+                              <note xml:id="note-L139F1S1" oct="3" pname="g" />
+                              <note xml:id="note-L139F1S2" oct="3" pname="b" />
+                              <note xml:id="note-L139F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L140F1" dur="8">
+                              <note xml:id="note-L140F1S1" oct="3" pname="g" />
+                              <note xml:id="note-L140F1S2" oct="3" pname="b" />
+                              <note xml:id="note-L140F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L141F1" dur="8">
+                              <note xml:id="note-L141F1S1" oct="3" pname="g" />
+                              <note xml:id="note-L141F1S2" oct="3" pname="b" />
+                              <note xml:id="note-L141F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L142F1" dur="8">
+                              <note xml:id="note-L142F1S1" oct="3" pname="g" />
+                              <note xml:id="note-L142F1S2" oct="3" pname="b" />
+                              <note xml:id="note-L142F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L143F1" dur="8">
+                              <note xml:id="note-L143F1S1" oct="3" pname="g" />
+                              <note xml:id="note-L143F1S2" oct="3" pname="b" />
+                              <note xml:id="note-L143F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L144F1" dur="8">
+                              <note xml:id="note-L144F1S1" oct="3" pname="g" />
+                              <note xml:id="note-L144F1S2" oct="3" pname="b" />
+                              <note xml:id="note-L144F1S3" oct="4" pname="e" />
+                           </chord>
+                        </layer>
+                     </staff>
+                  </measure>
+                  <measure xml:id="measure-L145" n="14">
+                     <staff xml:id="staff-L145F2N1" n="1">
+                        <layer xml:id="layer-L145F2N1" n="1">
+                           <note xml:id="note-L146F2" dots="1" dur="2" oct="4" pname="b" />
+                           <note xml:id="note-L152F2" dur="4" oct="5" pname="c" />
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-L145F1N1" n="2">
+                        <layer xml:id="layer-L145F1N1" n="1">
+                           <chord xml:id="chord-L146F1" dur="8">
+                              <note xml:id="note-L146F1S1" oct="3" pname="f" />
+                              <note xml:id="note-L146F1S2" oct="3" pname="a" />
+                              <note xml:id="note-L146F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L147F1" dur="8">
+                              <note xml:id="note-L147F1S1" oct="3" pname="f" />
+                              <note xml:id="note-L147F1S2" oct="3" pname="a" />
+                              <note xml:id="note-L147F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L148F1" dur="8">
+                              <note xml:id="note-L148F1S1" oct="3" pname="f" />
+                              <note xml:id="note-L148F1S2" oct="3" pname="a" />
+                              <note xml:id="note-L148F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L149F1" dur="8">
+                              <note xml:id="note-L149F1S1" oct="3" pname="f" />
+                              <note xml:id="note-L149F1S2" oct="3" pname="a" />
+                              <note xml:id="note-L149F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L150F1" dur="8">
+                              <note xml:id="note-L150F1S1" oct="3" pname="f" accid="n" />
+                              <note xml:id="note-L150F1S2" oct="3" pname="a" />
+                              <note xml:id="note-L150F1S3" oct="4" pname="e" accid="f" />
+                           </chord>
+                           <chord xml:id="chord-L151F1" dur="8">
+                              <note xml:id="note-L151F1S1" oct="3" pname="f" />
+                              <note xml:id="note-L151F1S2" oct="3" pname="a" />
+                              <note xml:id="note-L151F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L152F1" dur="8">
+                              <note xml:id="note-L152F1S1" oct="3" pname="f" />
+                              <note xml:id="note-L152F1S2" oct="3" pname="a" />
+                              <note xml:id="note-L152F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L153F1" dur="8">
+                              <note xml:id="note-L153F1S1" oct="3" pname="f" />
+                              <note xml:id="note-L153F1S2" oct="3" pname="a" />
+                              <note xml:id="note-L153F1S3" oct="4" pname="e" />
+                           </chord>
+                        </layer>
+                     </staff>
+                  </measure>
+                  <measure xml:id="measure-L154" n="15">
+                     <staff xml:id="staff-L154F2N1" n="1">
+                        <layer xml:id="layer-L154F2N1" n="1">
+                           <note xml:id="note-L155F2" dots="1" dur="2" oct="4" pname="b" />
+                           <note xml:id="note-L161F2" dur="4" oct="5" pname="c" />
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-L154F1N1" n="2">
+                        <layer xml:id="layer-L154F1N1" n="1">
+                           <chord xml:id="chord-L155F1" dur="8">
+                              <note xml:id="note-L155F1S1" oct="3" pname="f" accid="n" />
+                              <note xml:id="note-L155F1S2" oct="3" pname="a" accid="f" />
+                              <note xml:id="note-L155F1S3" oct="4" pname="e" accid="f" />
+                           </chord>
+                           <chord xml:id="chord-L156F1" dur="8">
+                              <note xml:id="note-L156F1S1" oct="3" pname="f" />
+                              <note xml:id="note-L156F1S2" oct="3" pname="a" />
+                              <note xml:id="note-L156F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L157F1" dur="8">
+                              <note xml:id="note-L157F1S1" oct="3" pname="f" />
+                              <note xml:id="note-L157F1S2" oct="3" pname="a" />
+                              <note xml:id="note-L157F1S3" oct="4" pname="d" />
+                           </chord>
+                           <chord xml:id="chord-L158F1" dur="8">
+                              <note xml:id="note-L158F1S1" oct="3" pname="f" />
+                              <note xml:id="note-L158F1S2" oct="3" pname="a" />
+                              <note xml:id="note-L158F1S3" oct="4" pname="d" />
+                           </chord>
+                           <chord xml:id="chord-L159F1" dur="8">
+                              <note xml:id="note-L159F1S1" oct="3" pname="e">
+                                 <accid xml:id="accid-L159F1S1" type="caution" accid="n" func="caution" />
+                              </note>
+                              <note xml:id="note-L159F1S2" oct="3" pname="g" accid="s" />
+                              <note xml:id="note-L159F1S3" oct="4" pname="d" />
+                           </chord>
+                           <chord xml:id="chord-L160F1" dur="8">
+                              <note xml:id="note-L160F1S1" oct="3" pname="e" />
+                              <note xml:id="note-L160F1S2" oct="3" pname="g" />
+                              <note xml:id="note-L160F1S3" oct="4" pname="d" />
+                           </chord>
+                           <chord xml:id="chord-L161F1" dur="8">
+                              <note xml:id="note-L161F1S1" oct="3" pname="e" />
+                              <note xml:id="note-L161F1S2" oct="3" pname="g" />
+                              <note xml:id="note-L161F1S3" oct="4" pname="d" />
+                           </chord>
+                           <chord xml:id="chord-L162F1" dur="8">
+                              <note xml:id="note-L162F1S1" oct="3" pname="e" />
+                              <note xml:id="note-L162F1S2" oct="3" pname="g" />
+                              <note xml:id="note-L162F1S3" oct="4" pname="d" />
+                           </chord>
+                        </layer>
+                     </staff>
+                  </measure>
+                  <measure xml:id="measure-L163" n="16">
+                     <staff xml:id="staff-L163F2N1" n="1">
+                        <layer xml:id="layer-L163F2N1" n="1">
+                           <note xml:id="note-L164F2" dots="1" dur="8" oct="4" pname="b" />
+                           <note xml:id="note-L166F2" dur="16" oct="4" pname="a" accid="s" />
+                           <note xml:id="note-L167F2" dur="4" oct="4" pname="a" />
+                           <note xml:id="note-L169F2" dur="4" oct="5" pname="g" />
+                           <note xml:id="note-L171F2" dots="1" dur="8" oct="5" pname="f" />
+                           <note xml:id="note-L173F2" dur="16" oct="5" pname="e" />
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-L163F1N1" n="2">
+                        <layer xml:id="layer-L163F1N1" n="1">
+                           <chord xml:id="chord-L164F1" dur="8">
+                              <note xml:id="note-L164F1S1" oct="3" pname="e" />
+                              <note xml:id="note-L164F1S2" oct="3" pname="g">
+                                 <accid xml:id="accid-L164F1S2" type="caution" accid="n" func="caution" />
+                              </note>
+                              <note xml:id="note-L164F1S3" oct="4" pname="d" />
+                           </chord>
+                           <chord xml:id="chord-L165F1" dur="8">
+                              <note xml:id="note-L165F1S1" oct="3" pname="e" />
+                              <note xml:id="note-L165F1S2" oct="3" pname="g" />
+                              <note xml:id="note-L165F1S3" oct="4" pname="d" />
+                           </chord>
+                           <chord xml:id="chord-L167F1" dur="8">
+                              <note xml:id="note-L167F1S1" oct="3" pname="e" />
+                              <note xml:id="note-L167F1S2" oct="3" pname="g" />
+                              <note xml:id="note-L167F1S3" oct="4" pname="c" accid="s" />
+                           </chord>
+                           <chord xml:id="chord-L168F1" dur="8">
+                              <note xml:id="note-L168F1S1" oct="3" pname="e" />
+                              <note xml:id="note-L168F1S2" oct="3" pname="g" />
+                              <note xml:id="note-L168F1S3" oct="4" pname="c" />
+                           </chord>
+                           <chord xml:id="chord-L169F1" dur="8">
+                              <note xml:id="note-L169F1S1" oct="3" pname="c" accid="s" />
+                              <note xml:id="note-L169F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L169F1S3" oct="3" pname="a" accid="s" />
+                           </chord>
+                           <chord xml:id="chord-L170F1" dur="8">
+                              <note xml:id="note-L170F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L170F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L170F1S3" oct="3" pname="a" />
+                           </chord>
+                           <chord xml:id="chord-L171F1" dur="8">
+                              <note xml:id="note-L171F1S1" oct="3" pname="c" accid="n" />
+                              <note xml:id="note-L171F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L171F1S3" oct="3" pname="a" accid="n" />
+                           </chord>
+                           <chord xml:id="chord-L172F1" dur="8">
+                              <note xml:id="note-L172F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L172F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L172F1S3" oct="3" pname="a" />
+                           </chord>
+                        </layer>
+                     </staff>
+                  </measure>
+                  <measure xml:id="measure-L174" n="17">
+                     <staff xml:id="staff-L174F2N1" n="1">
+                        <layer xml:id="layer-L174F2N1" n="1">
+                           <note xml:id="note-L175F2" dur="8" oct="5" pname="e" />
+                           <note xml:id="note-L176F2" dur="8" oct="5" pname="d" accid="s" />
+                           <note xml:id="note-L177F2" dur="8" oct="6" pname="c" />
+                           <note xml:id="note-L178F2" dur="8" oct="5" pname="d" />
+                           <note xml:id="note-L179F2" dur="8" oct="5" pname="d" />
+                           <note xml:id="note-L180F2" dur="8" oct="5" pname="e" />
+                           <note xml:id="note-L181F2" dur="8" oct="5" pname="g" />
+                           <note xml:id="note-L182F2" dur="8" oct="4" pname="b" />
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-L174F1N1" n="2">
+                        <layer xml:id="layer-L174F1N1" n="1">
+                           <chord xml:id="chord-L175F1" dur="8">
+                              <note xml:id="note-L175F1S1" oct="1" pname="b" />
+                              <note xml:id="note-L175F1S2" oct="2" pname="b" />
+                           </chord>
+                           <chord xml:id="chord-L176F1" dur="8">
+                              <note xml:id="note-L176F1S1" oct="3" pname="a" />
+                              <note xml:id="note-L176F1S2" oct="4" pname="c" />
+                              <note xml:id="note-L176F1S3" oct="4" pname="f" />
+                              <note xml:id="note-L176F1S4" oct="4" pname="a" />
+                           </chord>
+                           <chord xml:id="chord-L177F1" dur="8">
+                              <note xml:id="note-L177F1S1" oct="3" pname="a" />
+                              <note xml:id="note-L177F1S2" oct="4" pname="c" />
+                              <note xml:id="note-L177F1S3" oct="4" pname="f" />
+                              <note xml:id="note-L177F1S4" oct="4" pname="a" />
+                           </chord>
+                           <chord xml:id="chord-L178F1" dur="8">
+                              <note xml:id="note-L178F1S1" oct="3" pname="a" />
+                              <note xml:id="note-L178F1S2" oct="4" pname="c" />
+                              <note xml:id="note-L178F1S3" oct="4" pname="f" />
+                              <note xml:id="note-L178F1S4" oct="4" pname="a" />
+                           </chord>
+                           <chord xml:id="chord-L179F1" dur="8">
+                              <note xml:id="note-L179F1S1" oct="3" pname="g" />
+                              <note xml:id="note-L179F1S2" oct="3" pname="b" />
+                              <note xml:id="note-L179F1S3" oct="4" pname="d" accid="s" />
+                              <note xml:id="note-L179F1S4" oct="4" pname="f" />
+                           </chord>
+                           <chord xml:id="chord-L180F1" dur="8">
+                              <note xml:id="note-L180F1S1" oct="3" pname="g" />
+                              <note xml:id="note-L180F1S2" oct="3" pname="b" />
+                              <note xml:id="note-L180F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L181F1" dur="8">
+                              <note xml:id="note-L181F1S1" oct="3" pname="g" />
+                              <note xml:id="note-L181F1S2" oct="3" pname="b" />
+                              <note xml:id="note-L181F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L182F1" dur="8">
+                              <note xml:id="note-L182F1S1" oct="3" pname="g" />
+                              <note xml:id="note-L182F1S2" oct="3" pname="b" />
+                              <note xml:id="note-L182F1S3" oct="4" pname="e" />
+                           </chord>
+                        </layer>
+                     </staff>
+                  </measure>
+                  <measure xml:id="measure-L183" n="18">
+                     <staff xml:id="staff-L183F2N1" n="1">
+                        <layer xml:id="layer-L183F2N1" n="1">
+                           <note xml:id="note-L184F2" dur="8" oct="5" pname="d">
+                              <accid xml:id="accid-L184F2" type="caution" accid="n" func="caution" />
+                           </note>
+                           <note xml:id="note-L185F2" dur="8" oct="5" pname="c" />
+                           <tuplet xml:id="tuplet-L186F2-L189F2" num="3" numbase="2" num.format="count">
+                              <note xml:id="note-L186F2" dur="8" oct="5" pname="e" />
+                              <note xml:id="note-L187F2" dur="8" oct="4" pname="e" />
+                              <note xml:id="note-L189F2" dur="8" oct="4" pname="a" />
+                           </tuplet>
+                           <note xml:id="note-L190F2" dots="1" dur="4" oct="4" pname="f" />
+                           <note xml:id="note-L193F2" dur="8" oct="4" pname="a" />
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-L183F1N1" n="2">
+                        <layer xml:id="layer-L183F1N1" n="1">
+                           <chord xml:id="chord-L184F1" dur="8">
+                              <note xml:id="note-L184F1S1" oct="3" pname="a" />
+                              <note xml:id="note-L184F1S2" oct="4" pname="c" />
+                              <note xml:id="note-L184F1S3" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L185F1" dur="8">
+                              <note xml:id="note-L185F1S1" oct="3" pname="a" />
+                              <note xml:id="note-L185F1S2" oct="4" pname="c" />
+                              <note xml:id="note-L185F1S3" oct="4" pname="e" />
+                           </chord>
+                           <note xml:id="note-L186F1" dur="8" oct="2" pname="a" />
+                           <chord xml:id="chord-L188F1" dur="8">
+                              <note xml:id="note-L188F1S1" oct="3" pname="e" />
+                              <note xml:id="note-L188F1S2" oct="3" pname="f" />
+                              <note xml:id="note-L188F1S3" oct="4" pname="c" />
+                           </chord>
+                           <chord xml:id="chord-L190F1" dur="8">
+                              <note xml:id="note-L190F1S1" oct="2" pname="b" />
+                              <note xml:id="note-L190F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L190F1S3" oct="3" pname="b" />
+                           </chord>
+                           <chord xml:id="chord-L191F1" dur="8">
+                              <note xml:id="note-L191F1S1" oct="2" pname="b" />
+                              <note xml:id="note-L191F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L191F1S3" oct="3" pname="b" />
+                           </chord>
+                           <chord xml:id="chord-L192F1" dur="8">
+                              <note xml:id="note-L192F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L192F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L192F1S3" oct="3" pname="a" />
+                           </chord>
+                           <chord xml:id="chord-L193F1" dur="8">
+                              <note xml:id="note-L193F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L193F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L193F1S3" oct="3" pname="a" />
+                           </chord>
+                        </layer>
+                     </staff>
+                  </measure>
+                  <measure xml:id="measure-L194" n="19">
+                     <staff xml:id="staff-L194F2N1" n="1">
+                        <layer xml:id="layer-L194F2N1" n="1">
+                           <note xml:id="note-L195F2" dots="1" dur="2" oct="4" pname="f" />
+                           <note xml:id="note-L201F2" dur="8" oct="4" pname="b" grace="unacc" />
+                           <note xml:id="note-L202F2" dur="4" oct="4" pname="a" />
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-L194F1N1" n="2">
+                        <layer xml:id="layer-L194F1N1" n="1">
+                           <chord xml:id="chord-L195F1" dur="8">
+                              <note xml:id="note-L195F1S1" oct="2" pname="b" />
+                              <note xml:id="note-L195F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L195F1S3" oct="3" pname="b" />
+                           </chord>
+                           <chord xml:id="chord-L196F1" dur="8">
+                              <note xml:id="note-L196F1S1" oct="2" pname="b" />
+                              <note xml:id="note-L196F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L196F1S3" oct="3" pname="b" />
+                           </chord>
+                           <chord xml:id="chord-L197F1" dur="8">
+                              <note xml:id="note-L197F1S1" oct="2" pname="b" />
+                              <note xml:id="note-L197F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L197F1S3" oct="3" pname="b" />
+                           </chord>
+                           <chord xml:id="chord-L198F1" dur="8">
+                              <note xml:id="note-L198F1S1" oct="2" pname="b" />
+                              <note xml:id="note-L198F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L198F1S3" oct="3" pname="b" />
+                           </chord>
+                           <chord xml:id="chord-L199F1" dur="8">
+                              <note xml:id="note-L199F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L199F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L199F1S3" oct="3" pname="a" />
+                           </chord>
+                           <chord xml:id="chord-L200F1" dur="8">
+                              <note xml:id="note-L200F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L200F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L200F1S3" oct="3" pname="a" />
+                           </chord>
+                           <chord xml:id="chord-L201F1" dur="8">
+                              <note xml:id="note-L201F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L201F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L201F1S3" oct="3" pname="a" />
+                           </chord>
+                           <chord xml:id="chord-L203F1" dur="8">
+                              <note xml:id="note-L203F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L203F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L203F1S3" oct="3" pname="a" />
+                           </chord>
+                        </layer>
+                     </staff>
+                  </measure>
+                  <measure xml:id="measure-L204" n="20">
+                     <staff xml:id="staff-L204F2N1" n="1">
+                        <layer xml:id="layer-L204F2N1" n="1">
+                           <note xml:id="note-L205F2" dots="1" dur="2" oct="4" pname="f" />
+                           <note xml:id="note-L211F2" dots="1" dur="8" oct="4" pname="f" />
+                           <note xml:id="note-L213F2" dur="16" oct="4" pname="e" />
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-L204F1N1" n="2">
+                        <layer xml:id="layer-L204F1N1" n="1">
+                           <chord xml:id="chord-L205F1" dur="8">
+                              <note xml:id="note-L205F1S1" oct="2" pname="b" />
+                              <note xml:id="note-L205F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L205F1S3" oct="3" pname="b" />
+                           </chord>
+                           <chord xml:id="chord-L206F1" dur="8">
+                              <note xml:id="note-L206F1S1" oct="2" pname="b" />
+                              <note xml:id="note-L206F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L206F1S3" oct="3" pname="b" />
+                           </chord>
+                           <chord xml:id="chord-L207F1" dur="8">
+                              <note xml:id="note-L207F1S1" oct="2" pname="b" />
+                              <note xml:id="note-L207F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L207F1S3" oct="3" pname="b" />
+                           </chord>
+                           <chord xml:id="chord-L208F1" dur="8">
+                              <note xml:id="note-L208F1S1" oct="2" pname="b" />
+                              <note xml:id="note-L208F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L208F1S3" oct="3" pname="b" />
+                           </chord>
+                           <chord xml:id="chord-L209F1" dur="8">
+                              <note xml:id="note-L209F1S1" oct="2" pname="b" />
+                              <note xml:id="note-L209F1S2" oct="3" pname="d" accid="s" />
+                              <note xml:id="note-L209F1S3" oct="3" pname="b" />
+                           </chord>
+                           <chord xml:id="chord-L210F1" dur="8">
+                              <note xml:id="note-L210F1S1" oct="2" pname="b" />
+                              <note xml:id="note-L210F1S2" oct="3" pname="d" />
+                              <note xml:id="note-L210F1S3" oct="3" pname="b" />
+                           </chord>
+                           <chord xml:id="chord-L211F1" dur="8">
+                              <note xml:id="note-L211F1S1" oct="2" pname="b" />
+                              <note xml:id="note-L211F1S2" oct="3" pname="d" />
+                              <note xml:id="note-L211F1S3" oct="3" pname="a" />
+                           </chord>
+                           <chord xml:id="chord-L212F1" dur="8">
+                              <note xml:id="note-L212F1S1" oct="2" pname="b" />
+                              <note xml:id="note-L212F1S2" oct="3" pname="d" />
+                              <note xml:id="note-L212F1S3" oct="3" pname="a" />
+                           </chord>
+                        </layer>
+                     </staff>
+                     <tie xml:id="tie-L205F2-L211F2" startid="#note-L205F2" endid="#note-L211F2" />
+                  </measure>
+                  <measure xml:id="measure-L214" n="21">
+                     <staff xml:id="staff-L214F2N1" n="1">
+                        <layer xml:id="layer-L214F2N1" n="1">
+                           <note xml:id="note-L215F2" dots="1" dur="2" oct="4" pname="e" />
+                           <note xml:id="note-L221F2" dur="4" oct="4" pname="f" />
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-L214F1N1" n="2">
+                        <layer xml:id="layer-L214F1N1" n="1">
+                           <chord xml:id="chord-L215F1" dur="8">
+                              <note xml:id="note-L215F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L215F1S2" oct="3" pname="g" />
+                           </chord>
+                           <chord xml:id="chord-L216F1" dur="8">
+                              <note xml:id="note-L216F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L216F1S2" oct="3" pname="g" />
+                           </chord>
+                           <chord xml:id="chord-L217F1" dur="8">
+                              <note xml:id="note-L217F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L217F1S2" oct="3" pname="g" />
+                           </chord>
+                           <chord xml:id="chord-L218F1" dur="8">
+                              <note xml:id="note-L218F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L218F1S2" oct="3" pname="g" />
+                           </chord>
+                           <chord xml:id="chord-L219F1" dur="8">
+                              <note xml:id="note-L219F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L219F1S2" oct="3" pname="b" accid="f" />
+                           </chord>
+                           <chord xml:id="chord-L220F1" dur="8">
+                              <note xml:id="note-L220F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L220F1S2" oct="3" pname="b" />
+                           </chord>
+                           <chord xml:id="chord-L221F1" dur="8">
+                              <note xml:id="note-L221F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L221F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L221F1S3" oct="3" pname="a" />
+                           </chord>
+                           <chord xml:id="chord-L222F1" dur="8">
+                              <note xml:id="note-L222F1S1" oct="3" pname="c" />
+                              <note xml:id="note-L222F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L222F1S3" oct="3" pname="a" />
+                           </chord>
+                        </layer>
+                     </staff>
+                  </measure>
+                  <measure xml:id="measure-L223" n="22">
+                     <staff xml:id="staff-L223F2N1" n="1">
+                        <layer xml:id="layer-L223F2N1" n="1">
+                           <note xml:id="note-L224F2" dots="1" dur="2" oct="4" pname="e" />
+                           <note xml:id="note-L230F2" dur="4" oct="4" pname="f" />
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-L223F1N1" n="2">
+                        <layer xml:id="layer-L223F1N1" n="1">
+                           <chord xml:id="chord-L224F1" dur="8">
+                              <note xml:id="note-L224F1S1" oct="2" pname="b">
+                                 <accid xml:id="accid-L224F1S1" type="caution" accid="n" func="caution" />
+                              </note>
+                              <note xml:id="note-L224F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L224F1S3" oct="3" pname="a" />
+                           </chord>
+                           <chord xml:id="chord-L225F1" dur="8">
+                              <note xml:id="note-L225F1S1" oct="2" pname="b" />
+                              <note xml:id="note-L225F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L225F1S3" oct="3" pname="a" />
+                           </chord>
+                           <chord xml:id="chord-L226F1" dur="8">
+                              <note xml:id="note-L226F1S1" oct="2" pname="b" />
+                              <note xml:id="note-L226F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L226F1S3" oct="3" pname="g" accid="s" />
+                           </chord>
+                           <chord xml:id="chord-L227F1" dur="8">
+                              <note xml:id="note-L227F1S1" oct="2" pname="b" />
+                              <note xml:id="note-L227F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L227F1S3" oct="3" pname="g" />
+                           </chord>
+                           <chord xml:id="chord-L228F1" dur="8">
+                              <note xml:id="note-L228F1S1" oct="2" pname="b" />
+                              <note xml:id="note-L228F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L228F1S3" oct="3" pname="g" accid="n" />
+                           </chord>
+                           <chord xml:id="chord-L229F1" dur="8">
+                              <note xml:id="note-L229F1S1" oct="2" pname="b" />
+                              <note xml:id="note-L229F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L229F1S3" oct="3" pname="g" />
+                           </chord>
+                           <chord xml:id="chord-L230F1" dur="8">
+                              <note xml:id="note-L230F1S1" oct="2" pname="b" />
+                              <note xml:id="note-L230F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L230F1S3" oct="3" pname="g" />
+                           </chord>
+                           <chord xml:id="chord-L231F1" dur="8">
+                              <note xml:id="note-L231F1S1" oct="2" pname="b" />
+                              <note xml:id="note-L231F1S2" oct="3" pname="e" />
+                              <note xml:id="note-L231F1S3" oct="3" pname="g" />
+                           </chord>
+                        </layer>
+                     </staff>
+                  </measure>
+                  <measure xml:id="measure-L232" n="23">
+                     <staff xml:id="staff-L232F2N1" n="1">
+                        <layer xml:id="layer-L232F2N1" n="1">
+                           <note xml:id="note-L233F2" dur="2" oct="4" pname="e" />
+                           <rest xml:id="rest-L234F2" dur="2" />
+                           <clef xml:id="clef-L235F2" shape="F" line="4" />
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-L232F1N1" n="2">
+                        <layer xml:id="layer-L232F1N1" n="1">
+                           <chord xml:id="chord-L233F1" dur="2">
+                              <note xml:id="note-L233F1S1" oct="2" pname="b" accid="f" />
+                              <note xml:id="note-L233F1S2" oct="3" pname="c" />
+                              <note xml:id="note-L233F1S3" oct="3" pname="g" />
+                           </chord>
+                           <rest xml:id="rest-L234F1" dur="2" />
+                        </layer>
+                     </staff>
+                     <fermata xml:id="nmizl73" startid="#rest-L234F2" place="above" />
+                     <fermata xml:id="o14c31dw" startid="#rest-L234F1" place="above" />
+                  </measure>
+                  <measure xml:id="measure-L236" n="24">
+                     <staff xml:id="staff-L236F2N1" n="1">
+                        <layer xml:id="layer-L236F2N1" n="1">
+                           <chord xml:id="chord-L237F2" dur="2">
+                              <note xml:id="note-L237F2S1" oct="3" pname="e" />
+                              <note xml:id="note-L237F2S2" oct="3" pname="f" />
+                              <note xml:id="note-L237F2S3" oct="3" pname="b">
+                                 <accid xml:id="accid-L237F2S3" type="caution" accid="n" func="caution" />
+                              </note>
+                              <note xml:id="note-L237F2S4" oct="4" pname="e" />
+                           </chord>
+                           <chord xml:id="chord-L238F2" dur="2">
+                              <note xml:id="note-L238F2S1" oct="3" pname="d" accid="s" />
+                              <note xml:id="note-L238F2S2" oct="3" pname="f" />
+                              <note xml:id="note-L238F2S3" oct="3" pname="b" />
+                              <note xml:id="note-L238F2S4" oct="3" pname="d" accid="s" />
+                           </chord>
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-L236F1N1" n="2">
+                        <layer xml:id="layer-L236F1N1" n="1">
+                           <chord xml:id="chord-L237F1" dur="2">
+                              <note xml:id="note-L237F1S1" oct="1" pname="b">
+                                 <accid xml:id="accid-L237F1S1" type="caution" accid="n" func="caution" />
+                              </note>
+                              <note xml:id="note-L237F1S2" oct="2" pname="b">
+                                 <accid xml:id="accid-L237F1S2" type="caution" accid="n" func="caution" />
+                              </note>
+                           </chord>
+                           <chord xml:id="chord-L238F1" dur="2">
+                              <note xml:id="note-L238F1S1" oct="1" pname="b">
+                                 <accid xml:id="accid-L238F1S1" type="caution" accid="n" func="caution" />
+                              </note>
+                              <note xml:id="note-L238F1S2" oct="2" pname="f" />
+                              <note xml:id="note-L238F1S3" oct="2" pname="b">
+                                 <accid xml:id="accid-L238F1S3" type="caution" accid="n" func="caution" />
+                              </note>
+                           </chord>
+                        </layer>
+                     </staff>
+                  </measure>
+                  <measure xml:id="measure-L239" right="end" n="25">
+                     <staff xml:id="staff-L239F2N1" n="1">
+                        <layer xml:id="layer-L239F2N1" n="1">
+                           <chord xml:id="chord-L240F2" dur="1">
+                              <note xml:id="note-L240F2S1" oct="3" pname="e" />
+                              <note xml:id="note-L240F2S2" oct="3" pname="g" />
+                              <note xml:id="note-L240F2S3" oct="3" pname="b" />
+                              <note xml:id="note-L240F2S4" oct="4" pname="e" />
+                           </chord>
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-L239F1N1" n="2">
+                        <layer xml:id="layer-L239F1N1" n="1">
+                           <chord xml:id="chord-L240F1" dur="1">
+                              <note xml:id="note-L240F1S1" oct="1" pname="e" />
+                              <note xml:id="note-L240F1S2" oct="2" pname="e" />
+                           </chord>
+                        </layer>
+                     </staff>
+                  </measure>
+               </section>
+            </score>
+         </mdiv>
+      </body>
+   </music>
+</mei>

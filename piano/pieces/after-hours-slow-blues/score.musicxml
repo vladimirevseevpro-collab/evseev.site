@@ -37,7 +37,7 @@
         <voice>1</voice>
         <type>eighth</type>
         <staff>1</staff>
-        <notations>
+        <beam number="1">begin</beam><notations>
           <slur type="start" number="1"/>
         </notations>
       </note>
@@ -47,7 +47,7 @@
         <voice>1</voice>
         <type>eighth</type>
         <staff>1</staff>
-      </note>
+      <beam number="1">end</beam></note>
       <note>
         <pitch><step>G</step><octave>4</octave></pitch>
         <duration>4</duration>
@@ -257,14 +257,14 @@
         <voice>1</voice>
         <type>eighth</type>
         <staff>1</staff>
-      </note>
+      <beam number="1">begin</beam></note>
       <note>
         <pitch><step>B</step><alter>-1</alter><octave>4</octave></pitch>
         <duration>2</duration>
         <voice>1</voice>
         <type>eighth</type>
         <staff>1</staff>
-      </note>
+      <beam number="1">end</beam></note>
       <note>
         <pitch><step>G</step><octave>4</octave></pitch>
         <duration>4</duration>
@@ -1132,7 +1132,7 @@
         <voice>1</voice>
         <type>eighth</type>
         <staff>1</staff>
-        <notations>
+        <beam number="1">begin</beam><notations>
           <slur type="start" number="1"/>
         </notations>
       </note>
@@ -1142,7 +1142,7 @@
         <voice>1</voice>
         <type>eighth</type>
         <staff>1</staff>
-      </note>
+      <beam number="1">end</beam></note>
       <note>
         <pitch><step>G</step><octave>4</octave></pitch>
         <duration>4</duration>
@@ -1352,14 +1352,14 @@
         <voice>1</voice>
         <type>eighth</type>
         <staff>1</staff>
-      </note>
+      <beam number="1">begin</beam></note>
       <note>
         <pitch><step>B</step><alter>-1</alter><octave>4</octave></pitch>
         <duration>2</duration>
         <voice>1</voice>
         <type>eighth</type>
         <staff>1</staff>
-      </note>
+      <beam number="1">end</beam></note>
       <note>
         <pitch><step>G</step><octave>4</octave></pitch>
         <duration>4</duration>
@@ -2227,7 +2227,7 @@
         <voice>1</voice>
         <type>eighth</type>
         <staff>1</staff>
-        <notations>
+        <beam number="1">begin</beam><notations>
           <slur type="start" number="1"/>
         </notations>
       </note>
@@ -2237,7 +2237,7 @@
         <voice>1</voice>
         <type>eighth</type>
         <staff>1</staff>
-      </note>
+      <beam number="1">end</beam></note>
       <note>
         <pitch><step>G</step><octave>5</octave></pitch>
         <duration>4</duration>
@@ -2447,14 +2447,14 @@
         <voice>1</voice>
         <type>eighth</type>
         <staff>1</staff>
-      </note>
+      <beam number="1">begin</beam></note>
       <note>
         <pitch><step>B</step><alter>-1</alter><octave>5</octave></pitch>
         <duration>2</duration>
         <voice>1</voice>
         <type>eighth</type>
         <staff>1</staff>
-      </note>
+      <beam number="1">end</beam></note>
       <note>
         <pitch><step>G</step><octave>5</octave></pitch>
         <duration>4</duration>
