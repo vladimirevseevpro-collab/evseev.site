@@ -251,7 +251,7 @@
       </note>
       <note>
         <chord/>
-        <pitch><step>E</step><alter>-1</alter><octave>5</octave></pitch>
+        <pitch><step>D</step><alter>1</alter><octave>5</octave></pitch>
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
@@ -567,7 +567,7 @@
         <staff>2</staff>
       </note>
       <note>
-        <pitch><step>E</step><alter>-1</alter><octave>2</octave></pitch>
+        <pitch><step>D</step><alter>1</alter><octave>2</octave></pitch>
         <duration>4</duration>
         <voice>2</voice>
         <type>quarter</type>
@@ -758,7 +758,7 @@
       </note>
       <note>
         <chord/>
-        <pitch><step>E</step><alter>-1</alter><octave>5</octave></pitch>
+        <pitch><step>D</step><alter>1</alter><octave>5</octave></pitch>
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
@@ -841,7 +841,7 @@
         </notations>
       </note>
       <note>
-        <pitch><step>E</step><alter>-1</alter><octave>5</octave></pitch>
+        <pitch><step>D</step><alter>1</alter><octave>5</octave></pitch>
         <duration>4</duration>
         <voice>1</voice>
         <type>quarter</type>
@@ -1110,7 +1110,7 @@
       </note>
       <note>
         <chord/>
-        <pitch><step>E</step><alter>-1</alter><octave>5</octave></pitch>
+        <pitch><step>D</step><alter>1</alter><octave>5</octave></pitch>
         <duration>4</duration>
         <voice>1</voice>
         <type>quarter</type>
@@ -1144,7 +1144,7 @@
         <staff>2</staff>
       </note>
       <note>
-        <pitch><step>E</step><alter>-1</alter><octave>2</octave></pitch>
+        <pitch><step>D</step><alter>1</alter><octave>2</octave></pitch>
         <duration>4</duration>
         <voice>2</voice>
         <type>quarter</type>
@@ -1306,7 +1306,7 @@
         <staff>2</staff>
       </note>
       <note>
-        <pitch><step>E</step><alter>-1</alter><octave>2</octave></pitch>
+        <pitch><step>D</step><alter>1</alter><octave>2</octave></pitch>
         <duration>4</duration>
         <voice>2</voice>
         <type>quarter</type>
@@ -1605,7 +1605,7 @@
       </note>
       <note>
         <chord/>
-        <pitch><step>E</step><alter>-1</alter><octave>5</octave></pitch>
+        <pitch><step>D</step><alter>1</alter><octave>5</octave></pitch>
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
@@ -1921,7 +1921,7 @@
         <staff>2</staff>
       </note>
       <note>
-        <pitch><step>E</step><alter>-1</alter><octave>2</octave></pitch>
+        <pitch><step>D</step><alter>1</alter><octave>2</octave></pitch>
         <duration>4</duration>
         <voice>2</voice>
         <type>quarter</type>

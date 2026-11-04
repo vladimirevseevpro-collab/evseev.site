@@ -1057,7 +1057,7 @@
     </measure>
     <measure number="10">
       <note>
-        <pitch><step>A</step><alter>-1</alter><octave>4</octave></pitch>
+        <pitch><step>G</step><alter>1</alter><octave>4</octave></pitch>
         <duration>4</duration>
         <voice>1</voice>
         <type>quarter</type>
@@ -1096,7 +1096,7 @@
         <staff>1</staff>
       </note>
       <note>
-        <pitch><step>A</step><alter>-1</alter><octave>4</octave></pitch>
+        <pitch><step>G</step><alter>1</alter><octave>4</octave></pitch>
         <duration>4</duration>
         <voice>1</voice>
         <type>quarter</type>
@@ -1111,7 +1111,7 @@
         <staff>2</staff>
       </note>
       <note>
-        <pitch><step>A</step><alter>-1</alter><octave>3</octave></pitch>
+        <pitch><step>G</step><alter>1</alter><octave>3</octave></pitch>
         <duration>4</duration>
         <voice>2</voice>
         <type>quarter</type>
@@ -1146,7 +1146,7 @@
         <staff>2</staff>
       </note>
       <note>
-        <pitch><step>A</step><alter>-1</alter><octave>3</octave></pitch>
+        <pitch><step>G</step><alter>1</alter><octave>3</octave></pitch>
         <duration>4</duration>
         <voice>2</voice>
         <type>quarter</type>
@@ -1574,7 +1574,7 @@
         <staff>1</staff>
       </note>
       <note>
-        <pitch><step>A</step><alter>-1</alter><octave>4</octave></pitch>
+        <pitch><step>G</step><alter>1</alter><octave>4</octave></pitch>
         <duration>4</duration>
         <voice>1</voice>
         <type>quarter</type>
@@ -1634,7 +1634,7 @@
         <staff>2</staff>
       </note>
       <note>
-        <pitch><step>A</step><alter>-1</alter><octave>3</octave></pitch>
+        <pitch><step>G</step><alter>1</alter><octave>3</octave></pitch>
         <duration>4</duration>
         <voice>2</voice>
         <type>quarter</type>
