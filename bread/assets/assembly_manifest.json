@@ -1,0 +1,1598 @@
+{
+  "meta": {
+    "name": "DRUCKBROT Nº 1",
+    "patent": "RU 2475028",
+    "inventor": "N. V. Evseev",
+    "units": "mm",
+    "head_closed_z": 144.0,
+    "head_lift_z": 120.0,
+    "gear_z_local": 86.0
+  },
+  "subassemblies": [
+    {
+      "id": "G1",
+      "collection": "I_Base_and_Column",
+      "title": "Узел I · Станина и силовая колонна",
+      "stage": 7
+    },
+    {
+      "id": "G2",
+      "collection": "II_Piston_Compressor_4Bar",
+      "title": "Узел II · Ручной поршневой насос 4 бар",
+      "stage": 5
+    },
+    {
+      "id": "G3",
+      "collection": "III_BreadPan_and_Dough",
+      "title": "Узел III · Хлебная форма и аэрированное тесто",
+      "stage": 1
+    },
+    {
+      "id": "G4",
+      "collection": "IV_PressureHead_and_Bayonet",
+      "title": "Узел IV · Напорная голова и байонетный затвор",
+      "stage": 2
+    },
+    {
+      "id": "G5",
+      "collection": "V_BevelGearbox_1to8_and_Seal",
+      "title": "Узел V · Конический редуктор 1:8 и сальник вала",
+      "stage": 3
+    },
+    {
+      "id": "G6",
+      "collection": "VI_Patent_14Wire_Whisk",
+      "title": "Узел VI · Патентный 14-проволочный венчик",
+      "stage": 4
+    },
+    {
+      "id": "G7",
+      "collection": "VII_Manometer_and_Valves",
+      "title": "Узел VII · Манометр Бурдона и клапанная группа",
+      "stage": 6
+    }
+  ],
+  "parts": [
+    {
+      "id": "101_Base_CastEnamel",
+      "code": "101",
+      "group": "G1",
+      "name": "Литая чугунная станина с рёбрами жёсткости",
+      "matSpec": "Чугун СЧ20 · стеклоэмаль горячего обжига",
+      "matKey": "enamel",
+      "desc": "Цельнолитое основание с внутренней полостью и 3 силовыми рёбрами жёсткости.",
+      "stl": "101_Base_CastEnamel.stl",
+      "pivot_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parentRig": "root",
+      "explode_mm": [
+        0,
+        0,
+        -35
+      ],
+      "stage": 7,
+      "isShell": true
+    },
+    {
+      "id": "102_Base_ChromeTrim",
+      "code": "102",
+      "group": "G1",
+      "name": "Хромированный молдинг основания",
+      "matSpec": "Сталь 1.4301 · зеркальный хром",
+      "matKey": "chrome",
+      "desc": "Окантовка нижней кромки эмалированной станины.",
+      "stl": "102_Base_ChromeTrim.stl",
+      "pivot_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parentRig": "root",
+      "explode_mm": [
+        0,
+        0,
+        -58
+      ],
+      "stage": 7,
+      "isShell": false
+    },
+    {
+      "id": "103_RubberFeet_4x",
+      "code": "103",
+      "group": "G1",
+      "name": "Виброопоры противоскользящие EPDM (4 шт.)",
+      "matSpec": "Эластомер EPDM 65 Shore A · болты М6",
+      "matKey": "rubber",
+      "desc": "Предотвращают смещение аппарата по столешнице при ручной накачке.",
+      "stl": "103_RubberFeet_4x.stl",
+      "pivot_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parentRig": "root",
+      "explode_mm": [
+        0,
+        0,
+        -85
+      ],
+      "stage": 7,
+      "isShell": false
+    },
+    {
+      "id": "104_Pot_CenteringSeat",
+      "code": "104",
+      "group": "G1",
+      "name": "Центрирующий ложемент хлебной формы",
+      "matSpec": "Нержавеющая сталь AISI 304",
+      "matKey": "chrome",
+      "desc": "Выставляет хлебную форму строго соосно со шпинделем венчика.",
+      "stl": "104_Pot_CenteringSeat.stl",
+      "pivot_mm": [
+        0,
+        0,
+        48.0
+      ],
+      "parentRig": "root",
+      "explode_mm": [
+        0,
+        -45,
+        25
+      ],
+      "stage": 7,
+      "isShell": false
+    },
+    {
+      "id": "104b_Seat_AntiRotationDogs",
+      "code": "104b",
+      "group": "G1",
+      "name": "Латунные упоры от проворота формы (3 шт.)",
+      "matSpec": "Латунь Л63 · штифты",
+      "matKey": "brass",
+      "desc": "Фиксируют донышко формы при затягивании байонетного кольца.",
+      "stl": "104b_Seat_AntiRotationDogs.stl",
+      "pivot_mm": [
+        0,
+        0,
+        48.0
+      ],
+      "parentRig": "root",
+      "explode_mm": [
+        0,
+        -58,
+        35
+      ],
+      "stage": 7,
+      "isShell": false
+    },
+    {
+      "id": "105_Badge_BrassFrame",
+      "code": "105",
+      "group": "G1",
+      "name": "Латунная рамка шильдика с заклёпками",
+      "matSpec": "Латунь Л63 · заклёпки Ø3 мм",
+      "matKey": "brass",
+      "desc": "Несущая рамка паспортного шильдика на лицевой грани станины.",
+      "stl": "105_Badge_BrassFrame.stl",
+      "pivot_mm": [
+        0,
+        -100.5,
+        27.0
+      ],
+      "parentRig": "root",
+      "explode_mm": [
+        0,
+        -65,
+        0
+      ],
+      "stage": 7,
+      "isShell": false
+    },
+    {
+      "id": "105a_Badge_EtchedPlate",
+      "code": "105a",
+      "group": "G1",
+      "name": "Травлёный шильдик DRUCKBROT Nº 1",
+      "matSpec": "Латунь / горячая эмаль · гравировка",
+      "matKey": "badge",
+      "desc": "Серийная табличка с номером патента РФ № 2475028 Н. В. Евсеева.",
+      "stl": "105a_Badge_EtchedPlate.stl",
+      "pivot_mm": [
+        0,
+        -102.2,
+        27.0
+      ],
+      "parentRig": "root",
+      "explode_mm": [
+        0,
+        -82,
+        0
+      ],
+      "stage": 7,
+      "isShell": false
+    },
+    {
+      "id": "106_Column_Enamel",
+      "code": "106",
+      "group": "G1",
+      "name": "Вертикальная силовая колонна",
+      "matSpec": "Чугун СЧ20 · фрезерованный паз",
+      "matKey": "enamel",
+      "desc": "Воспринимает отрывное усилие 4 бар и несёт реечный механизм подъёма головы.",
+      "stl": "106_Column_Enamel.stl",
+      "pivot_mm": [
+        0,
+        116.0,
+        0
+      ],
+      "parentRig": "root",
+      "explode_mm": [
+        0,
+        95,
+        0
+      ],
+      "stage": 7,
+      "isShell": true
+    },
+    {
+      "id": "107_GuideShafts_12h6",
+      "code": "107",
+      "group": "G1",
+      "name": "Прецизионные направляющие валы Ø12h6 (2 шт.)",
+      "matSpec": "Сталь ШХ15 ТВЧ · твёрдый хром",
+      "matKey": "chrome",
+      "desc": "Обеспечивают строгую соосность напорного колокола с хлебной формой.",
+      "stl": "107_GuideShafts_12h6.stl",
+      "pivot_mm": [
+        0,
+        84.0,
+        270.0
+      ],
+      "parentRig": "root",
+      "explode_mm": [
+        0,
+        55,
+        45
+      ],
+      "stage": 7,
+      "isShell": false
+    },
+    {
+      "id": "108_Column_ToothedRack",
+      "code": "108",
+      "group": "G1",
+      "name": "Зубчатая рейка подъёма головы (36 зубьев)",
+      "matSpec": "Латунь ЛС59-1 · модуль m = 1,5",
+      "matKey": "brass",
+      "desc": "Зацепляется с шестернёй каретки для точного подъёма и опускания головы.",
+      "stl": "108_Column_ToothedRack.stl",
+      "pivot_mm": [
+        0,
+        86.0,
+        270.0
+      ],
+      "parentRig": "root",
+      "explode_mm": [
+        0,
+        72,
+        20
+      ],
+      "stage": 7,
+      "isShell": false
+    },
+    {
+      "id": "110_Column_LockThumbscrew",
+      "code": "110",
+      "group": "G1",
+      "name": "Винтовой стопор фиксации высоты М10",
+      "matSpec": "Латунь с накаткой · винт М10",
+      "matKey": "brass_knurl",
+      "desc": "Блокирует каретку в верхнем положении при установке формы.",
+      "stl": "110_Column_LockThumbscrew.stl",
+      "pivot_mm": [
+        39.0,
+        116.0,
+        240.0
+      ],
+      "parentRig": "root",
+      "explode_mm": [
+        65,
+        20,
+        0
+      ],
+      "stage": 7,
+      "isShell": false
+    },
+    {
+      "id": "111_Column_TopCap",
+      "code": "111",
+      "group": "G1",
+      "name": "Верхняя хромированная крышка колонны",
+      "matSpec": "Нержавеющая сталь 1.4301",
+      "matKey": "chrome",
+      "desc": "Заглушка верхней шахты направляющих валов.",
+      "stl": "111_Column_TopCap.stl",
+      "pivot_mm": [
+        0,
+        116.0,
+        413.0
+      ],
+      "parentRig": "root",
+      "explode_mm": [
+        0,
+        45,
+        75
+      ],
+      "stage": 7,
+      "isShell": false
+    },
+    {
+      "id": "201_Pump_BaseFlange",
+      "code": "201",
+      "group": "G2",
+      "name": "Опорный фланец насоса (4 болта М5 + штуцер)",
+      "matSpec": "Сталь AISI 304 · болты М5",
+      "matKey": "chrome",
+      "desc": "Герметичное дно цилиндра с нижним выпускным каналом высокого давления.",
+      "stl": "201_Pump_BaseFlange.stl",
+      "pivot_mm": [
+        -124.0,
+        26.0,
+        48.0
+      ],
+      "parentRig": "root",
+      "explode_mm": [
+        -45,
+        0,
+        0
+      ],
+      "stage": 5,
+      "isShell": false
+    },
+    {
+      "id": "202_Pump_CylinderSleeve",
+      "code": "202",
+      "group": "G2",
+      "name": "Оребрённая гильза цилиндра Ø32×110 мм",
+      "matSpec": "Сталь AISI 304 · хонингование Ra 0,2",
+      "matKey": "chrome",
+      "desc": "Труба рабочего цилиндра Ø32 мм с рёбрами отвода тепла сжатого воздуха.",
+      "stl": "202_Pump_CylinderSleeve.stl",
+      "pivot_mm": [
+        -124.0,
+        26.0,
+        56.0
+      ],
+      "parentRig": "root",
+      "explode_mm": [
+        -80,
+        -25,
+        45
+      ],
+      "stage": 5,
+      "isShell": true
+    },
+    {
+      "id": "203_Pump_PistonBrass",
+      "code": "203",
+      "group": "G2",
+      "name": "Латунный поршень Ø31,6 мм",
+      "matSpec": "Латунь Л63 · допуск h7",
+      "matKey": "brass",
+      "desc": "Сжимает воздух при движении вниз, нагнетая его через штуцер в напорный купол.",
+      "stl": "203_Pump_PistonBrass.stl",
+      "pivot_mm": [
+        -124.0,
+        26.0,
+        138.0
+      ],
+      "parentRig": "piston_rig",
+      "explode_mm": [
+        -120,
+        0,
+        62
+      ],
+      "stage": 5,
+      "isShell": false
+    },
+    {
+      "id": "203b_Piston_CupSeal_FKM",
+      "code": "203b",
+      "group": "G2",
+      "name": "Манжета поршня Viton + направляющее кольцо",
+      "matSpec": "Фторкаучук FKM 75 Shore A",
+      "matKey": "rubber",
+      "desc": "Уплотняет ход нагнетания до 4,5 бар и работает как манжетный впуск при ходе вверх.",
+      "stl": "203b_Piston_CupSeal_FKM.stl",
+      "pivot_mm": [
+        -124.0,
+        26.0,
+        138.0
+      ],
+      "parentRig": "piston_rig",
+      "explode_mm": [
+        -140,
+        0,
+        62
+      ],
+      "stage": 5,
+      "isShell": false
+    },
+    {
+      "id": "204_Pump_ReturnSpring",
+      "code": "204",
+      "group": "G2",
+      "name": "Возвратная витая пружина поршня (7 витков)",
+      "matSpec": "Пружинная сталь 65Г",
+      "matKey": "wire",
+      "desc": "Демпфирует нижнюю мёртвую точку и помогает возврату рукояти.",
+      "stl": "204_Pump_ReturnSpring.stl",
+      "pivot_mm": [
+        -124.0,
+        26.0,
+        56.5
+      ],
+      "parentRig": "root",
+      "explode_mm": [
+        -120,
+        35,
+        25
+      ],
+      "stage": 5,
+      "isShell": false
+    },
+    {
+      "id": "205_Pump_PistonRod_8mm",
+      "code": "205",
+      "group": "G2",
+      "name": "Шток поршня Ø8 мм с проушиной",
+      "matSpec": "Сталь 40Х · твёрдый хром",
+      "matKey": "chrome",
+      "desc": "Передаёт усилие кулисного рычага строго вертикально на поршень.",
+      "stl": "205_Pump_PistonRod_8mm.stl",
+      "pivot_mm": [
+        -124.0,
+        26.0,
+        144.0
+      ],
+      "parentRig": "piston_rig",
+      "explode_mm": [
+        -120,
+        0,
+        98
+      ],
+      "stage": 5,
+      "isShell": false
+    },
+    {
+      "id": "206_Pump_KnurledGlandNut",
+      "code": "206",
+      "group": "G2",
+      "name": "Накидная крышка-сальник насоса М36×1,5",
+      "matSpec": "Латунь Л63 с накаткой",
+      "matKey": "brass_knurl",
+      "desc": "Направляет шток Ø8 мм и закрывает верхний торец цилиндра.",
+      "stl": "206_Pump_KnurledGlandNut.stl",
+      "pivot_mm": [
+        -124.0,
+        26.0,
+        170.0
+      ],
+      "parentRig": "root",
+      "explode_mm": [
+        -80,
+        0,
+        118
+      ],
+      "stage": 5,
+      "isShell": false
+    },
+    {
+      "id": "207_Pump_FulcrumPost",
+      "code": "207",
+      "group": "G2",
+      "name": "Опорный пилон кулисы с вилкой шарнира",
+      "matSpec": "Сталь AISI 304 · бронзовая вилка",
+      "matKey": "chrome",
+      "desc": "Несущая стойка оси качания рычага накачки.",
+      "stl": "207_Pump_FulcrumPost.stl",
+      "pivot_mm": [
+        -124.0,
+        71.0,
+        48.0
+      ],
+      "parentRig": "root",
+      "explode_mm": [
+        -50,
+        65,
+        30
+      ],
+      "stage": 5,
+      "isShell": false
+    },
+    {
+      "id": "208a_Pump_LeverArm",
+      "code": "208",
+      "group": "G2",
+      "name": "Кулисный рычаг накачки (плечо 3,2:1)",
+      "matSpec": "Кованая сталь · хром",
+      "matKey": "chrome",
+      "desc": "Позволяет легко накачать 4 бар одной рукой.",
+      "stl": "208a_Pump_LeverArm.stl",
+      "pivot_mm": [
+        -124.0,
+        71.0,
+        190.0
+      ],
+      "parentRig": "lever_rig",
+      "explode_mm": [
+        -85,
+        -55,
+        135
+      ],
+      "stage": 5,
+      "isShell": false
+    },
+    {
+      "id": "208b_Pump_BakeliteHandle",
+      "code": "208b",
+      "group": "G2",
+      "name": "Точёная бакелитовая рукоятка насоса",
+      "matSpec": "Фенопласт / орех · латунная втулка",
+      "matKey": "bakelite",
+      "desc": "Эргономичная рукоять ручного рычага компрессора.",
+      "stl": "208b_Pump_BakeliteHandle.stl",
+      "pivot_mm": [
+        -124.0,
+        71.0,
+        190.0
+      ],
+      "parentRig": "lever_rig",
+      "explode_mm": [
+        -115,
+        -55,
+        135
+      ],
+      "stage": 5,
+      "isShell": false
+    },
+    {
+      "id": "209_Pump_HighPressureHose",
+      "code": "209",
+      "group": "G2",
+      "name": "Напорный рукав ВД G1/4\" напрямую в купол",
+      "matSpec": "Армированный EPDM · штуцер SW17",
+      "matKey": "rubber",
+      "desc": "Подаёт сжатый воздух от нижнего штуцера насоса прямо во впускной обратный клапан напорного колокола.",
+      "stl": "209_Pump_HighPressureHose.stl",
+      "pivot_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parentRig": "root",
+      "explode_mm": [
+        -65,
+        -45,
+        -20
+      ],
+      "stage": 5,
+      "isShell": false
+    },
+    {
+      "id": "301_BreadPan_AISI304",
+      "code": "301",
+      "group": "G3",
+      "name": "Хлебная форма-автоклав Ø110×90 мм",
+      "matSpec": "Пищевая сталь AISI 304 · стенка 2,2 мм",
+      "matKey": "steel",
+      "desc": "Выдерживает 4 бар при взбивании и сразу отправляется в духовку 210 °C.",
+      "stl": "301_BreadPan_AISI304.stl",
+      "pivot_mm": [
+        0,
+        0,
+        52.0
+      ],
+      "parentRig": "pot_rig",
+      "explode_mm": [
+        0,
+        -145,
+        -15
+      ],
+      "stage": 1,
+      "isShell": true
+    },
+    {
+      "id": "302_BreadPan_SideHandles",
+      "code": "302",
+      "group": "G3",
+      "name": "Боковые скобы-ручки формы (2 шт.)",
+      "matSpec": "Пруток AISI 304 Ø6 мм",
+      "matKey": "steel",
+      "desc": "Для извлечения горячей формы из духовки.",
+      "stl": "302_BreadPan_SideHandles.stl",
+      "pivot_mm": [
+        0,
+        0,
+        52.0
+      ],
+      "parentRig": "pot_rig",
+      "explode_mm": [
+        0,
+        -175,
+        -15
+      ],
+      "stage": 1,
+      "isShell": false
+    },
+    {
+      "id": "303_BreadPan_BayonetLugs",
+      "code": "303",
+      "group": "G3",
+      "name": "Силовые шлицы байонетного венца (3 шт.)",
+      "matSpec": "Фрезерованная сталь AISI 304",
+      "matKey": "steel",
+      "desc": "Воспринимают отрывное усилие 380 кгс в зацеплении с кольцом-затвором.",
+      "stl": "303_BreadPan_BayonetLugs.stl",
+      "pivot_mm": [
+        0,
+        0,
+        52.0
+      ],
+      "parentRig": "pot_rig",
+      "explode_mm": [
+        0,
+        -165,
+        15
+      ],
+      "stage": 1,
+      "isShell": false
+    },
+    {
+      "id": "304_Aerated_Dough_350g",
+      "code": "304",
+      "group": "G3",
+      "name": "Аэрированное бездрожжевое тесто (350 г)",
+      "matSpec": "Мука + вода + воздух 4 бар",
+      "matKey": "dough",
+      "desc": "После сброса давления микропузырьки воздуха расширяются, удваивая объём теста.",
+      "stl": "304_Aerated_Dough_350g.stl",
+      "pivot_mm": [
+        0,
+        0,
+        56.5
+      ],
+      "parentRig": "pot_rig",
+      "explode_mm": [
+        0,
+        -145,
+        45
+      ],
+      "stage": 1,
+      "isShell": false
+    },
+    {
+      "id": "305_Baked_Artisan_Loaf",
+      "code": "305",
+      "group": "G3",
+      "name": "Готовый выпеченный каравай (без дрожжей)",
+      "matSpec": "Выпечка 35 мин · 210 °C",
+      "matKey": "crust",
+      "desc": "Финальный результат после выпечки формы в духовке.",
+      "stl": "305_Baked_Artisan_Loaf.stl",
+      "pivot_mm": [
+        235.0,
+        -58.0,
+        0.0
+      ],
+      "parentRig": "root",
+      "explode_mm": [
+        65,
+        -25,
+        0
+      ],
+      "stage": 1,
+      "isShell": false
+    },
+    {
+      "id": "109_Head_SlideCarriage",
+      "code": "109",
+      "group": "G1",
+      "name": "Каретка подъёма с шестернёй Z=14",
+      "matSpec": "Бронза БрОФ10-1 · сталь 40Х",
+      "matKey": "brass",
+      "desc": "Скользит по валам колонны и несёт напорную голову.",
+      "stl": "109_Head_SlideCarriage.stl",
+      "pivot_mm": [
+        0,
+        80.0,
+        62.0
+      ],
+      "parentRig": "head_rig",
+      "explode_mm": [
+        0,
+        55,
+        25
+      ],
+      "stage": 7,
+      "isShell": false
+    },
+    {
+      "id": "401_Head_Housing_Enamel",
+      "code": "401",
+      "group": "G4",
+      "name": "Верхний литой кожух редукторного отсека",
+      "matSpec": "Чугунное литьё · эмаль горячего обжига",
+      "matKey": "enamel",
+      "desc": "Полый силовой корпус редуктора 1:8 с фланцами манометра и люка.",
+      "stl": "401_Head_Housing_Enamel.stl",
+      "pivot_mm": [
+        0,
+        0,
+        0
+      ],
+      "parentRig": "head_rig",
+      "explode_mm": [
+        0,
+        0,
+        108
+      ],
+      "stage": 2,
+      "isShell": true
+    },
+    {
+      "id": "401b_Head_ChromeBelt",
+      "code": "401b",
+      "group": "G4",
+      "name": "Хромированный поясной молдинг головы",
+      "matSpec": "Нержавеющая сталь 1.4301",
+      "matKey": "chrome",
+      "desc": "Декоративный пояс корпуса редуктора.",
+      "stl": "401b_Head_ChromeBelt.stl",
+      "pivot_mm": [
+        0,
+        0,
+        0
+      ],
+      "parentRig": "head_rig",
+      "explode_mm": [
+        0,
+        0,
+        126
+      ],
+      "stage": 2,
+      "isShell": false
+    },
+    {
+      "id": "402_Head_PressureBell_4Bar",
+      "code": "402",
+      "group": "G4",
+      "name": "Силовой напорный колокол (свод 4 бар)",
+      "matSpec": "Кованая сталь / чугун · стенка 5 мм",
+      "matKey": "enamel",
+      "desc": "Замыкает герметичный купол высокого давления над хлебной формой.",
+      "stl": "402_Head_PressureBell_4Bar.stl",
+      "pivot_mm": [
+        0,
+        0,
+        0
+      ],
+      "parentRig": "head_rig",
+      "explode_mm": [
+        0,
+        0,
+        52
+      ],
+      "stage": 2,
+      "isShell": true
+    },
+    {
+      "id": "403_Bell_MainGasket_FKM",
+      "code": "403",
+      "group": "G4",
+      "name": "Главное уплотнительное кольцо Ø116×3,5 мм",
+      "matSpec": "Пищевой фторкаучук FKM / силикон",
+      "matKey": "rubber",
+      "desc": "Герметизирует стык хлебной формы и напорного колокола при 4 бар.",
+      "stl": "403_Bell_MainGasket_FKM.stl",
+      "pivot_mm": [
+        0,
+        0,
+        0.5
+      ],
+      "parentRig": "head_rig",
+      "explode_mm": [
+        0,
+        0,
+        -25
+      ],
+      "stage": 4,
+      "isShell": false
+    },
+    {
+      "id": "404_Head_DisplacementDome",
+      "code": "404",
+      "group": "G4",
+      "name": "Купол-вытеснитель мёртвого объёма (6 винтов)",
+      "matSpec": "Сталь AISI 304 · штамповка",
+      "matKey": "steel",
+      "desc": "Сокращает паразитный воздушный зазор над тестом до ≈ 0,30 л.",
+      "stl": "404_Head_DisplacementDome.stl",
+      "pivot_mm": [
+        0,
+        0,
+        0
+      ],
+      "parentRig": "head_rig",
+      "explode_mm": [
+        0,
+        0,
+        -52
+      ],
+      "stage": 4,
+      "isShell": true
+    },
+    {
+      "id": "405_Bayonet_LockingCollar",
+      "code": "405",
+      "group": "G4",
+      "name": "Поворотное байонетное кольцо (6 клиньев)",
+      "matSpec": "Сталь 40Х13 · хром",
+      "matKey": "chrome",
+      "desc": "Поворотом на 30° надёжно запирает хлебную форму под напорным колоколом.",
+      "stl": "405_Bayonet_LockingCollar.stl",
+      "pivot_mm": [
+        0,
+        0,
+        0
+      ],
+      "parentRig": "collar_rig",
+      "explode_mm": [
+        0,
+        -90,
+        -10
+      ],
+      "stage": 2,
+      "isShell": false
+    },
+    {
+      "id": "405b_Bayonet_BakeliteKnobs",
+      "code": "405b",
+      "group": "G4",
+      "name": "Бакелитовые рукояти байонета (2 шт.)",
+      "matSpec": "Фенопласт · латунные втулки",
+      "matKey": "bakelite",
+      "desc": "Термоизолированные сферические рукоятки затвора.",
+      "stl": "405b_Bayonet_BakeliteKnobs.stl",
+      "pivot_mm": [
+        0,
+        0,
+        0
+      ],
+      "parentRig": "collar_rig",
+      "explode_mm": [
+        0,
+        -110,
+        -10
+      ],
+      "stage": 2,
+      "isShell": false
+    },
+    {
+      "id": "501_BevelCrownGear_Z48",
+      "code": "501",
+      "group": "G5",
+      "name": "Ведущее зубчатое колесо Z=48 (мультипликатор 1:8)",
+      "matSpec": "Бронза БрАЖ9-4 · m = 1,4 мм",
+      "matKey": "brass",
+      "desc": "Главная шестерня мультипликатора 1:8, разгоняющая венчик до 800 об/мин.",
+      "stl": "501_BevelCrownGear_Z48.stl",
+      "pivot_mm": [
+        -7.0,
+        0.0,
+        86.0
+      ],
+      "parentRig": "crank_gear_rig",
+      "explode_mm": [
+        -48,
+        0,
+        60
+      ],
+      "stage": 3,
+      "isShell": false
+    },
+    {
+      "id": "502_HorizontalDriveShaft",
+      "code": "502",
+      "group": "G5",
+      "name": "Горизонтальный приводной вал Ø8 мм",
+      "matSpec": "Сталь 40Х · шлифовка",
+      "matKey": "chrome",
+      "desc": "Передаёт момент с рукояти кривошипа на ведущее колесо Z=48.",
+      "stl": "502_HorizontalDriveShaft.stl",
+      "pivot_mm": [
+        25.0,
+        0.0,
+        86.0
+      ],
+      "parentRig": "head_rig",
+      "explode_mm": [
+        48,
+        0,
+        60
+      ],
+      "stage": 3,
+      "isShell": false
+    },
+    {
+      "id": "502b_Bearings_6001_Outer",
+      "code": "502b",
+      "group": "G5",
+      "name": "Обоймы подшипников 6001-2RS (2 шт.)",
+      "matSpec": "Сталь ШХ15",
+      "matKey": "steel",
+      "desc": "Радиально-упорные опоры приводного вала.",
+      "stl": "502b_Bearings_6001_Outer.stl",
+      "pivot_mm": [
+        25.0,
+        0.0,
+        86.0
+      ],
+      "parentRig": "head_rig",
+      "explode_mm": [
+        68,
+        0,
+        60
+      ],
+      "stage": 3,
+      "isShell": false
+    },
+    {
+      "id": "502c_Bearings_6001_2RS_Seals",
+      "code": "502c",
+      "group": "G5",
+      "name": "Пыльники 2RS подшипников 6001 (2 шт.)",
+      "matSpec": "Бутадиен-нитрильный каучук NBR",
+      "matKey": "red",
+      "desc": "Двухстороннее контактное уплотнение смазки подшипников.",
+      "stl": "502c_Bearings_6001_2RS_Seals.stl",
+      "pivot_mm": [
+        25.0,
+        0.0,
+        86.0
+      ],
+      "parentRig": "head_rig",
+      "explode_mm": [
+        80,
+        0,
+        60
+      ],
+      "stage": 3,
+      "isShell": false
+    },
+    {
+      "id": "503_Gearbox_InspectionCover",
+      "code": "503",
+      "group": "G5",
+      "name": "Боковая сервисная крышка редуктора",
+      "matSpec": "Чугун СЧ20 · хром",
+      "matKey": "enamel",
+      "desc": "Закрывает картер конической пары; снимается для ревизии и смазки.",
+      "stl": "503_Gearbox_InspectionCover.stl",
+      "pivot_mm": [
+        60.0,
+        0.0,
+        86.0
+      ],
+      "parentRig": "head_rig",
+      "explode_mm": [
+        96,
+        0,
+        40
+      ],
+      "stage": 3,
+      "isShell": true
+    },
+    {
+      "id": "503b_GearCover_ORing",
+      "code": "503b",
+      "group": "G5",
+      "name": "Уплотнительное кольцо крышки Ø50×2 мм",
+      "matSpec": "Эластомер NBR 70 Shore A",
+      "matKey": "rubber",
+      "desc": "Уплотняет стык сервисной крышки картера редуктора.",
+      "stl": "503b_GearCover_ORing.stl",
+      "pivot_mm": [
+        55.0,
+        0.0,
+        86.0
+      ],
+      "parentRig": "head_rig",
+      "explode_mm": [
+        82,
+        0,
+        40
+      ],
+      "stage": 3,
+      "isShell": false
+    },
+    {
+      "id": "503c_GearCover_HexBolts_M4",
+      "code": "503c",
+      "group": "G5",
+      "name": "Болты крепления крышки М4 (6 шт.)",
+      "matSpec": "Латунь Л63 · шестигранник",
+      "matKey": "brass",
+      "desc": "Крепят крышку картера к корпусу головы.",
+      "stl": "503c_GearCover_HexBolts_M4.stl",
+      "pivot_mm": [
+        60.0,
+        0.0,
+        86.0
+      ],
+      "parentRig": "head_rig",
+      "explode_mm": [
+        112,
+        0,
+        40
+      ],
+      "stage": 3,
+      "isShell": false
+    },
+    {
+      "id": "504a_HandCrank_Arm",
+      "code": "504",
+      "group": "G5",
+      "name": "Кривошип приводной рукоятки R=55 мм",
+      "matSpec": "Кованая сталь · хром",
+      "matKey": "chrome",
+      "desc": "Эргономичный рычаг привода конического мультипликатора 1:8.",
+      "stl": "504a_HandCrank_Arm.stl",
+      "pivot_mm": [
+        70.0,
+        0.0,
+        86.0
+      ],
+      "parentRig": "crank_rig",
+      "explode_mm": [
+        142,
+        0,
+        25
+      ],
+      "stage": 3,
+      "isShell": false
+    },
+    {
+      "id": "504b_HandCrank_BakeliteGrip",
+      "code": "504b",
+      "group": "G5",
+      "name": "Точёное веретено рукоятки",
+      "matSpec": "Фенопласт / орех · латунь",
+      "matKey": "bakelite",
+      "desc": "Свободно вращающаяся ручка кривошипа.",
+      "stl": "504b_HandCrank_BakeliteGrip.stl",
+      "pivot_mm": [
+        70.0,
+        0.0,
+        86.0
+      ],
+      "parentRig": "crank_rig",
+      "explode_mm": [
+        158,
+        0,
+        25
+      ],
+      "stage": 3,
+      "isShell": false
+    },
+    {
+      "id": "506a_RotarySeal_FKM",
+      "code": "506a",
+      "group": "G5",
+      "name": "Манжета высокого давления вала Viton",
+      "matSpec": "Фторкаучук FKM",
+      "matKey": "rubber",
+      "desc": "Держит 4 бар на вращающемся со скоростью 800 об/мин шпинделе.",
+      "stl": "506a_RotarySeal_FKM.stl",
+      "pivot_mm": [
+        0,
+        0,
+        47.5
+      ],
+      "parentRig": "head_rig",
+      "explode_mm": [
+        0,
+        -55,
+        -18
+      ],
+      "stage": 4,
+      "isShell": false
+    },
+    {
+      "id": "506b_Shaft_GuideBushing",
+      "code": "506b",
+      "group": "G5",
+      "name": "Направляющая бронзовая втулка шпинделя",
+      "matSpec": "Бронза БрОФ10-1 с накаткой",
+      "matKey": "brass_knurl",
+      "desc": "Воспринимает радиальную нагрузку вала венчика.",
+      "stl": "506b_Shaft_GuideBushing.stl",
+      "pivot_mm": [
+        0,
+        0,
+        52.5
+      ],
+      "parentRig": "head_rig",
+      "explode_mm": [
+        0,
+        -55,
+        -2
+      ],
+      "stage": 4,
+      "isShell": false
+    },
+    {
+      "id": "506c_Shaft_HexPackingNut",
+      "code": "506c",
+      "group": "G5",
+      "name": "Нажимная сальниковая гайка SW14",
+      "matSpec": "Сталь 1.4301 · ключ 14",
+      "matKey": "chrome",
+      "desc": "Регулирует натяг фторкаучуковой манжеты вала.",
+      "stl": "506c_Shaft_HexPackingNut.stl",
+      "pivot_mm": [
+        0,
+        0,
+        58.5
+      ],
+      "parentRig": "head_rig",
+      "explode_mm": [
+        0,
+        -55,
+        16
+      ],
+      "stage": 4,
+      "isShell": false
+    },
+    {
+      "id": "505_BevelPinion_Z6",
+      "code": "505",
+      "group": "G5",
+      "name": "Ведомая шестерня Z=6 (передача 1:8)",
+      "matSpec": "Закалённая бронза / сталь 40Х13",
+      "matKey": "brass",
+      "desc": "Восьмикратный ускоритель вращения на шпинделе венчика.",
+      "stl": "505_BevelPinion_Z6.stl",
+      "pivot_mm": [
+        0.0,
+        0.0,
+        52.0
+      ],
+      "parentRig": "whisk_rig",
+      "explode_mm": [
+        0,
+        45,
+        42
+      ],
+      "stage": 3,
+      "isShell": false
+    },
+    {
+      "id": "601_Whisk_Spindle_7mm",
+      "code": "601",
+      "group": "G6",
+      "name": "Вертикальный шпиндель венчика Ø7 мм",
+      "matSpec": "Сталь 1.4301 · шлифовка h6",
+      "matKey": "chrome",
+      "desc": "Проходит через сальник FKM и купол-вытеснитель в камеру теста.",
+      "stl": "601_Whisk_Spindle_7mm.stl",
+      "pivot_mm": [
+        0,
+        0,
+        12.0
+      ],
+      "parentRig": "whisk_rig",
+      "explode_mm": [
+        0,
+        35,
+        -35
+      ],
+      "stage": 4,
+      "isShell": false
+    },
+    {
+      "id": "602_Whisk_ColletFerrule",
+      "code": "602",
+      "group": "G6",
+      "name": "Цанговая обжимная втулка венчика",
+      "matSpec": "Пищевая сталь AISI 304",
+      "matKey": "chrome",
+      "desc": "Надёжно обжимает 14 пружинных спиц венчика.",
+      "stl": "602_Whisk_ColletFerrule.stl",
+      "pivot_mm": [
+        0,
+        0,
+        0.0
+      ],
+      "parentRig": "whisk_rig",
+      "explode_mm": [
+        0,
+        -40,
+        -62
+      ],
+      "stage": 4,
+      "isShell": false
+    },
+    {
+      "id": "603_Patent_14Wire_Whisk",
+      "code": "603",
+      "group": "G6",
+      "name": "Упругий 14-проволочный венчик (Патент № 2475028)",
+      "matSpec": "Пружинная сталь 12Х18Н10Т Ø1,6 мм",
+      "matKey": "wire",
+      "desc": "14 упругих проволочных дуг при 800 об/мин диспергируют сжатый воздух в микропузырьки теста.",
+      "stl": "603_Patent_14Wire_Whisk.stl",
+      "pivot_mm": [
+        0,
+        0,
+        0.0
+      ],
+      "parentRig": "whisk_rig",
+      "explode_mm": [
+        0,
+        -65,
+        -92
+      ],
+      "stage": 4,
+      "isShell": false
+    },
+    {
+      "id": "701_InletCheckValve_Copper",
+      "code": "701",
+      "group": "G7",
+      "name": "Впускной обратный клапан купола (шарик + медь)",
+      "matSpec": "Латунь Л63 · медь М1 Ø5 мм",
+      "matKey": "copper",
+      "desc": "Врезан в левый борт колокола: пропускает воздух от насоса в камеру и запирает 4 бар.",
+      "stl": "701_InletCheckValve_Copper.stl",
+      "pivot_mm": [
+        -64.0,
+        0.0,
+        28.0
+      ],
+      "parentRig": "head_rig",
+      "explode_mm": [
+        -68,
+        0,
+        35
+      ],
+      "stage": 6,
+      "isShell": false
+    },
+    {
+      "id": "702a_Manometer_ChromeCase",
+      "code": "702a",
+      "group": "G7",
+      "name": "Корпус манометра Ø61 мм",
+      "matSpec": "Нержавеющая сталь 1.4301",
+      "matKey": "chrome",
+      "desc": "Защитный корпус манометра на передней стенке головы.",
+      "stl": "702a_Manometer_ChromeCase.stl",
+      "pivot_mm": [
+        0,
+        -58.0,
+        86.0
+      ],
+      "parentRig": "head_rig",
+      "explode_mm": [
+        0,
+        -75,
+        45
+      ],
+      "stage": 6,
+      "isShell": true
+    },
+    {
+      "id": "702b_Manometer_BourdonCTube",
+      "code": "702b",
+      "group": "G7",
+      "name": "Упругая С-образная трубка Бурдона",
+      "matSpec": "Тянутая латунь Л63",
+      "matKey": "brass",
+      "desc": "Разгибается под давлением 4 бар и вращает стрелочный механизм манометра.",
+      "stl": "702b_Manometer_BourdonCTube.stl",
+      "pivot_mm": [
+        0,
+        -70.0,
+        86.0
+      ],
+      "parentRig": "head_rig",
+      "explode_mm": [
+        0,
+        -102,
+        45
+      ],
+      "stage": 6,
+      "isShell": false
+    },
+    {
+      "id": "702c_Manometer_PrintedDial",
+      "code": "702c",
+      "group": "G7",
+      "name": "Циферблат манометра 0–8 бар (зел. 3–5 бар)",
+      "matSpec": "Эмалированный алюминий · печать",
+      "matKey": "dial",
+      "desc": "Шкала 0–8 бар: 0 бар внизу слева, рабочая зона 3–5 бар вверху по центру.",
+      "stl": "702c_Manometer_PrintedDial.stl",
+      "pivot_mm": [
+        0,
+        -79.0,
+        86.0
+      ],
+      "parentRig": "head_rig",
+      "explode_mm": [
+        0,
+        -128,
+        45
+      ],
+      "stage": 6,
+      "isShell": false
+    },
+    {
+      "id": "702d_Manometer_PointerNeedle",
+      "code": "702d",
+      "group": "G7",
+      "name": "Стрелка манометра с осью",
+      "matSpec": "Воронёная сталь · латунный колпачок",
+      "matKey": "needle",
+      "desc": "Стартует на 0 бар (снизу слева) и поворачивается по часовой стрелке до 4 бар.",
+      "stl": "702d_Manometer_PointerNeedle.stl",
+      "pivot_mm": [
+        0,
+        -80.6,
+        86.0
+      ],
+      "parentRig": "needle_rig",
+      "explode_mm": [
+        0,
+        -152,
+        45
+      ],
+      "stage": 6,
+      "isShell": false
+    },
+    {
+      "id": "702e_Manometer_ChromeBezel",
+      "code": "702e",
+      "group": "G7",
+      "name": "Хромированный ободок манометра",
+      "matSpec": "Сталь 1.4301",
+      "matKey": "chrome",
+      "desc": "Прижимает смотровое стекло к корпусу прибора.",
+      "stl": "702e_Manometer_ChromeBezel.stl",
+      "pivot_mm": [
+        0,
+        -80.2,
+        86.0
+      ],
+      "parentRig": "head_rig",
+      "explode_mm": [
+        0,
+        -176,
+        45
+      ],
+      "stage": 6,
+      "isShell": false
+    },
+    {
+      "id": "702f_Manometer_CrystalGlass",
+      "code": "702f",
+      "group": "G7",
+      "name": "Смотровое приборное стекло манометра",
+      "matSpec": "Закалённое минеральное стекло",
+      "matKey": "glass",
+      "desc": "Защищает стрелку и циферблат от пыли и муки.",
+      "stl": "702f_Manometer_CrystalGlass.stl",
+      "pivot_mm": [
+        0,
+        -81.8,
+        86.0
+      ],
+      "parentRig": "head_rig",
+      "explode_mm": [
+        0,
+        -200,
+        45
+      ],
+      "stage": 6,
+      "isShell": false
+    },
+    {
+      "id": "703a_BleedValve_CopperJet06",
+      "code": "703a",
+      "group": "G7",
+      "name": "Медная магистраль сброса с жиклёром Ø0,6 мм",
+      "matSpec": "Медь М1 · дроссель ЛС59 Ø0,6 мм",
+      "matKey": "copper",
+      "desc": "Ограничивает скорость сброса (~0,06 МПа/с), чтобы пена в тесте не рвала клейковину.",
+      "stl": "703a_BleedValve_CopperJet06.stl",
+      "pivot_mm": [
+        0,
+        0,
+        0
+      ],
+      "parentRig": "head_rig",
+      "explode_mm": [
+        25,
+        -35,
+        105
+      ],
+      "stage": 6,
+      "isShell": false
+    },
+    {
+      "id": "703b_BleedBtn_ChromeCollar",
+      "code": "703b",
+      "group": "G7",
+      "name": "Хромированная гильза кнопки сброса",
+      "matSpec": "Сталь 1.4301",
+      "matKey": "chrome",
+      "desc": "Направляющая втулка клапана стравливания.",
+      "stl": "703b_BleedBtn_ChromeCollar.stl",
+      "pivot_mm": [
+        0,
+        -28.0,
+        117.0
+      ],
+      "parentRig": "head_rig",
+      "explode_mm": [
+        0,
+        -35,
+        118
+      ],
+      "stage": 6,
+      "isShell": false
+    },
+    {
+      "id": "703c_BleedBtn_ReturnSpring",
+      "code": "703c",
+      "group": "G7",
+      "name": "Пружина кнопки плавного сброса",
+      "matSpec": "Пружинная сталь 65Г",
+      "matKey": "wire",
+      "desc": "Держит клапан закрытым при давлении 4 бар.",
+      "stl": "703c_BleedBtn_ReturnSpring.stl",
+      "pivot_mm": [
+        0,
+        -28.0,
+        114.0
+      ],
+      "parentRig": "head_rig",
+      "explode_mm": [
+        0,
+        -35,
+        142
+      ],
+      "stage": 6,
+      "isShell": false
+    },
+    {
+      "id": "703d_BleedBtn_RedCap",
+      "code": "703d",
+      "group": "G7",
+      "name": "Красная кнопка сброса давления",
+      "matSpec": "Ударопрочный полиамид / эбонит",
+      "matKey": "red",
+      "desc": "Нажмите для плавного 10-секундного стравливания газа и подъёма теста ×2.",
+      "stl": "703d_BleedBtn_RedCap.stl",
+      "pivot_mm": [
+        0,
+        -28.0,
+        121.0
+      ],
+      "parentRig": "release_btn_rig",
+      "explode_mm": [
+        0,
+        -35,
+        168
+      ],
+      "stage": 6,
+      "isShell": false
+    },
+    {
+      "id": "704a_SafetyValve_CopperLine",
+      "code": "704a",
+      "group": "G7",
+      "name": "Патрубок предохранительного клапана",
+      "matSpec": "Медь М1 Ø5 мм",
+      "matKey": "copper",
+      "desc": "Аварийная отводная трубка от напорного колокола.",
+      "stl": "704a_SafetyValve_CopperLine.stl",
+      "pivot_mm": [
+        0,
+        0,
+        0
+      ],
+      "parentRig": "head_rig",
+      "explode_mm": [
+        45,
+        40,
+        100
+      ],
+      "stage": 6,
+      "isShell": false
+    },
+    {
+      "id": "704b_SafetyValve_BrassBody",
+      "code": "704b",
+      "group": "G7",
+      "name": "Корпус предохранительного клапана 5,5 бар",
+      "matSpec": "Латунь Л63 с накаткой",
+      "matKey": "brass_knurl",
+      "desc": "Тарированный корпус аварийного клапана.",
+      "stl": "704b_SafetyValve_BrassBody.stl",
+      "pivot_mm": [
+        32.0,
+        28.0,
+        117.0
+      ],
+      "parentRig": "head_rig",
+      "explode_mm": [
+        45,
+        40,
+        130
+      ],
+      "stage": 6,
+      "isShell": false
+    },
+    {
+      "id": "704c_SafetyValve_Spring",
+      "code": "704c",
+      "group": "G7",
+      "name": "Тарированная пружина 5,5 бар",
+      "matSpec": "Сталь 65Г",
+      "matKey": "wire",
+      "desc": "Откалибрована на открытие при 5,5 бар.",
+      "stl": "704c_SafetyValve_Spring.stl",
+      "pivot_mm": [
+        32.0,
+        28.0,
+        120.0
+      ],
+      "parentRig": "head_rig",
+      "explode_mm": [
+        45,
+        40,
+        155
+      ],
+      "stage": 6,
+      "isShell": false
+    },
+    {
+      "id": "704d_SafetyValve_DomeCap",
+      "code": "704d",
+      "group": "G7",
+      "name": "Хромированный колпачок клапана",
+      "matSpec": "Нержавеющая сталь 1.4301",
+      "matKey": "chrome",
+      "desc": "Защитный колпачок отсечки избыточного давления.",
+      "stl": "704d_SafetyValve_DomeCap.stl",
+      "pivot_mm": [
+        32.0,
+        28.0,
+        128.0
+      ],
+      "parentRig": "head_rig",
+      "explode_mm": [
+        45,
+        40,
+        180
+      ],
+      "stage": 6,
+      "isShell": false
+    }
+  ]
+}
