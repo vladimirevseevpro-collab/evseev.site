@@ -4,9 +4,17 @@
     "patent": "RU 2475028",
     "inventor": "N. V. Evseev",
     "units": "mm",
-    "head_closed_z": 144.0,
+    "head_closed_z": 144.5,
     "head_lift_z": 120.0,
-    "gear_z_local": 86.0
+    "gear_z_local": 89.0,
+    "mano_z_local": 89.0,
+    "mano_y_local": -68.0,
+    "pump_x": -126.0,
+    "pump_y": 26.0,
+    "pump_fulcrum_y": 86.0,
+    "pump_fulcrum_z": 198.0,
+    "crank_x": 72.5,
+    "crown_x": -9.0
   },
   "subassemblies": [
     {
@@ -339,7 +347,7 @@
       "desc": "Герметичное дно цилиндра с нижним выпускным каналом высокого давления.",
       "stl": "201_Pump_BaseFlange.stl",
       "pivot_mm": [
-        -124.0,
+        -126.0,
         26.0,
         48.0
       ],
@@ -356,13 +364,13 @@
       "id": "202_Pump_CylinderSleeve",
       "code": "202",
       "group": "G2",
-      "name": "Оребрённая гильза цилиндра Ø32×110 мм",
+      "name": "Оребрённая гильза цилиндра Ø38×128 мм",
       "matSpec": "Сталь AISI 304 · хонингование Ra 0,2",
       "matKey": "chrome",
-      "desc": "Труба рабочего цилиндра Ø32 мм с рёбрами отвода тепла сжатого воздуха.",
+      "desc": "Труба рабочего цилиндра Ø38 мм с рёбрами отвода тепла сжатого воздуха.",
       "stl": "202_Pump_CylinderSleeve.stl",
       "pivot_mm": [
-        -124.0,
+        -126.0,
         26.0,
         56.0
       ],
@@ -379,15 +387,15 @@
       "id": "203_Pump_PistonBrass",
       "code": "203",
       "group": "G2",
-      "name": "Латунный поршень Ø31,6 мм",
+      "name": "Латунный поршень Ø37,2 мм (с карманом пружины)",
       "matSpec": "Латунь Л63 · допуск h7",
       "matKey": "brass",
-      "desc": "Сжимает воздух при движении вниз, нагнетая его через штуцер в напорный купол.",
+      "desc": "Сжимает воздух при движении вниз (ход 68 мм); внутренний карман сокращает вредный объём до 4,5 %.",
       "stl": "203_Pump_PistonBrass.stl",
       "pivot_mm": [
-        -124.0,
+        -126.0,
         26.0,
-        138.0
+        150.0
       ],
       "parentRig": "piston_rig",
       "explode_mm": [
@@ -408,9 +416,9 @@
       "desc": "Уплотняет ход нагнетания до 4,5 бар и работает как манжетный впуск при ходе вверх.",
       "stl": "203b_Piston_CupSeal_FKM.stl",
       "pivot_mm": [
-        -124.0,
+        -126.0,
         26.0,
-        138.0
+        150.0
       ],
       "parentRig": "piston_rig",
       "explode_mm": [
@@ -425,13 +433,13 @@
       "id": "204_Pump_ReturnSpring",
       "code": "204",
       "group": "G2",
-      "name": "Возвратная витая пружина поршня (7 витков)",
+      "name": "Возвратная витая пружина поршня (6 витков)",
       "matSpec": "Пружинная сталь 65Г",
       "matKey": "wire",
-      "desc": "Демпфирует нижнюю мёртвую точку и помогает возврату рукояти.",
+      "desc": "Демпфирует нижнюю мёртвую точку, уходя в карман поршня.",
       "stl": "204_Pump_ReturnSpring.stl",
       "pivot_mm": [
-        -124.0,
+        -126.0,
         26.0,
         56.5
       ],
@@ -454,9 +462,9 @@
       "desc": "Передаёт усилие кулисного рычага строго вертикально на поршень.",
       "stl": "205_Pump_PistonRod_8mm.stl",
       "pivot_mm": [
-        -124.0,
+        -126.0,
         26.0,
-        144.0
+        156.0
       ],
       "parentRig": "piston_rig",
       "explode_mm": [
@@ -471,15 +479,15 @@
       "id": "206_Pump_KnurledGlandNut",
       "code": "206",
       "group": "G2",
-      "name": "Накидная крышка-сальник насоса М36×1,5",
+      "name": "Накидная крышка-сальник насоса М42×1,5",
       "matSpec": "Латунь Л63 с накаткой",
       "matKey": "brass_knurl",
       "desc": "Направляет шток Ø8 мм и закрывает верхний торец цилиндра.",
       "stl": "206_Pump_KnurledGlandNut.stl",
       "pivot_mm": [
-        -124.0,
+        -126.0,
         26.0,
-        170.0
+        184.0
       ],
       "parentRig": "root",
       "explode_mm": [
@@ -500,8 +508,8 @@
       "desc": "Несущая стойка оси качания рычага накачки.",
       "stl": "207_Pump_FulcrumPost.stl",
       "pivot_mm": [
-        -124.0,
-        71.0,
+        -126.0,
+        86.0,
         48.0
       ],
       "parentRig": "root",
@@ -520,12 +528,12 @@
       "name": "Кулисный рычаг накачки (плечо 3,2:1)",
       "matSpec": "Кованая сталь · хром",
       "matKey": "chrome",
-      "desc": "Позволяет легко накачать 4 бар одной рукой.",
+      "desc": "Позволяет накачать 4 бар за ~18 качков одной рукой (~14,5 кгс на рукояти).",
       "stl": "208a_Pump_LeverArm.stl",
       "pivot_mm": [
-        -124.0,
-        71.0,
-        190.0
+        -126.0,
+        86.0,
+        198.0
       ],
       "parentRig": "lever_rig",
       "explode_mm": [
@@ -546,9 +554,9 @@
       "desc": "Эргономичная рукоять ручного рычага компрессора.",
       "stl": "208b_Pump_BakeliteHandle.stl",
       "pivot_mm": [
-        -124.0,
-        71.0,
-        190.0
+        -126.0,
+        86.0,
+        198.0
       ],
       "parentRig": "lever_rig",
       "explode_mm": [
@@ -587,14 +595,14 @@
       "code": "301",
       "group": "G3",
       "name": "Хлебная форма-автоклав Ø110×90 мм",
-      "matSpec": "Пищевая сталь AISI 304 · стенка 2,2 мм",
+      "matSpec": "Пищевая сталь AISI 304 · стенка 2,5 мм",
       "matKey": "steel",
-      "desc": "Выдерживает 4 бар при взбивании и сразу отправляется в духовку 210 °C.",
+      "desc": "Выдерживает 4 бар при взбивании (запас >17×) и сразу отправляется в духовку 210 °C.",
       "stl": "301_BreadPan_AISI304.stl",
       "pivot_mm": [
         0,
         0,
-        52.0
+        54.2
       ],
       "parentRig": "pot_rig",
       "explode_mm": [
@@ -617,7 +625,7 @@
       "pivot_mm": [
         0,
         0,
-        52.0
+        54.2
       ],
       "parentRig": "pot_rig",
       "explode_mm": [
@@ -640,7 +648,7 @@
       "pivot_mm": [
         0,
         0,
-        52.0
+        54.2
       ],
       "parentRig": "pot_rig",
       "explode_mm": [
@@ -663,7 +671,7 @@
       "pivot_mm": [
         0,
         0,
-        56.5
+        58.7
       ],
       "parentRig": "pot_rig",
       "explode_mm": [
@@ -817,9 +825,9 @@
       "code": "404",
       "group": "G4",
       "name": "Купол-вытеснитель мёртвого объёма (6 винтов)",
-      "matSpec": "Сталь AISI 304 · штамповка",
+      "matSpec": "Сталь AISI 304 · герметичный сильфон",
       "matKey": "steel",
-      "desc": "Сокращает паразитный воздушный зазор над тестом до ≈ 0,30 л.",
+      "desc": "Вытесняет паразитный воздух над тестом точно до ≈ 0,30 л рабочего газового купола.",
       "stl": "404_Head_DisplacementDome.stl",
       "pivot_mm": [
         0,
@@ -886,14 +894,14 @@
       "code": "501",
       "group": "G5",
       "name": "Ведущее зубчатое колесо Z=48 (мультипликатор 1:8)",
-      "matSpec": "Бронза БрАЖ9-4 · m = 1,4 мм",
+      "matSpec": "Бронза БрАЖ9-4 · m = 1,25 мм",
       "matKey": "brass",
       "desc": "Главная шестерня мультипликатора 1:8, разгоняющая венчик до 800 об/мин.",
       "stl": "501_BevelCrownGear_Z48.stl",
       "pivot_mm": [
-        -7.0,
+        -9.0,
         0.0,
-        86.0
+        89.0
       ],
       "parentRig": "crank_gear_rig",
       "explode_mm": [
@@ -914,9 +922,9 @@
       "desc": "Передаёт момент с рукояти кривошипа на ведущее колесо Z=48.",
       "stl": "502_HorizontalDriveShaft.stl",
       "pivot_mm": [
-        25.0,
+        22.0,
         0.0,
-        86.0
+        89.0
       ],
       "parentRig": "head_rig",
       "explode_mm": [
@@ -937,9 +945,9 @@
       "desc": "Радиально-упорные опоры приводного вала.",
       "stl": "502b_Bearings_6001_Outer.stl",
       "pivot_mm": [
-        25.0,
+        22.0,
         0.0,
-        86.0
+        89.0
       ],
       "parentRig": "head_rig",
       "explode_mm": [
@@ -960,9 +968,9 @@
       "desc": "Двухстороннее контактное уплотнение смазки подшипников.",
       "stl": "502c_Bearings_6001_2RS_Seals.stl",
       "pivot_mm": [
-        25.0,
+        22.0,
         0.0,
-        86.0
+        89.0
       ],
       "parentRig": "head_rig",
       "explode_mm": [
@@ -985,7 +993,7 @@
       "pivot_mm": [
         60.0,
         0.0,
-        86.0
+        89.0
       ],
       "parentRig": "head_rig",
       "explode_mm": [
@@ -1008,7 +1016,7 @@
       "pivot_mm": [
         55.0,
         0.0,
-        86.0
+        89.0
       ],
       "parentRig": "head_rig",
       "explode_mm": [
@@ -1031,7 +1039,7 @@
       "pivot_mm": [
         60.0,
         0.0,
-        86.0
+        89.0
       ],
       "parentRig": "head_rig",
       "explode_mm": [
@@ -1052,9 +1060,9 @@
       "desc": "Эргономичный рычаг привода конического мультипликатора 1:8.",
       "stl": "504a_HandCrank_Arm.stl",
       "pivot_mm": [
-        70.0,
+        72.5,
         0.0,
-        86.0
+        89.0
       ],
       "parentRig": "crank_rig",
       "explode_mm": [
@@ -1075,9 +1083,9 @@
       "desc": "Свободно вращающаяся ручка кривошипа.",
       "stl": "504b_HandCrank_BakeliteGrip.stl",
       "pivot_mm": [
-        70.0,
+        72.5,
         0.0,
-        86.0
+        89.0
       ],
       "parentRig": "crank_rig",
       "explode_mm": [
@@ -1100,7 +1108,7 @@
       "pivot_mm": [
         0,
         0,
-        47.5
+        46.2
       ],
       "parentRig": "head_rig",
       "explode_mm": [
@@ -1123,7 +1131,7 @@
       "pivot_mm": [
         0,
         0,
-        52.5
+        50.0
       ],
       "parentRig": "head_rig",
       "explode_mm": [
@@ -1146,7 +1154,7 @@
       "pivot_mm": [
         0,
         0,
-        58.5
+        52.3
       ],
       "parentRig": "head_rig",
       "explode_mm": [
@@ -1169,7 +1177,7 @@
       "pivot_mm": [
         0.0,
         0.0,
-        52.0
+        57.2
       ],
       "parentRig": "whisk_rig",
       "explode_mm": [
@@ -1192,7 +1200,7 @@
       "pivot_mm": [
         0,
         0,
-        12.0
+        17.0
       ],
       "parentRig": "whisk_rig",
       "explode_mm": [
@@ -1284,7 +1292,7 @@
       "pivot_mm": [
         0,
         -58.0,
-        86.0
+        89.0
       ],
       "parentRig": "head_rig",
       "explode_mm": [
@@ -1307,7 +1315,7 @@
       "pivot_mm": [
         0,
         -70.0,
-        86.0
+        89.0
       ],
       "parentRig": "head_rig",
       "explode_mm": [
@@ -1329,8 +1337,8 @@
       "stl": "702c_Manometer_PrintedDial.stl",
       "pivot_mm": [
         0,
-        -79.0,
-        86.0
+        -78.2,
+        89.0
       ],
       "parentRig": "head_rig",
       "explode_mm": [
@@ -1352,8 +1360,8 @@
       "stl": "702d_Manometer_PointerNeedle.stl",
       "pivot_mm": [
         0,
-        -80.6,
-        86.0
+        -80.2,
+        89.0
       ],
       "parentRig": "needle_rig",
       "explode_mm": [
@@ -1375,8 +1383,8 @@
       "stl": "702e_Manometer_ChromeBezel.stl",
       "pivot_mm": [
         0,
-        -80.2,
-        86.0
+        -80.4,
+        89.0
       ],
       "parentRig": "head_rig",
       "explode_mm": [
@@ -1398,8 +1406,8 @@
       "stl": "702f_Manometer_CrystalGlass.stl",
       "pivot_mm": [
         0,
-        -81.8,
-        86.0
+        -83.0,
+        89.0
       ],
       "parentRig": "head_rig",
       "explode_mm": [
@@ -1445,7 +1453,7 @@
       "pivot_mm": [
         0,
         -28.0,
-        117.0
+        132.0
       ],
       "parentRig": "head_rig",
       "explode_mm": [
@@ -1468,7 +1476,7 @@
       "pivot_mm": [
         0,
         -28.0,
-        114.0
+        129.0
       ],
       "parentRig": "head_rig",
       "explode_mm": [
@@ -1491,7 +1499,7 @@
       "pivot_mm": [
         0,
         -28.0,
-        121.0
+        136.0
       ],
       "parentRig": "release_btn_rig",
       "explode_mm": [
@@ -1537,7 +1545,7 @@
       "pivot_mm": [
         32.0,
         28.0,
-        117.0
+        132.0
       ],
       "parentRig": "head_rig",
       "explode_mm": [
@@ -1560,7 +1568,7 @@
       "pivot_mm": [
         32.0,
         28.0,
-        120.0
+        135.0
       ],
       "parentRig": "head_rig",
       "explode_mm": [
@@ -1583,7 +1591,7 @@
       "pivot_mm": [
         32.0,
         28.0,
-        128.0
+        143.0
       ],
       "parentRig": "head_rig",
       "explode_mm": [

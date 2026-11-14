@@ -887,10 +887,13 @@ dl.spec dd {
 @media (max-width: 920px) {
   body { overflow: auto; }
   .app { flex-direction: column; height: auto; padding: 8px; gap: 10px; }
-  #stage { height: 58vh; min-height: 380px; flex: none; border-radius: 14px; }
+  #stage { height: 50vh; min-height: 340px; max-height: 440px; flex: none; border-radius: 14px; }
   aside { width: auto; overflow: visible; padding: 14px; border-radius: 14px; }
-  .stage-topbar { top: 8px; left: 8px; right: 8px; justify-content: center; }
+  .stage-topbar { top: 8px; left: 8px; right: 8px; justify-content: flex-start; }
   .badge-patent { display: none; }
+  .finish-bar { max-width: 100%; overflow-x: auto; flex-wrap: nowrap; scrollbar-width: none; }
+  .finish-bar::-webkit-scrollbar { display: none; }
+  .finish-btn { white-space: nowrap; flex-shrink: 0; font-size: 11px; padding: 5px 8px; }
   .stage-bottombar { left: 8px; right: 8px; bottom: 8px; }
   .stage-meta { display: none; }
   .cam-dock { width: 100%; overflow-x: auto; flex-wrap: nowrap; scrollbar-width: none; }
@@ -1422,7 +1425,7 @@ dl.spec dd {
         <dt>Загрузка теста</dt><dd>350 г (≈ 0,30 л сырого)</dd>
         <dt>Рабочее давление</dt><dd>4,0 бар (предохр. 5,5 бар)</dd>
         <dt>Газовый купол над тестом</dt><dd>≈ 0,30 л (с вытеснителем)</dd>
-        <dt>Ручной насос</dt><dd>Ø 32 × 110 мм · ~15 качков</dd>
+        <dt>Ручной насос</dt><dd>Ø 38 × 128 мм · ~16 качков</dd>
         <dt>Привод венчика</dt><dd>R 55 мм · коническая пара 1:8 (Z=48/6)</dd>
         <dt>Дроссель сброса</dt><dd>жиклёр Ø 0,6 мм (~0,06 МПа/с)</dd>
       </dl>
@@ -1430,6 +1433,6 @@ dl.spec dd {
   </aside>
 </div>
 
-<script type="module" src="assets/app.js?v=5"></script>
+<script type="module" src="assets/app.js?v=6"></script>
 </body>
 </html>

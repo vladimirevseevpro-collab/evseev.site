@@ -35,11 +35,11 @@ import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
 
   const VIEWS = {
     home:  { p: new THREE.Vector3(49, 40, 72),   t: new THREE.Vector3(2.0, 20.0, 0) },
-    cut:   { p: new THREE.Vector3(4, 22, 62),    t: new THREE.Vector3(0, 17.5, 0) },
+    cut:   { p: new THREE.Vector3(6, 22, 68),    t: new THREE.Vector3(0, 17.5, 0) },
     gear:  { p: new THREE.Vector3(24, 30, 22),   t: new THREE.Vector3(1.5, 23.0, 0) },
     seal:  { p: new THREE.Vector3(18, 20, 26),   t: new THREE.Vector3(0, 15.0, 0) },
-    pump:  { p: new THREE.Vector3(-36, 20, 28),  t: new THREE.Vector3(-12.4, 13.0, -2.6) },
-    gauge: { p: new THREE.Vector3(0, 24, 34),    t: new THREE.Vector3(0, 23.0, 7.6) }
+    pump:  { p: new THREE.Vector3(-36, 20, 28),  t: new THREE.Vector3(-12.6, 13.0, -2.6) },
+    gauge: { p: new THREE.Vector3(0, 24, 34),    t: new THREE.Vector3(0, 23.4, 7.6) }
   };
   camera.position.copy(VIEWS.home.p);
   controls.target.copy(VIEWS.home.t);
@@ -55,7 +55,8 @@ import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
   const d = 44;
   key.shadow.camera.left = -d; key.shadow.camera.right = d;
   key.shadow.camera.top = d; key.shadow.camera.bottom = -d;
-  key.shadow.bias = -0.0004;
+  key.shadow.bias = -0.0001;
+  key.shadow.normalBias = 0.045;
   scene.add(key);
 
   const rim = new THREE.DirectionalLight(0xcbe2ff, 0.68);
@@ -691,8 +692,8 @@ import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
     S.pumping = true;
     for (const target of [1.2, 2.3, 3.2, 4.0]){
       const p0 = S.p;
-      await tween(0.38, k => { S.leverA = lerp(-0.26, 0.36, ease(k)); S.p = lerp(p0, target, ease(k)); S.pumpPhase = k; });
-      await tween(0.28, k => { S.leverA = lerp(0.36, -0.26, ease(k)); S.pumpPhase = 0; });
+      await tween(0.38, k => { S.leverA = lerp(-0.48, 0.48, ease(k)); S.p = lerp(p0, target, ease(k)); S.pumpPhase = k; });
+      await tween(0.28, k => { S.leverA = lerp(0.48, -0.48, ease(k)); S.pumpPhase = 0; });
     }
     S.leverA = 0;
     S.pumping = false;
@@ -756,12 +757,18 @@ import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
 
   // ---------- SECTION VIEW & CAMERA PRESETS ----------
   let cutOn = false;
+  function getResponsivePos(view){
+    const p1 = view.p.clone();
+    const aspect = stageEl.clientWidth / Math.max(1, stageEl.clientHeight);
+    if (aspect < 0.9){
+      const zoomOut = Math.max(1.36, 1.06 / Math.max(0.45, aspect));
+      p1.sub(view.t).multiplyScalar(zoomOut).add(view.t);
+    }
+    return p1;
+  }
   function flyTo(view, dur = 0.9){
     const p0 = camera.position.clone(), t0 = controls.target.clone();
-    const p1 = view.p.clone();
-    if (stageEl.clientWidth / Math.max(1, stageEl.clientHeight) < 0.9){
-      p1.sub(view.t).multiplyScalar(1.25).add(view.t);
-    }
+    const p1 = getResponsivePos(view);
     return tween(dur, k => {
       const e = ease(k);
       camera.position.lerpVectors(p0, p1, e);
@@ -919,19 +926,19 @@ import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
     if (rigs.collar_rig) rigs.collar_rig.rotation.y = (1 - S.lock) * (-Math.PI / 6);
     if (rigs.lever_rig) rigs.lever_rig.rotation.x = S.leverA;
 
-    const pistonDz = -0.045 * Math.sin(S.leverA);
+    const pistonDz = -0.060 * Math.sin(S.leverA);
     if (rigs.piston_rig) rigs.piston_rig.position.y = rigRest.piston_rig.pos.y + pistonDz;
     if (spring204){
-      const strokeFrac = THREE.MathUtils.clamp((pistonDz + 0.017) / 0.029, 0, 1);
-      spring204.scale.y = 0.62 + strokeFrac * 0.38;
+      const strokeFrac = THREE.MathUtils.clamp((pistonDz + 0.028) / 0.056, 0, 1);
+      spring204.scale.y = 0.48 + strokeFrac * 0.52;
     }
 
-    // Air pulses + seamless flexible hose tracking lifted head (-9.8, 5.3, -2.6 -> -6.5, head+2.8, 0)
-    const headYcm = (rigs.head_rig ? rigs.head_rig.position.y : 0.144) * 100;
+    // Air pulses + seamless flexible hose tracking lifted head (-10.0, 5.48, -2.6 -> -6.5, head+2.8, 0)
+    const headYcm = (rigs.head_rig ? rigs.head_rig.position.y : 0.1445) * 100;
     const hoseCurve = new THREE.CatmullRomCurve3([
-      new THREE.Vector3(-9.8, 5.3, -2.6),
-      new THREE.Vector3(-8.4, 8.2 + Math.max(0, headYcm - 14.4) * 0.25, -1.3),
-      new THREE.Vector3(-7.6, 12.6 + Math.max(0, headYcm - 14.4) * 0.65, -0.5),
+      new THREE.Vector3(-10.0, 5.48, -2.6),
+      new THREE.Vector3(-9.4, 8.2 + Math.max(0, headYcm - 14.45) * 0.25, -3.4),
+      new THREE.Vector3(-8.6, 13.4 + Math.max(0, headYcm - 14.45) * 0.65, -3.6),
       new THREE.Vector3(-6.5, headYcm + 2.8, 0.0)
     ]);
     const useFlex = hose209Node && S.headLift > 0.015 && explodeK <= 0.02 && (!isolatedPart || isolatedPart === partMap['209_Pump_HighPressureHose']);
@@ -1004,12 +1011,19 @@ import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
     requestAnimationFrame(frame);
   }
 
+  let didInitialMobileFrame = false;
   function resize(){
     const w = stageEl.clientWidth, h = stageEl.clientHeight;
     if (!w || !h) return;
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
+    if (!didInitialMobileFrame && w / h < 0.9){
+      didInitialMobileFrame = true;
+      camera.position.copy(getResponsivePos(VIEWS.home));
+      controls.target.copy(VIEWS.home.t);
+      controls.update();
+    }
   }
   new ResizeObserver(resize).observe(stageEl);
   resize();
