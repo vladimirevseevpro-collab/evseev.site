@@ -16,8 +16,8 @@ import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
-  renderer.toneMapping = THREE.AgXToneMapping || THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.05;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 0.86;
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   renderer.localClippingEnabled = true;
@@ -45,9 +45,9 @@ import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
   controls.target.copy(VIEWS.home.t);
   controls.update();
 
-  // Cinema 3-Strip Studio Lights + Real Poly Haven HDRI
-  scene.add(new THREE.HemisphereLight(0xfff4e4, 0x3a2d22, 0.30));
-  const key = new THREE.DirectionalLight(0xfff2de, 1.75);
+  // Cinema 3-Strip Studio Lights + Real Poly Haven HDRI (calibrated so HDR never blows out enamel)
+  scene.add(new THREE.HemisphereLight(0xfff4e4, 0x3a2d22, 0.16));
+  const key = new THREE.DirectionalLight(0xfff2de, 1.12);
   key.position.set(-44, 48, 46);
   key.castShadow = true;
   key.shadow.mapSize.set(1024, 1024);
@@ -58,23 +58,25 @@ import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
   key.shadow.bias = -0.0004;
   scene.add(key);
 
-  const rim = new THREE.DirectionalLight(0xcbe2ff, 1.25);
+  const rim = new THREE.DirectionalLight(0xcbe2ff, 0.68);
   rim.position.set(42, 36, -34);
   scene.add(rim);
 
-  const fill = new THREE.DirectionalLight(0xffe0bc, 0.42);
+  const fill = new THREE.DirectionalLight(0xffe0bc, 0.22);
   fill.position.set(36, 20, 42);
   scene.add(fill);
 
+  window.__hdrReady = false;
   new RGBELoader().load('assets/studio.hdr', hdr => {
     const pmrem = new THREE.PMREMGenerator(renderer);
     pmrem.compileEquirectangularShader();
     scene.environment = pmrem.fromEquirectangular(hdr).texture;
-    scene.environmentIntensity = 1.18;
+    scene.environmentIntensity = 0.44;
     if (scene.environmentRotation) scene.environmentRotation.y = -Math.PI * 0.30;
     hdr.dispose();
     pmrem.dispose();
-  }, undefined, () => {});
+    window.__hdrReady = true;
+  }, undefined, () => { window.__hdrReady = true; });
 
   // ---------- PROCEDURAL TABLETOP & CRUMB MICRO-STRUCTURES ----------
   function canvasTex(w, h, draw, repeatX, repeatY){
@@ -190,15 +192,15 @@ import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
   const oakNormal = loadTiledOak('oak_normal.png', false);
   const oakRough = loadTiledOak('oak_rough.png', false);
 
-  const tableGeo = new THREE.ExtrudeGeometry(rrect(98, 66, 4), { depth: 2.6, bevelEnabled: true, bevelThickness: 0.45, bevelSize: 0.45, bevelSegments: 4 });
+  const tableGeo = new THREE.ExtrudeGeometry(rrect(108, 76, 4), { depth: 2.6, bevelEnabled: true, bevelThickness: 0.45, bevelSize: 0.45, bevelSegments: 4 });
   tableGeo.rotateX(-Math.PI / 2);
-  tableGeo.translate(6, -2.6, -2);
+  tableGeo.translate(7, -2.6, -3);
   const tableMat = new THREE.MeshStandardMaterial({
     map: oakAlbedo,
     normalMap: oakNormal,
     normalScale: new THREE.Vector2(0.85, 0.85),
     roughnessMap: oakRough,
-    roughness: 0.85,
+    roughness: 0.92,
     metalness: 0.02
   });
   const studioTable = new THREE.Mesh(tableGeo, tableMat);
@@ -218,24 +220,38 @@ import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
   aoPlane.position.set(5, 0.02, -1);
   scene.add(aoPlane);
 
-  // Translucent Baking Oven Station on Right Table (centered near baked loaf X=23.5, Z=5.8)
+  // Warm Amber Cloche Baking Station on Back-Right Table (clear of baked loaf at X=23.5, Z=+5.8)
   const ovenGroup = new THREE.Group();
-  ovenGroup.position.set(23.5, 0, 5.8);
+  ovenGroup.position.set(24.5, 0, -10.5);
   ovenGroup.visible = false;
   scene.add(ovenGroup);
-  const heaterMat = new THREE.MeshStandardMaterial({ color: 0xff4500, emissive: 0xff3300, emissiveIntensity: 0, roughness: 0.4 });
-  const ovenCoil = new THREE.Mesh(new THREE.TorusGeometry(6.2, 0.25, 12, 48), heaterMat);
-  ovenCoil.rotation.x = Math.PI / 2; ovenCoil.position.y = 14.5;
+  const ovenBaseTray = new THREE.Mesh(
+    new THREE.CylinderGeometry(8.8, 9.2, 0.5, 48),
+    new THREE.MeshStandardMaterial({ color: 0x242629, roughness: 0.45, metalness: 0.75 })
+  );
+  ovenBaseTray.position.y = 0.25;
+  ovenGroup.add(ovenBaseTray);
+  const heaterMat = new THREE.MeshStandardMaterial({ color: 0xb44210, emissive: 0xd9480f, emissiveIntensity: 0, roughness: 0.45 });
+  const ovenCoil = new THREE.Mesh(new THREE.TorusGeometry(6.4, 0.22, 12, 48), heaterMat);
+  ovenCoil.rotation.x = Math.PI / 2; ovenCoil.position.y = 14.2;
   ovenGroup.add(ovenCoil);
   const ovenDome = new THREE.Mesh(
-    new THREE.CylinderGeometry(8.5, 9.2, 16.5, 48, 1, true),
-    new THREE.MeshPhysicalMaterial({ color: 0xffffff, transparent: true, opacity: 0.16, roughness: 0.05, clearcoat: 1, side: THREE.DoubleSide, depthWrite: false })
+    new THREE.CylinderGeometry(8.2, 8.6, 15.5, 48, 1, true),
+    new THREE.MeshPhysicalMaterial({ color: 0xd99b52, transparent: true, opacity: 0.14, roughness: 0.12, side: THREE.DoubleSide, depthWrite: false })
   );
-  ovenDome.position.y = 8.25;
+  ovenDome.position.y = 7.9;
   ovenGroup.add(ovenDome);
-  const ovenLight = new THREE.PointLight(0xff6a1a, 0, 42, 2);
-  ovenLight.position.set(23.5, 8.5, 5.8);
+  const ovenLight = new THREE.PointLight(0xff6a1a, 0, 26, 2);
+  ovenLight.position.set(24.5, 8.5, -10.5);
   scene.add(ovenLight);
+
+  // Dynamic Flexible High-Pressure Hose Bridge when Head is Lifted
+  const hoseMat = new THREE.MeshStandardMaterial({ color: 0x1e2124, roughness: 0.65, metalness: 0.1 });
+  const flexHoseMesh = new THREE.Mesh(new THREE.BufferGeometry(), hoseMat);
+  flexHoseMesh.visible = false;
+  flexHoseMesh.castShadow = true;
+  scene.add(flexHoseMesh);
+  let lastHoseHeadY = -999;
 
   // Compressed Air Pulses & Bleed Exhaust Vapor
   const airPulses = [];
@@ -352,10 +368,10 @@ import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
         }
         const mname = o.material.name || '';
         if (mname.includes('Mat_Enamel_Mint')) {
-          o.material.envMapIntensity = 1.35;
+          o.material.envMapIntensity = 0.92;
           enamelMats.add(o.material);
         } else if (mname.includes('Mat_Polished_Chrome') || mname.includes('Mat_Steel') || mname.includes('Mat_Machined_Brass') || mname.includes('Mat_Drawn_Copper')) {
-          o.material.envMapIntensity = 1.45;
+          o.material.envMapIntensity = 1.15;
         }
         if (mname.includes('Mat_Walnut_Bakelite')) bakeliteMats.add(o.material);
         if (part.isShell){
@@ -373,6 +389,8 @@ import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
   if (doughObj) doughObj.traverse(o => { if (o.isMesh) doughMat = o.material; });
   spring204 = partMap['204_Pump_ReturnSpring']?.node || null;
   jet703 = partMap['703a_BleedValve_CopperJet06']?.node || null;
+  const hose209Node = partMap['209_Pump_HighPressureHose']?.node || null;
+  if (partMap['209_Pump_HighPressureHose']) meshToPart.set(flexHoseMesh, partMap['209_Pump_HighPressureHose']);
 
   if (loaderEl) loaderEl.classList.add('done');
 
@@ -709,7 +727,7 @@ import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
     await tween(1.4, k => S.potOut = ease(k));
     await tween(2.6, k => {
       S.bake = ease(k);
-      S.doughH = lerp(6.88, 8.2, ease(k));
+      S.doughH = lerp(6.88, 7.6, ease(k));
       if (S.bake > 0.4) S.foam = 3;
     });
   }
@@ -908,14 +926,22 @@ import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
       spring204.scale.y = 0.62 + strokeFrac * 0.38;
     }
 
-    // Air pulses tracing the exact CAD hose from Pump Outlet (-9.8, 5.3, -2.6) to Bell Check Valve (-6.5, head+2.8, 0)
+    // Air pulses + seamless flexible hose tracking lifted head (-9.8, 5.3, -2.6 -> -6.5, head+2.8, 0)
     const headYcm = (rigs.head_rig ? rigs.head_rig.position.y : 0.144) * 100;
     const hoseCurve = new THREE.CatmullRomCurve3([
       new THREE.Vector3(-9.8, 5.3, -2.6),
-      new THREE.Vector3(-8.0, 7.4, -1.2),
-      new THREE.Vector3(-7.6, 12.2, -0.6),
+      new THREE.Vector3(-8.4, 8.2 + Math.max(0, headYcm - 14.4) * 0.25, -1.3),
+      new THREE.Vector3(-7.6, 12.6 + Math.max(0, headYcm - 14.4) * 0.65, -0.5),
       new THREE.Vector3(-6.5, headYcm + 2.8, 0.0)
     ]);
+    const useFlex = hose209Node && S.headLift > 0.015 && explodeK <= 0.02 && (!isolatedPart || isolatedPart === partMap['209_Pump_HighPressureHose']);
+    if (hose209Node) hose209Node.visible = !useFlex && (!isolatedPart || isolatedPart === partMap['209_Pump_HighPressureHose']);
+    flexHoseMesh.visible = useFlex;
+    if (useFlex && Math.abs(headYcm - lastHoseHeadY) > 0.05){
+      lastHoseHeadY = headYcm;
+      flexHoseMesh.geometry.dispose();
+      flexHoseMesh.geometry = new THREE.TubeGeometry(hoseCurve, 24, 0.42, 12, false);
+    }
     airPulses.forEach((ap, idx) => {
       if (S.pumping && S.pumpPhase > 0){
         const u = (S.pumpPhase * 1.4 + idx * 0.18) % 1.0;
@@ -934,18 +960,18 @@ import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
     if (rigs.needle_rig) rigs.needle_rig.rotation.z = THREE.MathUtils.degToRad(135 - (S.p / 8) * 270);
     if (rigs.release_btn_rig) rigs.release_btn_rig.position.y = rigRest.release_btn_rig.pos.y - S.btnPress * 0.006;
 
-    // Dough expansion (2x height on bleed) & bake glow
+    // Dough expansion (2x height on bleed) & bake glow onto Back-Right Baking Cloche (24.5, 0, -10.5)
     if (doughObj) doughObj.scale.set(1, S.doughH / 3.44, 1);
     if (doughMat) doughMat.color.copy(rawC).lerp(bakeC, S.bake);
     if (rigs.pot_rig){
       rigs.pot_rig.position.set(
-        rigRest.pot_rig.pos.x + S.potOut * 0.235,
-        rigRest.pot_rig.pos.y - S.potOut * 0.048,
-        rigRest.pot_rig.pos.z + S.potOut * 0.058
+        rigRest.pot_rig.pos.x + S.potOut * 0.245,
+        rigRest.pot_rig.pos.y - S.potOut * 0.047,
+        rigRest.pot_rig.pos.z - S.potOut * 0.105
       );
     }
-    ovenLight.intensity = S.bake * 2.4;
-    heaterMat.emissiveIntensity = S.bake * 3.2;
+    ovenLight.intensity = S.bake * 0.75;
+    heaterMat.emissiveIntensity = S.bake * 0.95;
 
     if (S.releasing && Math.random() < 0.65) spawnPuff();
     for (let i = puffs.length - 1; i >= 0; i--){
