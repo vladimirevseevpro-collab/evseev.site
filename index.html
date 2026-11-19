@@ -5,18 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>Владимир | evseev.site Home Hub</title>
   <script src="/auth-1978.js"></script>
-  
-  <!-- iOS / PWA Fullscreen Web App Meta -->
+
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Evseev Hub">
   <meta name="theme-color" content="#07080c">
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+
   <style>
     :root {
       --bg: #07080c;
@@ -25,24 +24,17 @@
       --accent: #38bdf8;
       --accent-glow: rgba(56, 189, 248, 0.25);
       --green: #10b981;
-      --green-glow: rgba(16, 185, 129, 0.3);
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
-      --nullfield: #ccff00;
-      --foldwink: #f97316;
-      --creep: #10b981;
-      --library: #818cf8;
-      --photo: #38bdf8;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; -webkit-tap-highlight-color: transparent; }
-    
+
     body {
       background-color: var(--bg);
-      background-image: 
+      background-image:
         radial-gradient(circle at 10% 10%, rgba(56, 189, 248, 0.08) 0px, transparent 40%),
-        radial-gradient(circle at 90% 90%, rgba(168, 85, 247, 0.08) 0px, transparent 40%),
-        radial-gradient(circle at 50% 50%, rgba(204, 255, 0, 0.03) 0px, transparent 60%);
+        radial-gradient(circle at 90% 90%, rgba(168, 85, 247, 0.08) 0px, transparent 40%);
       background-attachment: fixed;
       color: var(--text-main);
       min-height: 100vh;
@@ -50,7 +42,7 @@
     }
 
     .container { max-width: 1100px; margin: 0 auto; }
-    
+
     header {
       display: flex;
       justify-content: space-between;
@@ -76,13 +68,12 @@
       display: inline-flex; align-items: center; gap: 6px;
       padding: 6px 12px; border-radius: 20px;
       font-size: 11px; font-weight: 700; font-family: 'JetBrains Mono', monospace;
-      background: rgba(16, 185, 129, 0.12);
-      color: var(--green);
-      border: 1px solid rgba(16, 185, 129, 0.3);
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.3);
     }
-    .status-dot { width: 7px; height: 7px; border-radius: 50%; background: #10b981; box-shadow: 0 0 8px #10b981; }
+    .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent); }
 
-    /* Hardware Telemetry Summary */
     .telemetry-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -105,7 +96,6 @@
     .tele-value { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 2px; }
     .tele-sub { font-size: 10px; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; }
 
-    /* Section Headers */
     .section-header {
       display: flex; justify-content: space-between; align-items: center;
       margin-top: 24px;
@@ -114,7 +104,6 @@
     .section-header h2 { font-size: 15px; font-weight: 700; letter-spacing: -0.2px; display: flex; align-items: center; gap: 8px; }
     .section-header span { font-size: 11px; color: var(--text-muted); }
 
-    /* Grid of Services & Apps */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -188,19 +177,12 @@
       color: #fff;
       box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
     }
-    .btn-nullfield {
-      background: #ccff00;
-      color: #000;
-      font-weight: 800;
-      box-shadow: 0 4px 14px rgba(204, 255, 0, 0.35);
-    }
     .btn-secondary {
       background: rgba(255,255,255,0.06);
       color: var(--text-main);
       border: 1px solid var(--card-border);
     }
 
-    /* iOS Bottom Navigation Tab Bar */
     .ios-tab-bar {
       position: fixed;
       bottom: calc(env(safe-area-inset-bottom, 8px) + 6px);
@@ -238,7 +220,6 @@
       color: var(--accent);
       background: rgba(56, 189, 248, 0.12);
     }
-    .tab-item.nullfield-tab { color: #ccff00; }
   </style>
 </head>
 <body>
@@ -251,126 +232,50 @@
           <p>Vladimir Home Hub · Ryzen 8845HS · 32GB</p>
         </div>
       </div>
-      <div class="status-badge">
+      <div class="status-badge" id="hubStatusBadge">
         <span class="status-dot"></span>
-        Online
+        Home Hub
       </div>
     </header>
 
-    <!-- Hardware Summary -->
     <div class="telemetry-grid">
       <div class="tele-card">
-        <div class="tele-title"><span>CPU Server</span><span>8845HS</span></div>
+        <div class="tele-title"><span>Домашний ПК</span><span>8845HS</span></div>
         <div class="tele-value">8 Cores</div>
-        <div class="tele-sub">16 Threads · DDR5</div>
+        <div class="tele-sub">16 Threads · 32 GB DDR5</div>
       </div>
       <div class="tele-card">
         <div class="tele-title"><span>Хранилище D:</span><span>Seagate 8TB</span></div>
-        <div class="tele-value">7.5 TB</div>
-        <div class="tele-sub">27 959 Медиа · Архив</div>
+        <div class="tele-value">27 959</div>
+        <div class="tele-sub">Фото и видео 2003–2020</div>
       </div>
       <div class="tele-card">
         <div class="tele-title"><span>Библиотека</span><span>BookDB v4.1</span></div>
         <div class="tele-value">615 027</div>
-        <div class="tele-sub">AI Поиск · Старая бумага EPUB · Главы</div>
+        <div class="tele-sub">AI Поиск · Старая бумага EPUB</div>
       </div>
     </div>
 
-    <!-- Section 1: Games -->
     <div class="section-header">
-      <h2>🎮 Игры и Интерактивные Приложения</h2>
-      <span>Web Apps</span>
+      <h2>📚 Домашние Архивы и Хаб</h2>
+      <span>Tailscale Funnel · Локальный сервер</span>
     </div>
 
     <div class="services-grid">
-      <!-- Foldwink -->
-      <div class="service-card" style="border-color: rgba(249, 115, 22, 0.3);">
+      <div class="service-card" style="border-color: rgba(129, 140, 248, 0.35);">
         <div class="card-top">
-          <div class="svc-icon" style="background: rgba(249, 115, 22, 0.15); color: #fb923c;">🎲</div>
+          <div class="svc-icon" style="background: rgba(129, 140, 248, 0.15); color: #818cf8;">📚</div>
           <div class="svc-meta">
-            <h3>Foldwink (Фолдвинкл v0.9.5)</h3>
-            <p>Уютная логическая игра 4x4 на ассоциации в винтажном архиве. 3000 уровней (RU/EN/DE), Палимпсест, Дзен-режим, процедурный Web Audio и дуэли.</p>
+            <h3>Флибуста & Web Reader v4.1</h3>
+            <p>615 027 книг локально на домашнем сервере. Гибридный AI-поиск (ONNX + FTS5), потоковая читалка по главам и сборка EPUB в переплёте «Старая бумага».</p>
           </div>
         </div>
         <div class="card-actions">
-          <a href="/games/foldwink/" class="btn btn-game-foldwink">🕹️ Играть в Foldwink</a>
+          <a href="/books/" class="btn btn-primary">📖 Открыть читалку</a>
         </div>
       </div>
 
-      <!-- ScreenCreep -->
-      <div class="service-card" style="border-color: rgba(16, 185, 129, 0.3);">
-        <div class="card-top">
-          <div class="svc-icon" style="background: rgba(16, 185, 129, 0.15); color: #10b981;">🧬</div>
-          <div class="svc-meta">
-            <h3>ScreenCreep (Bio-Digital Clicker)</h3>
-            <p>Процедурная эволюция на PixiJS + Web Audio ASMR: комбо, мутации Session DNA и престиж-споруляция.</p>
-          </div>
-        </div>
-        <div class="card-actions">
-          <a href="/games/screencreep/" class="btn btn-game-creep">🧬 Играть в ScreenCreep</a>
-        </div>
-      </div>
-
-      <!-- NULL FIELD -->
-      <div class="service-card" style="border-color: rgba(204, 255, 0, 0.3); background: rgba(16, 26, 18, 0.85);">
-        <div class="card-top">
-          <div class="svc-icon" style="background: rgba(204, 255, 0, 0.15); color: #ccff00;">🧭</div>
-          <div class="svc-meta">
-            <h3 style="color: #ccff00;">NULL FIELD (Echolock Protocol)</h3>
-            <p>Аудио-радарный киберпанк триллер. Слушай импульсы, ориентируйся по звуку и очищай аномалии.</p>
-          </div>
-        </div>
-        <div class="card-actions">
-          <a href="https://neural-void.com" class="btn btn-nullfield">⚡ Играть в NULL FIELD</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Section 2: ENCLAVR Intelligence Swarm -->
-    <div class="section-header">
-      <h2>🤖 ENCLAVR Swarm & Облачные Агенты</h2>
-      <span>Google Cloud 24/7 • 08:00 & 21:00 CET</span>
-    </div>
-
-    <div class="services-grid">
-      <div class="service-card" style="border-color: rgba(99, 102, 241, 0.35); background: linear-gradient(180deg, rgba(99, 102, 241, 0.06) 0%, rgba(13, 18, 31, 0.7) 100%);">
-        <div class="card-top">
-          <div class="svc-icon" style="background: rgba(99, 102, 241, 0.15); color: #818cf8;">🤖</div>
-          <div class="svc-meta">
-            <h3>ENCLAVR Daily Strategic Radar</h3>
-            <p>4 автономных агента (Tech, Legal, DATEV Market, Synthesizer) собирают альфу по MCP, TEE, KI-MIG и § 203 StGB каждый день в 08:00 и 21:00 CET.</p>
-          </div>
-        </div>
-        <div class="card-actions" style="display:flex; gap:8px;">
-          <a href="#" class="btn btn-primary hub-link-agents" style="flex:1;">🤖 7 Облачных Агентов</a>
-          <a href="#" class="btn btn-secondary hub-link-briefing" style="flex:1;">📑 Читать Дайджест</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Section 3: Core Media & Storage -->
-    <div class="section-header">
-      <h2>📚 Книги, Фото & Голосовой Движок</h2>
-      <span>Домашние Архивы</span>
-    </div>
-
-    <div class="services-grid">
-      <!-- Verbum -->
-      <div class="service-card" style="border-color: rgba(14, 165, 233, 0.3);">
-        <div class="card-top">
-          <div class="svc-icon" style="background: rgba(14, 165, 233, 0.15); color: #38bdf8;">🎙️</div>
-          <div class="svc-meta">
-            <h3>Verbum — Телефон-Конспектатор</h3>
-            <p>Локальная AI-диктовка, расшифровка речи с микрофона iPhone в реальном времени и Markdown-конспекты.</p>
-          </div>
-        </div>
-        <div class="card-actions">
-          <a href="/verbum/" class="btn btn-primary">🎙️ Открыть Конспектатор</a>
-        </div>
-      </div>
-
-      <!-- PhotoHub -->
-      <div class="service-card" style="border-color: rgba(56, 189, 248, 0.3);">
+      <div class="service-card" style="border-color: rgba(56, 189, 248, 0.35);">
         <div class="card-top">
           <div class="svc-icon" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;">📷</div>
           <div class="svc-meta">
@@ -383,21 +288,19 @@
         </div>
       </div>
 
-      <!-- Flibusta Library -->
-      <div class="service-card" style="border-color: rgba(129, 140, 248, 0.3);">
+      <div class="service-card" style="border-color: rgba(16, 185, 129, 0.3);">
         <div class="card-top">
-          <div class="svc-icon" style="background: rgba(129, 140, 248, 0.15); color: #818cf8;">📚</div>
+          <div class="svc-icon" style="background: rgba(16, 185, 129, 0.15); color: #10b981;">⚡</div>
           <div class="svc-meta">
-            <h3>Флибуста & Web Reader v4.1</h3>
-            <p>615 027 книг локально на домашнем сервере. Гибридный AI-поиск (ONNX + FTS5), потоковая читалка по главам и сборка EPUB в переплёте «Старая бумага» (с переключением на Камин / Обычный).</p>
+            <h3>Панель Home Hub</h3>
+            <p>Телеметрия домашнего сервера (CPU, RAM, диски C:/D:) и прямой доступ к локальным сервисам и инструментам.</p>
           </div>
         </div>
         <div class="card-actions">
-          <a href="/books/" class="btn btn-primary">📖 Открыть читалку</a>
+          <a href="https://nucbox-k8-plus.tail374af0.ts.net/" class="btn btn-secondary hub-link-root">⚡ Открыть Home Hub</a>
         </div>
       </div>
 
-      <!-- Neural Void -->
       <div class="service-card" style="border-color: rgba(168, 85, 247, 0.3);">
         <div class="card-top">
           <div class="svc-icon" style="background: rgba(168, 85, 247, 0.15); color: #c084fc;">🌌</div>
@@ -407,756 +310,96 @@
           </div>
         </div>
         <div class="card-actions">
-          <a href="https://neural-void.com" target="_blank" class="btn btn-secondary">🌌 neural-void.com</a>
+          <a href="https://neural-void.com" target="_blank" rel="noopener" class="btn btn-secondary">🌌 neural-void.com</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <h2>🎮 Игры и Веб-Приложения</h2>
+      <span>Статика на evseev.site</span>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card" style="border-color: rgba(249, 115, 22, 0.3);">
+        <div class="card-top">
+          <div class="svc-icon" style="background: rgba(249, 115, 22, 0.15); color: #fb923c;">🎲</div>
+          <div class="svc-meta">
+            <h3>Foldwink (Фолдвинкл)</h3>
+            <p>Уютная логическая игра 4x4 на ассоциации в винтажном архиве. 3000 уровней (RU/EN/DE), Палимпсест, Дзен-режим и дуэли.</p>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="/games/foldwink/" class="btn btn-game-foldwink">🕹️ Играть в Foldwink</a>
+        </div>
+      </div>
+
+      <div class="service-card" style="border-color: rgba(16, 185, 129, 0.3);">
+        <div class="card-top">
+          <div class="svc-icon" style="background: rgba(16, 185, 129, 0.15); color: #10b981;">🧬</div>
+          <div class="svc-meta">
+            <h3>ScreenCreep</h3>
+            <p>Процедурная эволюция на PixiJS + Web Audio ASMR: комбо, мутации Session DNA и престиж-споруляция.</p>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="/games/screencreep/" class="btn btn-game-creep">🧬 Играть в ScreenCreep</a>
+        </div>
+      </div>
+
+      <div class="service-card" style="border-color: rgba(14, 165, 233, 0.3);">
+        <div class="card-top">
+          <div class="svc-icon" style="background: rgba(14, 165, 233, 0.15); color: #38bdf8;">🎙️</div>
+          <div class="svc-meta">
+            <h3>Verbum</h3>
+            <p>Локальная офлайн-диктовка Whisper для Windows 11 — RU/EN/DE техническая терминология без облака.</p>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="/verbum/" class="btn btn-primary">🎙️ Страница Verbum</a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- iOS Bottom Navigation Tab Bar -->
   <nav class="ios-tab-bar">
     <a href="/" class="tab-item active"><i class="fa-solid fa-house"></i><span>Хаб</span></a>
-    <a href="#" class="tab-item hub-link-agents"><i class="fa-solid fa-robot"></i><span>Агенты</span></a>
+    <a href="/books/" class="tab-item"><i class="fa-solid fa-book-open"></i><span>Книги</span></a>
+    <a href="https://nucbox-k8-plus.tail374af0.ts.net/photos/" class="tab-item hub-link-photo"><i class="fa-solid fa-images"></i><span>Фото</span></a>
     <a href="/games/foldwink/" class="tab-item"><i class="fa-solid fa-dice"></i><span>Foldwink</span></a>
     <a href="/games/screencreep/" class="tab-item"><i class="fa-solid fa-ghost"></i><span>Creep</span></a>
     <a href="/verbum/" class="tab-item"><i class="fa-solid fa-microphone"></i><span>Verbum</span></a>
-    <a href="https://nucbox-k8-plus.tail374af0.ts.net/photos/" class="tab-item hub-link-photo"><i class="fa-solid fa-images"></i><span>Фото</span></a>
-    <a href="/books/" class="tab-item"><i class="fa-solid fa-book-open"></i><span>Книги</span></a>
   </nav>
 
-  <!-- Books Cloud Search Modal (24/7 Google Cloud Always Free) -->
-  <div id="books-modal" class="modal-overlay" style="display:none;">
-    <div class="modal-card">
-      <div class="modal-header">
-        <div class="modal-title-group">
-          <div class="svc-icon" style="background: rgba(129, 140, 248, 0.15); color: #818cf8; width:36px; height:36px; font-size:18px;">📚</div>
-          <div>
-            <h3 style="font-size: 16px; font-weight: 700; color: #fff;">Флибуста BookDB v4.1 (615 027 книг)</h3>
-            <p style="font-size: 11px; color: #94a3b8; font-family: 'JetBrains Mono', monospace;">Локальный AI + FTS5 · EPUB «Старая бумага»</p>
-          </div>
-        </div>
-        <button id="close-books-modal" class="modal-close-btn">&times;</button>
-      </div>
-
-      <!-- Search Input -->
-      <div class="search-box-wrap">
-        <i class="fa-solid fa-magnifying-glass search-icon"></i>
-        <input type="text" id="books-search-input" class="search-input" placeholder="Поиск: автор, название, серия..." autofocus>
-        <span id="search-spinner" class="spinner" style="display:none;"></span>
-      </div>
-
-      <!-- Quick Search Chips -->
-      <div class="search-chips">
-        <span class="chip" onclick="searchFor('Пелевин')">Пелевин</span>
-        <span class="chip" onclick="searchFor('Несбё')">Ю Несбё</span>
-        <span class="chip" onclick="searchFor('Кеплер')">Ларс Кеплер</span>
-        <span class="chip" onclick="searchFor('Стругацкие')">Стругацкие</span>
-        <span class="chip" onclick="searchFor('Достоевский')">Достоевский</span>
-        <span class="chip" onclick="searchFor('Булгаков')">Булгаков</span>
-        <span class="chip" onclick="searchFor('Азимов')">Азимов</span>
-        <span class="chip" onclick="searchFor('Лем')">Лем</span>
-        <span class="chip" onclick="searchFor('Сорокин')">Сорокин</span>
-        <span class="chip" onclick="searchFor('Кинг')">Стивен Кинг</span>
-      </div>
-
-      <!-- Direct Full Catalog Web Reader Link -->
-      <div style="padding: 2px 20px 10px;">
-        <a id="btn-open-full-catalog" href="/books/" class="btn btn-primary" style="display:flex; align-items:center; justify-content:center; gap:8px; padding:10px; font-size:13px; font-weight:700; text-decoration:none; background: linear-gradient(135deg, rgba(129, 140, 248, 0.25), rgba(56, 189, 248, 0.25)); border: 1px solid rgba(129, 140, 248, 0.4); border-radius: 10px;">
-          📚 Открыть полную библиотеку (Страницы авторов, серии, читалка) <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px;"></i>
-        </a>
-      </div>
-
-      <!-- Search Results Area -->
-      <div id="books-results" class="results-container">
-        <div class="results-empty">
-          <p>⚡ Введите автора или название для поиска по каталогу 615 027 книг.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PhotoHub Cloud Timeline Modal (24/7 Google Cloud Always Free) -->
-  <div id="photos-modal" class="modal-overlay" style="display:none;">
-    <div class="modal-card" style="max-width: 800px;">
-      <div class="modal-header">
-        <div class="modal-title-group">
-          <div class="svc-icon" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; width:36px; height:36px; font-size:18px;">📷</div>
-          <div>
-            <h3 style="font-size: 16px; font-weight: 700; color: #fff;">PhotoHub Cloud Gallery (27 639 медиа)</h3>
-            <p style="font-size: 11px; color: #94a3b8; font-family: 'JetBrains Mono', monospace;">Google Cloud • Хроника 2003–2020 24/7</p>
-          </div>
-        </div>
-        <button id="close-photos-modal" class="modal-close-btn">&times;</button>
-      </div>
-
-      <!-- Year Filter Chips -->
-      <div id="photo-year-chips" class="search-chips" style="padding: 12px 20px 8px;">
-        <span class="chip" onclick="loadPhotosYear('')">Все годы</span>
-        <span class="chip" onclick="loadPhotosYear('2020')">2020</span>
-        <span class="chip" onclick="loadPhotosYear('2019')">2019</span>
-        <span class="chip" onclick="loadPhotosYear('2018')">2018</span>
-        <span class="chip" onclick="loadPhotosYear('2017')">2017</span>
-        <span class="chip" onclick="loadPhotosYear('2016')">2016</span>
-        <span class="chip" onclick="loadPhotosYear('2011')">2011</span>
-        <span class="chip" onclick="loadPhotosYear('2010')">2010</span>
-        <span class="chip" onclick="loadPhotosYear('2009')">2009</span>
-        <span class="chip" onclick="loadPhotosYear('2008')">2008</span>
-        <span class="chip" onclick="loadPhotosYear('2007')">2007</span>
-        <span class="chip" onclick="loadPhotosYear('2006')">2006</span>
-        <span class="chip" onclick="loadPhotosYear('2005')">2005</span>
-        <span class="chip" onclick="loadPhotosYear('2004')">2004</span>
-        <span class="chip" onclick="loadPhotosYear('2003')">2003</span>
-      </div>
-
-      <!-- Photos Grid Area -->
-      <div id="photos-grid" class="results-container photo-grid-wrap">
-        <div class="results-empty">
-          <p>⚡ Загрузка архива 2003–2020 из Google Cloud...</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Agents & Cloud Services Dashboard Modal -->
-  <div id="agents-modal" class="modal-overlay" style="display:none;">
-    <div class="modal-card" style="max-width: 780px;">
-      <div class="modal-header">
-        <div class="modal-title-group">
-          <div class="svc-icon" style="background: rgba(99, 102, 241, 0.15); color: #818cf8; width:36px; height:36px; font-size:18px;">🤖</div>
-          <div>
-            <h3 style="font-size: 16px; font-weight: 700; color: #fff;">Облачные Агенты & Службы (Google Cloud 24/7)</h3>
-            <p style="font-size: 11px; color: #94a3b8; font-family: 'JetBrains Mono', monospace;">sites-mcp-cloud-node • 08:00 & 21:00 CET Swarm</p>
-          </div>
-        </div>
-        <button id="close-agents-modal" class="modal-close-btn">&times;</button>
-      </div>
-
-      <!-- Quick Actions Header -->
-      <div style="padding: 12px 20px; background: rgba(255, 255, 255, 0.02); border-bottom: 1px solid rgba(255, 255, 255, 0.06); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
-        <div style="font-size: 12px; color: #cbd5e1;">
-          <span style="color: #10b981;">● 7 служб активно</span> · Следующий запуск: <strong style="color: #818cf8;">21:00 CET</strong>
-        </div>
-        <button onclick="openBriefingModal()" class="btn btn-secondary" style="padding: 6px 14px; font-size: 12px;">📑 Читать Дайджест ENCLAVR</button>
-      </div>
-
-      <!-- Agents Grid Container -->
-      <div id="agents-list" class="results-container" style="gap: 8px; padding-top: 12px;">
-        <div class="results-empty"><p>⚡ Загрузка телеметрии агентов...</p></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Agent Detail & Telemetry Modal -->
-  <div id="agent-detail-modal" class="modal-overlay" style="display:none; z-index: 10000;">
-    <div class="modal-card" style="max-width: 580px;">
-      <div class="modal-header">
-        <div class="modal-title-group">
-          <div id="detail-agent-icon" class="svc-icon" style="background: rgba(99, 102, 241, 0.15); color: #818cf8; width:36px; height:36px; font-size:18px;">🔬</div>
-          <div>
-            <h3 id="detail-agent-name" style="font-size: 15px; font-weight: 700; color: #fff;">Agent Name</h3>
-            <p id="detail-agent-category" style="font-size: 11px; color: #94a3b8; font-family: 'JetBrains Mono', monospace;">Category</p>
-          </div>
-        </div>
-        <button id="close-detail-modal" class="modal-close-btn">&times;</button>
-      </div>
-
-      <div class="results-container" style="padding: 16px 20px; gap: 14px;">
-        <!-- Metrics Grid -->
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
-          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 10px; padding: 10px;">
-            <div style="font-size: 10px; color: #64748b; font-family: 'JetBrains Mono'; text-transform: uppercase;">Расписание</div>
-            <div id="detail-schedule" style="font-size: 13px; font-weight: 700; color: #818cf8; margin-top: 2px;">08:00, 21:00 CET</div>
-          </div>
-          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 10px; padding: 10px;">
-            <div style="font-size: 10px; color: #64748b; font-family: 'JetBrains Mono'; text-transform: uppercase;">Статус</div>
-            <div id="detail-status" style="font-size: 13px; font-weight: 700; color: #10b981; margin-top: 2px;">ACTIVE / READY</div>
-          </div>
-        </div>
-
-        <!-- Latest Finding Box -->
-        <div>
-          <div style="font-size: 11px; font-weight: 700; color: #cbd5e1; margin-bottom: 6px; text-transform: uppercase; font-family: 'JetBrains Mono';">Главный найденный инсайт</div>
-          <div id="detail-finding" style="background: rgba(99, 102, 241, 0.08); border: 1px solid rgba(99, 102, 241, 0.25); border-radius: 10px; padding: 12px; font-size: 13px; color: #fff; line-height: 1.4;">
-            Finding text
-          </div>
-        </div>
-
-        <!-- Log Summary -->
-        <div>
-          <div style="font-size: 11px; font-weight: 700; color: #64748b; margin-bottom: 6px; text-transform: uppercase; font-family: 'JetBrains Mono';">Лог сканирования</div>
-          <div id="detail-logs" style="background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 10px; padding: 10px; font-size: 12px; color: #94a3b8; font-family: 'JetBrains Mono', monospace;">
-            Log summary
-          </div>
-        </div>
-
-        <!-- Actions -->
-        <div style="display: flex; gap: 10px; margin-top: 4px;">
-          <button id="trigger-agent-btn" class="btn btn-primary" style="flex: 1; padding: 10px;">⚡ Запустить разведку прямо сейчас</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ENCLAVR Daily Briefing Reader Modal -->
-  <div id="briefing-modal" class="modal-overlay" style="display:none; z-index: 10000;">
-    <div class="modal-card" style="max-width: 680px;">
-      <div class="modal-header">
-        <div class="modal-title-group">
-          <div class="svc-icon" style="background: rgba(99, 102, 241, 0.15); color: #818cf8; width:36px; height:36px; font-size:18px;">📑</div>
-          <div>
-            <h3 style="font-size: 15px; font-weight: 700; color: #fff;">ENCLAVR Daily Strategic Briefing</h3>
-            <p id="briefing-date-sub" style="font-size: 11px; color: #94a3b8; font-family: 'JetBrains Mono', monospace;">2-Minute Decision Digest</p>
-          </div>
-        </div>
-        <button id="close-briefing-modal" class="modal-close-btn">&times;</button>
-      </div>
-      <div id="briefing-content" class="results-container" style="padding: 18px 22px; font-size: 13px; color: #cbd5e1; line-height: 1.6; white-space: pre-wrap; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-        Загрузка отчёта...
-      </div>
-    </div>
-  </div>
-
-  <style>
-    .modal-overlay {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(4, 7, 14, 0.85);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-    }
-    .modal-card {
-      background: #0d121f;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 20px;
-      width: 100%;
-      max-width: 640px;
-      max-height: 85vh;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
-      overflow: hidden;
-    }
-    .modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 20px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .modal-title-group { display: flex; align-items: center; gap: 12px; }
-    .modal-close-btn {
-      background: rgba(255, 255, 255, 0.06);
-      border: none;
-      color: #94a3b8;
-      width: 32px; height: 32px;
-      border-radius: 50%;
-      font-size: 20px;
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      transition: all 0.2s;
-    }
-    .modal-close-btn:hover { background: rgba(255, 255, 255, 0.15); color: #fff; }
-    .search-box-wrap {
-      position: relative;
-      padding: 14px 20px 8px;
-    }
-    .search-icon {
-      position: absolute;
-      left: 34px;
-      top: 26px;
-      color: #818cf8;
-      font-size: 14px;
-    }
-    .search-input {
-      width: 100%;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(129, 140, 248, 0.3);
-      border-radius: 12px;
-      padding: 12px 40px 12px 42px;
-      color: #fff;
-      font-size: 15px;
-      font-family: inherit;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-    .search-input:focus { border-color: #818cf8; background: rgba(255, 255, 255, 0.08); }
-    .spinner {
-      position: absolute;
-      right: 34px;
-      top: 26px;
-      width: 16px; height: 16px;
-      border: 2px solid rgba(255,255,255,0.2);
-      border-top-color: #818cf8;
-      border-radius: 50%;
-      animation: spin 0.6s linear infinite;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .search-chips {
-      display: flex;
-      gap: 6px;
-      padding: 4px 20px 12px;
-      overflow-x: auto;
-      white-space: nowrap;
-    }
-    .chip {
-      font-size: 11px;
-      font-weight: 600;
-      background: rgba(129, 140, 248, 0.1);
-      color: #a5b4fc;
-      border: 1px solid rgba(129, 140, 248, 0.2);
-      padding: 4px 10px;
-      border-radius: 14px;
-      cursor: pointer;
-      transition: all 0.15s;
-    }
-    .chip:hover { background: rgba(129, 140, 248, 0.25); color: #fff; }
-    .results-container {
-      padding: 8px 20px 20px;
-      overflow-y: auto;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .results-empty {
-      text-align: center;
-      padding: 40px 16px;
-      color: #64748b;
-      font-size: 13px;
-    }
-    .book-item {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 12px;
-      padding: 12px 14px;
-      transition: all 0.15s;
-    }
-    .book-item:hover {
-      background: rgba(129, 140, 248, 0.06);
-      border-color: rgba(129, 140, 248, 0.25);
-    }
-    .book-title { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 2px; }
-    .book-author { font-size: 12px; color: #818cf8; font-weight: 600; margin-bottom: 6px; }
-    .book-meta {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 8px;
-      font-size: 11px;
-      color: #64748b;
-      font-family: 'JetBrains Mono', monospace;
-    }
-    .badge-fmt {
-      background: rgba(16, 185, 129, 0.15);
-      color: #10b981;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-size: 10px;
-      font-weight: 700;
-    }
-    .photo-grid-wrap {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-      gap: 8px;
-      padding: 10px 20px 20px;
-    }
-    .photo-card {
-      position: relative;
-      border-radius: 10px;
-      overflow: hidden;
-      background: rgba(255, 255, 255, 0.05);
-      aspect-ratio: 1;
-      cursor: pointer;
-      transition: transform 0.15s;
-    }
-    .photo-card:hover { transform: scale(1.03); }
-    .photo-thumb {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .photo-badge {
-      position: absolute;
-      bottom: 4px; right: 4px;
-      background: rgba(0, 0, 0, 0.7);
-      color: #fff;
-      font-size: 9px;
-      font-family: 'JetBrains Mono', monospace;
-      padding: 1px 4px;
-      border-radius: 4px;
-    }
-  </style>
-
   <script>
-    function escapeHtml(s){return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
-
-    // Fast Non-Blocking Connection & Home Server Status Resolver
-    (async function() {
-      const statusBadge = document.querySelector('.status-badge');
-      let photoTarget = 'https://nucbox-k8-plus.tail374af0.ts.net/photos/';
-      let booksTarget = 'https://nucbox-k8-plus.tail374af0.ts.net/library/';
-      let isServerOnline = false;
-      
-      const isLocal = window.location.hostname === '192.168.178.118' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-
-      if (!isServerOnline) {
-        // External HTTPS (evseev.site)
-        try {
-          const controller = new AbortController();
-          const timeoutId = setTimeout(() => controller.abort(), 1200);
-          const resp = await fetch('/hub_status.json?t=' + Date.now(), { signal: controller.signal });
-          clearTimeout(timeoutId);
-          
-          if (resp.ok) {
-            const data = await resp.json();
-            if (data && data.online && data.photos_url && data.books_url) {
-              try {
-                const pu = new URL(data.photos_url);
-                pu.searchParams.delete('k');
-                pu.searchParams.delete('token');
-                photoTarget = pu.toString();
-                const bu = new URL(data.books_url);
-                bu.searchParams.delete('k');
-                bu.searchParams.delete('token');
-                booksTarget = bu.toString();
-              } catch(e) {
-                photoTarget = data.photos_url;
-                booksTarget = data.books_url;
-              }
-              isServerOnline = true;
-              if (statusBadge) statusBadge.innerHTML = '<span class="status-dot" style="background:#38bdf8; box-shadow:0 0 8px #38bdf8;"></span> Онлайн (Домашний ПК)';
-            }
+    (async function resolveHomeHubStatus() {
+      const badge = document.getElementById('hubStatusBadge');
+      try {
+        const controller = new AbortController();
+        const tid = setTimeout(() => controller.abort(), 1500);
+        const resp = await fetch('/hub_status.json', { signal: controller.signal, cache: 'no-cache' });
+        clearTimeout(tid);
+        if (!resp.ok) return;
+        const data = await resp.json();
+        if (data && data.online) {
+          if (data.photos_url) {
+            const pu = new URL(data.photos_url);
+            pu.searchParams.delete('k');
+            pu.searchParams.delete('token');
+            document.querySelectorAll('.hub-link-photo').forEach(el => { el.href = pu.toString(); });
           }
-        } catch(e) {
-          console.log('Home server is offline or unreachable');
-        }
-
-        if (!isServerOnline && statusBadge) {
-          statusBadge.innerHTML = '<span class="status-dot" style="background:#10b981; box-shadow:0 0 8px #10b981;"></span> Google Cloud 24/7';
-          statusBadge.style.color = '#10b981';
-          statusBadge.style.borderColor = 'rgba(16, 185, 129, 0.3)';
-          statusBadge.style.background = 'rgba(16, 185, 129, 0.1)';
-        }
-      }
-
-      // Books navigation goes directly to /books/ without popup blocking
-      const booksModal = document.getElementById('books-modal');
-
-      document.getElementById('close-books-modal')?.addEventListener('click', () => {
-        if (booksModal) booksModal.style.display = 'none';
-      });
-
-      booksModal?.addEventListener('click', (e) => {
-        if (e.target === booksModal) booksModal.style.display = 'none';
-      });
-
-      // Intercept Photo Click to Open 24/7 Cloud Gallery
-      const photosModal = document.getElementById('photos-modal');
-      document.querySelectorAll('.hub-link-photo').forEach(el => {
-        el.addEventListener('click', function(e) {
-          if (!isServerOnline && !isLocal) {
-            e.preventDefault();
-            if (photosModal) {
-              photosModal.style.display = 'flex';
-              loadPhotosYear('');
-            }
+          if (data.public_url) {
+            document.querySelectorAll('.hub-link-root').forEach(el => { el.href = data.public_url.replace(/\/+$/, '') + '/'; });
           }
-        });
-      });
-
-      document.getElementById('close-photos-modal')?.addEventListener('click', () => {
-        if (photosModal) photosModal.style.display = 'none';
-      });
-
-      photosModal?.addEventListener('click', (e) => {
-        if (e.target === photosModal) photosModal.style.display = 'none';
-      });
+          if (badge) {
+            badge.innerHTML = '<span class="status-dot" style="background:#10b981; box-shadow:0 0 8px #10b981;"></span> Домашний ПК';
+            badge.style.color = '#10b981';
+            badge.style.borderColor = 'rgba(16, 185, 129, 0.35)';
+            badge.style.background = 'rgba(16, 185, 129, 0.12)';
+          }
+        }
+      } catch (_) {}
     })();
-
-    // Live Books Search Engine (Google Cloud Always-Free Backend)
-    let searchDebounceTimer = null;
-    const CLOUD_API_BASE = 'https://34.27.195.78.sslip.io';
-    const FALLBACK_TUNNEL_URL = 'https://nucbox-k8-plus.tail374af0.ts.net';
-    let cachedTunnelBase = FALLBACK_TUNNEL_URL;
-
-    function normalizeBookQuery(text) {
-      if (!text) return '';
-      return text.replace(/ё/g, 'е').replace(/Ё/g, 'Е').trim();
-    }
-
-    document.getElementById('books-search-input')?.addEventListener('input', function(e) {
-      const rawQ = e.target.value.trim();
-      clearTimeout(searchDebounceTimer);
-      if (rawQ.length < 2) {
-        document.getElementById('books-results').innerHTML = '<div class="results-empty"><p>⚡ Введите автора или название книги.</p></div>';
-        return;
-      }
-      document.getElementById('search-spinner').style.display = 'inline-block';
-      searchDebounceTimer = setTimeout(() => performSearch(rawQ), 250);
-    });
-
-    window.searchFor = function(text) {
-      const input = document.getElementById('books-search-input');
-      if (input) {
-        input.value = text;
-        document.getElementById('search-spinner').style.display = 'inline-block';
-        performSearch(text);
-      }
-    };
-
-    // Robust Handler for Full Catalog button
-    // Native link href='/books/' handles navigation seamlessly
-
-    async function performSearch(query) {
-      const resultsContainer = document.getElementById('books-results');
-      const spinner = document.getElementById('search-spinner');
-      const normQ = normalizeBookQuery(query);
-
-      try {
-        const resp = await fetch(`${CLOUD_API_BASE}/api/books/search?q=${encodeURIComponent(normQ)}&limit=30`);
-        if (!resp.ok) throw new Error('HTTP ' + resp.status);
-        const data = await resp.json();
-
-        if (spinner) spinner.style.display = 'none';
-
-        if (!data.books || data.books.length === 0) {
-          resultsContainer.innerHTML = `<div class="results-empty"><p>Ничего не найдено по запросу «${escapeHtml(query)}»</p></div>`;
-          return;
-        }
-
-        // Resolve active tunnel base URL (use cached or booksTarget or fallback)
-        let tunnelBase = cachedTunnelBase || (booksTarget && !booksTarget.includes('/books/') ? booksTarget.split('/books')[0].split('/library')[0] : FALLBACK_TUNNEL_URL);
-
-        let html = `<div style="font-size:11px; color:#94a3b8; margin-bottom:8px; font-family:'JetBrains Mono';">Найдено: ${escapeHtml(data.count)} книг (${escapeHtml(data.duration_ms)} мс)</div>`;
-        data.books.forEach(b => {
-          const author = b.author ? b.author.replace(/,/g, ' ').trim() : 'Неизвестный автор';
-          const sizeKb = Math.round((b.size || 0) / 1024);
-          const ext = (b.ext || 'fb2').toUpperCase();
-          const series = b.series ? ` · <span style="cursor:pointer; color:#a5b4fc;" onclick="event.stopPropagation(); searchFor(${escapeHtml(JSON.stringify(b.series))})"><i>Серия: ${escapeHtml(b.series)}${b.ser_no ? ' #' + escapeHtml(b.ser_no) : ''}</i></span>` : '';
-          const safeTitle = (b.title || 'book').replace(/'/g, "\\'");
-
-          // Download URL via tunnel (falls back to Cloud API)
-          const dlBase = tunnelBase || CLOUD_API_BASE;
-          const bookId = encodeURIComponent(b.id);
-          const epubUrl = `${dlBase}/api/book/${bookId}/download?format=epub`;
-          const fb2Url = `${dlBase}/api/book/${bookId}/download?format=fb2`;
-
-          html += `
-            <div class="book-item" style="cursor: pointer;" onclick="window.location.href='/books/#book=${bookId}'">
-              <div class="book-title" style="color: #818cf8;">${escapeHtml(b.title || 'Без названия')}</div>
-              <div class="book-author" style="cursor:pointer;" onclick="event.stopPropagation(); window.location.href='/books/#author=' + encodeURIComponent(${escapeHtml(JSON.stringify(author))})">✍️ ${escapeHtml(author)}</div>
-              <div class="book-meta">
-                <span class="badge-fmt">${escapeHtml(ext)}</span>
-                <span>${escapeHtml(sizeKb)} KB</span>
-                ${b.date ? `<span>📅 ${escapeHtml(b.date)}</span>` : ''}
-                ${series}
-              </div>
-              <div style="display:flex; gap:6px; margin-top:8px;">
-                <a href="${escapeHtml(epubUrl)}" target="_blank" onclick="event.stopPropagation();" style="flex:1; text-align:center; padding:7px 0; border-radius:8px; background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.3); color:#10b981; font-size:12px; font-weight:700; text-decoration:none; transition:all 0.15s;">📥 EPUB</a>
-                <a href="${escapeHtml(fb2Url)}" target="_blank" onclick="event.stopPropagation();" style="flex:1; text-align:center; padding:7px 0; border-radius:8px; background:rgba(129,140,248,0.1); border:1px solid rgba(129,140,248,0.25); color:#a5b4fc; font-size:12px; font-weight:700; text-decoration:none; transition:all 0.15s;">📥 FB2</a>
-                <a href="/books/#read-${bookId}" onclick="event.stopPropagation();" style="flex:1; text-align:center; padding:7px 0; border-radius:8px; background:rgba(56,189,248,0.1); border:1px solid rgba(56,189,248,0.25); color:#38bdf8; font-size:12px; font-weight:700; text-decoration:none; transition:all 0.15s;">📖 Читать</a>
-              </div>
-            </div>
-          `;
-        });
-        resultsContainer.innerHTML = html;
-      } catch (err) {
-        if (spinner) spinner.style.display = 'none';
-        resultsContainer.innerHTML = `<div class="results-empty" style="color:#ef4444;"><p>Ошибка поиска: ${err.message}</p></div>`;
-      }
-    }
-
-    // Photo Gallery Loader
-    window.loadPhotosYear = async function(year) {
-      const grid = document.getElementById('photos-grid');
-      if (!grid) return;
-      grid.innerHTML = '<div class="results-empty"><p>⚡ Загрузка фотографий из Google Cloud...</p></div>';
-
-      try {
-        const url = year ? `${CLOUD_API_BASE}/api/photos/timeline?year=${year}&limit=48` : `${CLOUD_API_BASE}/api/photos/timeline?limit=48`;
-        const resp = await fetch(url);
-        const data = await resp.json();
-
-        if (!data.photos || data.photos.length === 0) {
-          grid.innerHTML = '<div class="results-empty"><p>Фотографий за этот период не найдено.</p></div>';
-          return;
-        }
-
-        let html = '';
-        data.photos.forEach(p => {
-          const thumbUrl = `${CLOUD_API_BASE}/api/photos/thumb/${p.id}`;
-          html += `
-            <div class="photo-card" title="${p.filename || ''}">
-              <div style="width:100%; height:100%; background: linear-gradient(135deg, #1e293b, #0f172a); display:flex; align-items:center; justify-content:center; font-size:24px;">📷</div>
-              <div class="photo-badge">${p.year || ''}</div>
-            </div>
-          `;
-        });
-        grid.innerHTML = html;
-      } catch(err) {
-        grid.innerHTML = `<div class="results-empty" style="color:#ef4444;"><p>Ошибка загрузки: ${err.message}</p></div>`;
-      }
-    };
-
-    // --- Agents Dashboard & Strategic Radar Engine ---
-    let cachedAgents = [];
-    let currentSelectedAgent = null;
-
-    const agentsModal = document.getElementById('agents-modal');
-    const agentDetailModal = document.getElementById('agent-detail-modal');
-    const briefingModal = document.getElementById('briefing-modal');
-
-    document.querySelectorAll('.hub-link-agents').forEach(el => {
-      el.addEventListener('click', function(e) {
-        e.preventDefault();
-        if (agentsModal) {
-          agentsModal.style.display = 'flex';
-          loadAgentsDashboard();
-        }
-      });
-    });
-
-    document.querySelectorAll('.hub-link-briefing').forEach(el => {
-      el.addEventListener('click', function(e) {
-        e.preventDefault();
-        openBriefingModal();
-      });
-    });
-
-    document.getElementById('close-agents-modal')?.addEventListener('click', () => {
-      if (agentsModal) agentsModal.style.display = 'none';
-    });
-    document.getElementById('close-detail-modal')?.addEventListener('click', () => {
-      if (agentDetailModal) agentDetailModal.style.display = 'none';
-    });
-    document.getElementById('close-briefing-modal')?.addEventListener('click', () => {
-      if (briefingModal) briefingModal.style.display = 'none';
-    });
-
-    agentsModal?.addEventListener('click', (e) => {
-      if (e.target === agentsModal) agentsModal.style.display = 'none';
-    });
-    agentDetailModal?.addEventListener('click', (e) => {
-      if (e.target === agentDetailModal) agentDetailModal.style.display = 'none';
-    });
-    briefingModal?.addEventListener('click', (e) => {
-      if (e.target === briefingModal) briefingModal.style.display = 'none';
-    });
-
-    async function loadAgentsDashboard() {
-      const container = document.getElementById('agents-list');
-      if (!container) return;
-      container.innerHTML = '<div class="results-empty"><p>⚡ Опрос облачных агентов...</p></div>';
-
-      try {
-        const resp = await fetch(`${CLOUD_API_BASE}/api/agents/status`);
-        if (!resp.ok) throw new Error('HTTP ' + resp.status);
-        const data = await resp.json();
-        cachedAgents = data.agents || [];
-
-        if (cachedAgents.length === 0) {
-          container.innerHTML = '<div class="results-empty"><p>Нет активных агентов</p></div>';
-          return;
-        }
-
-        let html = '';
-        cachedAgents.forEach(a => {
-          const isOnline = a.status.includes('ACTIVE') || a.status.includes('ONLINE');
-          const dotColor = isOnline ? '#10b981' : '#38bdf8';
-          const icon = a.name.split(' ')[0] || '🤖';
-          
-          html += `
-            <div class="book-item" style="cursor: pointer; display:flex; justify-content:space-between; align-items:center; padding:12px 16px;" onclick="openAgentDetail('${a.agent_id}')">
-              <div style="display:flex; align-items:center; gap:12px;">
-                <div class="svc-icon" style="background: rgba(255, 255, 255, 0.05); color: #fff; width:34px; height:34px; font-size:16px;">${icon}</div>
-                <div>
-                  <div style="font-size:14px; font-weight:700; color:#fff;">${a.name}</div>
-                  <div style="font-size:11px; color:#818cf8; font-family:'JetBrains Mono'; margin-top:2px;">
-                    ${a.category} · Расписание: ${a.schedule}
-                  </div>
-                  <div style="font-size:11px; color:#94a3b8; margin-top:4px; max-width:480px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">
-                    💡 ${a.last_finding || a.log_summary || ''}
-                  </div>
-                </div>
-              </div>
-              <div style="text-align:right; flex-shrink:0;">
-                <span class="badge-fmt" style="background:rgba(16,185,129,0.15); color:${dotColor};">
-                  ● ${a.status}
-                </span>
-                <div style="font-size:10px; color:#64748b; font-family:'JetBrains Mono'; margin-top:4px;">
-                  Детали →
-                </div>
-              </div>
-            </div>
-          `;
-        });
-        container.innerHTML = html;
-      } catch(err) {
-        container.innerHTML = `<div class="results-empty" style="color:#ef4444;"><p>Ошибка связи с агентами: ${err.message}</p></div>`;
-      }
-    }
-
-    window.openAgentDetail = function(agentId) {
-      const agent = cachedAgents.find(a => a.agent_id === agentId);
-      if (!agent || !agentDetailModal) return;
-      currentSelectedAgent = agent;
-
-      document.getElementById('detail-agent-name').textContent = agent.name;
-      document.getElementById('detail-agent-category').textContent = `${agent.category} · ${agent.agent_id}`;
-      document.getElementById('detail-schedule').textContent = agent.schedule;
-      document.getElementById('detail-status').textContent = `${agent.status} (Следующий запуск: ${agent.next_run})`;
-      document.getElementById('detail-finding').textContent = agent.last_finding || 'Сбор информации в фоновом режиме...';
-      document.getElementById('detail-logs').textContent = agent.log_summary || 'Логи в норме. 0 аномалий.';
-
-      agentDetailModal.style.display = 'flex';
-    };
-
-    document.getElementById('trigger-agent-btn')?.addEventListener('click', async function() {
-      if (!currentSelectedAgent) return;
-      const btn = this;
-      btn.disabled = true;
-      btn.textContent = '⏳ Запуск...';
-
-      try {
-        const resp = await fetch(`${CLOUD_API_BASE}/api/agents/trigger/${currentSelectedAgent.agent_id}`, { method: 'POST' });
-        if (!resp.ok) throw new Error('HTTP ' + resp.status);
-        btn.textContent = '✅ Разведка успешно запущена!';
-        setTimeout(() => {
-          btn.disabled = false;
-          btn.textContent = '⚡ Запустить разведку прямо сейчас';
-          loadAgentsDashboard();
-        }, 2000);
-      } catch (err) {
-        btn.disabled = false;
-        btn.textContent = '❌ Ошибка запуска: ' + err.message;
-      }
-    });
-
-    window.openBriefingModal = async function() {
-      if (!briefingModal) return;
-      briefingModal.style.display = 'flex';
-      const container = document.getElementById('briefing-content');
-      container.textContent = '⚡ Загрузка свежего дайджеста из Google Cloud...';
-
-      try {
-        const resp = await fetch(`${CLOUD_API_BASE}/api/agents/radar/latest`);
-        if (!resp.ok) throw new Error('HTTP ' + resp.status);
-        const data = await resp.json();
-        
-        if (data.raw_markdown) {
-          container.textContent = data.raw_markdown;
-        } else if (data.action_today) {
-          container.textContent = `Score: ${data.score}/100\n\nДЕЙСТВИЕ СЕГОДНЯ:\n${data.action_today}\n\nХОЛОДНЫЙ ХУК:\n${data.cold_hook}\n\nДЛЯ СИНКА С МАКСОМ:\n${data.max_sync_topic}`;
-        }
-      } catch(err) {
-        container.textContent = 'Ошибка загрузки дайджеста: ' + err.message;
-      }
-    };
   </script>
 </body>
 </html>

@@ -1,0 +1,4 @@
+node_modules/
+games/screencreep/dist/
+.DS_Store
+Thumbs.db
