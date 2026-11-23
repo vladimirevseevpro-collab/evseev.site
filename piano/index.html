@@ -8,8 +8,9 @@
   <meta name="theme-color" content="#faf9f5" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#1c1b19" media="(prefers-color-scheme: dark)" />
   <title>Piano Trainer</title>
-  <script type="module" crossorigin src="./assets/index-BrrLvhph.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-COtkfXNU.css">
+  <script type="module" crossorigin src="./assets/index-DTZWay00.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/verovio-DSRtvmCy.js">
+  <link rel="stylesheet" crossorigin href="./assets/index-BunWB7su.css">
 </head>
 <body>
   <header class="bar">
@@ -30,7 +31,7 @@
     <div class="tools">
       <div class="stepper" aria-label="Темп">
         <button id="slower" aria-label="Медленнее"><svg viewBox="0 0 16 16"><path d="M4 8h8" /></svg></button>
-        <span id="tempoVal">100%</span>
+        <button id="tempoVal" class="tempo-val" type="button" title="Сбросить темп на 100%" aria-label="Темп 100%, нажать для сброса">100%</button>
         <button id="faster" aria-label="Быстрее"><svg viewBox="0 0 16 16"><path d="M4 8h8M8 4v8" /></svg></button>
       </div>
       <button id="loopBtn" class="demo-btn loop-btn" type="button" aria-pressed="false" title="Петля A–B + Лестница темпа (+5% за чистый проход)">
